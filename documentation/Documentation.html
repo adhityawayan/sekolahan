@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+
+        <title>Quadz Advanced School Management System </title>
+
+        <meta name="description" content="Thank you for purchasing Freelance Cockpit 2. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form. Thanks so much!">
+        <meta name="author" content="Md.Omar Faruk Serniabat">
+        <meta name="copyright" content="Md.Omar Faruk Serniabat">
+
+        <link rel="stylesheet" href="css/documenter_style.css" media="all">
+        <script src="js/jquery.1.6.4.js"></script>
+
+        <script src="js/jquery.scrollTo-1.4.2-min.js"></script>
+        <script src="js/jquery.easing.js"></script>
+        <script>document.createElement('section');
+            var duration = 500, easing = 'swing';</script>
+        <script src="js/script.js"></script>
+
+        <style>
+            html{background-color:#FFFFFF;color:#383838;}
+            ::-moz-selection{background:#333636;color:#00DFFC;}
+            ::selection{background:#333636;color:#00DFFC;}
+            #documenter_sidebar #documenter_logo{background-image:url(assets/images/smlogoa.png);}
+            a{color:#008C9E;}
+            hr{border-top:1px solid #D4D4D4;border-bottom:1px solid #FFFFFF;}
+            #documenter_sidebar, #documenter_sidebar ol a{background-color:#343838;color:#FFFFFF;}
+            #documenter_sidebar ol a{-webkit-text-shadow:1px 1px 0px #494F4F;-moz-text-shadow:1px 1px 0px #494F4F;text-shadow:1px 1px 0px #494F4F;}
+            #documenter_sidebar ol{border-top:1px solid #212424;}
+            #documenter_sidebar ol a{border-top:1px solid #494F4F;border-bottom:1px solid #212424;color:#FFFFFF;}
+            #documenter_sidebar ol a:hover{background:#333636;color:#00DFFC;border-top:1px solid #333636;}
+            #documenter_sidebar ol a.current{background:#333636;color:#00DFFC;border-top:1px solid #333636;}
+            #documenter_copyright{display:block !important;visibility:visible !important;}
+        </style>
+
+    </head>
+    <body>
+        <div id="documenter_sidebar">
+            <a href="#documenter_cover" id="documenter_logo"></a>
+            <ol id="documenter_nav">
+                <li><a class="current" href="#documenter_cover">Start</a></li>
+                <li><a href="#system_requrements">System Requrements</a></li>
+                <li><a href="#installation">Installation</a></li>
+                <li><a href="#local_server_installation">Local Server Installation</a></li>
+                <li><a href="#first_steps">User Guide</a></li>
+                <li><a href="#Coding">Coding Structure</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#sources_and_credits">Sources and Credits</a></li>
+
+            </ol>
+            <div id="documenter_copyright">Copyright &nbsp; Quadzlab Ltd. 2016<br>
+            </div>
+        </div>
+        <div id="documenter_content">
+            <section id="documenter_cover">
+                <h1> Quadz  School Management System</h1>
+                <h2> Documentation by “ Quadzlab Ltd. ” v3.0 </h2><hr>
+                <ul>
+                    <li>Created: 10/10/2014</li>
+                    <li>latest Update: 20/06/2015</li>
+                    <li>By: Quadzlab Ltd.</li>
+                    <li><a href=""></a></li>
+                    <li>Email: <a href="mailto:icesoft14@gmail.com">quadzlab@gmail.com</a></li>
+                </ul>
+                <p>Thank you for purchasing Quadz  School Management System. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form. Thanks so much!</p></section>
+            <section id="system_requrements">
+                <h3>System Requrements</h3><hr class="notop">
+                <p>
+                    Your server need to meet the following requirements in order to run Quadz  School Management System.</p>
+                <ul style="margin: 0px 1.5em 1.5em 3.5em; padding: 0px; border: 0px; font-size: 13px; font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif; vertical-align: baseline; line-height: 19px;">
+                    <li style="margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        PHP 5.3+</li>
+                    <li style="margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        MYSQL 5+</li>
+                    <li style="margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        PHP Mcrypt Extention</li>
+                    <li style="margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        PHP MBString Extension</li>
+                    <li style="margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        PHP DOM Extension</li>
+                    <li style="margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        PHP GD Extension</li>
+                    <li style="margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        PHP MYSQL Extension</li>
+                    <li style="margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        PHP PDO Extention</li>
+                    <li style="margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        PHP CURL Extention</li>
+
+                </ul>
+                <p style="margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                    &nbsp;</p>
+                <p style="margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                    &nbsp;</p>
+                <p style="margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                    &nbsp;</p>
+                <p style="margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                    &nbsp;</p>
+                <p style="margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                    &nbsp;</p>
+                <p style="margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                    &nbsp;</p>
+                <p style="margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                    &nbsp;</p>
+                <p style="margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                    &nbsp;</p>
+            </section>
+            <section id="installation">
+                <h3>Installation</h3><hr class="notop">
+                <ol>
+                    <li>
+                        <p>
+                            Connect to your web server using any FTP program (ie. FileZilla) or the webinterface of your webhost and upload all files and folders which are inside the &quot;<strong>Ice ASMS</strong>&quot; folder from the .zip file you have downloaded from Codecanyon. If you like to install Quadz  School Management System on your local computer using WAMP, make sure you first read&nbsp;<a href="#localserverinstallation">Local Server Installation&nbsp;<br>
+                                <br>
+                                <img alt="" src="assets/images/image_12.png" style="color: rgb(34, 34, 34); font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif; font-size: 13px; line-height: 19px; width: 791px; height: 376px;"></a><br>
+                            &nbsp;</p>
+                    </li>
+
+
+
+                    <li>
+                        <p>
+                            If you running cPanel, You can upload zip folder and extract the folder from file manager. This is fast and easy.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Create Mysql Database, Go to phpMyadmin login your database Import sql file to your database .You will find the sql file in the "Ice Advance School Management System full.zip > Database" import "database.sql" if you want blank software. If you want to load database with contend import "database_with_content.sql" <br><br>
+                            <img alt="" src="assets/images/Screenshot_1.png" style="width: 900px; height: 88px;"><br>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Go to <b>ISFM/config/Database.php</b> file and change "hostname (if you need)" "username", "password", "database" 
+                            <br>
+                            <br>
+                            <img alt="" src="assets/images/Database file.png" style="color: rgb(34, 34, 34); font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif; font-size: 13px; line-height: 19px; width: 336px; height: 70px;"></a><br>
+                            &nbsp;</p>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Go to your web browser and enter your domain <b>http://www.your-domain.com</b>
+
+                            <br>
+                            <br>
+                            <img alt="" src="assets/images/login_screen.png" style="color: rgb(34, 34, 34); font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif; font-size: 13px; line-height: 19px; width: 500px; height: 450px;"></a><br>
+                            &nbsp;
+                        </p>
+                    </li>
+                </ol>
+                <p>
+                    &nbsp;</p>
+                <p>
+                    &nbsp;</p>
+                <p>
+                    &nbsp;</p>
+                <p>
+                    &nbsp;</p>
+                <p>
+                    &nbsp;</p>
+                <p>
+                    &nbsp;</p>
+                <p>
+                    &nbsp;</p>
+            </section>
+            <section id="local_server_installation">
+                <h3>Local Server Installation</h3><hr class="notop">
+                <h3>
+                    WAMP Server</h3>
+                <p>
+                    If you like to install Ice-Advanced School Management System on your local machine using <strong>WAMP</strong> Server you need to make sure to enable the apache rewrite_module and also need to enable php extension. Click on the WAMP icon in your taskbar click on <em>Apache -&gt; Apache modules -&gt; rewrite_module</em> and click on <em>PHP -&gt; PHP Extensions -&gt; php_curl</em></p>
+                <p>
+                    <img alt="" src="assets/images/image_47.png" style="width: 403px; height: 340px;"><br>
+                    &nbsp;</p>
+                <p>
+                    When the rewrite_module is not active you will get the following error message if you try to access the Ice-Advanced School Management System installation tool.</p>
+                <pre style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; font-size: medium;">
+<strong>Internal Server Error</strong>
+The server encountered an internal error or misconfiguration and was unable to complete your request.
+Please contact the server administrator, admin@localhost and inform them of the time the error occurred, and anything you might have done that may have caused the error.
+More information about this error may be available in the server error log.</pre>
+                <p>
+                    &nbsp;</p>
+                <p>
+                    You also need to make sure that the Curl extention is loaded. Just open your php.ini (...wamp\bin\apache\apache2.2.22\bin\php.ini) and remove the semicolon in front of the following extention: &nbsp;<strong>extension=php_curl.dll</strong></p>
+                <img alt="" src="assets/images/Php Extension.png" style="width: 360px; height: 500px;"><br>
+                <p>
+                    <br>
+                    <img alt="" src="http://envato.iceSoftBd-apps.com/instruction/curl_extention.PNG" style="width: 340px; height: 166px; border-width: 1px; border-style: solid;"></p>
+                <p>
+                    &nbsp;</p>
+                <p>
+                    &nbsp;</p>
+                <p>
+                    &nbsp;</p>
+                <p>
+                    &nbsp;</p>
+                <p>
+                    &nbsp;</p>
+                <p>
+                    &nbsp;</p>
+                <p>
+                    &nbsp;</p>
+                <p>
+                    &nbsp;</p>
+            </section>
+            <section id="first_steps">
+                <h3>User Guide</h3><hr class="notop">
+                <ol>
+                    <li>
+                        <span style="font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif; font-size: 13px; line-height: 19px;">Login using &quot;Admin Email Address&quot; and &quot; password&quot;. Defalt admin login information:<br> <b><br> User Name : admin@admin.com <br> Password : password </b></span><br>
+                        <br>
+                        <br>
+                        <img alt="" src="assets/images/Login.png" style="color: rgb(34, 34, 34); font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif; font-size: 13px; line-height: 19px; width: 467px; height: 450px;"></a><br>
+                        &nbsp;
+                        <br>
+                        &nbsp;</li>
+                    <li>
+                        If You Forgot Your password then Click on "Click Here" Button.<br>
+                        <br>
+                        <img alt="" src="assets/images/forget_pass_1.png" style="width: 467px; height: 465px;"><br>
+                        <br>
+                        <img alt="" src="assets/images/forget_pass_2.png" style="width: 449px; height: 361px;"><br>
+
+                        <br>
+                        &nbsp;</li>
+
+                    <li>
+                        After your Login successfully, you can see your Main DashBoard.<br>
+                        <br>
+                        <img alt="" src="assets/images/Dashbord.png" style="width: 1000px; height: 1200px;"><br>
+                        <br>
+                        <br>
+                        &nbsp;</li>
+
+                    <li>
+                        Hover on User's Name (like "Headmaster", "D.M. Karim", "Halain") will show in the right upper corner.<br>
+                        <br>
+                        <img alt="" src="assets/images/User Profile Upper Corner.png" style="width: 950px; height: 501px;"><br>
+                        OR Go to Profile and Change your password and personal details<br><br>
+                        <img alt="" src="assets/images/Profile.png" style="width: 950px; height: 501px;"><br>
+                        <br>
+                        <img alt="" src="assets/images/Profile2.png" style="width: 950px; height: 501px;"><br>
+                        <br>
+                        &nbsp;</li>
+                    <li>
+                        Now go to Configuration and change the general settings and Weekly Day so it fits your needs.<br>
+                        <br>
+                        <img alt="" src="assets/images/general_settings.png" style="width: 950px; height: 729px;"><br>
+                        <img alt="" src="assets/images/weekly_settings.png" style="width: 950px; height: 729px;"><br>
+                        <br>
+                        &nbsp;</li>
+                    <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 15px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        Now go to Students Select Admission and Add Student.<br>
+                        <br>
+                        <img alt="" src="assets/images/add_student.png" style="width: 950px; height: 1400px;"><br>
+                        &nbsp;</li>
+                    <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 15px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        Go to Students then Select Students Information then Select Class and Select Section <br>
+                        <br>
+                        <img alt="" src="assets/images/All Student select.png" style="width: 950px; height: 501px;"><br>
+                        &nbsp;</li>
+                    <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 15px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        Click Submit button go Student Information page. If you click on Add Button.Now you can add student.Click Details view student details.If you click Edit button then Edit your student.if you want to delete then click delete button<br>
+                        <br>
+                        <img alt="" src="assets/images/All Student view.png" style="width: 1000px; height: 450px;"><br>
+                        &nbsp;</li>
+                    <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 15px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        If you click on Details Button, Now you can view Details <br>
+                        <br>
+                        <img alt="" src="assets/images/Student Details.png" style="width: 1000px; height: 700px;"><br>
+                        &nbsp;</li>
+                    <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 15px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        Go to Class > Add Class and Section for Class Add and section add. you must be selected Class Title and Students Capacity in a section  <br>
+                        <br>
+                        <img alt="" src="assets/images/add class and section.png" style="width: 1000px; height: 600px;"><br>
+                        &nbsp;</li>
+                    <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 15px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        If you want to see all classes then Click on Class > All Class. If you want to see Details then Click Details <br>
+                        <br>
+                        <img alt="" src="assets/images/All Class.png" style="width: 1000px; height: 600px;"><br>
+                        &nbsp;</li>
+                    <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 15px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        If you need Routine Added then Got to Class > Add Class Routine. First select class if have any section then select section other wise click start button then go to Add Class Routine page now add your class routine<br>
+                        <br>
+                        <img alt="" src="assets/images/addClass Routine select.png" style="width: 1000px; height: 600px;"><br>
+                        <img alt="" src="assets/images/add class routine.png" style="width: 1000px; height: 1000px;"><br>
+                        &nbsp;</li>
+                    <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 15px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        If You want to Edit and Delect class routine then go Class > Class Routine and select class if have any section then select section other wise click start button then view Class Routine. you can Edit or delete here<br>
+                        <br>
+                        <img alt="" src="assets/images/Class Routine Edit and Delete.png" style="width: 1000px; height: 600px;"><br>
+                        &nbsp;</li>
+                    <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 15px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        If you need added your teacher.First need admin access then go to Teacher > Add Teacher and if you need teacher's informtion then go Teacher > Teachers Information. You can also add your teacher from here <br>
+                        <br>
+                        <img alt="" src="assets/images/Teacher's Information.png" style="width: 1000px; height: 600px;"><br>
+                        &nbsp;</li>
+                    <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 15px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        If you want to see teachers details then go Teacher > Teachers Information and Click on Details Button <br>
+                        <br>
+                        <img alt="" src="assets/images/Teacher's InformationDetails.png" style="width: 1000px; height: 600px;"><br>
+                        &nbsp;
+                        <img alt="" src="assets/images/Teacher's InformationDetails1.png" style="width: 1000px; height: 600px;"><br>
+                    </li>
+                    <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 15px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        Now go to Subject > Add Subject  <br>
+                        <br>
+                        <img alt="" src="assets/images/Add Subject.png" style="width: 1000px; height: 600px;"><br>
+                        &nbsp;
+                    </li>
+                    <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 15px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        If you want to see all subject then go to Subject > All Subjects  <br>
+                        <br>
+                        <img alt="" src="assets/images/Subject Information.png" style="width: 1000px; height: 600px;"><br><br>
+                        <img alt="" src="assets/images/View Created Subject.png" style="width: 1000px; height: 600px;"><br>
+                        &nbsp;
+                    </li>
+                    <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 15px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        If you want to see Notice Board then go to "Notice Board" and if you want to add Notice then click "Add New" Button<br>
+                        <br>
+                        <img alt="" src="assets/images/All Notice.png" style="width: 1000px; height: 600px;"><br><br>
+
+                        &nbsp;
+                    </li>
+                    <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 15px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        If you need Parents Information then go to Parents > Parents Information and Select Class if have any section then select Section other wise only select Class then Click on Submit button and go to Parents Information page. You can Edit or Delete Parents from here<br>
+                        <br>
+                        <img alt="" src="assets/images/select class for parents information.png" style="width: 1000px; height: 600px;"><br><br>
+                        <img alt="" src="assets/images/Parents Information.png" style="width: 1000px; height: 600px;"><br>
+                        &nbsp;
+                    </li>
+                    <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 15px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        If you need made any Parents Profile then go to Parents > Make Parents Profile<br>
+                        <br>
+                        <img alt="" src="assets/images/Make Parents Profile.png" style="width: 1000px; height: 600px;"><br><br>
+                        &nbsp;
+                    </li>
+                    <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 15px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        If you need to see Grade Information then go to Examination > Exam Grade and If you want to add Exam Grade then Click on "Add New Grade" Button and add your exam grade<br>
+                        <br>
+                        <img alt="" src="assets/images/Grade Information.png" style="width: 1000px; height: 600px;"><br><br>
+                        &nbsp;
+                    </li>
+                    <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 15px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        Go to Examination > Add Exam and Add Routine. Now add your Exam Information then Click on Submit Button. You will go Add Exam Routine page here you could add your Exam Routine and also you could remove your Exam Routine<br>
+                        <br>
+                        <img alt="" src="assets/images/Add Exam1.png" style="width: 1000px; height: 600px;"><br><br>
+                        &nbsp;
+                        <img alt="" src="assets/images/Term Examination's Routine.png" style="width: 1000px; height: 600px;"><br>
+                    </li>
+                    <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 15px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        After Add your Routine then go to Examination > All Exam Routine First time select your class then select Exam Title then Click on submit button.After Click Submit button you will go Exam Routine View page<br>
+                        <br>
+                        <img alt="" src="assets/images/All Exam Routine.png" style="width: 1000px; height: 445px;"><br><br>
+                        &nbsp;
+                        <img alt="" src="assets/images/All Exam Routine1.png" style="width: 1000px; height: 445px;"><br>
+                    </li>
+                    <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 15px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        If you want to take attendance first login teacher who want to attendance then login administrator account and see Exam Attendance First Select "Class","Exam Title" and "Subject Title". when Click on "View Attendance" then you will go exam attendance preview page<br>
+                        <br>
+                        <img alt="" src="assets/images/Preview Exam Attendance.png" style="width: 1000px; height: 600px;"><br><br>
+                        &nbsp;
+                        <img alt="" src="assets/images/Exam Attendance Preview.png" style="width: 1000px; height: 600px;"><br>
+                    </li>
+                    <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 15px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        If you want to Make result first login teacher who want to make result then select "Class","Exam Title" and "Subject Title". After Click on "Submit Result" then you will go "View Result" page.If Result made successfully then show a SUCCESSFUL message <br>
+                        <br>
+                        <img alt="" src="assets/images/make Result Shit1.png" style="width: 1000px; height: 500px;"><br><br>
+                        &nbsp;
+                        <img alt="" src="assets/images/make Result Shit2.png" style="width: 1000px; height: 600px;"><br><BR>
+                        <img alt="" src="assets/images/Submit Result Shit Success Message.png" style="width: 1000px; height: 280px;"><br>
+                    </li>
+                    <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 15px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        After Make Result, Login Admin Account and go to Examination > Make Result. If you want to Check Result then Click On "Check Result" and if you click on "Approve Result Sheet" then it will invisible and it ready for publishing. when you click on "Publish Result" then it will go "View Result" Page<br>
+                        <br>
+                        <img alt="" src="assets/images/make Result Shit.png" style="width: 1000px; height: 600px;"><br><br>
+                        &nbsp;
+
+                    </li>
+                    <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 15px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        After Publishing you result then Go to Examination > View Result you will see Class Wise Exam Result Sheet then click on Exam Result Sheet you will see Full Result<br>
+                        <img alt="" src="assets/images/viewResult.png" style="width: 1000px; height: 380px;"><br><br>
+                        &nbsp;
+                        <img alt="" src="assets/images/Full Result.png" style="width: 1000px; height: 380px;"><br>
+
+                    </li>
+                    <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 15px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        If You want to know about Students Mark Sheet then Go to Examination > Students Mark's Sheet.First time Select "Class", "Exam Title", "Student Title" then Click on "Submit" Button. After Click On Submit Button You will go Student Make Sheet page<br>
+                        <br>
+                        <img alt="" src="assets/images/Student mark shit1.png" style="width: 1000px; height: 500px;"><br><br>
+                        &nbsp;
+                        <img alt="" src="assets/images/Student mark shit2.png" style="width: 1000px; height: 500px;"><br>
+
+                    </li>
+                    <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 15px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        Now go to Library > Add Category here you can add you books Category. After Add Category go to Library > All Category and see your All Category<br>
+                        <br>
+                        <img alt="" src="assets/images/BookCategory.png" style="width: 1000px; height: 500px;"><br><br>
+                        &nbsp;
+                        <img alt="" src="assets/images/All books Category.png" style="width: 1000px; height: 500px;"><br>
+
+                    </li>
+                    <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 15px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        Now go to Library > Add Books here you can add you new books. After Add Books go to Library > All Books and see your All Books<br>
+                        <br>
+                        <img alt="" src="assets/images/Add Books.png" style="width: 1000px; height: 450px;"><br><br>
+                        &nbsp;
+                        <img alt="" src="assets/images/All Books.png" style="width: 1000px; height: 350px;"><br>
+
+                    </li>
+                    <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 15px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        If you need added Transport then go to Transport > Add Transport and Add your new Transport. After Click on Submit Button then you will go Transport > All Transport for view all Transport<br>
+                        <br>
+                        <img alt="" src="assets/images/Add New Transport.png" style="width: 1000px; height: 500px;"><br><br>
+                        &nbsp;
+                        <img alt="" src="assets/images/All Transports.png" style="width: 1000px; height: 400px;"><br>
+
+                    </li>
+                    <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 15px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        If you need create Account then go to Accounts > Add Account and Add your new account. After Click on Submit Button then you will go Accounts > All Account for view all Account<br>
+                        <br>
+                        <img alt="" src="assets/images/Add Account.png" style="width: 1000px; height: 500px;"><br><br>
+                        &nbsp;
+                        <img alt="" src="assets/images/All Accounts.png" style="width: 1000px; height: 400px;"><br>
+
+                    </li>
+                    <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 15px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        If you need Student Transaction then go to Accounts > Student Transactions and Add your Student Transactions. After Click on Submit Button then you will go "Accounts > All Students Transactions Slips" page. If you want to see Slip Detail then Click on "Show Slip Details" Button and View Slip Details<br>
+                        <br>
+                        <img alt="" src="assets/images/Add Student Transaction.png" style="width: 1000px; height: 500px;"><br><br>
+                        &nbsp;
+                        <img alt="" src="assets/images/All Slips.png" style="width: 1000px; height: 400px;"><br>
+
+                        <img alt="" src="assets/images/Student's Transaction Slip.png" style="width: 1000px; height: 400px;"><br>
+
+                    </li>
+
+                    <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 15px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        If you need to send Message to anyone then go to Message > Send Message and Type your message. Go to Message > Inbox if any messages are unread <br>
+                        <br>
+                        <img alt="" src="assets/images/Send Message.png" style="width: 1000px; height: 500px;"><br><br>
+                        &nbsp;
+                        <img alt="" src="assets/images/Inbox.png" style="width: 1000px; height: 400px;"><br>
+
+                        <img alt="" src="assets/images/Message Detail.png" style="width: 1000px; height: 400px;"><br>
+
+                    </li>
+                    <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 15px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        If you want to LogOut then Click on "LogOut" Button<br>
+                        <br>
+                        <img alt="" src="assets/images/logout.png" style="width: 1000px; height: 500px;"><br><br>
+                        &nbsp;
+
+                    </li>
+
+                </ol>
+            </section>
+            
+            <section id="Coding">
+                <h3>Coding Structure</h3><hr class="notop">
+                <P>
+                    This software frontend view is made by using “Metronic v3.1.1” admin view. This system layout is made full dynamic by using php into the html file. This is full responsive frontend layout is made by using Bootstrap CSS framework.<br><br>
+                    This software pages coding structure have three part a) header part, b) body part and c) footer part. If you want to load full a page you have to call three views at a time.<br> For Example:
+                    <br><br>
+                        <img alt="" src="assets/images/loadpage.png"><br>
+                    <br>
+                    1st view (line 336) is loading header part for this page <br>
+                    2nd view (line 337) is loading body part for this page<br>
+                    3rd view (line 338) is loading footer part for this page
+                </P>
+                <h5>Now I am giving to show coding structure in this software.</h5>
+                <ol id="documenter_nav">
+                    <li><a class="current" href="#HTML">HTML</a></li>
+                    <li><a href="#CSS">CSS</a></li>
+                    <li><a href="#JavaScript">JavaScript</a></li>
+                    <li><a href="#PHP">PHP Code Explanation </a></li>
+                </ol>
+                <section id="HTML">
+                    <h3>HTML Structure</h3><hr class="notop">
+                    <p>
+                        This software is used bootstrap framework so layout with twelve columns. All of the information within the <strong>“-- BEGIN CONTENT --”</strong> area is nested within a div. The page title, time and date, page root etc within <strong>“-- BEGIN PAGE HEADER--”</strong> area and main page content and information within <strong>”-- BEGIN PAGE CONTENT--”</strong>.If need to any page level style sheet that within <strong>“ -- BEGIN PAGE LEVEL STYLES --”</strong> and need to any page level script that was given bellow in the page. Here is the general structure. 
+                        <br><br><br>
+                        <img alt="" src="assets/images/html.png"><br>
+                        <br>
+                    <h6>Note: Header and footer part is not here because this is a dynamic system. But header and footer coding structure same.  </h6>
+                    </p>
+                </section>
+                <section id="CSS">
+                    <h3>CSS Structure</h3><hr class="notop">
+                    <P>
+                        The external css file which is core css file for this software that is loaded header file in this software ( header.php ). Which css file need to individual pages that is loaded that page's top within "-- BEGIN PAGE LEVEL STYLES --" comment area. Now giving CSS coding structure bellow. 
+                        <br><br><br>
+                        <img alt="" src="assets/images/css.png"><br>
+                    </P>
+                    
+                </section>
+                <section id="JavaScript">
+                    <h3>JavaScript Structure</h3><hr class="notop">
+                    <P>
+                        The external JavaScript/jQuery file which is core file for this software that is loaded footer file in this software ( footer.php ) but "jquery-1.11.0.min.js, jquery-migrate-1.2.1.min.js and jquery-ui-1.10.3.custom.min.js" are loaded into the header file after style sheet link. Which JavaScript/jQuery file need to individual pages that is loaded that page's bottom. Now giving JavaScript/jQuery coding structure bellow. 
+                        <br><br><br>
+                        <img alt="" src="assets/images/javascrift.png"><br>
+                    </P>
+                </section>
+                <section id="PHP">
+                    <h3>PHP coding Structure</h3><hr class="notop">
+                    <P>
+                        The php Codeigniter framework and Ion Auth class is used to made this software full, HMVC pattern. So Codeigniter is full object oriented programming system so I am showing you one of my controller for php coding structure in bellow.  
+                        <br><br><br>
+                        <img alt="" src="assets/images/php.png"><br>
+                    </P>
+                </section>
+                
+            </section>
+
+            <section id="sources_and_credits">
+                <h3>Sources and Credits</h3><hr class="notop">
+                <p>
+                    I&#39;ve used the following images, icons or other files as listed.</p>
+                <ul style="margin-left: 40px;">
+                    <li style="margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        Codeigniter 2.2.0 - PHP Framework |&nbsp;<a href="http://codeigniter.com/" style="margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(0, 0, 153);">Codeigniter</a></li>
+                    <li style="margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        jQuery - Javascript Framework |&nbsp;<a href="http://www.jquery.com/" style="margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(0, 0, 153);">jQuery</a></li>
+                    <li style="margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        Bootstrap 3.3.0 - HTML Framework | <a href="http://twitter.github.com/bootstrap">Bootstrap</a></li>
+                    <li style="margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        Ckeditor - WYSIWYG Editor |&nbsp;<a href="http://ckeditor.com/" style="margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(0, 0, 153);">Ckeditor</a></li>
+                    <li style="margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        bootstrap-wysihtml5 -&nbsp;WYSIWYG Editor | <a href="http://jhollingworth.github.com/bootstrap-wysihtml5/">wysihtml5</a></li>
+                    <li style="margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        Chosen - Select plugin for jQuery |&nbsp;<a href="http://www.jacklmoore.com/colorbox" style="margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(0, 0, 153);">C</a><a href="http://harvesthq.github.com/chosen/">hosen</a></li>
+                    <li style="margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        jscrollpane - Scroll plugin for jQuery |&nbsp;jscrollpane</li>
+                    <li style="margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        Datatables - Datatables plugin for jQuery |&nbsp;<a href="http://datatables.net/" style="margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(0, 0, 153);">Datatables</a></li>
+                    <li style="margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline;">
+                        Validation - Form Validation plugin for jQuery |&nbsp;<a href="http://bassistance.de/jquery-plugins/jquery-plugin-validation/" style="margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(0, 0, 153);">Validation</a></li>
+                   
+                </ul>
+                <hr>
+                <p>
+                    Once again, thank you so much for purchasing Quadz School Management System. As I said at the beginning, I&#39;d be glad to help you if you have any questions relating to this software. No guarantees, but I&#39;ll do my best to assist.&nbsp;</p>
+                <p>
+                    <strong>Md. Omar Faruk Serniabat</strong></p>
+            </section>
+
+        </div>
+    </body>
+</html>
