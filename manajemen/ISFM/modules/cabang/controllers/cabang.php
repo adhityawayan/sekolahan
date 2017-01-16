@@ -43,18 +43,29 @@ class Cabang extends MX_Controller
             $nonaktif = $this->input->post('nonaktif');
             $code = $this->cabangmodel->getkode();
 
-            $data= array(
+            $data_cabang= array(
                 'name' => $name,
                 'phone' => $phone,
                 'address' => $address,
                 'nonaktif' => $nonaktif,
                 'code' => $code
             );
-            $result = $this->cabangmodel->create($data);
+            $result = $this->cabangmodel->create($data_cabang);
             if($result)
+            {
+                $data['success'] = '<div class="alert alert-info alert-dismissable admisionSucceassMessageFont">
+                                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button"></button>
+                                            <strong>'.lang('success').'</strong> Data Cabang berhasil tersimpan</div>';
+                $this->load->view('temp/header');
+                $this->load->view('addCabang',$data);
+                $this->load->view('temp/footer');
+            }
         }
-        $this->load->view('temp/header');
-        $this->load->view('addCabang');
-        $this->load->view('temp/footer');
+        else
+        {
+            $this->load->view('temp/header');
+            $this->load->view('addCabang');
+            $this->load->view('temp/footer');
+        }
     }
 }
