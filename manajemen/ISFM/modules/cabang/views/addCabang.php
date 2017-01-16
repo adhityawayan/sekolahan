@@ -1,0 +1,105 @@
+
+<!-- BEGIN CONTENT -->
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <!-- BEGIN PAGE HEADER-->
+        <div class="row">
+            <div class="col-md-12">
+                <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+                <h3 class="page-title">
+                    <?php echo lang('sub_asfc'); ?> <small></small>
+                </h3>
+                <ul class="page-breadcrumb breadcrumb">
+                    <li>
+                        <i class="fa fa-home"></i><?php echo lang('home'); ?>
+                    </li>
+                    <li>
+                        Cabang
+                    </li>
+                    <li>
+                        Add Cabang
+                    </li>
+                    <li id="result" class="pull-right topClock"></li>
+                </ul>
+                <!-- END PAGE TITLE & BREADCRUMB-->
+            </div>
+        </div>
+        <!-- END PAGE HEADER-->
+        <!-- BEGIN PAGE CONTENT-->
+        <div class="row">
+            <div class="col-md-12 ">
+                <?php if (!empty($success)) {
+                    echo $success;
+                } ?>
+                <!-- BEGIN SAMPLE FORM PORTLET-->
+                <div class="portlet box green ">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-book"></i> Add Cabang
+                        </div>
+                        <div class="tools">
+                            <a href="" class="collapse">
+                            </a>
+                            <a href="" class="reload">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portlet-body form">
+                        <?php $form_attributs = array('class' => 'form-horizontal', 'role' => 'form');
+                        echo form_open('cabang/addcabang', $form_attributs);
+                        ?>
+                            <div class="form-body">
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label"> Nama Yayasan <span class="requiredStar"> </span></label>
+                                    <div class="col-md-6">
+                                        <input type="text" name="name" class="form-control" placeholder="Nama Yayasan" data-validation="required" data-validation-error-msg="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label"> No Telp <span class="requiredStar">  </span></label>
+                                    <div class="col-md-6">
+                                        <input type="text" name="phone" class="form-control" placeholder="No Telepon" data-validation="required" data-validation-error-msg="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label"> Alamat <span class="requiredStar">  </span></label>
+                                    <div class="col-md-6">
+                                        <textarea rows="3" class="form-control" name="address" data-validation="required" data-validation-error-msg="" placeholder="Alamat Yayasan"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                        <label class="col-md-3 control-label"> Non-Aktif </label>
+                                        <div class="radio-list">
+                                                <label class="radio-inline">
+                                                <input type="radio" name="nonaktif" id="optionsRadios4" value="1"> Yes </label>
+                                                <label class="radio-inline">
+                                                <input type="radio" name="nonaktif" id="optionsRadios5" value="0" checked> No </label>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="form-actions fluid">
+                                <div class="col-md-offset-3 col-md-6">
+                                    <button type="submit" name="submit" class="btn green" value="Add Subject"> <?php echo lang('sub_addsub_but'); ?> </button>
+                                    <button type="reset" class="btn default"> <?php echo lang('cancel'); ?> </button>
+                                </div>
+                            </div>
+                        <?php echo form_close(); ?>
+                    </div>
+                </div>
+                <!-- END SAMPLE FORM PORTLET-->
+            </div>
+        </div>
+        <!-- END PAGE CONTENT-->
+    </div>
+</div>
+<!-- END CONTENT -->
+<script>
+    jQuery(document).ready(function() {
+//here is auto reload after 1 second for time and date in the top
+        jQuery(setInterval(function() {
+            jQuery("#result").load("index.php/home/iceTime");
+        }, 1000));
+    });
+</script>
+<script src="assets/global/plugins/jquery.form-validator.min.js" type="text/javascript"></script>
+<script> $.validate(); </script>

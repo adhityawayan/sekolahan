@@ -8,11 +8,14 @@
 ?>
 <!-- BEGIN PAGE LEVEL STYLES -->
 <link rel="stylesheet" type="text/css" href="assets/global/plugins/select2/select2.css"/>
-<link rel="stylesheet" type="text/css" href="assets/global/plugins/datatables/extensions/Scroller/css/dataTables.scroller.min.css"/>
-<link rel="stylesheet" type="text/css" href="assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css"/>
+<link rel="stylesheet" type="text/css"
+      href="assets/global/plugins/datatables/extensions/Scroller/css/dataTables.scroller.min.css"/>
+<link rel="stylesheet" type="text/css"
+      href="assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css"/>
 <!-- END PAGE LEVEL STYLES -->
 
-<?php $user = $this->ion_auth->user()->row(); $userId = $user->id;?>
+<?php $user = $this->ion_auth->user()->row();
+$userId = $user->id; ?>
 <!-- BEGIN CONTENT -->
 <div class="page-content-wrapper">
     <div class="page-content">
@@ -21,7 +24,8 @@
             <div class="col-md-12">
                 <!-- BEGIN PAGE TITLE & BREADCRUMB-->
                 <h3 class="page-title">
-                    <?php echo lang('header_tea_info'); ?> <small></small>
+                    <?php echo lang('header_tea_info'); ?>
+                    <small></small>
                 </h3>
                 <ul class="page-breadcrumb breadcrumb">
                     <li>
@@ -29,10 +33,10 @@
                         <?php echo lang('home'); ?>
                     </li>
                     <li>
-                        <?php echo lang('header_teacher'); ?>
+                        Cabang
                     </li>
                     <li>
-                        <?php echo lang('header_tea_info'); ?>
+                        List Cabang
                     </li>
                     <li id="result" class="pull-right topClock"></li>
 
@@ -49,7 +53,7 @@
                 <div class="portlet box green">
                     <div class="portlet-title">
                         <div class="caption">
-                            <?php echo lang('tea_tl'); ?>
+                            List Cabang
                         </div>
                         <div class="tools">
                         </div>
@@ -71,7 +75,7 @@
                                     Phone
                                 </th>
                                 <th>
-                                    <?php echo lang('tea_action'); ?>
+                                    Actions
                                 </th>
                             </tr>
                             </thead>
@@ -88,15 +92,19 @@
                                         <?php echo $row['address']; ?>
                                     </td>
                                     <td>
-                                        <span class="label label-sm label-success"><?php echo $row['phone']; ?></span>
-
+                                        <?php echo $row['phone']; ?>
                                     </td>
                                     <td>
-                                        <a class="btn btn-xs green" href="index.php/cabang/cabangDetails?id=<?php echo $row['id']; ?>&uid=<?php echo $row['user_id']; ?>&photo=<?php echo $row['teachers_photo']; ?>"> <i class="fa fa-file-text-o"></i> <?php echo lang('details'); ?> </a>
-                                        <?php if($this->common->user_access('teacher_edit_delete',$userId)){ ?>
-                                            <a class="btn btn-xs default" href="index.php/cabang/edit_cabang?id=<?php echo $row['id']; ?>&uid=<?php echo $row['user_id']; ?>"> <i class="fa fa-pencil-square"></i> <?php echo lang('edit'); ?> </a>
-                                            <a class="btn btn-xs red" href="index.php/cabang/cabangDelete?id=<?php echo $row['id']; ?>&uid=<?php echo $row['user_id']; ?>"  onClick="javascript:return confirm('<?php echo lang('tea_tdecon'); ?>')"> <i class="fa fa-trash-o"></i> <?php echo lang('delete'); ?> </a>
-                                        <?php } ?>
+                                        <a class="btn btn-xs green"
+                                           href="index.php/cabang/cabangDetails/<?php echo $row['id']; ?>"> <i
+                                                class="fa fa-file-text-o"></i> <?php echo lang('details'); ?> </a>
+                                        <a class="btn btn-xs default"
+                                           href="index.php/cabang/edit_cabang/<?php echo $row['id']; ?>"> <i
+                                                class="fa fa-pencil-square"></i> <?php echo lang('edit'); ?> </a>
+                                        <a class="btn btn-xs red"
+                                           href="index.php/cabang/cabangDelete/<?php echo $row['id']; ?>"
+                                           onClick="javascript:return confirm('<?php echo lang('tea_tdecon'); ?>')"> <i
+                                                class="fa fa-trash-o"></i> <?php echo lang('delete'); ?> </a>
                                     </td>
                                 </tr>
                             <?php } ?>
@@ -114,15 +122,18 @@
 <!-- BEGIN PAGE LEVEL PLUGINS -->
 <script type="text/javascript" src="assets/global/plugins/select2/select2.min.js"></script>
 <script type="text/javascript" src="assets/global/plugins/datatables/media/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="assets/global/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js"></script>
-<script type="text/javascript" src="assets/global/plugins/datatables/extensions/Scroller/js/dataTables.scroller.min.js"></script>
-<script type="text/javascript" src="assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"></script>
+<script type="text/javascript"
+        src="assets/global/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js"></script>
+<script type="text/javascript"
+        src="assets/global/plugins/datatables/extensions/Scroller/js/dataTables.scroller.min.js"></script>
+<script type="text/javascript"
+        src="assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"></script>
 <!-- END PAGE LEVEL PLUGINS -->
 <script src="assets/admin/pages/scripts/table-advanced.js"></script>
 <script>
-    jQuery(document).ready(function() {
+    jQuery(document).ready(function () {
         //here is auto reload after 1 second for time and date in the top
-        jQuery(setInterval(function() {
+        jQuery(setInterval(function () {
             jQuery("#result").load("index.php/home/iceTime");
         }, 1000));
     });
