@@ -13,6 +13,7 @@ class Parents extends CI_Controller {
      */
     function __construct() {
         parent::__construct();
+        $this->load->model('../../students/models/studentmodel','studentmodel');
         if (!$this->ion_auth->logged_in()) {
             redirect('auth/login');
         }
@@ -37,7 +38,7 @@ class Parents extends CI_Controller {
     //If any one want to select class section for get that section's parents thene he can call this ajax function from view file.
     public function ajaxClassSection() {
         $classTitle = $this->input->get('q');
-        $query = $this->common->getWhere('class', 'class_title', $classTitle);
+        $query = $this->common->getWhere('class', 'id', $classTitle);
         foreach ($query as $row) {
             $data = $row;
         }
@@ -111,5 +112,12 @@ class Parents extends CI_Controller {
         $this->db->delete('parents_info', array('id' => $parentsInfoId));
 
         redirect("parents/parentsInformation", 'refresh');
+    }
+
+    public  function get_info($studentId)
+    {
+        $data['studentInfo'] = $this->studentmodel->studentDetailsByStudentId($studentId);
+        $data['photo'] = $this->studentmodel->studentPhoto($studentId);
+        $this->load->view('studentsDetails', $data);
     }
 }

@@ -82,9 +82,8 @@
                                     </div>
                                     <div class="col-sm-3">
                                         <select class="form-control" name="action_<?php echo $i; ?>" required>
-                                            <option value="0"><?php echo lang('select'); ?></option>
-                                            <option value="P"><?php echo lang('att_pre'); ?></option>
                                             <option value="A"><?php echo lang('att_absent'); ?></option>
+                                            <option value="P"><?php echo lang('att_pre'); ?></option>
                                         </select> 
                                     </div>
                                     <div class="col-sm-2">

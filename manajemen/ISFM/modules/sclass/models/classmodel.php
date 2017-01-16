@@ -85,6 +85,25 @@ class Classmodel extends CI_Model {
         }
     }
 
+    //This function will return id final exam and result compleate or not
+    public function chFiExReId($class_id) {
+        $query = $this->db->query("SELECT publish,status,id FROM add_exam WHERE class_id='$class_id' AND final='Final'");
+        foreach ($query->result_array() as $row) {
+            $publich = $row['publish'];
+            $status = $row['status'];
+            $id = $row['id'];
+        }
+        if (!empty($publich)) {
+            if ($publich == 'Publish') {
+                return $id;
+            } else {
+                return 0;
+            }
+        } else {
+            return 0;
+        }
+    }
+
     //This function will make marite list 
     public function meritList($examId) {
         $data = array();

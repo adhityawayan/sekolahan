@@ -1,7 +1,9 @@
 <!-- BEGIN PAGE LEVEL STYLES -->
 <link rel="stylesheet" type="text/css" href="assets/global/plugins/select2/select2.css"/>
-<link rel="stylesheet" type="text/css" href="assets/global/plugins/datatables/extensions/Scroller/css/dataTables.scroller.min.css"/>
-<link rel="stylesheet" type="text/css" href="assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css"/>
+<link rel="stylesheet" type="text/css"
+      href="assets/global/plugins/datatables/extensions/Scroller/css/dataTables.scroller.min.css"/>
+<link rel="stylesheet" type="text/css"
+      href="assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css"/>
 <!-- END PAGE LEVEL STYLES -->
 
 <?php
@@ -16,7 +18,8 @@ $userId = $user->id;
             <div class="col-md-12">
                 <!-- BEGIN PAGE TITLE & BREADCRUMB-->
                 <h3 class="page-title">
-                    <?php echo lang('header_parent_info'); ?> <small></small>
+                    <?php echo lang('header_parent_info'); ?>
+                    <small></small>
                 </h3>
                 <ul class="page-breadcrumb breadcrumb">
                     <li>
@@ -53,68 +56,73 @@ $userId = $user->id;
                     <div class="portlet-body">
                         <table class="table table-striped table-bordered table-hover" id="sample_1">
                             <thead>
-                                <tr>
-                                    <th>
-                                        <?php echo lang('par_stu_id'); ?>
-                                    </th>
-                                    <th>
-                                        <?php echo lang('par_gar_name'); ?>
-                                    </th>
-                                    <th>
-                                        <?php echo lang('par_rela'); ?>
-                                    </th>
-                                    <th>
-                                        <?php echo lang('par_email'); ?>
-                                    </th>
-                                    <th>
-                                        <?php echo lang('par_pho_num'); ?>
-                                    </th>
-                                    <th>
-                                        <?php echo lang('par_gur_pho'); ?>
-                                    </th>
-                                    <?php if ($this->common->user_access('parents_edit_dlete', $userId)) { ?>
+                            <tr>
+                                <th>
+                                    <?php echo lang('par_stu_id'); ?>
+                                </th>
+                                <th>
+                                    <?php echo lang('par_gar_name'); ?>
+                                </th>
+                                <th>
+                                    <?php echo lang('par_rela'); ?>
+                                </th>
+                                <th>
+                                    <?php echo lang('par_email'); ?>
+                                </th>
+                                <th>
+                                    <?php echo lang('par_pho_num'); ?>
+                                </th>
+                                <th>
+                                    <?php echo lang('par_gur_pho'); ?>
+                                </th>
+                                <?php if ($this->common->user_access('parents_edit_dlete', $userId)) { ?>
                                     <th>
                                         <?php echo lang('par_action'); ?>
                                     </th>
-                                    <?php } ?>
-                                </tr>
+                                <?php } ?>
+                            </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($parents as $row) { ?>
-                                    <tr>
+                            <?php foreach ($parents as $row) { ?>
+                                <tr>
+                                    <td>
+                                        <a id="<?=$row['student_id']?>" href="javascript:void(0);" onclick="show_students_id(this.id)"><?php echo $row['student_id']; ?></a>
+                                    </td>
+                                    <td>
+                                        <?php echo $row['parents_name']; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $row['relation']; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $row['email']; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $row['phone']; ?>
+                                    </td>
+                                    <td>
+                                        <div class="tableImage">
+                                            <?php
+                                            $puserid = $row['user_id'];
+                                            $query = $this->db->get_where('users', array('id' => $puserid));
+                                            foreach ($query->result_array() as $row1) { ?>
+                                                <img src="assets/uploads/<?php echo $row1['profile_image']; ?>" alt="">
+                                            <?php } ?>
+                                        </div>
+                                    </td>
+                                    <?php if ($this->common->user_access('parents_edit_dlete', $userId)) { ?>
                                         <td>
-                                            <?php echo $row['student_id']; ?>
+                                            <a class="btn btn-xs default"
+                                               href="index.php/parents/editParentsInfo?painid=<?php echo $row['id']; ?>&puid=<?php echo $userId; ?>">
+                                                <i class="fa fa-pencil-square"></i> <?php echo lang('edit'); ?> </a>
+                                            <a class="btn btn-xs red"
+                                               href="index.php/parents/deleteParents?painid=<?php echo $row['id']; ?>&painid=<?php echo $userId; ?>"
+                                               onClick="javascript:return confirm('<?php echo lang('par_aysywtdtgp'); ?>')">
+                                                <i class="fa fa-trash-o"></i> <?php echo lang('delete'); ?> </a>
                                         </td>
-                                        <td>
-                                            <?php echo $row['parents_name']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $row['relation']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $row['email']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $row['phone']; ?>
-                                        </td>
-                                        <td>
-                                            <div class="tableImage">
-                                                <?php
-                                                $puserid = $row['user_id'];
-                                                $query = $this->db->get_where('users', array('id' => $puserid));
-                                                foreach ($query->result_array() as $row1) { ?>
-                                                    <img src="assets/uploads/<?php echo $row1['profile_image']; ?>" alt="">
-                                                <?php } ?>
-                                            </div>
-                                        </td>
-                                        <?php if ($this->common->user_access('parents_edit_dlete', $userId)) { ?>
-                                        <td>
-                                                <a class="btn btn-xs default" href="index.php/parents/editParentsInfo?painid=<?php echo $row['id']; ?>&puid=<?php echo $userId; ?>"> <i class="fa fa-pencil-square"></i> <?php echo lang('edit'); ?> </a>
-                                                <a class="btn btn-xs red" href="index.php/parents/deleteParents?painid=<?php echo $row['id']; ?>&painid=<?php echo $userId; ?>" onClick="javascript:return confirm('<?php echo lang('par_aysywtdtgp'); ?>')"> <i class="fa fa-trash-o"></i> <?php echo lang('delete'); ?> </a>
-                                        </td>
-                                        <?php } ?>
-                                    </tr>
-                                <?php } ?>
+                                    <?php } ?>
+                                </tr>
+                            <?php } ?>
                             </tbody>
                         </table>
                     </div>
@@ -127,22 +135,58 @@ $userId = $user->id;
 </div>
 <!-- END CONTENT -->
 
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Detail Students</h4>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- BEGIN PAGE LEVEL PLUGINS -->
 <script type="text/javascript" src="assets/global/plugins/select2/select2.min.js"></script>
 <script type="text/javascript" src="assets/global/plugins/datatables/media/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="assets/global/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js"></script>
-<script type="text/javascript" src="assets/global/plugins/datatables/extensions/Scroller/js/dataTables.scroller.min.js"></script>
-<script type="text/javascript" src="assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"></script>
+<script type="text/javascript"
+        src="assets/global/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js"></script>
+<script type="text/javascript"
+        src="assets/global/plugins/datatables/extensions/Scroller/js/dataTables.scroller.min.js"></script>
+<script type="text/javascript"
+        src="assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"></script>
 <!-- END PAGE LEVEL PLUGINS -->
 <script src="assets/admin/pages/scripts/table-advanced.js"></script>
 
+<input type="hidden" id="urlstudents" value="<?=site_url('parents/get_info/')?>">
+
 
 <script>
-                                                    jQuery(document).ready(function () {
-                                                        //here is auto reload after 1 second for time and date in the top
-                                                        jQuery(setInterval(function () {
-                                                            jQuery("#result").load("index.php/home/iceTime");
-                                                        }, 1000));
-                                                    });
+    jQuery(document).ready(function () {
+        //here is auto reload after 1 second for time and date in the top
+        jQuery(setInterval(function () {
+            jQuery("#result").load("index.php/home/iceTime");
+        }, 1000));
+    });
+
+    function show_students_id(id)
+    {
+        var url = $('#urlstudents').val();
+        $.ajax({
+            url : url+'/'+id,
+            type : 'GET',
+            cache: false
+        })
+            .success(function(data){
+                $('.modal-body').html(data);
+                $('#myModal').modal('show');
+            });
+    }
 </script>

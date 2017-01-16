@@ -88,6 +88,7 @@ $config['site_title'] = "Example.com";       // Site Title, example.com
 $config['admin_email'] = "admin@example.com"; // Admin Email, admin@example.com
 $config['default_group'] = 'members';           // Default group, use name
 $config['admin_group'] = 'admin';             // Default administrators group, use name
+$config['superadmin_group'] = 'superadmin';             // Default administrators group, use name
 $config['student_group'] = 'student';
 $config['teacher_group'] = 'teacher';
 $config['parents_group'] = 'parents';

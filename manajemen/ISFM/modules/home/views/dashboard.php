@@ -348,9 +348,6 @@
                     <div class="col-md-12 teaBox teaBoxMargin">
                         <div class="teacInfoHead2"><?php echo lang('des_absent'); ?><hr style="margin-top: 10px; margin-bottom: 10px;"><?php echo $absentEmploy; ?></div>
                     </div>
-                    <div class="col-md-12 teaBox teaBoxMargin">
-                        <div class="teacInfoHead3"><?php echo lang('des_leave'); ?><hr style="margin-top: 10px; margin-bottom: 10px;"><?php echo $leaveEmploy; ?></div>
-                    </div>
                 </div>
 
                 <div class="col-md-5 col-sm-5">

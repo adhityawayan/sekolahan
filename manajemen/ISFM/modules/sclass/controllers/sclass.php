@@ -2,24 +2,29 @@
 if (!defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
-class Sclass extends MX_Controller {
+
+class Sclass extends MX_Controller
+{
     /**
      * This controller is use for add class and maintain class
      *
      * Maps to the following URL
-     * 		http://example.com/index.php/Sclass
-     * 	- or -  
-     * 		http://example.com/index.php/Sclass/<method_name>
+     *        http://example.com/index.php/Sclass
+     *    - or -
+     *        http://example.com/index.php/Sclass/<method_name>
      */
-    function __construct() {
+    function __construct()
+    {
         parent::__construct();
         $this->load->model('classmodel');
         if (!$this->ion_auth->logged_in()) {
             redirect('auth/login');
         }
     }
+
     //This function is useing for add a new class and section.
-    public function addClass() {
+    public function addClass()
+    {
         if ($this->input->post('submit', TRUE)) {
             $classTitle = $this->input->post('class_title', TRUE);
             $group = $this->input->post('group', TRUE);
@@ -54,7 +59,7 @@ class Sclass extends MX_Controller {
             if ($this->db->insert('class', $tableData)) {
                 $data['success'] = '<div class="alert alert-info alert-dismissable admisionSucceassMessageFont">
                                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button"></button>
-                                            <strong>'.lang('success').'</strong>'.lang('clasc_1').' "' . $classTitle . '" '.lang('clasc_2').'
+                                            <strong>' . lang('success') . '</strong>' . lang('clasc_1') . ' "' . $classTitle . '" ' . lang('clasc_2') . '
                                     </div>';
                 $data['classInfo'] = $this->common->getAllData('class');
                 $this->load->view('temp/header');
@@ -68,25 +73,28 @@ class Sclass extends MX_Controller {
             $this->load->view('temp/footer');
         }
     }
-    
+
     //This function can edit class information
-    public function deleteClass() {
+    public function deleteClass()
+    {
         $id = $this->input->get('id');
         if ($this->db->delete('class', array('id' => $id))) {
             redirect('sclass/allClass/', 'refresh');
         }
     }
-    
+
     //This function is useing for geting all class short information
-    public function allClass() {
+    public function allClass()
+    {
         $data['classInfo'] = $this->common->getAllData('class');
         $this->load->view('temp/header');
         $this->load->view('allClass', $data);
         $this->load->view('temp/footer');
     }
-    
+
     //This function is useing for a class's full informtion
-    public function classDetails() {
+    public function classDetails()
+    {
         $class_id = $this->input->get('c_id');
         $data['class'] = $this->common->getWhere('class', 'id', $class_id);
         $data['day'] = $this->common->getAllData('config_week_day');
@@ -97,16 +105,20 @@ class Sclass extends MX_Controller {
         $this->load->view('classDetails', $data);
         $this->load->view('temp/footer');
     }
+
     //This function lode the view for select which class routine add or make
-    public function selectClassRoutin() {
+    public function selectClassRoutin()
+    {
         $data['classTile'] = $this->common->getAllData('class');
         $data['day'] = $this->common->getAllData('config_week_day');
         $this->load->view('temp/header');
         $this->load->view('selectClassRoutine', $data);
         $this->load->view('temp/footer');
     }
+
     //This function is useing for add new class routine
-    public function addClassRoutin() {
+    public function addClassRoutin()
+    {
         $class_id = $this->input->post('class', TRUE);
         $classTitle = $this->common->class_title($class_id);
         //if admin set section for any class then bellow [if(){ condition]  will execute ***(Start)***
@@ -154,8 +166,7 @@ class Sclass extends MX_Controller {
                     $this->load->view('addClassRoutin', $data);
                     $this->load->view('temp/footer');
                 }
-            }
-            //if admin set "Section A or any specific section" for any class then bellow [ealse{ condition]  will execute ***(Start)***
+            } //if admin set "Section A or any specific section" for any class then bellow [ealse{ condition]  will execute ***(Start)***
             else {
                 if ($this->input->post('submit2', TRUE)) {
                     $day = $this->input->post('day', TRUE);
@@ -198,8 +209,7 @@ class Sclass extends MX_Controller {
                     $this->load->view('temp/footer');
                 }
             }
-        }
-        //if admin do not set section for any class then bellow [else{ condition]  will execute ***(Start)***
+        } //if admin do not set section for any class then bellow [else{ condition]  will execute ***(Start)***
         else {
             if ($this->input->post('submit2', TRUE)) {
                 $day = $this->input->post('day', TRUE);
@@ -245,7 +255,8 @@ class Sclass extends MX_Controller {
     }
 
     //This function gives us class section and class info.
-    public function ajaxClassInfo() {
+    public function ajaxClassInfo()
+    {
         $class_id = $this->input->get('q');
         $query = $this->common->getWhere('class', 'id', $class_id);
         foreach ($query as $row) {
@@ -256,10 +267,10 @@ class Sclass extends MX_Controller {
             $section = $data['section'];
             $sectionArray = explode(",", $section);
             echo '<div class="form-group">
-                        <label class="col-md-3 control-label">'.lang('clasc_3').' <span class="requiredStar"> * </span></label>
+                        <label class="col-md-3 control-label">' . lang('clasc_3') . ' <span class="requiredStar"> * </span></label>
                         <div class="col-md-6">
                             <select name="section" class="form-control">
-                                <option value="all">'.lang('clasc_4').'</option>';
+                                <option value="all">' . lang('clasc_4') . '</option>';
             foreach ($sectionArray as $sec) {
                 echo '<option value="' . $sec . '">' . $sec . '</option>';
             }
@@ -270,33 +281,39 @@ class Sclass extends MX_Controller {
                         <label class="col-md-3 control-label"></label>
                         <div class="col-md-6">
                         <div class="alert alert-warning">
-                                <strong>'.lang('clasc_5').'</strong> '.lang('clasc_6').'
+                                <strong>' . lang('clasc_5') . '</strong> ' . lang('clasc_6') . '
                         </div></div></div>';
         }
     }
+
     //This function check class code data type and leanth
-    public function ajaxClassCodeInfo() {
+    public function ajaxClassCodeInfo()
+    {
         $classCode = $this->input->get('q');
         if ($classCode <= 99) {
             if ($this->classmodel->classCodeCheck($classCode) == TRUE) {
                 echo '<input type="hidden" value="' . $classCode . '" name="class_code">';
             } else {
-                echo ''.lang('clasc_7').' " ' . $classCode . ' " '.lang('clasc_8');
+                echo '' . lang('clasc_7') . ' " ' . $classCode . ' " ' . lang('clasc_8');
             }
         } else {
             echo lang('clasc_9');
         }
     }
+
     //This function gives a view for serlect class routine
-    public function selectAllRoutine() {
+    public function selectAllRoutine()
+    {
         $data['classTile'] = $this->common->getAllData('class');
         $data['day'] = $this->common->getAllData('config_week_day');
         $this->load->view('temp/header');
         $this->load->view('selectAllRoutine', $data);
         $this->load->view('temp/footer');
     }
+
     //This function gives a class routine after selecting a class
-    public function allClassRoutine() {
+    public function allClassRoutine()
+    {
         if ($this->input->post('submit', TRUE)) {
             $class_id = $this->input->post('class', TRUE);
             $data['class_id'] = $class_id;
@@ -308,8 +325,10 @@ class Sclass extends MX_Controller {
             $this->load->view('temp/footer');
         }
     }
-    //By this function edit routine previous information 
-    public function editRoutine() {
+
+    //By this function edit routine previous information
+    public function editRoutine()
+    {
         $routinClassId = $this->input->get('id', TRUE);
         $class_id = $this->input->get('class', TRUE);
         if ($this->input->post('update', TRUE)) {
@@ -348,8 +367,10 @@ class Sclass extends MX_Controller {
             $this->load->view('temp/footer');
         }
     }
+
     //By this function we can delet a class routine
-    public function deleteRoutine() {
+    public function deleteRoutine()
+    {
         $routinClassId = $this->input->get('id');
         $class_id = $this->input->get('class_id');
         if ($this->db->delete('class_routine', array('id' => $routinClassId))) {
@@ -359,15 +380,17 @@ class Sclass extends MX_Controller {
             $data['teacher'] = $this->common->getAllData('teachers_info');
             $data['message'] = '<div class="alert alert-warning alert-dismissable">
 								<button aria-hidden="true" data-dismiss="alert" class="close" type="button"></button>
-								<strong>'.lang('clasc_10').'</strong> '.lang('clasc_11').'
+								<strong>' . lang('clasc_10') . '</strong> ' . lang('clasc_11') . '
 							</div>';
             $this->load->view('temp/header');
             $this->load->view('viewRoutine', $data);
             $this->load->view('temp/footer');
         }
     }
+
     //This function will show student's and parent's own class routine
-    public function ownClassRoutin() {
+    public function ownClassRoutin()
+    {
         $data = array();
         $userId = $this->input->get('uisd');
         $query = $this->db->query("SELECT class_id FROM parents_info WHERE user_id='$userId'");
@@ -382,10 +405,12 @@ class Sclass extends MX_Controller {
         $this->load->view('viewRoutine', $data);
         $this->load->view('temp/footer');
     }
+
     //This function gives us class section and class info.
-    public function ajaxpromotion() {
+    public function ajaxpromotion()
+    {
         $classTitle = $this->input->get('q');
-        $query = $this->common->getWhere('class', 'class_title', $classTitle);
+        $query = $this->common->getWhere('class', 'id', $classTitle);
         foreach ($query as $row) {
             $data = $row;
         }
@@ -399,10 +424,10 @@ class Sclass extends MX_Controller {
             }
             for ($a = 1; $a <= $i; $a++) {
                 echo '<div class="form-group">
-                        <label class="col-md-3 control-label">'.lang('clasc_3').' ' . $a . '<span class="requiredStar"> * </span></label>
+                        <label class="col-md-3 control-label">' . lang('clasc_3') . ' ' . $a . '<span class="requiredStar"> * </span></label>
                         <div class="col-md-6">
                             <select name="section_' . $a . '" class="form-control" data-validation="required" data-validation-error-msg="">
-                                <option value="">'.lang('select').'</option>';
+                                <option value="">' . lang('select') . '</option>';
                 foreach ($sectionArray as $sec) {
                     echo '<option value="' . $sec . '">' . $sec . '</option>';
                 }
@@ -415,52 +440,67 @@ class Sclass extends MX_Controller {
                         <label class="col-md-3 control-label"></label>
                         <div class="col-md-6">
                         <div class="alert alert-warning">
-                                <strong>'.lang('clasc_5').'</strong> '.lang('clasc_6').'
+                                <strong>' . lang('clasc_5') . '</strong> ' . lang('clasc_6') . '
                         </div></div></div>';
         }
     }
-    //This function will work for promotion 
-    public function promotion() {
+
+    public function ajaxListStudents($idClass)
+    {
+        $query = $this->db->query("SELECT cs.*,si.student_nam FROM class_students cs
+INNER JOIN student_info si on cs.student_id=si.student_id
+WHERE cs.class_id='$idClass'");
+        $data['list'] = $query->result_array();
+        $this->load->view('studentList',$data);
+    }
+
+    //This function will work for promotion
+    public function promotion()
+    {
         if ($this->input->post('submit', TRUE)) {
+            $student = $this->input->post('student', TRUE);
             $classId = $this->input->post('class', TRUE);
-            if ($this->classmodel->chFiExRe($classId)) {
-                $examId = $this->classmodel->chFiExRe($classId);
+            if ($student) {
+                $examId = $this->classmodel->chFiExReId($classId);
                 $this->classmodel->meritList($examId);
                 $nextClass_id = $this->input->post('nextClass', TRUE);
-                $query = $this->db->query("SELECT student_id,status,maride_list FROM final_result WHERE exam_id='$examId'");
+
+//                $query = $this->db->query("SELECT student_id,status,maride_list FROM final_result WHERE exam_id='$examId'");
                 $i = 1;
                 $sm = 1;
-                foreach ($query->result_array() as $row) {
-                    $studentId = $row['student_id'];
-                    $status = $row['status'];
-                    $newRoll = $row['maride_list'];
+                foreach ($student as $key=>$student_id) {
+                    $studentId = $student_id;
+//                    $status = $row['status'];
+//                    $newRoll = $row['maride_list'];
                     //Here is chacking this student is pass the exam or not.
-                    if ($status == 'Pass') {
-                        $section = '';
-                        $sectionCap = $this->classmodel->sectionCap($classId);
-                        $sectionCap2 = $sectionCap * 2;
-                        $sectionCap3 = $sectionCap * 3;
-                        $sectionCap4 = $sectionCap * 4;
-                        $sectionCap5 = $sectionCap * 5;
-                        if ($i <= $sectionCap) {
-                            $section = $this->input->post('section_1', TRUE);
-                        } elseif ($i > $sectionCap && $i <= $sectionCap2) {
-                            $section = $this->input->post('section_2', TRUE);
-                        } elseif ($i > $sectionCap2 && $i <= $sectionCap3) {
-                            $section = $this->input->post('section_3', TRUE);
-                        } elseif ($i > $sectionCap3 && $i <= $sectionCap4) {
-                            $section = $this->input->post('section_4', TRUE);
-                        } elseif ($i > $sectionCap4 && $i <= $sectionCap5) {
-                            $section = $this->input->post('section_5', TRUE);
-                        }
+                    if ($studentId) {
+//                        $section = '';
+//                        $sectionCap = $this->classmodel->sectionCap($classId);
+//                        $sectionCap2 = $sectionCap * 2;
+//                        $sectionCap3 = $sectionCap * 3;
+//                        $sectionCap4 = $sectionCap * 4;
+//                        $sectionCap5 = $sectionCap * 5;
+//                        if ($i <= $sectionCap) {
+//                            $section = $this->input->post('section_1', TRUE);
+//                        } elseif ($i > $sectionCap && $i <= $sectionCap2) {
+//                            $section = $this->input->post('section_2', TRUE);
+//                        } elseif ($i > $sectionCap2 && $i <= $sectionCap3) {
+//                            $section = $this->input->post('section_3', TRUE);
+//                        } elseif ($i > $sectionCap3 && $i <= $sectionCap4) {
+//                            $section = $this->input->post('section_4', TRUE);
+//                        } elseif ($i > $sectionCap4 && $i <= $sectionCap5) {
+//                            $section = $this->input->post('section_5', TRUE);
+//                        }
                         $arrayClassStud = array(
                             'year' => $this->db->escape_like_str($this->input->post('nextYear', TRUE)),
-                            'roll_number' => $this->db->escape_like_str($newRoll),
+//                            'roll_number' => $this->db->escape_like_str($newRoll),
                             'class_id' => $this->db->escape_like_str($nextClass_id),
                             'class_title' => $this->db->escape_like_str($this->common->class_title($nextClass_id)),
-                            'section' => $this->db->escape_like_str($section),
+//                            'section' => $this->db->escape_like_str($section),
                             'attendance_percentices_daily' => $this->db->escape_like_str(0),
                         );
+//                        return var_dump($arrayClassStud);
+
                         $this->db->where('student_id', $studentId);
                         if ($this->db->update('class_students', $arrayClassStud)) {
                             $arrayClassInfo = array(
@@ -473,8 +513,9 @@ class Sclass extends MX_Controller {
 
                             $arrayDormiBed = array(
                                 'class' => $this->db->escape_like_str($nextClass_id),
-                                'roll_number' => $this->db->escape_like_str($newRoll)
+//                                'roll_number' => $this->db->escape_like_str($newRoll)
                             );
+                            $classTitle = $this->common->class_title($nextClass_id);
                             $this->db->where('class', $classTitle);
                             $this->db->update('dormitory_bed', $arrayDormiBed);
                             $arrayParentsInfo = array(
@@ -484,7 +525,7 @@ class Sclass extends MX_Controller {
                             $this->db->update('parents_info', $arrayParentsInfo);
                             $arrrayStudInfo = array(
                                 'year' => $this->db->escape_like_str($this->input->post('nextYear', TRUE)),
-                                'roll_number' => $this->db->escape_like_str($newRoll),
+//                                'roll_number' => $this->db->escape_like_str($newRoll),
                                 'class_id' => $this->db->escape_like_str($nextClass_id),
                             );
                             $this->db->where('student_id', $studentId);
@@ -511,6 +552,61 @@ class Sclass extends MX_Controller {
             $this->load->view('temp/header');
             $this->load->view('promotion', $data);
             $this->load->view('temp/footer');
+        }
+    }
+
+    public function ajaxSubmitPromotion()
+    {
+        $studentsId = $this->input->post('student_id', TRUE);
+        $classId = $this->input->post('class', TRUE);
+        $nextClass = $this->input->post("nextClass", TRUE);
+        $nextYear = $this->input->post("nextYear", TRUE);
+
+        $i = 1;
+        $sm = 1;
+
+        for($r=0; $r<count($studentsId); $r++) {
+            $studentId = $studentsId[$r];
+            $arrayClassStud = array(
+                'year' => $this->db->escape_like_str($nextYear),
+                'class_id' => $this->db->escape_like_str($nextClass),
+                'class_title' => $this->db->escape_like_str($this->common->class_title($nextClass)),
+                'section' => $this->db->escape_like_str(''),
+                'attendance_percentices_daily' => $this->db->escape_like_str(0),
+            );
+            $this->db->where('student_id', $studentId);
+            if ($this->db->update('class_students', $arrayClassStud)) {
+                $arrayClassInfo = array(
+                    'student_amount' => $this->db->escape_like_str($sm),
+                    'attendance_percentices_daily' => $this->db->escape_like_str(0),
+                    'attend_percentise_yearly' => $this->db->escape_like_str(0)
+                );
+                $this->db->where('id', $nextClass);
+                $this->db->update('class', $arrayClassInfo);
+
+                $arrayDormiBed = array(
+                    'class' => $this->db->escape_like_str($nextClass),
+//                    'roll_number' => $this->db->escape_like_str($newRoll)
+                );
+                $classTitle = $this->common->class_title($nextClass);
+                $this->db->where('class', $classTitle);
+                $this->db->update('dormitory_bed', $arrayDormiBed);
+                $arrayParentsInfo = array(
+                    'class_id' => $this->db->escape_like_str($nextClass)
+                );
+                $this->db->where('student_id', $studentId);
+                $this->db->update('parents_info', $arrayParentsInfo);
+                $arrrayStudInfo = array(
+                    'year' => $this->db->escape_like_str($nextYear),
+//                    'roll_number' => $this->db->escape_like_str($newRoll),
+                    'class_id' => $this->db->escape_like_str($nextClass),
+                );
+                $this->db->where('student_id', $studentId);
+                $this->db->update('student_info', $arrrayStudInfo);
+                echo 'success';
+            }
+            $sm++;
+            $i++;
         }
     }
 }

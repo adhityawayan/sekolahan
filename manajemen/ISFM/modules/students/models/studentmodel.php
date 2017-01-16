@@ -78,6 +78,16 @@ class Studentmodel extends CI_Model {
         return $data;
     }
 
+    //This function return a student's details by student_id database row id.
+    public function studentDetailsByStudentId($a) {
+        $query = $this->db->get_where('class_students', array('student_id' => $a));
+        $data = array();
+        foreach ($query->result_array() as $row) {
+            $data[] = $row;
+        }
+        return $data;
+    }
+
     //This function return a student's details by student database row id.
     public function ownStudentDetails($a) {
         $query = $this->db->get_where('class_students', array('user_id' => $a));

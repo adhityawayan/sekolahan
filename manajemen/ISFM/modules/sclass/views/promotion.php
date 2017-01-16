@@ -13,7 +13,7 @@
                     <li>
                         <i class="fa fa-home"></i>
                         Home
-                        
+
                     </li>
                     <li>
                         Promotion
@@ -40,21 +40,20 @@
                         </div>
                     </div>
                     <div class="portlet-body form">
-                        
                         <?php
                         if(!empty($message)){
                             echo '<br><div class="col-md-12"><div class="alert alert-danger">
                                     <strong>Message </strong> '.$message.'
                             </div></div>';
                         }
-                        $form_attributs = array('class' => 'form-horizontal', 'role' => 'form');
-                        echo form_open('sclass/promotion', $form_attributs);
                         ?>
+                        <form id="formpromotion" class="form-horizontal" method="post" action="<?=site_url('sclass/promotion/')?>">
+                            <input type="hidden" name="submit" value="1">
                             <div class="form-body">
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">Class <span class="requiredStar"> * </span></label>
                                     <div class="col-md-6">
-                                        <select onchange="classSection(this.value)" class="form-control" name="class" data-validation="required" data-validation-error-msg="This field is required field.">
+                                        <select onchange="viewStudents(this.value)" class="form-control" name="class" data-validation="required" data-validation-error-msg="This field is required field.">
                                             <option value="">Select one</option>
                                             <?php foreach ($classTile as $row) { ?>
                                                 <option value="<?php echo $row['id']; ?>"><?php echo $row['class_title']; ?></option>
@@ -63,6 +62,9 @@
                                     </div>
                                 </div>
                                 <div  id="ajaxResult">
+                                </div>
+                                <div id="ajaxList">
+
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">Promotion Next Class <span class="requiredStar"> * </span></label>
@@ -93,7 +95,7 @@
                                     <button class="btn default" type="reset">Cancel</button>
                                 </div>
                             </div>
-                        <?php echo form_close(); ?>
+                        </form>
                     </div>
                 </div>
                 <!-- END SAMPLE FORM PORTLET-->
@@ -102,6 +104,8 @@
         <!-- END PAGE CONTENT-->
     </div>
 </div>
+<input type="hidden" id="urlstudents" value="<?=site_url('sclass/ajaxListStudents/')?>">
+<input type="hidden" id="urlsubmit" value="<?=site_url('sclass/ajaxSubmitPromotion/')?>">
 <!-- END CONTENT -->
 <script src="assets/global/plugins/jquery.form-validator.min.js" type="text/javascript"></script>
 <script> $.validate(); </script>
@@ -129,6 +133,45 @@
         xmlhttp.open("GET", "index.php/sclass/ajaxpromotion?q=" + str, true);
         xmlhttp.send();
     }
+
+    function viewStudents(id)
+    {
+
+        var url = $('#urlstudents').val();
+        $.ajax({
+            url : url+'/'+id,
+            type : 'GET',
+            cache : false,
+            dataType: "html"
+        })
+            .success(function(data){
+                $('#ajaxList').html(data);
+        });
+    }
+
+    function checkall(){
+        var check = $('#checkAll').is(':checked');
+            $('input:checkbox').prop('checked', check);
+    }
+
+    function submitPromotion()
+    {
+        var studentId = [];
+        var url = $('#urlsubmit').val();
+        var data = $('#formpromotion').serializeArray();
+        console.log(data);
+        $.ajax({
+            url : url,
+            type : 'POST',
+            data : data,
+            cache : false,
+        })
+            .success(function(data){
+                console.log(data);
+//                location.reload();
+            });
+    }
+
 </script>
 
 <script>

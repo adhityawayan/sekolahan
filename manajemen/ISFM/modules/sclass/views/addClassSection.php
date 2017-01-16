@@ -55,7 +55,7 @@
                                         <input type="text" class="form-control" placeholder="<?php echo lang('clas_title_plash'); ?>" name="class_title" data-validation="required" data-validation-error-msg="<?php echo lang('clas_cls_tit_requi'); ?>">
                                     </div>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group" style="display: none;">
                                     <label class="col-md-3 control-label"> <?php echo lang('clas_group'); ?> <span class="requiredStar"> </span></label>
                                     <div class="col-md-6">
                                         <div id="div_scents">
@@ -76,22 +76,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-3 control-label"><?php echo lang('clas_sec_capaci'); ?><span class="requiredStar"> * </span></label>
-                                    <div class="col-md-6">
-                                        <select name="capicity" class="form-control"  data-validation="required" data-validation-error-msg="Select section's student capacity.">
-                                            <option value=""><?php echo lang('select'); ?></option>
-                                            <option value="10"><?php echo lang('clas_10stu'); ?></option>
-                                            <option value="20"><?php echo lang('clas_20stu'); ?></option>
-                                            <option value="30"><?php echo lang('clas_30stu'); ?></option>
-                                            <option value="40"><?php echo lang('clas_40stu'); ?></option>
-                                            <option value="50"><?php echo lang('clas_50stu'); ?></option>
-                                            <option value="60"><?php echo lang('clas_60stu'); ?></option>
-                                            <option value="70"><?php echo lang('clas_70stu'); ?></option>
-                                            <option value="80"><?php echo lang('clas_80stu'); ?></option>
-                                            <option value="90"><?php echo lang('clas_90stu'); ?></option>
-                                            <option value="100"><?php echo lang('clas_100stu'); ?></option>
-                                            <option value="150"><?php echo lang('clas_150stu'); ?></option>
-                                            <option value="200"><?php echo lang('clas_200stu'); ?></option>
-                                        </select>
+                                    <div class="col-md-3">
+                                        <input type="number" placeholder="10" name="capicity" class="form-control" data-validation="required" data-validation-error-msg="Select section's student capacity.">
                                     </div>
                                 </div>
                                 <div class="form-group">

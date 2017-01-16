@@ -51,9 +51,12 @@ class Users extends CI_Controller {
             $group_ids = array('group_id' => 3);
             $class_id = $this->db->escape_like_str($this->input->post('class', TRUE));
             $class_title = $this->common->class_title($class_id);
-            if ($this->ion_auth->register($username, $password, $email, $additional_data, $group_ids)) {
+            $result_ion_auth = $this->ion_auth->register($username, $password, $email, $additional_data, $group_ids);
+            print_r($result_ion_auth);
+            if ($result_ion_auth) {
                 $userid = $this->common->usersId();
                 //This array information's are sending to "student_info" table.
+                print_r($userid);
                 $studentsInfo = array(
                     'year' => date('Y'),
                     'user_id' => $this->db->escape_like_str($userid),
@@ -230,11 +233,12 @@ class Users extends CI_Controller {
             $this->load->view('add_new_student', $data);
             $this->load->view('temp/footer');
         }
+//        return var_dump($student_access);
     }
 
     //This function add teacher in this function
     function addTeacher() {
-        if (!$this->ion_auth->logged_in() || !$this->ion_auth->is_admin()) {
+        if (!$this->ion_auth->logged_in() || !$this->ion_auth->is_superadmin()) {
             redirect('auth', 'refresh');
         }
         if ($this->input->post('submit', TRUE)) {

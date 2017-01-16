@@ -87,7 +87,7 @@ class Students extends MX_Controller {
     //Whene class and section gave in the frontend, if the class have section he cane select the section and get student information in the viwe.
     public function ajaxClassSection() {
         $classTitle = $this->input->get('classTitle');
-        $query = $this->common->getWhere('class', 'class_title', $classTitle);
+        $query = $this->common->getWhere('class', 'id', $classTitle);
         foreach ($query as $row) {
             $data = $row['section'];
         }

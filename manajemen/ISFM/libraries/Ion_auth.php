@@ -411,6 +411,15 @@ class Ion_auth
         return $this->in_group($admin_group, $id);
         }
 
+    public function is_superadmin($id = false)
+    {
+        $this->ion_auth_model->trigger_events('is_superadmin');
+
+        $superadmin_group = $this->config->item('superadmin_group', 'ion_auth');
+
+        return $this->in_group($superadmin_group, $id);
+    }
+
     public function is_student($id = false)
         {
         $this->ion_auth_model->trigger_events('is_student');

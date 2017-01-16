@@ -1572,7 +1572,106 @@ class Configuration extends MX_Controller {
             <label class="roll_row"><input type="checkbox" name="other_setting" value="1" checked> ' . lang('rol_91') . '</label>
             <label class="roll_row"><input type="checkbox" name="front_setings" value="1" checked>' . lang('rol_92') . '</label>
             </div></div></div><div class="clearfix"></div>';
-        } elseif ($userGroupId == '3') {
+        }else if($userGroupId == '2')
+        {
+            //System admin access here
+            echo '<div class="col-md-12"><div class="alert alert-info"><strong>' . lang('conc_role') . '</strong> ' . lang('conc_6') . '</div><div class="form-group"><div class="checkbox-list">
+            <label class="roll_row"><input type="checkbox" name="das_top_info" value="1" checked> ' . lang('rol_1') . '  </label>
+            <label class="roll_row"><input type="checkbox" name="das_grab_chart" value="1" checked> ' . lang('rol_2') . ' </label>
+            <label class="roll_row"><input type="checkbox" name="das_class_info" value="1" checked> ' . lang('rol_3') . '</label>
+            <label class="roll_row"><input type="checkbox" name="das_message" value="1" checked> ' . lang('rol_4') . '</label>
+            <label class="roll_row"><input type="checkbox" name="das_employ_attend" value="1" checked> ' . lang('rol_5') . '</label>
+            <label class="roll_row"><input type="checkbox" name="das_notice" value="1" checked> ' . lang('rol_6') . '</label>
+            <label class="roll_row"><input type="checkbox" name="das_calender" value="1" checked> ' . lang('rol_7') . '</label>
+            <label class="roll_row"><input type="checkbox" name="admission" value="1" checked> ' . lang('rol_8') . '</label>
+            <label class="roll_row"><input type="checkbox" name="all_student_info" value="1" checked> ' . lang('rol_9') . '</label>
+            <label class="roll_row"><input type="checkbox" name="stud_edit_delete" value="1" checked> ' . lang('rol_10') . '</label>
+            <label class="roll_row"><input type="checkbox" name="stu_own_info" value="1"> ' . lang('rol_11') . ' </label>
+            <label class="roll_row"><input type="checkbox" name="teacher_info" value="1" checked> ' . lang('rol_12') . '</label>
+            <label class="roll_row"><input type="checkbox" name="add_teacher" value="1" checked> ' . lang('rol_13') . '</label>
+            <label class="roll_row"><input type="checkbox" name="teacher_details" value="1" checked> ' . lang('rol_14') . '</label>
+            <label class="roll_row"><input type="checkbox" name="teacher_edit_delete" value="1" checked> ' . lang('rol_15') . '</label>
+            <label class="roll_row"><input type="checkbox" name="all_parents_info" value="1" checked> ' . lang('rol_16') . '</label>
+            <label class="roll_row"><input type="checkbox" name="own_parents_info" value="1"> ' . lang('rol_17') . '</label>
+            <label class="roll_row"><input type="checkbox" name="make_parents_id" value="1" checked> ' . lang('rol_18') . '</label>
+            <label class="roll_row"><input type="checkbox" name="parents_edit_dlete" value="1" checked> ' . lang('rol_19') . '</label>
+            <label class="roll_row"><input type="checkbox" name="add_new_class" value="1" checked> ' . lang('rol_20') . '</label>
+            <label class="roll_row"><input type="checkbox" name="all_class_info" value="1" checked> ' . lang('rol_21') . '</label>
+            <label class="roll_row"><input type="checkbox" name="class_details" value="1" checked> ' . lang('rol_22') . '</label>
+            <label class="roll_row"><input type="checkbox" name="class_delete" value="1" checked> ' . lang('rol_23') . '</label>
+            <label class="roll_row"><input type="checkbox" name="class_promotion" value="1" checked> ' . lang('rol_24') . '</label>
+            <label class="roll_row"><input type="checkbox" name="assin_optio_sub" value="1" checked> ' . lang('rol_25') . '</label>
+            <label class="roll_row"><input type="checkbox" name="add_class_routine" value="1" checked> ' . lang('rol_26') . '</label>
+            <label class="roll_row"><input type="checkbox" name="own_class_routine" value="1"> ' . lang('rol_27') . '</label>
+            <label class="roll_row"><input type="checkbox" name="all_class_routine" value="1" checked> ' . lang('rol_28') . '</label>
+            <label class="roll_row"><input type="checkbox" name="rutin_edit_delete" value="1" checked> ' . lang('rol_29') . '</label>
+            <label class="roll_row"><input type="checkbox" name="attendance_preview" value="1" checked> ' . lang('rol_30') . '</label>
+            <label class="roll_row"><input type="checkbox" name="take_studence_atten" value="1" checked> ' . lang('rol_31') . '</label>
+            <label class="roll_row"><input type="checkbox" name="edit_student_atten" value="1" checked> ' . lang('rol_32') . '</label>
+            <label class="roll_row"><input type="checkbox" name="add_employee" value="1" checked> ' . lang('rol_33') . '</label>
+            <label class="roll_row"><input type="checkbox" name="employee_list" value="1" checked> ' . lang('rol_34') . '</label>
+            <label class="roll_row"><input type="checkbox" name="employ_attendance" value="1" checked> ' . lang('rol_35') . '</label>
+            <label class="roll_row"><input type="checkbox" name="empl_atte_view" value="1" checked> ' . lang('rol_36') . '</label>
+            <label class="roll_row"><input type="checkbox" name="add_subject" value="1" checked> ' . lang('rol_37') . '</label>
+            <label class="roll_row"><input type="checkbox" name="all_subject" value="1" checked> ' . lang('rol_38') . '</label>
+            <label class="roll_row"><input type="checkbox" name="make_suggestion" value="1" checked> ' . lang('rol_39') . '</label>
+            <label class="roll_row"><input type="checkbox" name="all_suggestion" value="1" checked> ' . lang('rol_40') . '</label>
+            <label class="roll_row"><input type="checkbox" name="own_suggestion" value="1"> ' . lang('rol_41') . '</label>
+            <label class="roll_row"><input type="checkbox" name="add_exam_gread" value="1" checked> ' . lang('rol_42') . '</label>
+            <label class="roll_row"><input type="checkbox" name="exam_gread" value="1" checked> ' . lang('rol_43') . '</label>
+            <label class="roll_row"><input type="checkbox" name="add_exam_routin" value="1" checked> ' . lang('rol_44') . '</label>
+            <label class="roll_row"><input type="checkbox" name="all_exam_routine" value="1" checked>  ' . lang('rol_45') . '</label>
+            <label class="roll_row"><input type="checkbox" name="own_exam_routine" value="1">' . lang('rol_46') . ' </label>
+            <label class="roll_row"><input type="checkbox" name="exam_attend_preview" value="1" checked> ' . lang('rol_47') . '</label>
+            <label class="roll_row"><input type="checkbox" name="approve_result" value="1" checked> ' . lang('rol_48') . '</label>
+            <label class="roll_row"><input type="checkbox" name="view_result" value="1" checked> ' . lang('rol_49') . '</label>
+            <label class="roll_row"><input type="checkbox" name="all_mark_sheet" value="1" checked> ' . lang('rol_50') . '</label>
+            <label class="roll_row"><input type="checkbox" name="own_mark_sheet" value="1"> ' . lang('rol_51') . '</label>
+            <label class="roll_row"><input type="checkbox" name="take_exam_attend" value="1" checked> ' . lang('rol_52') . '</label>
+            <label class="roll_row"><input type="checkbox" name="change_exam_attendance" value="1" checked> ' . lang('rol_53') . '</label>
+            <label class="roll_row"><input type="checkbox" name="make_result" value="1" checked> ' . lang('rol_54') . '</label>
+            <label class="roll_row"><input type="checkbox" name="add_category" value="1" checked> ' . lang('rol_55') . '</label>
+            <label class="roll_row"><input type="checkbox" name="all_category" value="1" checked> ' . lang('rol_56') . '</label>
+            <label class="roll_row"><input type="checkbox" name="edit_delete_category" value="1" checked> ' . lang('rol_57') . '</label>
+            <label class="roll_row"><input type="checkbox" name="add_books" value="1" checked>  ' . lang('rol_58') . ' </label>
+            <label class="roll_row"><input type="checkbox" name="all_books" value="1" checked> ' . lang('rol_59') . '</label>
+            <label class="roll_row"><input type="checkbox" name="edit_delete_books" value="1" checked> ' . lang('rol_60') . '</label>
+            <label class="roll_row"><input type="checkbox" name="add_library_mem" value="1" checked> ' . lang('rol_61') . '</label>
+            <label class="roll_row"><input type="checkbox" name="memb_list" value="1" checked> ' . lang('rol_62') . '</label>
+            <label class="roll_row"><input type="checkbox" name="issu_return" value="1" checked> ' . lang('rol_63') . '</label>
+            <label class="roll_row"><input type="checkbox" name="add_dormitories" value="1" checked> ' . lang('rol_64') . '</label>
+            <label class="roll_row"><input type="checkbox" name="add_set_dormi" value="1" checked> ' . lang('rol_65') . '</label>
+            <label class="roll_row"><input type="checkbox" name="set_member_bed" value="1" checked> ' . lang('rol_66') . '</label>
+            <label class="roll_row"><input type="checkbox" name="dormi_report" value="1" checked> ' . lang('rol_67') . '</label>
+            <label class="roll_row"><input type="checkbox" name="add_transport" value="1" checked> ' . lang('rol_68') . '</label>
+            <label class="roll_row"><input type="checkbox" name="all_transport" value="1" checked> ' . lang('rol_69') . '</label>
+            <label class="roll_row"><input type="checkbox" name="transport_edit_dele" value="1" checked> ' . lang('rol_70') . '</label>
+            <label class="roll_row"><input type="checkbox" name="add_account_title" value="1" checked> ' . lang('rol_71') . '</label>
+            <label class="roll_row"><input type="checkbox" name="edit_dele_acco" value="1" checked> ' . lang('rol_93') . '</label>
+            <label class="roll_row"><input type="checkbox" name="trensection" value="1" checked> ' . lang('rol_72') . '</label>
+            <label class="roll_row"><input type="checkbox" name="fee_collection" value="1" checked> ' . lang('rol_73') . '</label>
+            <label class="roll_row"><input type="checkbox" name="all_slips" value="1" checked> ' . lang('rol_74') . '</label>
+            <label class="roll_row"><input type="checkbox" name="own_slip" value="1"> ' . lang('rol_75') . '</label>
+            <label class="roll_row"><input type="checkbox" name="slip_edit_delete" value="1" checked>' . lang('rol_76') . '</label>
+            <label class="roll_row"><input type="checkbox" name="pay_salary" value="1" checked>' . lang('rol_77') . '</label>
+            <label class="roll_row"><input type="checkbox" name="creat_notice" value="1" checked> ' . lang('rol_78') . '</label>
+            <label class="roll_row"><input type="checkbox" name="send_message" value="1" checked> ' . lang('rol_79') . '</label>
+            <label class="roll_row"><input type="checkbox" name="vendor" value="1" checked> ' . lang('rol_80') . '</label>
+            <label class="roll_row"><input type="checkbox" name="delet_vendor" value="1" checked> ' . lang('rol_81') . '</label>
+            <label class="roll_row"><input type="checkbox" name="add_inv_cat" value="1" checked> ' . lang('rol_82') . '</label>
+            <label class="roll_row"><input type="checkbox" name="delete_inv_cat" value="1" checked> ' . lang('rol_83') . '</label>
+            <label class="roll_row"><input type="checkbox" name="inve_item" value="1" checked> ' . lang('rol_84') . '</label>
+            <label class="roll_row"><input type="checkbox" name="delete_inve_ite" value="1" checked> ' . lang('rol_85') . '</label>
+            <label class="roll_row"><input type="checkbox" name="inve_issu" value="1" checked> ' . lang('rol_86') . '</label>
+            <label class="roll_row"><input type="checkbox" name="delete_inven_issu" value="1" checked> ' . lang('rol_87') . '</label>
+            <label class="roll_row"><input type="checkbox" name="check_leav_appli" value="1" checked> ' . lang('rol_88') . '</label>
+            <label class="roll_row"><input type="checkbox" name="setting_manage_user" value="1" checked> ' . lang('rol_89') . ' </label>
+            <label class="roll_row"><input type="checkbox" name="setting_accounts" value="1" checked>  ' . lang('rol_90') . '</label>
+            <label class="roll_row"><input type="checkbox" name="other_setting" value="1" checked> ' . lang('rol_91') . '</label>
+            <label class="roll_row"><input type="checkbox" name="front_setings" value="1" checked>' . lang('rol_92') . '</label>
+            </div></div></div><div class="clearfix"></div>';
+        }
+        elseif ($userGroupId == '3') {
             //Students access here
             echo '<div class="col-md-12"><div class="alert alert-info"><strong>' . lang('conc_role') . '</strong> ' . lang('conc_6') . '</div><div class="form-group"><div class="checkbox-list">
             <label class="roll_row"><input type="checkbox" name="das_top_info" value="1"> ' . lang('rol_1') . '  </label>
