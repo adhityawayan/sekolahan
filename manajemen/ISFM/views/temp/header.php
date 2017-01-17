@@ -217,6 +217,7 @@ $sent = "";
 $cabang = "";
 $allCabang = "";
 $addCabang = "";
+$editCabang = "";
 $configuration = "";
 $userAccess = "";
 $weeklyDay = "";
@@ -614,6 +615,9 @@ if ($cont == "home") {
         $cabang = $s . ' ' . $a;
         $addCabang = $a;
     } elseif ($view == "cabangDetails") {
+        $cabang = $s . ' ' . $a;
+        $allCabang = $a;
+    } elseif ($view == "editCabang") {
         $cabang = $s . ' ' . $a;
         $allCabang = $a;
     }

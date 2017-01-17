@@ -50,6 +50,17 @@
                             <div class="form-body">
 
                                 <div class="form-group">
+                                    <label class="col-md-3 control-label"> Cabang <span class="requiredStar"> * </span></label>
+                                    <div class="col-md-6">
+                                        <select class="form-control" name="cabang_id" data-validation="required" data-validation-error-msg="">
+                                            <option value="">Pilih Cabang</option>
+                                            <?php foreach($cabang as $cab): ?>
+                                                <option value="<?=$cab['id']?>"><?=$cab['code']?> | <?=$cab['name']?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <label class="col-md-3 control-label"> <?php echo lang('clas_class_title'); ?> <span class="requiredStar"> * </span></label>
                                     <div class="col-md-6">
                                         <input type="text" class="form-control" placeholder="<?php echo lang('clas_title_plash'); ?>" name="class_title" data-validation="required" data-validation-error-msg="<?php echo lang('clas_cls_tit_requi'); ?>">

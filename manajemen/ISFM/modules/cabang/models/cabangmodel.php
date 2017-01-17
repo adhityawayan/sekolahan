@@ -73,4 +73,54 @@ class cabangmodel extends Base_model
         $kode = $this->getkodeunik($this->table,'CB');
         return $kode;
     }
+
+    public function getTeacherSchoolByIdCabang($cabang_id)
+    {
+        $result = $this->getData('teacher_school', array('cabang_id'=>$cabang_id))->result_array();
+        foreach($result as $key=>$row)
+        {
+            $result[$key]['cabang'] = $this->getData('cabang',array('id'=>$row['cabang_id']))->row_array();
+            $result[$key]['teacher'] = $this->getData('teachers_info',array('id'=>$row['teacher_id']))->row_array();
+        }
+        if($result)
+        {
+            return $result;
+        }
+        return [];
+    }
+
+    public function allTeachers()
+    {
+        $result = $this->get('teachers_info')->result_array();
+        if($result)
+        {
+            return $result;
+        }
+        return [];
+    }
+
+    public function createTeacherSchool($data=array())
+    {
+        $result = $this->addData('teacher_school',$data);
+        if($result)
+        {
+            return TRUE;
+        }
+        return FALSE;
+    }
+
+    public function deleteTeacherSchool($id)
+    {
+        return $this->deleteData('teacher_school',array('id'=>$id));
+    }
+
+    public function checkTeacherSchool($teacher_id,$cabang_id)
+    {
+        $result = $this->getData('teacher_school',array('teacher_id'=>$teacher_id,'cabang_id'=>$cabang_id))->num_rows();
+        if($result)
+        {
+            return TRUE;
+        }
+        return FALSE;
+    }
 }

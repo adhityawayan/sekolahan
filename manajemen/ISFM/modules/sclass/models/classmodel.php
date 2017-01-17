@@ -2,7 +2,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Classmodel extends CI_Model {
+class Classmodel extends Base_model {
     /**
      * This model is using into the sclass controller
      * Load : $this->load->model('classmodel');
@@ -140,5 +140,15 @@ class Classmodel extends CI_Model {
         foreach ($query->result_array() as $row) {
             
         }
+    }
+
+    public function allCabang()
+    {
+        $result = $this->getData('cabang',array('nonaktif'=>0))->result_array();
+        if($result)
+        {
+            return $result;
+        }
+        return [];
     }
 }

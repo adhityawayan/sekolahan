@@ -49,12 +49,14 @@ class Sclass extends MX_Controller
             }
             $capicity = $this->input->post('capicity', TRUE);
             $classCode = $this->input->post('class_code', TRUE);
+            $cabang_id = $this->input->post('cabang_id', TRUE);
             $tableData = array(
                 'class_title' => $this->db->escape_like_str($classTitle),
                 'class_group' => $this->db->escape_like_str($group),
                 'section' => $this->db->escape_like_str($section),
                 'section_student_capacity' => $this->db->escape_like_str($capicity),
-                'classCode' => $this->db->escape_like_str($classCode)
+                'classCode' => $this->db->escape_like_str($classCode),
+                'cabang_id' => $this->db->escape_like_str($cabang_id),
             );
             if ($this->db->insert('class', $tableData)) {
                 $data['success'] = '<div class="alert alert-info alert-dismissable admisionSucceassMessageFont">
@@ -68,6 +70,7 @@ class Sclass extends MX_Controller
             }
         } else {
             $data['teacher'] = $this->common->getAllData('teachers_info');
+            $data['cabang'] = $this->classmodel->allCabang();
             $this->load->view('temp/header');
             $this->load->view('addClassSection', $data);
             $this->load->view('temp/footer');

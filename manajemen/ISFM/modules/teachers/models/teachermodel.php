@@ -2,7 +2,7 @@
 if (!defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
-class Teachermodel extends CI_Model {
+class Teachermodel extends Base_model {
     /**
      * This model is using into the students controller
      * Load : $this->load->model('studentmodel');
@@ -20,5 +20,40 @@ class Teachermodel extends CI_Model {
             $data[] = $row;
         }
         return $data;
+    }
+
+    public function allCabang()
+    {
+        $result = $this->getData('cabang',array('nonaktif'=>0))->result_array();
+        if($result)
+        {
+            return $result;
+        }
+        return [];
+    }
+
+    public function detailCabang($id)
+    {
+        $result = $this->getData('cabang', array('id'=>$id))->row_array();
+        if($result)
+        {
+            return $result;
+        }
+        return [];
+    }
+
+    public function getTeacherSchoolByIdCabang($cabang_id)
+    {
+        $result = $this->getData('teacher_school', array('cabang_id'=>$cabang_id))->result_array();
+        foreach($result as $key=>$row)
+        {
+            $result[$key]['cabang'] = $this->getData('cabang',array('id'=>$row['cabang_id']))->result_array();
+            $result[$key]['teacher'] = $this->getData('teacher_info',array('id'=>$row['teacher_id']))->result_array();
+        }
+        if($result)
+        {
+            return $result;
+        }
+        return [];
     }
 }

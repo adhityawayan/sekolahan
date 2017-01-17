@@ -99,11 +99,11 @@ $userId = $user->id; ?>
                                            href="index.php/cabang/cabangDetails/<?php echo $row['id']; ?>"> <i
                                                 class="fa fa-file-text-o"></i> <?php echo lang('details'); ?> </a>
                                         <a class="btn btn-xs default"
-                                           href="index.php/cabang/edit_cabang/<?php echo $row['id']; ?>"> <i
+                                           href="index.php/cabang/editCabang/<?php echo $row['id']; ?>"> <i
                                                 class="fa fa-pencil-square"></i> <?php echo lang('edit'); ?> </a>
                                         <a class="btn btn-xs red"
                                            href="index.php/cabang/cabangDelete/<?php echo $row['id']; ?>"
-                                           onClick="javascript:return confirm('<?php echo lang('tea_tdecon'); ?>')"> <i
+                                           onClick="javascript:return confirm('Are you sure you want to delete this cabang?')"> <i
                                                 class="fa fa-trash-o"></i> <?php echo lang('delete'); ?> </a>
                                     </td>
                                 </tr>
