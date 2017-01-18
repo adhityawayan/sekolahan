@@ -22,52 +22,134 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="cabang.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ISFM/modules/cabang/controllers/cabang.php">
+      <file leaf-file-name="sclass.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ISFM/modules/sclass/controllers/sclass.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.384615">
-              <caret line="131" column="39" selection-start-line="131" selection-start-column="20" selection-end-line="131" selection-end-column="39" />
+            <state vertical-scroll-proportion="-6.7454543">
+              <caret line="624" column="4" selection-start-line="624" selection-start-column="4" selection-end-line="630" selection-end-column="5" />
               <folding>
-                <marker date="1484642606537" expanded="true" signature="1770:2018" placeholder="..." />
-                <marker date="1484642606537" expanded="true" signature="3138:3386" placeholder="..." />
-                <marker date="1484642606537" expanded="true" signature="4112:4358" placeholder="..." />
+                <marker date="1484727258119" expanded="true" signature="3183:3510" placeholder="..." />
+                <marker date="1484727258119" expanded="true" signature="15206:15543" placeholder="..." />
+                <marker date="1484727258119" expanded="true" signature="15385:15543" placeholder="..." />
+                <marker date="1484727258119" expanded="true" signature="15458:15543" placeholder="..." />
+                <marker date="1484727258119" expanded="true" signature="15803:16119" placeholder="..." />
+                <marker date="1484727258119" expanded="true" signature="15921:16113" placeholder="..." />
+                <marker date="1484727258119" expanded="true" signature="15979:16107" placeholder="..." />
+                <marker date="1484727258119" expanded="true" signature="20620:20803" placeholder="..." />
+                <marker date="1484727258119" expanded="true" signature="21188:21245" placeholder="SELECT class..parents_info..." />
+                <marker date="1484727258119" expanded="true" signature="22452:22862" placeholder="..." />
+                <marker date="1484727258119" expanded="true" signature="22641:22862" placeholder="..." />
+                <marker date="1484727258119" expanded="true" signature="22781:22862" placeholder="..." />
+                <marker date="1484727258119" expanded="true" signature="23238:23554" placeholder="..." />
+                <marker date="1484727258119" expanded="true" signature="23356:23548" placeholder="..." />
+                <marker date="1484727258119" expanded="true" signature="23414:23542" placeholder="..." />
+                <marker date="1484727258119" expanded="true" signature="23663:23799" placeholder="SELECT cs.*,..class_students..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="alert_helper.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ISFM/helpers/alert_helper.php">
+      <file leaf-file-name="subjects.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ISFM/modules/subjects/controllers/subjects.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.1923075">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            <state vertical-scroll-proportion="-12.618182">
+              <caret line="146" column="48" selection-start-line="146" selection-start-column="20" selection-end-line="146" selection-end-column="48" />
+              <folding>
+                <marker date="1484730270070" expanded="true" signature="1395:1708" placeholder="..." />
+                <marker date="1484730270070" expanded="true" signature="3725:3896" placeholder="..." />
+                <marker date="1484730270070" expanded="true" signature="4601:4946" placeholder="..." />
+                <marker date="1484730270070" expanded="true" signature="4715:4940" placeholder="..." />
+                <marker date="1484730270070" expanded="true" signature="4772:4934" placeholder="..." />
+                <marker date="1484730270070" expanded="true" signature="5109:6768" placeholder="..." />
+                <marker date="1484730270070" expanded="true" signature="5160:6762" placeholder="..." />
+                <marker date="1484730270070" expanded="true" signature="5203:6449" placeholder="..." />
+                <marker date="1484730270070" expanded="true" signature="5252:5635" placeholder="..." />
+                <marker date="1484730270070" expanded="true" signature="5432:5604" placeholder="..." />
+                <marker date="1484730270070" expanded="true" signature="5684:6060" placeholder="..." />
+                <marker date="1484730270070" expanded="true" signature="5864:6029" placeholder="..." />
+                <marker date="1484730270070" expanded="true" signature="6108:6422" placeholder="..." />
+                <marker date="1484730270070" expanded="true" signature="6176:6391" placeholder="..." />
+                <marker date="1484730270070" expanded="true" signature="6597:6739" placeholder="..." />
+                <marker date="1484730270070" expanded="true" signature="7040:7373" placeholder="..." />
+                <marker date="1484730270070" expanded="true" signature="7205:7373" placeholder="..." />
+                <marker date="1484730270070" expanded="true" signature="7300:7373" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="subject_model.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ISFM/modules/subjects/models/subject_model.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-14.076923">
+              <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+              <folding>
+                <marker date="1484730037232" expanded="true" signature="522:604" placeholder="SELECT id,su..class_subject..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addSubject.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ISFM/modules/subjects/views/addSubject.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.65360504">
+              <caret line="136" column="20" selection-start-line="136" selection-start-column="20" selection-end-line="136" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sclass.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ISFM/modules/sclass/controllers/sclass.php">
+      <file leaf-file-name="classAjax.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ISFM/modules/subjects/views/classAjax.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3291536">
-              <caret line="58" column="70" selection-start-line="58" selection-start-column="70" selection-end-line="58" selection-end-column="70" />
+            <state vertical-scroll-proportion="-11.115385">
+              <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="promotion.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ISFM/modules/sclass/views/promotion.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.192307">
+              <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="85" />
               <folding>
-                <marker date="1484646496645" expanded="true" signature="3140:3467" placeholder="..." />
-                <marker date="1484646496645" expanded="true" signature="15002:15339" placeholder="..." />
-                <marker date="1484646496645" expanded="true" signature="15181:15339" placeholder="..." />
-                <marker date="1484646496645" expanded="true" signature="15254:15339" placeholder="..." />
-                <marker date="1484646496645" expanded="true" signature="15599:15915" placeholder="..." />
-                <marker date="1484646496645" expanded="true" signature="15717:15909" placeholder="..." />
-                <marker date="1484646496645" expanded="true" signature="15775:15903" placeholder="..." />
-                <marker date="1484646496645" expanded="true" signature="20416:20599" placeholder="..." />
-                <marker date="1484646496645" expanded="true" signature="20984:21041" placeholder="SELECT class..parents_info..." />
-                <marker date="1484646496645" expanded="true" signature="22248:22658" placeholder="..." />
-                <marker date="1484646496645" expanded="true" signature="22437:22658" placeholder="..." />
-                <marker date="1484646496645" expanded="true" signature="22577:22658" placeholder="..." />
-                <marker date="1484646496645" expanded="true" signature="23034:23350" placeholder="..." />
-                <marker date="1484646496645" expanded="true" signature="23152:23344" placeholder="..." />
-                <marker date="1484646496645" expanded="true" signature="23210:23338" placeholder="..." />
-                <marker date="1484646496645" expanded="true" signature="23459:23595" placeholder="SELECT cs.*,..class_students..." />
+                <marker date="1484725778936" expanded="true" signature="1713:1861" placeholder="..." />
+                <marker date="1484725778936" expanded="true" signature="1745:1855" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="allClass.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ISFM/modules/sclass/views/allClass.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-20.615385">
+              <caret line="64" column="24" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addClassSection.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ISFM/modules/sclass/views/addClassSection.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.230769">
+              <caret line="61" column="38" selection-start-line="51" selection-start-column="32" selection-end-line="61" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="classAjax.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ISFM/modules/sclass/views/classAjax.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.076923">
+              <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+              <folding>
+                <element signature="e#6#90#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -76,88 +158,14 @@
       <file leaf-file-name="classmodel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ISFM/modules/sclass/models/classmodel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.076923">
-              <caret line="144" column="31" selection-start-line="144" selection-start-column="20" selection-end-line="144" selection-end-column="31" />
+            <state vertical-scroll-proportion="-25.846153">
+              <caret line="181" column="5" selection-start-line="144" selection-start-column="4" selection-end-line="181" selection-end-column="5" />
               <folding>
-                <marker date="1484646324968" expanded="true" signature="2298:2378" placeholder="SELECT publi..add_exam..." />
-                <marker date="1484646324968" expanded="true" signature="2901:2984" placeholder="SELECT publi..add_exam..." />
-                <marker date="1484646324968" expanded="true" signature="3519:3589" placeholder="SELECT stude..final_result..." />
-                <marker date="1484646324968" expanded="true" signature="4224:4286" placeholder="SELECT secti..class..." />
-                <marker date="1484646324968" expanded="true" signature="4598:4661" placeholder="SELECT class..class..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="addClassSection.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ISFM/modules/sclass/views/addClassSection.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="19.615385">
-              <caret line="54" column="84" selection-start-line="54" selection-start-column="75" selection-end-line="54" selection-end-column="84" />
-              <folding>
-                <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cabang.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ISFM/modules/cabang/views/cabang.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.384615">
-              <caret line="106" column="109" selection-start-line="103" selection-start-column="40" selection-end-line="106" selection-end-column="109" />
-              <folding>
-                <element signature="e#6#90#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cabangmodel.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ISFM/modules/cabang/models/cabangmodel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.730769">
-              <caret line="111" column="44" selection-start-line="111" selection-start-column="20" selection-end-line="111" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Base_model.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ISFM/models/Base_model.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.230769">
-              <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-              <folding>
-                <marker date="1484297451908" expanded="true" signature="2198:2227" placeholder="SELECT MAX(i..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="editCabang.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ISFM/modules/cabang/views/editCabang.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-71.26923">
-              <caret line="109" column="9" selection-start-line="109" selection-start-column="9" selection-end-line="109" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cabangDetails.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ISFM/modules/cabang/views/cabangDetails.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.036364">
-              <caret line="125" column="45" selection-start-line="125" selection-start-column="45" selection-end-line="125" selection-end-column="45" />
-              <folding>
-                <marker date="1484642731973" expanded="true" signature="4857:4971" placeholder="..." />
-                <marker date="1484642731973" expanded="true" signature="4906:4971" placeholder="..." />
-                <marker date="1484642731973" expanded="true" signature="5090:5257" placeholder="..." />
-                <marker date="1484642731973" expanded="true" signature="5163:5257" placeholder="..." />
-                <marker date="1484642731973" expanded="true" signature="5452:5517" placeholder="..." />
-                <marker date="1484642731973" expanded="true" signature="5642:5707" placeholder="..." />
-                <marker date="1484642731973" expanded="true" signature="5839:5947" placeholder="..." />
+                <marker date="1484728726621" expanded="true" signature="2298:2378" placeholder="SELECT publi..add_exam..." />
+                <marker date="1484728726621" expanded="true" signature="2901:2984" placeholder="SELECT publi..add_exam..." />
+                <marker date="1484728726621" expanded="true" signature="3519:3589" placeholder="SELECT stude..final_result..." />
+                <marker date="1484728726621" expanded="true" signature="4224:4286" placeholder="SELECT secti..class..." />
+                <marker date="1484728726621" expanded="true" signature="4598:4661" placeholder="SELECT class..class..." />
               </folding>
             </state>
           </provider>
@@ -177,7 +185,6 @@
         <option value="$PROJECT_DIR$/ISFM/modules/home/views/dashboard.php" />
         <option value="$PROJECT_DIR$/ISFM/modules/configuration/controllers/configuration.php" />
         <option value="$PROJECT_DIR$/ISFM/modules/sclass/views/studentList.php" />
-        <option value="$PROJECT_DIR$/ISFM/modules/sclass/views/promotion.php" />
         <option value="$PROJECT_DIR$/ISFM/libraries/Ion_auth.php" />
         <option value="$PROJECT_DIR$/ISFM/config/ion_auth.php" />
         <option value="$PROJECT_DIR$/ISFM/controllers/users.php" />
@@ -196,9 +203,19 @@
         <option value="$PROJECT_DIR$/ISFM/modules/cabang/models/cabangmodel.php" />
         <option value="$PROJECT_DIR$/ISFM/modules/cabang/controllers/cabang.php" />
         <option value="$PROJECT_DIR$/ISFM/modules/cabang/views/cabangDetails.php" />
-        <option value="$PROJECT_DIR$/ISFM/modules/sclass/models/classmodel.php" />
+        <option value="$PROJECT_DIR$/ISFM/models/Student_model_api.php" />
+        <option value="$PROJECT_DIR$/ISFM/controllers/student_api.php" />
+        <option value="$PROJECT_DIR$/ISFM/config/routes.php" />
         <option value="$PROJECT_DIR$/ISFM/modules/sclass/views/addClassSection.php" />
+        <option value="$PROJECT_DIR$/ISFM/modules/sclass/views/classAjax.php" />
+        <option value="$PROJECT_DIR$/ISFM/modules/sclass/views/promotion.php" />
         <option value="$PROJECT_DIR$/ISFM/modules/sclass/controllers/sclass.php" />
+        <option value="$PROJECT_DIR$/ISFM/modules/sclass/models/classmodel.php" />
+        <option value="$PROJECT_DIR$/ISFM/modules/sclass/views/allClass.php" />
+        <option value="$PROJECT_DIR$/ISFM/modules/subjects/models/subject_model.php" />
+        <option value="$PROJECT_DIR$/ISFM/modules/subjects/views/classAjax.php" />
+        <option value="$PROJECT_DIR$/ISFM/modules/subjects/controllers/subjects.php" />
+        <option value="$PROJECT_DIR$/ISFM/modules/subjects/views/addSubject.php" />
       </list>
     </option>
   </component>
@@ -325,7 +342,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="teachers" />
+              <option name="myItemId" value="subjects" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -351,7 +368,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="teachers" />
+              <option name="myItemId" value="subjects" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -377,7 +394,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="teachers" />
+              <option name="myItemId" value="subjects" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -460,200 +477,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manajemen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manajemen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ISFM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cabang" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manajemen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manajemen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ISFM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cabang" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manajemen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manajemen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ISFM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cabang" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manajemen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manajemen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ISFM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manajemen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manajemen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ISFM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="language" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manajemen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manajemen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ISFM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="language" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="indonesian" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manajemen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manajemen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ISFM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="language" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="english" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manajemen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manajemen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ISFM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="helpers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manajemen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manajemen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ISFM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -664,11 +487,12 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../sewabaju2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\sekolahan\manajemen\ISFM\modules\subjects\views" />
       <recent name="D:\xampp\htdocs\sekolahan\manajemen\ISFM\helpers" />
       <recent name="D:\xampp\htdocs\sekolahan\manajemen\ISFM\modules\cabang\views" />
       <recent name="D:\xampp\htdocs\sekolahan\manajemen\ISFM\models" />
@@ -760,55 +584,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ISFM/modules/parents/views/parentsInformation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.6520376">
-          <caret line="149" column="0" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system/helpers/array_helper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="56.53846">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system/helpers/text_helper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="328.53845">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system/language/english/db_lang.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system/language/english/profiler_lang.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system/language/english/number_lang.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system/language/english/migration_lang.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/system/helpers/directory_helper.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -863,13 +638,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.9615386">
           <caret line="42" column="9" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ISFM/config/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-29.423077">
-          <caret line="45" column="36" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -936,13 +704,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ISFM/modules/subjects/views/addSubject.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.153846">
-          <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ISFM/modules/subjects/views/classSubjectDetails.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.1923075">
@@ -954,15 +715,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ISFM/modules/subjects/controllers/subjects.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="44" selection-start-line="28" selection-start-column="16" selection-end-line="31" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -977,7 +729,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.6909091">
           <caret line="791" column="23" selection-start-line="791" selection-start-column="23" selection-end-line="791" selection-end-column="68" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -993,7 +744,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.692307">
           <caret line="33" column="38" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1001,33 +751,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.6909091">
           <caret line="161" column="34" selection-start-line="161" selection-start-column="20" selection-end-line="161" selection-end-column="34" />
-          <folding>
-            <marker date="1483756310210" expanded="true" signature="-1:-1" placeholder="SELECT logo,..configuration..." />
-            <marker date="1483756310210" expanded="true" signature="-1:-1" placeholder="SELECT id FR..users..." />
-            <marker date="1483756310210" expanded="true" signature="-1:-1" placeholder="SELECT id,cl..class..." />
-            <marker date="1483756310210" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-            <marker date="1483756310210" expanded="true" signature="-1:-1" placeholder="SELECT time_..configuration..." />
-            <marker date="1483756310210" expanded="true" signature="-1:-1" placeholder="SELECT class..class..." />
-            <marker date="1483756310210" expanded="true" signature="-1:-1" placeholder="SELECT stude..student_info..." />
-            <marker date="1483756310210" expanded="true" signature="-1:-1" placeholder="SELECT stude..student_info..." />
-            <marker date="1483756310210" expanded="true" signature="-1:-1" placeholder="SELECT stude..parents_info..." />
-            <marker date="1483756310210" expanded="true" signature="-1:-1" placeholder="SELECT class..class..." />
-            <marker date="1483756310210" expanded="true" signature="-1:-1" placeholder="SELECT MAX(i..." />
-            <marker date="1483756310210" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..notice_board..." />
-            <marker date="1483756310210" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..notice_board..." />
-            <marker date="1483756310210" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..notice_board..." />
-            <marker date="1483756310210" expanded="true" signature="-1:-1" placeholder="SELECT user_..student_info..." />
-            <marker date="1483756310210" expanded="true" signature="-1:-1" placeholder="SELECT count..configuration..." />
-            <marker date="1483756310210" expanded="true" signature="-1:-1" placeholder="SELECT emplo..teacher_attendance..." />
-            <marker date="1483756310210" expanded="true" signature="-1:-1" placeholder="SELECT exam_..set_fees..." />
-            <marker date="1483756310210" expanded="true" signature="-1:-1" placeholder="SELECT ${$co..set_fees..." />
-            <marker date="1483756310210" expanded="true" signature="-1:-1" placeholder="SELECT id FR..." />
-            <marker date="1483756310210" expanded="true" signature="-1:-1" placeholder="SELECT ${$si..." />
-            <marker date="1483756310210" expanded="true" signature="-1:-1" placeholder="SELECT class..class..." />
-            <marker date="1483756310210" expanded="true" signature="-1:-1" placeholder="SELECT id FR..add_exam..." />
-            <marker date="1483756310210" expanded="true" signature="-1:-1" placeholder="SELECT id,su..class_subject..." />
-            <marker date="1483756310210" expanded="true" signature="-1:-1" placeholder="SELECT name ..groups..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1035,9 +758,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.461538">
           <caret line="44" column="4" selection-start-line="44" selection-start-column="4" selection-end-line="57" selection-end-column="5" />
-          <folding>
-            <marker date="1484628875816" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..teachers_info..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1045,26 +765,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.9230769">
           <caret line="51" column="36" selection-start-line="51" selection-start-column="36" selection-end-line="51" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ISFM/modules/sclass/views/promotion.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.6538463">
-          <caret line="151" column="4" selection-start-line="151" selection-start-column="4" selection-end-line="154" selection-end-column="5" />
-          <folding>
-            <marker date="1484202720024" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1484202720024" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ISFM/modules/sclass/views/studentList.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.230769">
-          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="83" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1072,19 +772,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.65384614">
           <caret line="1" column="66" selection-start-line="1" selection-start-column="66" selection-end-line="1" selection-end-column="66" />
-          <folding>
-            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#form#0;n#!!top" expanded="true" />
-            <marker date="1484640304227" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1484640304227" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1484640304227" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1484640304227" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1484640304227" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1484640304227" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1484640304227" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1484640304227" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1484640304227" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1484640304227" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1092,7 +779,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.384615">
           <caret line="70" column="54" selection-start-line="70" selection-start-column="54" selection-end-line="70" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1100,128 +786,226 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.576923">
           <caret line="82" column="172" selection-start-line="82" selection-start-column="36" selection-end-line="82" selection-end-column="172" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ISFM/modules/cabang/views/editCabang.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-71.26923">
+        <state vertical-scroll-proportion="0.0">
           <caret line="109" column="9" selection-start-line="109" selection-start-column="9" selection-end-line="109" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISFM/helpers/alert_helper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISFM/modules/cabang/views/cabang.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="106" column="109" selection-start-line="103" selection-start-column="40" selection-end-line="106" selection-end-column="109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISFM/modules/cabang/controllers/cabang.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="131" column="39" selection-start-line="131" selection-start-column="20" selection-end-line="131" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISFM/modules/cabang/views/cabangDetails.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="125" column="45" selection-start-line="125" selection-start-column="45" selection-end-line="125" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISFM/controllers/users.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.730769">
+          <caret line="27" column="49" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISFM/models/Student_model_api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.9230769">
+          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISFM/controllers/student_api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISFM/config/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="3" selection-start-line="28" selection-start-column="3" selection-end-line="28" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ISFM/modules/cabang/models/cabangmodel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.730769">
-          <caret line="111" column="44" selection-start-line="111" selection-start-column="20" selection-end-line="111" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="70" column="4" selection-start-line="70" selection-start-column="4" selection-end-line="74" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ISFM/helpers/alert_helper.php">
+    <entry file="file://$PROJECT_DIR$/ISFM/models/Base_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1923075">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="93" column="38" selection-start-line="93" selection-start-column="32" selection-end-line="93" selection-end-column="38" />
+          <folding>
+            <marker date="1484297451908" expanded="true" signature="-1:-1" placeholder="SELECT MAX(i..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISFM/modules/sclass/views/studentList.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="83" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ISFM/modules/cabang/views/cabang.php">
+    <entry file="file://$PROJECT_DIR$/ISFM/modules/sclass/views/classAjax.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.384615">
-          <caret line="106" column="109" selection-start-line="103" selection-start-column="40" selection-end-line="106" selection-end-column="109" />
+        <state vertical-scroll-proportion="-13.076923">
+          <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
           <folding>
             <element signature="e#6#90#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ISFM/modules/cabang/controllers/cabang.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.384615">
-          <caret line="131" column="39" selection-start-line="131" selection-start-column="20" selection-end-line="131" selection-end-column="39" />
-          <folding>
-            <marker date="1484642606537" expanded="true" signature="1770:2018" placeholder="..." />
-            <marker date="1484642606537" expanded="true" signature="3138:3386" placeholder="..." />
-            <marker date="1484642606537" expanded="true" signature="4112:4358" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ISFM/modules/cabang/views/cabangDetails.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.036364">
-          <caret line="125" column="45" selection-start-line="125" selection-start-column="45" selection-end-line="125" selection-end-column="45" />
-          <folding>
-            <marker date="1484642731973" expanded="true" signature="4857:4971" placeholder="..." />
-            <marker date="1484642731973" expanded="true" signature="4906:4971" placeholder="..." />
-            <marker date="1484642731973" expanded="true" signature="5090:5257" placeholder="..." />
-            <marker date="1484642731973" expanded="true" signature="5163:5257" placeholder="..." />
-            <marker date="1484642731973" expanded="true" signature="5452:5517" placeholder="..." />
-            <marker date="1484642731973" expanded="true" signature="5642:5707" placeholder="..." />
-            <marker date="1484642731973" expanded="true" signature="5839:5947" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ISFM/models/Base_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.230769">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-          <folding>
-            <marker date="1484297451908" expanded="true" signature="2198:2227" placeholder="SELECT MAX(i..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ISFM/modules/sclass/models/classmodel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.076923">
-          <caret line="144" column="31" selection-start-line="144" selection-start-column="20" selection-end-line="144" selection-end-column="31" />
+        <state vertical-scroll-proportion="-25.846153">
+          <caret line="181" column="5" selection-start-line="144" selection-start-column="4" selection-end-line="181" selection-end-column="5" />
           <folding>
-            <marker date="1484646324968" expanded="true" signature="2298:2378" placeholder="SELECT publi..add_exam..." />
-            <marker date="1484646324968" expanded="true" signature="2901:2984" placeholder="SELECT publi..add_exam..." />
-            <marker date="1484646324968" expanded="true" signature="3519:3589" placeholder="SELECT stude..final_result..." />
-            <marker date="1484646324968" expanded="true" signature="4224:4286" placeholder="SELECT secti..class..." />
-            <marker date="1484646324968" expanded="true" signature="4598:4661" placeholder="SELECT class..class..." />
+            <marker date="1484728726621" expanded="true" signature="2298:2378" placeholder="SELECT publi..add_exam..." />
+            <marker date="1484728726621" expanded="true" signature="2901:2984" placeholder="SELECT publi..add_exam..." />
+            <marker date="1484728726621" expanded="true" signature="3519:3589" placeholder="SELECT stude..final_result..." />
+            <marker date="1484728726621" expanded="true" signature="4224:4286" placeholder="SELECT secti..class..." />
+            <marker date="1484728726621" expanded="true" signature="4598:4661" placeholder="SELECT class..class..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISFM/modules/sclass/views/allClass.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.615385">
+          <caret line="64" column="24" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ISFM/modules/sclass/views/addClassSection.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="19.615385">
-          <caret line="54" column="84" selection-start-line="54" selection-start-column="75" selection-end-line="54" selection-end-column="84" />
-          <folding>
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-5.230769">
+          <caret line="61" column="38" selection-start-line="51" selection-start-column="32" selection-end-line="61" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ISFM/modules/sclass/controllers/sclass.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3291536">
-          <caret line="58" column="70" selection-start-line="58" selection-start-column="70" selection-end-line="58" selection-end-column="70" />
+        <state vertical-scroll-proportion="-6.7454543">
+          <caret line="624" column="4" selection-start-line="624" selection-start-column="4" selection-end-line="630" selection-end-column="5" />
           <folding>
-            <marker date="1484646496645" expanded="true" signature="3140:3467" placeholder="..." />
-            <marker date="1484646496645" expanded="true" signature="15002:15339" placeholder="..." />
-            <marker date="1484646496645" expanded="true" signature="15181:15339" placeholder="..." />
-            <marker date="1484646496645" expanded="true" signature="15254:15339" placeholder="..." />
-            <marker date="1484646496645" expanded="true" signature="15599:15915" placeholder="..." />
-            <marker date="1484646496645" expanded="true" signature="15717:15909" placeholder="..." />
-            <marker date="1484646496645" expanded="true" signature="15775:15903" placeholder="..." />
-            <marker date="1484646496645" expanded="true" signature="20416:20599" placeholder="..." />
-            <marker date="1484646496645" expanded="true" signature="20984:21041" placeholder="SELECT class..parents_info..." />
-            <marker date="1484646496645" expanded="true" signature="22248:22658" placeholder="..." />
-            <marker date="1484646496645" expanded="true" signature="22437:22658" placeholder="..." />
-            <marker date="1484646496645" expanded="true" signature="22577:22658" placeholder="..." />
-            <marker date="1484646496645" expanded="true" signature="23034:23350" placeholder="..." />
-            <marker date="1484646496645" expanded="true" signature="23152:23344" placeholder="..." />
-            <marker date="1484646496645" expanded="true" signature="23210:23338" placeholder="..." />
-            <marker date="1484646496645" expanded="true" signature="23459:23595" placeholder="SELECT cs.*,..class_students..." />
+            <marker date="1484727258119" expanded="true" signature="3183:3510" placeholder="..." />
+            <marker date="1484727258119" expanded="true" signature="15206:15543" placeholder="..." />
+            <marker date="1484727258119" expanded="true" signature="15385:15543" placeholder="..." />
+            <marker date="1484727258119" expanded="true" signature="15458:15543" placeholder="..." />
+            <marker date="1484727258119" expanded="true" signature="15803:16119" placeholder="..." />
+            <marker date="1484727258119" expanded="true" signature="15921:16113" placeholder="..." />
+            <marker date="1484727258119" expanded="true" signature="15979:16107" placeholder="..." />
+            <marker date="1484727258119" expanded="true" signature="20620:20803" placeholder="..." />
+            <marker date="1484727258119" expanded="true" signature="21188:21245" placeholder="SELECT class..parents_info..." />
+            <marker date="1484727258119" expanded="true" signature="22452:22862" placeholder="..." />
+            <marker date="1484727258119" expanded="true" signature="22641:22862" placeholder="..." />
+            <marker date="1484727258119" expanded="true" signature="22781:22862" placeholder="..." />
+            <marker date="1484727258119" expanded="true" signature="23238:23554" placeholder="..." />
+            <marker date="1484727258119" expanded="true" signature="23356:23548" placeholder="..." />
+            <marker date="1484727258119" expanded="true" signature="23414:23542" placeholder="..." />
+            <marker date="1484727258119" expanded="true" signature="23663:23799" placeholder="SELECT cs.*,..class_students..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISFM/modules/subjects/views/classAjax.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.115385">
+          <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISFM/modules/subjects/models/subject_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.076923">
+          <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+          <folding>
+            <marker date="1484730037232" expanded="true" signature="522:604" placeholder="SELECT id,su..class_subject..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISFM/modules/sclass/views/promotion.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.192307">
+          <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="85" />
+          <folding>
+            <marker date="1484725778936" expanded="true" signature="1713:1861" placeholder="..." />
+            <marker date="1484725778936" expanded="true" signature="1745:1855" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISFM/modules/subjects/controllers/subjects.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.618182">
+          <caret line="146" column="48" selection-start-line="146" selection-start-column="20" selection-end-line="146" selection-end-column="48" />
+          <folding>
+            <marker date="1484730270070" expanded="true" signature="1395:1708" placeholder="..." />
+            <marker date="1484730270070" expanded="true" signature="3725:3896" placeholder="..." />
+            <marker date="1484730270070" expanded="true" signature="4601:4946" placeholder="..." />
+            <marker date="1484730270070" expanded="true" signature="4715:4940" placeholder="..." />
+            <marker date="1484730270070" expanded="true" signature="4772:4934" placeholder="..." />
+            <marker date="1484730270070" expanded="true" signature="5109:6768" placeholder="..." />
+            <marker date="1484730270070" expanded="true" signature="5160:6762" placeholder="..." />
+            <marker date="1484730270070" expanded="true" signature="5203:6449" placeholder="..." />
+            <marker date="1484730270070" expanded="true" signature="5252:5635" placeholder="..." />
+            <marker date="1484730270070" expanded="true" signature="5432:5604" placeholder="..." />
+            <marker date="1484730270070" expanded="true" signature="5684:6060" placeholder="..." />
+            <marker date="1484730270070" expanded="true" signature="5864:6029" placeholder="..." />
+            <marker date="1484730270070" expanded="true" signature="6108:6422" placeholder="..." />
+            <marker date="1484730270070" expanded="true" signature="6176:6391" placeholder="..." />
+            <marker date="1484730270070" expanded="true" signature="6597:6739" placeholder="..." />
+            <marker date="1484730270070" expanded="true" signature="7040:7373" placeholder="..." />
+            <marker date="1484730270070" expanded="true" signature="7205:7373" placeholder="..." />
+            <marker date="1484730270070" expanded="true" signature="7300:7373" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISFM/modules/subjects/views/addSubject.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.65360504">
+          <caret line="136" column="20" selection-start-line="136" selection-start-column="20" selection-end-line="136" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>

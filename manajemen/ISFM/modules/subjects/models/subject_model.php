@@ -2,7 +2,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Subject_model extends CI_Model {
+class Subject_model extends Base_model {
     /**
      * This model is using into the sclass controller
      * Load : $this->load->model('classmodel');
@@ -20,5 +20,44 @@ class Subject_model extends CI_Model {
             $data[] = $row;
         }
         return $data;
+    }
+
+    public function allCabang()
+    {
+        $result = $this->getData('cabang',array('nonaktif'=>0))->result_array();
+        if($result)
+        {
+            return $result;
+        }
+        return [];
+    }
+
+    public function getkode($id)
+    {
+        $result = $this->getData('cabang',array('id'=>$id))->row_array();
+        $code = $result['code'];
+        $kode = $this->getkodeunik('class',$code,3);
+        return $kode;
+    }
+
+    public function getClassByCabang($cabang_id)
+    {
+        $result = $this->getData('class',array('cabang_id'=>$cabang_id))->result_array();
+        if($result)
+        {
+            return $result;
+        }
+        return [];
+    }
+
+    public function getCabangById($id)
+    {
+        $result = $this->getData('cabang',array('id'=>$id))->row_array();
+
+        if($result)
+        {
+            return $result;
+        }
+        return [];
     }
 }

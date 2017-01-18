@@ -37,21 +37,41 @@
         <!-- BEGIN PAGE CONTENT-->
         <div class="row">
             <div class="col-md-12">
+                <div class="portlet box green">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            Pilih Cabang
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                        <div class="form-group">
+                            <select id="selectcabang" class="form-control">
+                                <option value="0">Pilih Cabang</option>
+                                <?php foreach($cabang as $row): ?>
+                                    <option value="<?=$row['id']?>"><?=$row['name']?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
                 <?php
                 if (!empty($success)) {
                     echo $success;
                 }
                 ?>
-                <!-- BEGIN EXAMPLE TABLE PORTLET-->
-                <div class="portlet box green">
-                    <div class="portlet-title">
-                        <div class="caption">
-                            <?php echo lang('clas_info_here'); ?>
+                <?php if($detailcabang): ?>
+                    <!-- BEGIN EXAMPLE TABLE PORTLET-->
+                    <div class="portlet box green">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                Class Information Cabang <?=$detailcabang['name']?>
+                            </div>
                         </div>
-                    </div>
-                    <div class="portlet-body">
-                        <table class="table table-striped table-bordered table-hover" id="sample_1">
-                            <thead>
+                        <div class="portlet-body">
+                            <table class="table table-striped table-bordered table-hover" id="sample_1">
+                                <thead>
                                 <tr>
                                     <th>
                                         <?php echo lang('clas_title'); ?>
@@ -69,9 +89,9 @@
                                         &nbsp;
                                     </th>
                                 </tr>
-                            </thead>
-                            <tbody>
-                                        <?php foreach ($classInfo as $row) { ?>
+                                </thead>
+                                <tbody>
+                                <?php foreach ($classInfo as $row) { ?>
                                     <tr>
                                         <td>
                                             <?php echo $row['class_title']; ?>
@@ -83,21 +103,22 @@
                                             <?php echo $row['student_amount']; ?>
                                         </td>
                                         <td>
-    <?php echo $row['attendance_percentices_daily'] . ' %'; ?>
+                                            <?php echo $row['attendance_percentices_daily'] . ' %'; ?>
                                         </td>
                                         <td>
                                             <a class="btn btn-xs green" href="index.php/sclass/classDetails?c_id=<?php echo $row['id']; ?>"> <i class="fa fa-send-o"></i> <?php echo lang('details'); ?> </a>
                                             <?php if($this->common->user_access('class_delete',$userId)){ ?>
-                                            <a class="btn btn-xs red" href="index.php/sclass/deleteClass?id=<?php echo $row['id']; ?>" onClick="javascript:return confirm('Are you sure you want to delete this Class?')"> <i class="fa fa-trash-o"></i> <?php echo lang('delete'); ?> </a>
+                                                <a class="btn btn-xs red" href="index.php/sclass/deleteClass?id=<?php echo $row['id']; ?>" onClick="javascript:return confirm('Are you sure you want to delete this Class?')"> <i class="fa fa-trash-o"></i> <?php echo lang('delete'); ?> </a>
                                             <?php }?>
                                         </td>
                                     </tr>
-<?php } ?>
-                            </tbody>
-                        </table>
+                                <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                </div>
-                <!-- END EXAMPLE TABLE PORTLET-->
+                    <!-- END EXAMPLE TABLE PORTLET-->
+                <?php endif; ?>
             </div>
         </div>
         <!-- END PAGE CONTENT-->
@@ -105,6 +126,7 @@
 </div>
 <!-- END CONTENT -->
 
+<input type="hidden" id="url" value="<?=site_url('sclass/allClass')?>">
 
 <!-- BEGIN PAGE LEVEL PLUGINS -->
 <script type="text/javascript" src="assets/global/plugins/select2/select2.min.js"></script>
@@ -120,5 +142,9 @@
         jQuery(setInterval(function() {
             jQuery("#result").load("index.php/home/iceTime");
         }, 1000));
+        $('#selectcabang').change(function(){
+            var url = $('#url').val();
+            window.location.href = url+'/'+this.value;
+        });
     });
 </script>

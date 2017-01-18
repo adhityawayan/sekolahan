@@ -58,6 +58,7 @@ class Sclass extends MX_Controller
                 'classCode' => $this->db->escape_like_str($classCode),
                 'cabang_id' => $this->db->escape_like_str($cabang_id),
             );
+//            return var_dump($tableData);
             if ($this->db->insert('class', $tableData)) {
                 $data['success'] = '<div class="alert alert-info alert-dismissable admisionSucceassMessageFont">
                                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button"></button>
@@ -87,9 +88,11 @@ class Sclass extends MX_Controller
     }
 
     //This function is useing for geting all class short information
-    public function allClass()
+    public function allClass($cabang_id=0)
     {
-        $data['classInfo'] = $this->common->getAllData('class');
+        $data['classInfo'] = $this->classmodel->getClassByCabang($cabang_id);
+        $data['cabang'] = $this->classmodel->allCabang();
+        $data['detailcabang'] = $this->classmodel->getCabangById($cabang_id);
         $this->load->view('temp/header');
         $this->load->view('allClass', $data);
         $this->load->view('temp/footer');
@@ -552,6 +555,7 @@ WHERE cs.class_id='$idClass'");
             }
         } else {
             $data['classTile'] = $this->common->getAllData('class');
+            $data['cabang'] = $this->common->getAllData('cabang');
             $this->load->view('temp/header');
             $this->load->view('promotion', $data);
             $this->load->view('temp/footer');
@@ -611,5 +615,18 @@ WHERE cs.class_id='$idClass'");
             $sm++;
             $i++;
         }
+    }
+
+    public function ajaxGetCode($id)
+    {
+        echo $this->classmodel->getkode($id);
+    }
+
+    public function getClassByCabang($cabang_id)
+    {
+        $data=array(
+            'classTile' => $this->classmodel->getClassByCabang($cabang_id)
+        );
+        $this->load->view('classAjax',$data);
     }
 }

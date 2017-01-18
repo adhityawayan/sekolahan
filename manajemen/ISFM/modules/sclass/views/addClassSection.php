@@ -52,7 +52,7 @@
                                 <div class="form-group">
                                     <label class="col-md-3 control-label"> Cabang <span class="requiredStar"> * </span></label>
                                     <div class="col-md-6">
-                                        <select class="form-control" name="cabang_id" data-validation="required" data-validation-error-msg="">
+                                        <select onchange="getCode(this.value)" class="form-control" name="cabang_id" data-validation="required" data-validation-error-msg="">
                                             <option value="">Pilih Cabang</option>
                                             <?php foreach($cabang as $cab): ?>
                                                 <option value="<?=$cab['id']?>"><?=$cab['code']?> | <?=$cab['name']?></option>
@@ -94,7 +94,7 @@
                                 <div class="form-group">
                                     <label class="col-md-3 control-label"> <?php echo lang('clas_code'); ?> <span class="requiredStar"> * </span></label>
                                     <div class="col-md-6">
-                                        <input type="text" onkeyup="classSection(this.value)" class="form-control" placeholder="<?php echo lang('clas_code_plash'); ?>"  data-validation="required" data-validation-error-msg="<?php echo lang('clas_code_requir'); ?>">
+                                        <input type="text" name="class_code" onkeyup="classSection(this.value)" id="codeClass" class="form-control" placeholder="Code Class"  data-validation="required" data-validation-error-msg="<?php echo lang('clas_code_requir'); ?>">
                                         <span id="ajaxResult" class="classCodeCheck"></span>
                                     </div>
                                 </div>
@@ -115,6 +115,8 @@
     </div>
 </div>
 <!-- END CONTENT -->
+<input type="hidden" id="urlcode" value="<?=site_url('sclass/ajaxGetCode/')?>">
+<input type="hidden" id="txtcode" value="">
 <script>
     $(function() {
         var maxFild = 3;
@@ -171,6 +173,8 @@
         jQuery(setInterval(function() {
             jQuery("#result").load("index.php/home/iceTime");
         }, 1000));
+
+
     });
 
     function classSection(str) {
@@ -194,6 +198,20 @@
         };
         xmlhttp.open("GET", "index.php/sclass/ajaxClassCodeInfo?q=" + str, true);
         xmlhttp.send();
+    }
+
+    function getCode(id)
+    {
+        var url = $('#urlcode').val();
+
+        $.ajax({
+            url : url+'/'+id,
+            type : 'GET',
+            cache : false,
+        })
+            .success(function(response){
+                $('#codeClass').val(response);
+            });
     }
 </script>
 <script src="assets/global/plugins/jquery.form-validator.min.js" type="text/javascript"></script>
