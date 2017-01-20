@@ -84,13 +84,22 @@ class Examination extends MX_Controller {
             redirect('examination/examGread', 'refresh');
         }
     }
+
+    public function getClassByCabang($cabang_id)
+    {
+        $data=array(
+            's_class' => $this->common->selectClassByCabang($cabang_id)
+        );
+        $this->load->view('classAjaxSection',$data);
+    }
+
     //This function is using for decleration new examination for nay class.
     public function addExam() {
-        $data['s_class'] = $this->common->getAllData('class');
+        $data['cabang'] = $this->common->selectCabang();
         if ($this->input->post('submit', TRUE)) {
             $examTitle = $this->input->post('examTitle', TRUE);
             $startDate = $this->input->post('startDate', TRUE);
-            $class_id = $this->input->post('class_id', TRUE);
+            $class_id = $this->input->post('class', TRUE);
             $totleTime = $this->input->post('totleTime', TRUE);
             $examInfo = array(
                 'year' => $this->db->escape_like_str(date('Y')),
@@ -102,13 +111,16 @@ class Examination extends MX_Controller {
                 'final' => $this->db->escape_like_str($this->input->post('final', TRUE)),
                 'status' => $this->db->escape_like_str('NoResult')
             );
+//            return var_dump($examInfo);
             //Here is adding an exam information into database
             if ($this->db->insert('add_exam', $examInfo)) {
                 $data['successMessage'] = '<div class="alert alert-success">
                                                 <button aria-hidden="true" data-dismiss="alert" class="close" type="button"></button>
                                                 <strong>' . lang('success') . '</strong> ' . lang('exac_1') . '" ' . $examTitle . ' " ' . lang('exac_2') . ' "' . $this->common->class_title($class_id) . '" ' . lang('exac_3') . '
                                         </div>';
+//                return var_dump($data);
                 $data['examInfo'] = $this->common->getAllData('add_exam');
+
                 $data['subject'] = $this->common->getWhere('class_subject', 'class_id', $class_id);
                 $data['weeklyDay'] = $this->common->getAllData('config_week_day');
                 $this->load->view('temp/header');
@@ -490,6 +502,7 @@ class Examination extends MX_Controller {
     //This function will select that which exam routine 
     public function allExamRutine() {
         $data['s_class'] = $this->common->getAllData('class');
+        $data['cabang'] = $this->common->selectCabang();
         $this->load->view('temp/header');
         $this->load->view('selectAllRoutine', $data);
         $this->load->view('temp/footer');
@@ -537,7 +550,8 @@ class Examination extends MX_Controller {
     }
     //This function is using for select class and students for exam attendance.
     public function selectExamAttendance() {
-        $data['s_class'] = $this->common->getAllData('class');
+//        $data['s_class'] = $this->common->getAllData('class');
+        $data['cabang'] = $this->common->selectCabang();
         $this->load->view('temp/header');
         $this->load->view('selectExamAttendance', $data);
         $this->load->view('temp/footer');
@@ -584,6 +598,7 @@ class Examination extends MX_Controller {
             $examId = $this->input->post('examId', TRUE);
             $examTitle = $this->exammodel->examTitle($examId);
             $class_id = $this->input->post('class', TRUE);
+            $classTitle = $this->common->class_title($class_id);
             $check = $this->exammodel->checkExam($examId, $date);
             if ($check == 'Have An Exam') {
                 //Here is loding student for exam attendance.
@@ -625,6 +640,7 @@ class Examination extends MX_Controller {
             $this->load->view('temp/footer');
         } else {
             $data['s_class'] = $this->common->getAllData('class');
+            $data['cabang'] = $this->common->selectCabang();
             $this->load->view('temp/header');
             $this->load->view('allExamAttendanceView', $data);
             $this->load->view('temp/footer');
@@ -697,7 +713,7 @@ class Examination extends MX_Controller {
     //Here is first time select class for result.
     public function makingResult() {
         if ($this->input->post('submit', TRUE)) {
-            $class_id = $this->input->post('class_id', TRUE);
+            $class_id = $this->input->post('class', TRUE);
             $data['class_id'] = $class_id;
             $data['examId'] = $this->input->post('examID', TRUE);
             $data['subjectTitle'] = $this->input->post('examSubjectTitle', TRUE);
@@ -710,11 +726,13 @@ class Examination extends MX_Controller {
             }
             $data['students'] = $queryData;
             $data['gread'] = $this->common->getAllData('exam_grade');
+//            return var_dump($data);
             $this->load->view('temp/header');
             $this->load->view('makingResult', $data);
             $this->load->view('temp/footer');
         } else {
-            $data['s_class'] = $this->exammodel->getClassTitle();
+//            $data['s_class'] = $this->exammodel->getClassTitle();
+            $data['cabang'] = $this->common->selectCabang();
             $this->load->view('temp/header');
             $this->load->view('selectClassResult', $data);
             $this->load->view('temp/footer');
@@ -999,8 +1017,10 @@ class Examination extends MX_Controller {
         }
     }
     //This function select class for results 
-    public function selectResult() {
-        $data['result'] = $this->exammodel->publish('Complete', 'Publish');
+    public function selectResult($cabang_id=0) {
+        $data['result'] = $this->exammodel->publishWithCabang('Complete', 'Publish',$cabang_id);
+        $data['cabang'] = $this->common->selectCabang();
+        $data['cabangdetail'] = $this->common->selectCabangDetail($cabang_id);
         $this->load->view('temp/header');
         $this->load->view('selectResult', $data);
         $this->load->view('temp/footer');
@@ -1052,6 +1072,7 @@ class Examination extends MX_Controller {
             }
         } else {
             $data['class'] = $this->common->getAllData('class');
+            $data['cabang'] = $this->common->selectCabang();
             $this->load->view('temp/header');
             $this->load->view('selectClassMarksheet', $data);
             $this->load->view('temp/footer');

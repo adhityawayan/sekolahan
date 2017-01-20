@@ -53,15 +53,17 @@
                                 ?>
                                 <div class="form-body">
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label"> <?php echo lang('exa_class'); ?> </label>
+                                        <label class="col-md-3 control-label"> Cabang </label>
                                         <div class="col-md-4">
-                                            <select onchange="classSection(this.value)"  class="form-control" name="class_id" data-validation="required" data-validation-error-msg="">
-                                                <option value=""><?php echo lang('select'); ?></option>
-                                                <?php foreach ($class as $row) { ?>
-                                                    <option value="<?php echo $row['id']; ?>"><?php echo $row['class_title']; ?></option>
+                                            <select onchange="viewClass(this.value)"  class="form-control" name="class_id" data-validation="required" data-validation-error-msg="">
+                                                <option value="0"><?php echo lang('select'); ?></option>
+                                                <?php foreach ($cabang as $row) { ?>
+                                                    <option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
                                                 <?php } ?>
                                             </select>
                                         </div>
+                                    </div>
+                                    <div id="ajaxClass">
                                     </div>
                                     <div id="ajaxResult">
                                     </div>
@@ -84,6 +86,7 @@
     </div>
 </div>
 <!-- END CONTENT -->
+<input type="hidden" id="urlclass" value="<?=site_url('examination/getClassByCabang/')?>">
 <script src="assets/global/plugins/jquery.form-validator.min.js" type="text/javascript"></script>
 <script> $.validate();</script>
 <script>
@@ -116,4 +119,19 @@
             jQuery("#result").load("index.php/home/iceTime");
         }, 5000));
     });
+
+    function viewClass(id)
+    {
+
+        var url = $('#urlclass').val();
+        $.ajax({
+            url : url+'/'+id,
+            type : 'GET',
+            cache : false,
+            dataType: "html"
+        })
+            .success(function(data){
+                $('#ajaxClass').html(data);
+            });
+    }
 </script>

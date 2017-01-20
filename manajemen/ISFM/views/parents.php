@@ -58,16 +58,19 @@
                                 ?>
                                 <div class="form-body">
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label"> <?php echo lang('par_cla_tit'); ?> </label>
+                                        <label class="col-md-3 control-label"> Cabang </label>
                                         <div class="col-md-4">
-                                            <select onchange="classSection(this.value)"  class="form-control" name="class_id">
-                                                <option value=""><?php echo lang('select'); ?></option>
-                                                <?php foreach ($s_class as $row) { ?>
-                                                    <option value="<?php echo $row['id']; ?>"><?php echo $row['class_title']; ?></option>
+                                            <select onchange="viewClass(this.value)"  class="form-control" name="class_id">
+                                                <option value="0"><?php echo lang('select'); ?></option>
+                                                <?php foreach ($cabang as $row) { ?>
+                                                    <option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
                                                 <?php } ?>
                                             </select>
                                             <span class="help-block"><?php echo lang('At first select any class and click the "view Parents" button.'); ?> </span>
                                         </div>
+                                    </div>
+                                    <div id="ajaxClass">
+
                                     </div>
                                     <div id="ajaxResult"></div>
                                 </div>
@@ -89,6 +92,7 @@
     </div>
 </div>
 <!-- END CONTENT -->
+<input type="hidden" id="urlclass" value="<?=site_url('parents/getClassByCabang/')?>">
 <script>
     function classSection(str) {
         var xmlhttp;
@@ -117,4 +121,19 @@
             jQuery("#result").load("index.php/home/iceTime");
         }, 1000));
     });
+
+    function viewClass(id)
+    {
+
+        var url = $('#urlclass').val();
+        $.ajax({
+            url : url+'/'+id,
+            type : 'GET',
+            cache : false,
+            dataType: "html"
+        })
+            .success(function(data){
+                $('#ajaxClass').html(data);
+            });
+    }
 </script>

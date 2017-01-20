@@ -54,15 +54,17 @@
                                 ?>
                                 <div class="form-body">
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label"><?php echo lang('att_class'); ?></label>
+                                        <label class="col-md-3 control-label">Cabang</label>
                                         <div class="col-md-4">
-                                            <select name="class_title" onchange="attendanceClassSection(this.value)" class="form-control">
-                                                <option value=""> <?php echo lang('select'); ?> </option>
-                                                <?php foreach ($s_class as $row) { ?> 
-                                                    <option value="<?php echo $row['class_title']; ?>"><?php echo $row['class_title']; ?></option>
+                                            <select name="class_title" onchange="viewClass(this.value)" class="form-control">
+                                                <option value="0"> <?php echo lang('select'); ?> </option>
+                                                <?php foreach ($cabang as $row) { ?>
+                                                    <option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
                                                 <?php } ?>
                                             </select>
                                         </div>
+                                    </div>
+                                    <div id="ajaxClass">
                                     </div>
                                     <div id="ajaxResult">
                                     </div>
@@ -84,6 +86,7 @@
         <!-- END PAGE CONTENT-->
     </div>
     <!-- END CONTENT -->
+    <input type="hidden" id="urlclass" value="<?=site_url('dailyAttendance/getClassByCabang/')?>">
     <script>
         jQuery(document).ready(function () {
             //here is auto reload after 1 second for time and date in the top
@@ -112,6 +115,21 @@
             };
             xmlhttp.open("GET", "index.php/dailyAttendance/ajaxClassAttendanceSection?q=" + str, true);
             xmlhttp.send();
+        }
+
+        function viewClass(id)
+        {
+
+            var url = $('#urlclass').val();
+            $.ajax({
+                url : url+'/'+id,
+                type : 'GET',
+                cache : false,
+                dataType: "html"
+            })
+                .success(function(data){
+                    $('#ajaxClass').html(data);
+                });
         }
     </script>
 

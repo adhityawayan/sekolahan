@@ -91,7 +91,7 @@
                                                             </div>
                                                     <?php if($this->common->user_access('rutin_edit_delete',$userId)){ ?>
                                                                 <div class="info">
-                                                                    <button class="btn blue btn-xs buttonMargin" onclick="window.location.href = 'index.php/sclass/editRoutine?id=<?php echo $row4['id']; ?>&class=<?php echo $class_id; ?>'" type="button"><i class="fa fa-cogs"></i> <?php echo lang('edit'); ?></button>
+                                                                    <button class="btn blue btn-xs buttonMargin" onclick="window.location.href = 'index.php/sclass/editRoutine?id=<?php echo $row4['id']; ?>&class=<?php echo $class_id; ?>&cabang=<?=$cabang_id?>'" type="button"><i class="fa fa-cogs"></i> <?php echo lang('edit'); ?></button>
                                                                     <a class="btn btn-xs red buttonMargin" href="index.php/sclass/deleteRoutine?id=<?php echo $row4['id']; ?>&class_id=<?php echo $class_id; ?>" onClick="javascript:return confirm('Are you sure you want to delete this subject from this Class routine?')"> <i class="fa fa-trash-o"></i> <?php echo lang('delete'); ?> </a>
                                                                 </div>
                                                     <?php } ?>

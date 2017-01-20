@@ -37,6 +37,25 @@
         <!-- BEGIN PAGE CONTENT-->
         <div class="row">
             <div class="col-md-12">
+                <div class="portlet box green">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            Pilih Cabang
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                        <div class="form-group">
+                            <select id="selectcabang" class="form-control">
+                                <option value="0">Pilih Cabang</option>
+                                <?php foreach($cabang as $row): ?>
+                                    <option value="<?=$row['id']?>"><?=$row['name']?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
                 <!-- BEGIN EXAMPLE TABLE PORTLET-->
                 <div class="portlet box green">
                     <div class="portlet-title">
@@ -87,6 +106,7 @@
 </div>
 <!-- END CONTENT -->
 
+<input type="hidden" id="url" value="<?=site_url('subjects/allSubject')?>">
 
 <!-- BEGIN PAGE LEVEL PLUGINS -->
 <script type="text/javascript" src="assets/global/plugins/select2/select2.min.js"></script>
@@ -102,5 +122,9 @@
         jQuery(setInterval(function() {
             jQuery("#result").load("index.php/home/iceTime");
         }, 1000));
+        $('#selectcabang').change(function(){
+            var url = $('#url').val();
+            window.location.href = url+'/'+this.value;
+        });
     });
 </script>

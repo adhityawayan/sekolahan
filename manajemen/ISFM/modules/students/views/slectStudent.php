@@ -57,16 +57,20 @@
                                 ?>
                                     <div class="form-body">
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label"> <?php echo lang('stu_sel_cla_Class'); ?> </label>
+                                            <label class="col-md-3 control-label"> Cabang </label>
                                             <div class="col-md-4">
-                                                <select onchange="classSection(this.value)"  class="form-control" name="class" data-validation="required" data-validation-error-msg="">
-                                                    <option value=""><?php echo lang('stu_sel_cla_select'); ?></option>
-                                                    <?php foreach ($s_class as $row) { ?>
-                                                        <option value="<?php echo $row['id']; ?>"><?php echo $row['class_title']; ?></option>
+                                                <select onchange="viewClass(this.value)" class="form-control" name="cabang"
+                                                        data-validation="required"
+                                                        data-validation-error-msg="This field is required field.">
+                                                    <option value="0">Select one</option>
+                                                    <?php foreach ($cabang as $row) { ?>
+                                                        <option
+                                                            value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
                                                     <?php } ?>
                                                 </select>
-                                                <span class="help-block"><?php echo lang('stu_sel_cla_demo_text'); ?></span>
                                             </div>
+                                        </div>
+                                        <div id="ajaxClass">
                                         </div>
                                         <div id="ajaxResult">
                                         </div>
@@ -88,10 +92,33 @@
         <!-- END PAGE CONTENT-->
     </div>
 </div>
+
+<input type="hidden" id="urlclass" value="<?=site_url('students/getClassByCabang/')?>">
 <!-- END CONTENT -->
 <script src="assets/global/plugins/jquery.form-validator.min.js" type="text/javascript"></script>
 <script> $.validate(); </script>
 <script>
+    jQuery(document).ready(function() {
+//here is auto reload after 1 second for time and date in the top
+        jQuery(setInterval(function() {
+            jQuery("#result").load("index.php/home/iceTime");
+        }, 1000));
+    });
+
+    function viewClass(id)
+    {
+        var url = $('#urlclass').val();
+        $.ajax({
+            url : url+'/'+id,
+            type : 'GET',
+            cache : false,
+            dataType: "html"
+        })
+            .success(function(data){
+                $('#ajaxClass').html(data);
+            });
+    }
+
     function classSection(str) {
         var xmlhttp;
         if (str.length == 0) {
@@ -114,12 +141,4 @@
         xmlhttp.open("GET", "index.php/students/ajaxClassSection?classTitle=" + str, true);
         xmlhttp.send();
     }
-</script>
-<script>
-    jQuery(document).ready(function() {
-//here is auto reload after 1 second for time and date in the top
-        jQuery(setInterval(function() {
-            jQuery("#result").load("index.php/home/iceTime");
-        }, 1000));
-    });
 </script>

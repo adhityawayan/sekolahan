@@ -22,9 +22,17 @@ class DailyAttendance extends MX_Controller {
         }
     }
 
+    public function getClassByCabang($cabang_id)
+    {
+        $data=array(
+            's_class' => $this->common->selectClassByCabang($cabang_id)
+        );
+        $this->load->view('ajaxClass',$data);
+    }
+
     //This function show the class & section for selecting class to take attendance 
     public function selectClassAttendance() {
-        $data['s_class'] = $this->common->getAllData('class');
+        $data['cabang'] = $this->common->selectCabang();
         $this->load->view('temp/header');
         $this->load->view('selectClassAttendance', $data);
         $this->load->view('temp/footer');
@@ -201,7 +209,7 @@ class DailyAttendance extends MX_Controller {
     }
 
     public function selectAttendancePreview() {
-        $data['s_class'] = $this->common->getAllData('class');
+        $data['cabang'] = $this->common->selectcabang();
         $this->load->view('temp/header');
         $this->load->view('selectAttendencePreview', $data);
         $this->load->view('temp/footer');

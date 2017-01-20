@@ -23,8 +23,10 @@ class Teachers extends MX_Controller {
     }
 
     //This function gives all teacher's short informattion in a table view
-    public function allTeachers() {
-        $data['teacher'] = $this->teachermodel->allTeachers();
+    public function allTeachers($cabang_id=0) {
+        $data['teacher'] = $this->teachermodel->allTeachersByCabang($cabang_id);
+        $data['cabang_detail'] = $this->teachermodel->detailCabang($cabang_id);
+        $data['cabang'] = $this->common->selectCabang();
         $this->load->view('temp/header');
         $this->load->view('teachers', $data);
         $this->load->view('temp/footer');

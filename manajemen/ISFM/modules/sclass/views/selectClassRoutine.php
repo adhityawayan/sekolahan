@@ -49,16 +49,17 @@
                         ?>
                             <div class="form-body">
                                 <div class="form-group">
-                                    <label class="col-md-3 control-label"><?php echo lang('class'); ?> <span class="requiredStar"> * </span></label>
+                                    <label class="col-md-3 control-label">Cabang <span class="requiredStar"> * </span></label>
                                     <div class="col-md-6">
-                                        <select onchange="classSection(this.value)" class="form-control" name="class" data-validation="required" data-validation-error-msg="">
+                                        <select onchange="viewClass(this.value)" class="form-control" name="cabang_id" data-validation="required" data-validation-error-msg="">
                                             <option><?php echo lang('select'); ?></option>
-                                            <?php foreach ($classTile as $row) { ?>
-                                                <option value="<?php echo $row['id']; ?>"><?php echo $row['class_title']; ?></option>
+                                            <?php foreach ($cabang as $row) { ?>
+                                                <option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
                                             <?php } ?>
                                         </select>
                                     </div>
                                 </div>
+                                <div id="ajaxClass"></div>
                                 <div  id="ajaxResult">
                                 </div>
                             </div>
@@ -78,6 +79,7 @@
     </div>
 </div>
 <!-- END CONTENT -->
+<input type="hidden" id="urlclass" value="<?=site_url('sclass/getClassForSectionByCabang/')?>">
 
 <script src="assets/global/plugins/jquery.form-validator.min.js" type="text/javascript"></script>
 <script> $.validate(); </script>
@@ -113,4 +115,18 @@
             jQuery("#result").load("index.php/home/iceTime");
         }, 1000));
     });
+
+    function viewClass(id)
+    {
+        var url = $('#urlclass').val();
+        $.ajax({
+            url : url+'/'+id,
+            type : 'GET',
+            cache : false,
+            dataType: "html"
+        })
+            .success(function(data){
+                $('#ajaxClass').html(data);
+            });
+    }
 </script>

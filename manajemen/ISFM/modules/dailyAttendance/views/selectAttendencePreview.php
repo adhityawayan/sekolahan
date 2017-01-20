@@ -46,15 +46,17 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label"><?php echo lang('att_class'); ?></label>
+                                        <label class="col-md-3 control-label">Cabang</label>
                                         <div class="col-md-4">
-                                            <select name="class_title" onchange="attendanceClassSection(this.value)" class="form-control">
+                                            <select name="cabang_id" onchange="viewClass(this.value)" class="form-control">
                                                 <option value=""> <?php echo lang('select'); ?> </option>
-                                                <?php foreach ($s_class as $row): ?> 
-                                                    <option value="<?php echo $row['class_title']; ?>"><?php echo $row['class_title']; ?></option>
+                                                <?php foreach ($cabang as $row): ?>
+                                                    <option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
                                                 <?php endforeach; ?>
                                             </select>
                                         </div>
+                                    </div>
+                                    <div id="ajaxClass">
                                     </div>
                                     <div id="ajaxResult">
                                     </div>
@@ -75,6 +77,8 @@
         </div>
     </div>
     <!-- END CONTENT -->
+    <input type="hidden" id="urlclass" value="<?=site_url('dailyAttendance/getClassByCabang/')?>">
+
     <script type="text/javascript" src="assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
     <script>
         jQuery(document).ready(function () {
@@ -114,4 +118,20 @@
             xmlhttp.open("GET", "index.php/dailyAttendance/ajaxAttendencePreview?q=" + str, true);
             xmlhttp.send();
         }
+
+        function viewClass(id)
+        {
+
+            var url = $('#urlclass').val();
+            $.ajax({
+                url : url+'/'+id,
+                type : 'GET',
+                cache : false,
+                dataType: "html"
+            })
+                .success(function(data){
+                    $('#ajaxClass').html(data);
+                });
+        }
+
     </script>

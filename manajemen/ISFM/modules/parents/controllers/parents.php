@@ -20,19 +20,31 @@ class Parents extends CI_Controller {
     }
     //This function lode a view where is select class for know about parents infomation
     public function parentsInformation() {
-        if ($this->input->post('submit', TRUE)) {
+        if ($this->input->post('submit', TRUE))
+        {
             $class_id = $this->input->post('class_id', TRUE);
             $data['classTitle'] = $this->common->class_title($class_id);
             $data['parents'] = $this->common->getWhere('parents_info', 'class_id', $class_id);
             $this->load->view('temp/header');
             $this->load->view('parentsInformation', $data);
             $this->load->view('temp/footer');
-        } else {
+        }
+        else
+        {
             $data['s_class'] = $this->common->getAllData('class');
+            $data['cabang'] = $this->common->selectCabang();
             $this->load->view('temp/header');
             $this->load->view('parents', $data);
             $this->load->view('temp/footer');
         }
+    }
+
+    public function getClassByCabang($cabang_id)
+    {
+        $data=array(
+            's_class' => $this->common->selectClassByCabang($cabang_id)
+        );
+        $this->load->view('classAjax2',$data);
     }
     //This function is used for filtering to get students information(which class and which section if the section in that class)
     //If any one want to select class section for get that section's parents thene he can call this ajax function from view file.

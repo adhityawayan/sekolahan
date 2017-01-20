@@ -46,8 +46,9 @@ class Subjects extends MX_Controller {
         }
     }
     //This function load all subject with class
-    public function allSubject() {
-        $data['SubjectInfo'] = $this->common->getAllData('class');
+    public function allSubject($cabang_id=0) {
+        $data['SubjectInfo'] = $this->subject_model->getClassByCabang($cabang_id);
+        $data['cabang'] = $this->subject_model->allCabang();
         $this->load->view('temp/header');
         $this->load->view('subjectInformation', $data);
         $this->load->view('temp/footer');

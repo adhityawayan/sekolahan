@@ -77,11 +77,19 @@ class Students extends MX_Controller {
             }
         } else {
             //First of all this method run here and load class selecting view.
-            $data['s_class'] = $this->common->selectClass();
+            $data['cabang'] = $this->common->selectCabang();
             $this->load->view('temp/header');
             $this->load->view('slectStudent', $data);
             $this->load->view('temp/footer');
         }
+    }
+
+    public function getClassByCabang($cabang_id)
+    {
+        $data=array(
+            's_class' => $this->common->selectClassByCabang($cabang_id)
+        );
+        $this->load->view('classAjax',$data);
     }
     //This function is used for filtering to get students information
     //Whene class and section gave in the frontend, if the class have section he cane select the section and get student information in the viwe.

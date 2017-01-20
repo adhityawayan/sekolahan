@@ -83,6 +83,7 @@ class Users extends CI_Controller {
                     'documents_info' => $this->db->escape_like_str($this->input->post('submit_file_information', TRUE)),
                     'blood' => $this->db->escape_like_str($this->input->post('blood', TRUE)),
                     'starting_year' => $this->db->escape_like_str(date('Y')),
+                    'cabang_id' => $this->db->escape_like_str($this->input->post('cabang_id', TRUE))
                 );
 //                $feeTableInfo = array(
 //                    'student_id' => $this->db->escape_like_str($this->input->post('student_id', TRUE)),
@@ -227,7 +228,7 @@ class Users extends CI_Controller {
         } else {
             $query = $this->common->countryPhoneCode();
             $data['countryPhoneCode'] = $query->countryPhonCode;
-            $data['s_class'] = $this->common->getAllData('class');
+            $data['cabang'] = $this->common->selectCabang();
             //display the create user form
             $this->load->view('temp/header');
             $this->load->view('add_new_student', $data);
@@ -470,6 +471,14 @@ class Users extends CI_Controller {
         }
     }
 
+    public function getClassByCabang($cabang_id)
+    {
+        $data=array(
+            's_class' => $this->common->selectClassByCabang($cabang_id)
+        );
+        $this->load->view('classAjax',$data);
+    }
+
     //This function is returning student id and roll number by class title , runing year
     public function student_info() {
         $Class_id = $this->input->get('q', TRUE);
@@ -518,7 +527,7 @@ class Users extends CI_Controller {
         } elseif (strlen($roll) == 3) {
             $rollNumber = $roll;
         }
-        $finalStudentId = date("Y") . $classId . $rollNumber;
+        $finalStudentId = date("Y") . $Class_code . $rollNumber;
 
         echo '<div class="form-group">
                     <label class="col-md-3 control-label">Student\'s ID <span class="requiredStar"> * </span></label>

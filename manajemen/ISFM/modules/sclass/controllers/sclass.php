@@ -117,15 +117,26 @@ class Sclass extends MX_Controller
     {
         $data['classTile'] = $this->common->getAllData('class');
         $data['day'] = $this->common->getAllData('config_week_day');
+        $data['cabang'] = $this->common->selectCabang();
+//        return var_dump($data);
         $this->load->view('temp/header');
         $this->load->view('selectClassRoutine', $data);
         $this->load->view('temp/footer');
+    }
+
+    public function getClassForSectionByCabang($cabang_id)
+    {
+        $data=array(
+            'classTile' => $this->common->selectClassByCabang($cabang_id)
+        );
+        $this->load->view('classAjaxSection',$data);
     }
 
     //This function is useing for add new class routine
     public function addClassRoutin()
     {
         $class_id = $this->input->post('class', TRUE);
+        $cabang_id = $this->input->post('cabang_id', TRUE);
         $classTitle = $this->common->class_title($class_id);
         //if admin set section for any class then bellow [if(){ condition]  will execute ***(Start)***
         if ($this->input->post('section', TRUE)) {
@@ -252,7 +263,7 @@ class Sclass extends MX_Controller
                 $data['class_id'] = $class_id;
                 $data['day'] = $this->common->getAllData('config_week_day');
                 $data['subject'] = $this->common->getWhere('class_subject', 'class_id', $class_id);
-                $data['teacher'] = $this->common->getAllData('teachers_info');
+                $data['teacher'] = $this->common->selectTeacherByCabang($cabang_id);
                 $this->load->view('temp/header');
                 $this->load->view('addClassRoutin', $data);
                 $this->load->view('temp/footer');
@@ -312,6 +323,7 @@ class Sclass extends MX_Controller
     {
         $data['classTile'] = $this->common->getAllData('class');
         $data['day'] = $this->common->getAllData('config_week_day');
+        $data['cabang'] = $this->common->selectCabang();
         $this->load->view('temp/header');
         $this->load->view('selectAllRoutine', $data);
         $this->load->view('temp/footer');
@@ -322,10 +334,12 @@ class Sclass extends MX_Controller
     {
         if ($this->input->post('submit', TRUE)) {
             $class_id = $this->input->post('class', TRUE);
+            $cabang_id = $this->input->post('cabang_id', TRUE);
             $data['class_id'] = $class_id;
+            $data['cabang_id'] = $cabang_id;
             $data['day'] = $this->common->getAllData('config_week_day');
             $data['subject'] = $this->common->getWhere('class_subject', 'class_id', $class_id);
-            $data['teacher'] = $this->common->getAllData('teachers_info');
+            $data['teacher'] = $this->common->selectTeacherByCabang($cabang_id);
             $this->load->view('temp/header');
             $this->load->view('viewRoutine', $data);
             $this->load->view('temp/footer');
@@ -337,6 +351,7 @@ class Sclass extends MX_Controller
     {
         $routinClassId = $this->input->get('id', TRUE);
         $class_id = $this->input->get('class', TRUE);
+        $cabang_id = $this->input->get('cabang', TRUE);
         if ($this->input->post('update', TRUE)) {
             $day = $this->input->post('day', TRUE);
             $subject = $this->input->post('subject', TRUE);
@@ -367,7 +382,7 @@ class Sclass extends MX_Controller
             $data['day'] = $this->common->getAllData('config_week_day');
             $data['subject'] = $this->common->getWhere('class_subject', 'class_id', $class_id);
             $data['previousRoutin'] = $this->common->getWhere('class_routine', 'id', $routinClassId);
-            $data['teacher'] = $this->common->getAllData('teachers_info');
+            $data['teacher'] = $this->common->selectTeacherByCabang($cabang_id);
             $this->load->view('temp/header');
             $this->load->view('editRoutine', $data);
             $this->load->view('temp/footer');

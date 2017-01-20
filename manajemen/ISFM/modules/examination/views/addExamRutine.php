@@ -85,16 +85,17 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-3 control-label"> <?php echo lang('exa_class'); ?> <span class="requiredStar"> * </span></label>
+                                <label class="col-md-3 control-label"> Cabang <span class="requiredStar"> * </span></label>
                                 <div class="col-md-6">
-                                    <select class="form-control" name="class_id" required="">
+                                    <select onchange="viewClass(this.value)" class="form-control" name="cabang_id" required="">
                                         <option value=""><?php echo lang('select'); ?></option>
-                                        <?php foreach ($s_class as $row) { ?>
-                                            <option value="<?php echo $row['id']; ?>"><?php echo $row['class_title']; ?></option>
+                                        <?php foreach ($cabang as $row) { ?>
+                                            <option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
                             </div>
+                            <div id="ajaxClass"></div>
                             <div class="form-group">
                                 <label class="col-md-3 control-label"> <?php echo lang('exa_total_time'); ?> <span class="requiredStar"> * </span></label>
                                 <div class="col-md-6 classGroupInput">
@@ -134,6 +135,8 @@
         </div>
     </div>
     <!-- END CONTENT -->
+    <input type="hidden" id="urlclass" value="<?=site_url('examination/getClassByCabang/')?>">
+
     <!-- BEGIN PAGE LEVEL PLUGINS -->
     <script type="text/javascript" src="assets/global/plugins/jquery.input-ip-address-control-1.0.min.js"></script>
     <script type="text/javascript" src="assets/global/plugins/jquery-inputmask/jquery.inputmask.bundle.min.js"></script>
@@ -160,5 +163,20 @@
                 jQuery("#result").load("index.php/home/iceTime");
             }, 1000));
         });
+
+        function viewClass(id)
+        {
+
+            var url = $('#urlclass').val();
+            $.ajax({
+                url : url+'/'+id,
+                type : 'GET',
+                cache : false,
+                dataType: "html"
+            })
+                .success(function(data){
+                    $('#ajaxClass').html(data);
+                });
+        }
     </script>
 

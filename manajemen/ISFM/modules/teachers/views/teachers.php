@@ -37,11 +37,31 @@
         
         <div class="row">
             <div class="col-md-12">
+                <div class="portlet box green">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            Pilih Cabang
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                        <div class="form-group">
+                            <select id="selectcabang" class="form-control">
+                                <option value="0">Pilih Cabang</option>
+                                <?php foreach($cabang as $row): ?>
+                                    <option value="<?=$row['id']?>"><?=$row['name']?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php if($cabang_detail): ?>
+            <div class="col-md-12">
                 <!-- BEGIN EXAMPLE TABLE PORTLET-->
                 <div class="portlet box green">
                     <div class="portlet-title">
                         <div class="caption">
-                            <?php echo lang('tea_tl'); ?>
+                            <?php echo lang('tea_tl'); ?> Cabang <?=$cabang_detail['name']?>
                         </div>
                         <div class="tools">
                         </div>
@@ -107,11 +127,13 @@
                 </div>
                 <!-- END EXAMPLE TABLE PORTLET-->
             </div>
+            <?php endif; ?>
         </div>
         <!-- END PAGE CONTENT-->
     </div>
 </div>
 <!-- END CONTENT -->
+<input type="hidden" id="url" value="<?=site_url('teachers/allTeachers')?>">
 <!-- BEGIN PAGE LEVEL PLUGINS -->
 <script type="text/javascript" src="assets/global/plugins/select2/select2.min.js"></script>
 <script type="text/javascript" src="assets/global/plugins/datatables/media/js/jquery.dataTables.min.js"></script>
@@ -126,5 +148,9 @@
         jQuery(setInterval(function() {
             jQuery("#result").load("index.php/home/iceTime");
         }, 1000));
+        $('#selectcabang').change(function(){
+            var url = $('#url').val();
+            window.location.href = url+'/'+this.value;
+        });
     });
 </script>

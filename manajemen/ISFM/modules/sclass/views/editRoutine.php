@@ -92,7 +92,7 @@
     <?php foreach ($teacher as $row2) { ?>
                                                             <option><?php echo $row2['fullname'] ?></option>
     <?php } ?>
-                                                        <option>Sunday</option>
+<!--                                                        <option>Sunday</option>-->
                                                     </select>
                                                 </div>
                                                 <div class="col-md-2 routineFildMarginBottom">

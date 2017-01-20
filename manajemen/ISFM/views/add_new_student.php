@@ -204,15 +204,18 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-3 control-label"><?php echo lang('admi_Class'); ?> <span class="requiredStar"> * </span></label>
+                                <label class="col-md-3 control-label">Cabang <span class="requiredStar"> * </span></label>
                                 <div class="col-md-6">
-                                    <select name="class" onchange="classInfo(this.value)" class="form-control" data-validation="required" data-validation-error-msg="<?php echo lang('admi_Class_error_msg');?>">
-                                        <option value=""><?php echo lang('admi_select_class');?></option>
-<?php foreach ($s_class as $row) { ?>
-                                            <option value="<?php echo $row['id']; ?>"><?php echo $row['class_title']; ?></option>
-<?php } ?>
+                                    <select name="cabang_id" onchange="viewClass(this.value)" class="form-control" data-validation="required" data-validation-error-msg="">
+                                        <option value="0"><?php echo lang('admi_select_class');?></option>
+                                        <?php foreach ($cabang as $row) { ?>
+                                            <option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
+                                        <?php } ?>
                                     </select>
                                 </div>
+                            </div>
+                            <div id="ajaxClass">
+
                             </div>
                             <div id="txtHint">
 
@@ -240,8 +243,6 @@
                                     </div>
                                 </div>
                             </div>
-
-
                             <div class="alert alert-success">
                                 <?php echo lang('admi_submit_doc');?>
                             </div>
@@ -285,7 +286,7 @@
     </div>
 </div>
 <!-- END CONTENT -->
-
+<input type="hidden" id="urlclass" value="<?=site_url('users/getClassByCabang/')?>">
 
 <!-- BEGIN PAGE LEVEL script -->
 <script type="text/javascript" src="assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js"></script>
@@ -362,5 +363,20 @@
             jQuery("#result").load("index.php/home/iceTime");
         }, 1000));
     });
+
+    function viewClass(id)
+    {
+
+        var url = $('#urlclass').val();
+        $.ajax({
+            url : url+'/'+id,
+            type : 'GET',
+            cache : false,
+            dataType: "html"
+        })
+            .success(function(data){
+                $('#ajaxClass').html(data);
+            });
+    }
 </script>
 <!-- END PAGE LEVEL script -->
