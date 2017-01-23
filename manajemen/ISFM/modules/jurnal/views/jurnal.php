@@ -15,6 +15,8 @@
 <!-- END PAGE LEVEL STYLES -->
 
 <?php $user = $this->ion_auth->user()->row();
+$superadmin = $this->ion_auth->is_superadmin();
+$admin = $this->ion_auth->is_admin();
 $userId = $user->id; ?>
 <!-- BEGIN CONTENT -->
 <div class="page-content-wrapper">
@@ -24,7 +26,7 @@ $userId = $user->id; ?>
             <div class="col-md-12">
                 <!-- BEGIN PAGE TITLE & BREADCRUMB-->
                 <h3 class="page-title">
-                    <?php echo lang('header_tea_info'); ?>
+                    Jurnal Information
                     <small></small>
                 </h3>
                 <ul class="page-breadcrumb breadcrumb">
@@ -33,10 +35,13 @@ $userId = $user->id; ?>
                         <?php echo lang('home'); ?>
                     </li>
                     <li>
-                        Cabang
+                        Academic
                     </li>
                     <li>
-                        List Cabang
+                        Jurnal
+                    </li>
+                    <li>
+                        View Jurnal
                     </li>
                     <li id="result" class="pull-right topClock"></li>
 
@@ -48,12 +53,13 @@ $userId = $user->id; ?>
 
 
         <div class="row">
+            <?=$this->session->flashdata('pesan')?>
             <div class="col-md-12">
                 <!-- BEGIN EXAMPLE TABLE PORTLET-->
                 <div class="portlet box green">
                     <div class="portlet-title">
                         <div class="caption">
-                            List Cabang
+                            View Jurnal
                         </div>
                         <div class="tools">
                         </div>
@@ -66,49 +72,44 @@ $userId = $user->id; ?>
                                     Id
                                 </th>
                                 <th>
-                                    Name
+                                    Class
                                 </th>
                                 <th>
-                                    Address
+                                    Teacher
                                 </th>
-                                <th>
-                                    Phone
-                                </th>
-                                <th>
-                                    Non Aktif
-                                </th>
+                                <th>Time</th>
+                                <th>Materi</th>
+                                <th>Situasi</th>
+                                <th>Catatan</th>
                                 <th>
                                     Actions
                                 </th>
                             </tr>
                             </thead>
                             <tbody>
-                            <?php foreach ($cabang as $row) { ?>
+                            <?php foreach ($jurnal as $row) { ?>
                                 <tr>
                                     <td>
                                         <?php echo $row['id']; ?>
                                     </td>
                                     <td>
-                                        <?php echo $row['name']; ?>
+                                        <?php echo $row['class']; ?>
                                     </td>
                                     <td>
-                                        <?php echo $row['address']; ?>
+                                        <?php echo $row['user']; ?>
                                     </td>
                                     <td>
-                                        <?php echo $row['phone']; ?>
+                                        <?php echo $row['time']; ?>
                                     </td>
+                                    <td><?=$row['task']?></td>
+                                    <td><?=$row['situasi_kelas']?></td>
+                                    <td><?=$row['catatan']?></td>
                                     <td>
-                                        <?= $row['nonaktif']?'Ya':'Tidak' ?>
-                                    </td>
-                                    <td>
-                                        <a class="btn btn-xs green"
-                                           href="index.php/cabang/cabangDetails/<?php echo $row['id']; ?>"> <i
-                                                class="fa fa-file-text-o"></i> <?php echo lang('details'); ?> </a>
                                         <a class="btn btn-xs default"
-                                           href="index.php/cabang/editCabang/<?php echo $row['id']; ?>"> <i
+                                           href="index.php/jurnal/jurnalDetail/<?php echo $row['id']; ?>"> <i
                                                 class="fa fa-pencil-square"></i> <?php echo lang('edit'); ?> </a>
                                         <a class="btn btn-xs red"
-                                           href="index.php/cabang/cabangDelete/<?php echo $row['id']; ?>"
+                                           href="index.php/jurnal/delete/<?php echo $row['id']; ?>"
                                            onClick="javascript:return confirm('Are you sure you want to delete this cabang?')"> <i
                                                 class="fa fa-trash-o"></i> <?php echo lang('delete'); ?> </a>
                                     </td>
@@ -143,4 +144,5 @@ $userId = $user->id; ?>
             jQuery("#result").load("index.php/home/iceTime");
         }, 1000));
     });
+
 </script>

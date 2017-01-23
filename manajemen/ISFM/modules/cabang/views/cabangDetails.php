@@ -19,11 +19,9 @@
                 <ul class="page-breadcrumb breadcrumb">
                     <li>
                         <i class="fa fa-home"></i><?php echo lang('home'); ?>
-
                     </li>
                     <li>
                         Cabang
-
                     </li>
                     <li>
                         Detail Cabang

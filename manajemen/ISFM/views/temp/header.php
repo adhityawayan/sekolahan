@@ -192,6 +192,9 @@ $makeParents = "";
 $class = "";
 $addClass = "";
 $allClass = "";
+$jurnal = "";
+$addJurnal = "";
+$viewJurnal = "";
 $subject = "";
 $addSubject = "";
 $attendanse = "";
@@ -364,6 +367,16 @@ if ($cont == "home") {
         $academic = $s . ' ' . $a;
         $subject = $s . ' ' . $a;
         $set_optional = $a;
+    }
+} elseif ($cont == "jurnal") {
+    if ($view == "addJurnal") {
+        $academic = $s . ' ' . $a;
+        $jurnal = $s . ' ' . $a;
+        $addJurnal = $a;
+    } elseif ($view == "viewJurnal") {
+        $academic = $s . ' ' . $a;
+        $jurnal = $s . ' ' . $a;
+        $viewJurnal = $a;
     }
 } elseif ($cont == "teachers") {
     if ($view == "allTeachers") {
@@ -800,6 +813,24 @@ if ($cont == "home") {
                                                 </a>
                                             </li>
                                         <?php } ?>
+                                    </ul>
+                                </li>
+                                <li class="nav-item <?php echo $jurnal; ?>">
+                                    <a href="javascript:;" class="nav-link nav-toggle">
+                                        <span class="title">Jurnal</span>
+                                        <span class="arrow"></span>
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li class="nav-item <?php echo $addJurnal; ?>">
+                                            <a href="<?=site_url('jurnal/addjurnal')?>" class="nav-link ">
+                                                <span class="title">Add Jurnal</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item <?php echo $viewJurnal; ?>">
+                                            <a href="<?=site_url('jurnal/getJurnal')?>" class="nav-link ">
+                                                <span class="title">View Jurnal</span>
+                                            </a>
+                                        </li>
                                     </ul>
                                 </li>
                             <?php }
@@ -1392,6 +1423,7 @@ if ($cont == "home") {
                                 </ul>
                             </li-->
                 <?php } ?>
+                <?php if ($this->common->user_access('all_cabang', $userId)) { ?>
                 <li class="nav-item <?php echo $cabang; ?>">
                     <a href="javascript:;" class="nav-link nav-toggle">
                         <i class="icon-diamond"></i>
@@ -1409,6 +1441,7 @@ if ($cont == "home") {
                         </li>
                     </ul>
                 </li>
+                <?php } ?>
                 <li class="nav-item <?php echo $message; ?>">
                     <a href="javascript:;" class="nav-link nav-toggle">
                         <i class="icon-envelope-open"></i>

@@ -384,9 +384,11 @@ class DailyAttendance extends MX_Controller {
             }
             if ($password == $data) {
                 $today = strtotime(date('d-m-Y'));
-                if ($this->attendancemodule->todayTeacherAtt($today) == 'Taken') {
+                if ($this->attendancemodule->todayTeacherAtt($today) == 'Taken')
+                {
                     redirect('dailyAttendance/teacherAttendance', 'refresh');
-                } else {
+                } else
+                {
                     $query = $this->db->query("SELECT id,username FROM users WHERE user_status='Employee' AND NOT (leave_status='Leave' AND leave_start<='$today' AND leave_end>='$today')");
                     foreach ($query->result_array() as $row) {
                         $tData = array(
