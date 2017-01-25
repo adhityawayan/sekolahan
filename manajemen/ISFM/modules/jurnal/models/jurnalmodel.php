@@ -9,6 +9,7 @@
 class jurnalmodel extends Base_model
 {
     protected $table = 'jurnal';
+    protected $teacher_attendance = 'teacher_attendance';
 
     public function __construct()
     {
@@ -100,6 +101,37 @@ class jurnalmodel extends Base_model
     {
         $kode = $this->getkodeunik($this->table,'CUS');
         return $kode;
+    }
+
+    public function check_teacher_attedance($date,$year)
+    {
+        $user = $this->ion_auth->user()->row();
+        $user_id = $user->id;
+
+        $condition=array(
+            'employ_id' => $user_id,
+            'date' => $date,
+            'year' => $year
+        );
+        $result = $this->getData($this->teacher_attendance,$condition)->row_array();
+        if(count($result) != 0)
+        {
+            return FALSE;
+        }
+        else
+        {
+            return TRUE;
+        }
+    }
+
+    public function addTeacherAttedance($data=array())
+    {
+        $result = $this->addData($this->teacher_attendance,$data);
+        if($result)
+        {
+            return TRUE;
+        }
+        return FALSE;
     }
 
 }

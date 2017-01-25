@@ -75,16 +75,6 @@
                                         <button id="addGroup" class="btn green-meadow floatRight" type="button"><?php echo lang('clas_add_group'); ?></button>
                                     </div>
                                 </div>
-
-                                <div class="form-group">
-                                    <label class="col-md-3 control-label"> <?php echo lang('clas_section'); ?> <span class="requiredStar">  </span></label>
-                                    <div class="col-md-6">
-                                        <div id="section_div">
-                                            <input type="text" name="section" class="form-control classGroupInput" placeholder="">
-                                        </div>
-                                        <button id="addSection" class="btn green-meadow floatRight" type="button"><?php echo lang('clas_add_section'); ?></button>
-                                    </div>
-                                </div>
                                 <div class="form-group">
                                     <label class="col-md-3 control-label"><?php echo lang('clas_sec_capaci'); ?><span class="requiredStar"> * </span></label>
                                     <div class="col-md-3">

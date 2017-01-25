@@ -60,6 +60,16 @@ class HomeModel extends CI_Model {
         return $data;
     }
 
+    //This function will return all events
+    public function all_user_event() {
+        $data = array();
+        $query = $this->db->query("SELECT * FROM calender_events ORDER BY start_date DESC");
+        foreach ($query->result_array() as $row) {
+            $data[] = $row;
+        }
+        return $data;
+    }
+
     //This function will return single events
     public function single_event($eve_id) {
         $data = array();

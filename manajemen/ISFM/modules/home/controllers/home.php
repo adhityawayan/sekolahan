@@ -338,7 +338,7 @@ class Home extends MX_Controller {
                 redirect('home/calender', 'refresh');
             }
         } else {
-            $data['event'] = $this->homeModel->all_event($userId);
+            $data['event'] = $this->homeModel->all_user_event();
             $this->load->view('temp/header');
             $this->load->view('calender', $data);
             $this->load->view('temp/footer');

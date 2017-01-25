@@ -34,26 +34,12 @@ class Sclass extends MX_Controller
             if ($this->input->post('group_3', TRUE)) {
                 $group = $this->input->post('group', TRUE) . ',' . $this->input->post('group_2', TRUE) . ',' . $this->input->post('group_3', TRUE);
             }
-            $section = $this->input->post('section', TRUE);
-            if ($this->input->post('section_2', TRUE)) {
-                $section = $this->input->post('section', TRUE) . ',' . $this->input->post('section_2', TRUE);
-            }
-            if ($this->input->post('section_3', TRUE)) {
-                $section = $this->input->post('section', TRUE) . ',' . $this->input->post('section_2', TRUE) . ',' . $this->input->post('section_3', TRUE);
-            }
-            if ($this->input->post('section_4', TRUE)) {
-                $section = $this->input->post('section', TRUE) . ',' . $this->input->post('section_2', TRUE) . ',' . $this->input->post('section_3', TRUE) . ',' . $this->input->post('section_4', TRUE);
-            }
-            if ($this->input->post('section_5', TRUE)) {
-                $section = $this->input->post('section', TRUE) . ',' . $this->input->post('section_2', TRUE) . ',' . $this->input->post('section_3', TRUE) . ',' . $this->input->post('section_4', TRUE) . ',' . $this->input->post('section_5', TRUE);
-            }
             $capicity = $this->input->post('capicity', TRUE);
             $classCode = $this->input->post('class_code', TRUE);
             $cabang_id = $this->input->post('cabang_id', TRUE);
             $tableData = array(
                 'class_title' => $this->db->escape_like_str($classTitle),
                 'class_group' => $this->db->escape_like_str($group),
-                'section' => $this->db->escape_like_str($section),
                 'section_student_capacity' => $this->db->escape_like_str($capicity),
                 'classCode' => $this->db->escape_like_str($classCode),
                 'cabang_id' => $this->db->escape_like_str($cabang_id),
@@ -90,8 +76,19 @@ class Sclass extends MX_Controller
     //This function is useing for geting all class short information
     public function allClass($cabang_id=0)
     {
+        $user = $this->ion_auth->user()->row();
+        $user_id = $user->id;
         $data['classInfo'] = $this->classmodel->getClassByCabang($cabang_id);
-        $data['cabang'] = $this->classmodel->allCabang();
+        if($this->ion_auth->is_teacher() or $this->ion_auth->is_admin())
+        {
+            $teacher_id = $this->common->select_teacher($user_id);
+            $data['cabang'] = $this->common->selectCabangByTeacherId($teacher_id);
+        }
+        else
+        {
+            $data['cabang'] = $this->classmodel->allCabang();
+        }
+
         $data['detailcabang'] = $this->classmodel->getCabangById($cabang_id);
         $this->load->view('temp/header');
         $this->load->view('allClass', $data);

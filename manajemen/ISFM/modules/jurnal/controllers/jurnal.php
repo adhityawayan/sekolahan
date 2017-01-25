@@ -149,6 +149,18 @@ class jurnal extends MX_Controller
 
         if($result)
         {
+            $dataAttedance = array(
+                'year' => date('Y'),
+                'date' => strtotime(date("d-m-Y")),
+                'employ_id' => $userId,
+                'employ_title' => $username,
+                'present_or_absent' => 'Present',
+                'attend_time' => $compTime
+            );
+            if($this->jurnalmodel->check_teacher_attedance(strtotime(date("d-m-Y")),date('Y')))
+            {
+                $this->jurnalmodel->addTeacherAttedance($dataAttedance);
+            }
             alert();
             redirect('jurnal/addjurnal');
         }

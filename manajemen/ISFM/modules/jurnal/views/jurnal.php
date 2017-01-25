@@ -77,6 +77,7 @@ $userId = $user->id; ?>
                                 <th>
                                     Teacher
                                 </th>
+                                <th>Date</th>
                                 <th>Time</th>
                                 <th>Materi</th>
                                 <th>Situasi</th>
@@ -97,6 +98,9 @@ $userId = $user->id; ?>
                                     </td>
                                     <td>
                                         <?php echo $row['user']; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo date('d/m/Y',$row['date']); ?>
                                     </td>
                                     <td>
                                         <?php echo $row['time']; ?>

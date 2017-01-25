@@ -44,7 +44,9 @@ if (!defined('BASEPATH')) {
 
 //$route['default_controller'] = "fva";
 $route['default_controller'] = "auth";
-$route['api/student/(:num)/(:num)'] = 'student_api/getStudent/$1/$2';
+$route['api/student/(:num)'] = 'student_api/getStudent/$1';
+$route['api/savestudent'] = 'student_api/saveStudent';
+$route['api/attendance/(:num)/(:num)'] = 'student_api/attedance/$1/$2';
 $route['404_override'] = '';
 
 

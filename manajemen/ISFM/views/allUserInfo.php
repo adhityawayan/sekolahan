@@ -108,7 +108,7 @@
                                         </td>
                                         <td>
                                             <a class="btn btn-xs green" href="index.php/users/allUserInafoDetails?id=<?php echo $row['id']; ?>&uid=<?php echo $row['user_id']; ?>&photo=<?php echo $row['users_photo']; ?>"> <i class="fa fa-file-text-o"></i> Details </a>
-                                            <?php if ($this->ion_auth->is_admin()) { ?>
+                                            <?php if ($this->ion_auth->is_admin() || $this->ion_auth->is_superadmin()) { ?>
                                                 <a class="btn btn-xs default" href="index.php/users/edit_user?id=<?php echo $row['id']; ?>&uid=<?php echo $row['user_id']; ?>"> <i class="fa fa-pencil-square"></i> Edit </a>
                                                 <a class="btn btn-xs red" href="index.php/users/teacherDelete?id=<?php echo $row['id']; ?>&uid=<?php echo $row['user_id']; ?>""  onClick="javascript:return confirm('Are you sure you want to delete this teacher?')"> <i class="fa fa-trash-o"></i> Delete </a>
                                             <?php } ?>

@@ -73,11 +73,29 @@ class Common extends CI_Model
         return $data;
     }
 
+    public function select_teacher($user_id)
+    {
+        $query = $this->db->query("SELECT * FROM teachers_info
+WHERE user_id='$user_id'")->row();
+        return $query->id;
+    }
+
+    public function selectCabangByTeacherId($teacher_id)
+    {
+        $data = array();
+        $query = $this->db->query("SELECT cb.`id`,cb.code,cb.name FROM teacher_school ts INNER JOIN cabang cb ON ts.cabang_id=cb.id
+WHERE ts.teacher_id='$teacher_id'");
+        foreach ($query->result_array() as $row) {
+            $data[] = $row;
+        }
+        return $data;
+    }
+
     //This function show the cabang title for class selecting class
     public function selectCabangDetail($id)
     {
         $query = $this->db->query("SELECT id,code,name FROM cabang WHERE id='$id'");
-            $data = $query->row_array();
+        $data = $query->row_array();
 
         return $data;
     }
