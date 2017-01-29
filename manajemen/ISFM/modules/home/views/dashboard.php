@@ -48,6 +48,7 @@
                         </div>
                     </div>
                 </div>
+                <?php if($this->ion_auth->is_superadmin()): ?>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="dashboard-stat red-intense">
                         <div class="visual">
@@ -66,6 +67,7 @@
                         </div>
                     </div>
                 </div>
+                <?php endif; ?>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="dashboard-stat green-haze">
                         <div class="visual">

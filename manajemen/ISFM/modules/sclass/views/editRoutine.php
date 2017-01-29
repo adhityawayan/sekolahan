@@ -96,10 +96,10 @@
                                                     </select>
                                                 </div>
                                                 <div class="col-md-2 routineFildMarginBottom">
-                                                    <input type="text" class="form-control" placeholder="Start Time" value="<?php echo $routin['start_time']; ?>" name="startTime" required="">
+                                                    <input type="text" class="form-control datetimepicker3" placeholder="Start Time" value="<?php echo $routin['start_time']; ?>" name="startTime" required="">
                                                 </div>
                                                 <div class="col-md-2 routineFildMarginBottom">
-                                                    <input type="text" class="form-control" placeholder="End Time" value="<?php echo $routin['end_time']; ?>" name="endTime" required="">
+                                                    <input type="text" class="form-control datetimepicker3" placeholder="End Time" value="<?php echo $routin['end_time']; ?>" name="endTime" required="">
                                                 </div>
                                                 <div class="col-md-2 routineFildMarginBottom">
                                                     <input type="text" class="form-control" placeholder="Rome No" value="<?php echo $routin['room_number']; ?>" name="roomNumber" required="">

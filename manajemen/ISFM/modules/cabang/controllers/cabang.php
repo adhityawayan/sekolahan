@@ -124,7 +124,7 @@ class Cabang extends MX_Controller
 
     public function listTeacher($cabang_id)
     {
-        $data['teacher'] = $this->cabangmodel->allTeachers();
+        $data['teacher'] = $this->cabangmodel->allTeacherNotCabang($cabang_id);
         $data['cabang_id'] = $cabang_id;
         $this->load->view('teachers', $data);
     }

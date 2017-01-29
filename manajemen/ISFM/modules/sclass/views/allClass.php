@@ -36,6 +36,7 @@
         <!-- END PAGE HEADER-->
         <!-- BEGIN PAGE CONTENT-->
         <div class="row">
+            <?=$this->session->flashdata('pesan')?>
             <div class="col-md-12">
                 <div class="portlet box green">
                     <div class="portlet-title">

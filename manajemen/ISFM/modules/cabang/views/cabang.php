@@ -75,7 +75,7 @@ $userId = $user->id; ?>
                                     Phone
                                 </th>
                                 <th>
-                                    Non Aktif
+                                    Status
                                 </th>
                                 <th>
                                     Actions
@@ -98,7 +98,7 @@ $userId = $user->id; ?>
                                         <?php echo $row['phone']; ?>
                                     </td>
                                     <td>
-                                        <?= $row['nonaktif']?'Ya':'Tidak' ?>
+                                        <?= $row['nonaktif']?'Tidak Aktif':'Aktif' ?>
                                     </td>
                                     <td>
                                         <a class="btn btn-xs green"

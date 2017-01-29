@@ -2,45 +2,69 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Classmodel extends Base_model {
+class Classmodel extends Base_model
+{
     /**
      * This model is using into the sclass controller
      * Load : $this->load->model('classmodel');
      */
-    function __construct() {
+    function __construct()
+    {
         parent::__construct();
         $this->load->dbforge();
     }
 
     //This function sent an array to sclass controller's "addClassRoutin" function.
-    public function classSubject($a) {
+    public function classSubject($a)
+    {
         $data = array();
         $query = $this->db->get_where('class', array('class_title' => $a));
         foreach ($query->result_array() as $row) {
             $data = $row;
-        }return $data;
+        }
+        return $data;
     }
 
     //This functionn is for get data from database with two condition.
-    public function getWhere($a, $b, $c, $d, $e) {
+    public function getWhere($a, $b, $c, $d, $e)
+    {
         $data = array();
         $query = $this->db->get_where($a, array($b => $c, $d => $e));
         foreach ($query->result_array() as $row) {
             $data[] = $row;
-        }return $data;
+        }
+        return $data;
+    }
+
+    //getClassRoutine
+    //This function show the cabang title for class selecting class
+    public function viewRoutine($day_title,$class_id)
+    {
+        $data = array();
+        $query = $this->db->query("SELECT * FROM class_routine
+WHERE day_title='$day_title'
+AND class_id='$class_id'
+ORDER BY start_time ASC");
+        foreach ($query->result_array() as $row) {
+            $data[] = $row;
+        }
+        return $data;
     }
 
     //This function return total student amount in a class
-    public function totalClassStudent($classTitle) {
+    public function totalClassStudent($classTitle)
+    {
         $data = array();
         $query = $this->db->get_where('class_students', array('class_title' => $classTitle));
         foreach ($query->result_array() as $row) {
             $data[] = $row;
-        }return count($data);
+        }
+        return count($data);
     }
 
     //This function return section amount in a class
-    public function totalClassSection($c_id) {
+    public function totalClassSection($c_id)
+    {
         $data = array();
         $query = $this->db->get_where('class', array('id' => $c_id));
         foreach ($query->result_array() as $row) {
@@ -54,7 +78,8 @@ class Classmodel extends Base_model {
         }
     }
 
-    public function classCodeCheck($a) {
+    public function classCodeCheck($a)
+    {
         $data = array();
         $query = $this->db->get('class');
         foreach ($query->result_array() as $row) {
@@ -68,7 +93,8 @@ class Classmodel extends Base_model {
     }
 
     //This function will return true or false final exam and result compleate or not
-    public function chFiExRe($class_id) {
+    public function chFiExRe($class_id)
+    {
         $query = $this->db->query("SELECT publish,status FROM add_exam WHERE class_id='$class_id' AND final='Final'");
         foreach ($query->result_array() as $row) {
             $publich = $row['publish'];
@@ -86,7 +112,8 @@ class Classmodel extends Base_model {
     }
 
     //This function will return id final exam and result compleate or not
-    public function chFiExReId($class_id) {
+    public function chFiExReId($class_id)
+    {
         $query = $this->db->query("SELECT publish,status,id FROM add_exam WHERE class_id='$class_id' AND final='Final'");
         foreach ($query->result_array() as $row) {
             $publich = $row['publish'];
@@ -105,7 +132,8 @@ class Classmodel extends Base_model {
     }
 
     //This function will make marite list 
-    public function meritList($examId) {
+    public function meritList($examId)
+    {
         $data = array();
         $query = $this->db->query("SELECT student_id,total_mark FROM final_result WHERE exam_id='$examId'");
         foreach ($query->result_array() as $row) {
@@ -125,7 +153,8 @@ class Classmodel extends Base_model {
     }
 
     //This function will return class section student capacity
-    public function sectionCap($classId) {
+    public function sectionCap($classId)
+    {
         $data = array();
         $query = $this->db->query("SELECT section_student_capacity FROM class WHERE id='$classId'");
         foreach ($query->result_array() as $row) {
@@ -134,19 +163,19 @@ class Classmodel extends Base_model {
     }
 
     //This function will return student new class section by his studentid
-    public function sectionSelect($studentId, $i) {
+    public function sectionSelect($studentId, $i)
+    {
         $data = array();
         $query = $this->db->query("SELECT class_title,sex FROM class WHERE student_id='$studentId'");
         foreach ($query->result_array() as $row) {
-            
+
         }
     }
 
     public function allCabang()
     {
-        $result = $this->getData('cabang',array('nonaktif'=>0))->result_array();
-        if($result)
-        {
+        $result = $this->getData('cabang', array('nonaktif' => 0))->result_array();
+        if ($result) {
             return $result;
         }
         return [];
@@ -154,17 +183,16 @@ class Classmodel extends Base_model {
 
     public function getkode($id)
     {
-        $result = $this->getData('cabang',array('id'=>$id))->row_array();
+        $result = $this->getData('cabang', array('id' => $id))->row_array();
         $code = $result['code'];
-        $kode = $this->getkodeunik('class',$code,3);
+        $kode = $this->getkodeunik('class', $code, 3);
         return $kode;
     }
 
     public function getClassByCabang($cabang_id)
     {
-        $result = $this->getData('class',array('cabang_id'=>$cabang_id))->result_array();
-        if($result)
-        {
+        $result = $this->getData('class', array('cabang_id' => $cabang_id))->result_array();
+        if ($result) {
             return $result;
         }
         return [];
@@ -172,10 +200,9 @@ class Classmodel extends Base_model {
 
     public function getCabangById($id)
     {
-        $result = $this->getData('cabang',array('id'=>$id))->row_array();
+        $result = $this->getData('cabang', array('id' => $id))->row_array();
 
-        if($result)
-        {
+        if ($result) {
             return $result;
         }
         return [];

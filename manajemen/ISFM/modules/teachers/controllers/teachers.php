@@ -121,6 +121,7 @@ class Teachers extends MX_Controller {
         $teacherId = $this->input->get('id');
         $userId = $this->input->get('uid');
         $this->db->delete('teachers_info', array('id' => $teacherId));
+        $this->db->delete('teachers_school', array('id' => $teacherId));
         $this->db->delete('users', array('id' => $userId));
         redirect('teachers/allTeachers', 'refresh');
     }

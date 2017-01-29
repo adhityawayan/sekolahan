@@ -40,9 +40,10 @@
                         </div>
                     </div>
                     <div class="portlet-body form">
+                        <?=$this->session->flashdata('pesan')?>
                         <?php
                         if(!empty($message)){
-                            echo '<br><div class="col-md-12"><div class="alert alert-danger">
+                            echo '<br><div class="col-md-12"><div class="alert alert-success">
                                     <strong>Message </strong> '.$message.'
                             </div></div>';
                         }
@@ -67,29 +68,6 @@
                                 <div  id="ajaxResult">
                                 </div>
                                 <div id="ajaxList">
-
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-md-3 control-label">Promotion Next Class <span class="requiredStar"> * </span></label>
-                                    <div class="col-md-6">
-                                        <select class="form-control" name="nextClass" data-validation="required" data-validation-error-msg="This field is required field.">
-                                            <option value="0">Select one</option>
-                                            <?php foreach ($classTile as $row) { ?>
-                                                <option value="<?php echo $row['id']; ?>"><?php echo $row['class_title']; ?></option>
-                                            <?php } ?>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-md-3 control-label">Select Next Year <span class="requiredStar"> * </span></label>
-                                    <div class="col-md-6">
-                                        <select class="form-control" name="nextYear" data-validation="required" data-validation-error-msg="This field is required field.">
-                                            <option value="">Select Year</option>
-                                            <?php for($y=date('Y'); $y<=2050; $y++) { ?>
-                                                <option value="<?php echo $y; ?>"><?php echo $y; ?></option>
-                                            <?php } ?>
-                                        </select>
-                                    </div>
                                 </div>
                             </div>
                             <div class="form-actions fluid">

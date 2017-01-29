@@ -21,3 +21,14 @@
         </select>
     </div>
 </div>
+<div class="form-group">
+    <label class="col-md-3 control-label">Promotion Next Class <span class="requiredStar"> * </span></label>
+    <div class="col-md-6">
+        <select class="form-control" name="nextClass" data-validation="required" data-validation-error-msg="This field is required field.">
+            <option value="0">Select one</option>
+            <?php foreach ($classTile as $row) { ?>
+                <option value="<?php echo $row['id']; ?>"><?php echo $row['class_title']; ?></option>
+            <?php } ?>
+        </select>
+    </div>
+</div>

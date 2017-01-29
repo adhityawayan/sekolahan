@@ -116,7 +116,7 @@ $userId = $user->id;
                                                href="index.php/parents/editParentsInfo?painid=<?php echo $row['id']; ?>&puid=<?php echo $userId; ?>">
                                                 <i class="fa fa-pencil-square"></i> <?php echo lang('edit'); ?> </a>
                                             <a class="btn btn-xs red"
-                                               href="index.php/parents/deleteParents?painid=<?php echo $row['id']; ?>&painid=<?php echo $userId; ?>"
+                                               href="index.php/parents/deleteParents?painid=<?php echo $row['id']; ?>&puid=<?php echo $userId; ?>"
                                                onClick="javascript:return confirm('<?php echo lang('par_aysywtdtgp'); ?>')">
                                                 <i class="fa fa-trash-o"></i> <?php echo lang('delete'); ?> </a>
                                         </td>

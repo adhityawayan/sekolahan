@@ -78,7 +78,8 @@
                                                 </div>
                                                 <?php
                                                 //$query = array();
-                                                $query = $this->classmodel->getWhere('class_routine', 'day_title', $dayTitle, 'class_id', $class_id);
+//                                                $query = $this->classmodel->getWhere('class_routine', 'day_title', $dayTitle, 'class_id', $class_id);
+                                                $query = $this->classmodel->viewRoutine($dayTitle,$class_id);
                                                 foreach ($query as $row4) {
                                                     ?>
                                                     <div class="">

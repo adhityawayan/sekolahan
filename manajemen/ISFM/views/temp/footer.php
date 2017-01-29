@@ -23,7 +23,16 @@
 <script src="assets/global/scripts/metronic.js" type="text/javascript"></script>
 <script src="assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
 <script src="assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
+<script type="text/javascript" src="<?=base_url('bower_components/moment/min/moment.min.js')?>"></script>
+<script type="text/javascript" src="<?=base_url('bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js')?>"></script>
 <!-- Start Common Script For All System -->
+<script type="text/javascript">
+    $(function () {
+        $('.datetimepicker3').datetimepicker({
+            format: 'HH:mm',
+        });
+    });
+</script>
 <script>
     jQuery(document).ready(function() {
         Metronic.init(); // init metronic core components

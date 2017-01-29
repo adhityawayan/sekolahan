@@ -34,6 +34,8 @@
     <script src="assets/global/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
     <script src="assets/global/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
 
+    <link rel="stylesheet" href="<?=base_url('bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css')?>" />
+
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
@@ -195,6 +197,7 @@ $allClass = "";
 $jurnal = "";
 $addJurnal = "";
 $viewJurnal = "";
+$approvalJurnal = "";
 $subject = "";
 $addSubject = "";
 $attendanse = "";
@@ -377,6 +380,10 @@ if ($cont == "home") {
         $academic = $s . ' ' . $a;
         $jurnal = $s . ' ' . $a;
         $viewJurnal = $a;
+    } elseif ($view == "approvalJurnal") {
+        $academic = $s . ' ' . $a;
+        $jurnal = $s . ' ' . $a;
+        $approvalJurnal = $a;
     }
 } elseif ($cont == "teachers") {
     if ($view == "allTeachers") {
@@ -829,6 +836,11 @@ if ($cont == "home") {
                                         <li class="nav-item <?php echo $viewJurnal; ?>">
                                             <a href="<?=site_url('jurnal/getJurnal')?>" class="nav-link ">
                                                 <span class="title">View Jurnal</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item <?php echo $approvalJurnal; ?>">
+                                            <a href="<?=site_url('jurnal/approvalJurnal')?>" class="nav-link ">
+                                                <span class="title">Approval Jurnal</span>
                                             </a>
                                         </li>
                                     </ul>

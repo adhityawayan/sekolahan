@@ -68,12 +68,12 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                        <label class="col-md-3 control-label"> Non-Aktif </label>
+                                        <label class="col-md-3 control-label"> Status </label>
                                         <div class="radio-list">
                                                 <label class="radio-inline">
-                                                <input type="radio" name="nonaktif" id="optionsRadios4" value="1"> Yes </label>
+                                                <input type="radio" name="nonaktif" id="optionsRadios4" value="1"> Tidak Aktif </label>
                                                 <label class="radio-inline">
-                                                <input type="radio" name="nonaktif" id="optionsRadios5" value="0" checked> No </label>
+                                                <input type="radio" name="nonaktif" id="optionsRadios5" value="0" checked> Aktif </label>
                                         </div>
                                 </div>
                             </div>

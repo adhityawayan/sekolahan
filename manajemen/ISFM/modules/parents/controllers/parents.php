@@ -117,8 +117,8 @@ class Parents extends CI_Controller {
     }
     //This function is using for delete any parents profile.
     public function deleteParents() {
-        $userID = $this->input->get('UcsHeRnHdtfgrfGshId');
-        $parentsInfoId = $this->input->get('pdfdsfAjhgdfrRdfeNdsfdtSjdcfgdInfOdfgdfhIdnfd');
+        $userID = $this->input->get('puid');
+        $parentsInfoId = $this->input->get('painid');
 
         $this->db->delete('users', array('id' => $userID));
         $this->db->delete('parents_info', array('id' => $parentsInfoId));

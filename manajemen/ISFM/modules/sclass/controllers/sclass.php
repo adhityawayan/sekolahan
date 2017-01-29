@@ -46,14 +46,8 @@ class Sclass extends MX_Controller
             );
 //            return var_dump($tableData);
             if ($this->db->insert('class', $tableData)) {
-                $data['success'] = '<div class="alert alert-info alert-dismissable admisionSucceassMessageFont">
-                                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button"></button>
-                                            <strong>' . lang('success') . '</strong>' . lang('clasc_1') . ' "' . $classTitle . '" ' . lang('clasc_2') . '
-                                    </div>';
-                $data['classInfo'] = $this->common->getAllData('class');
-                $this->load->view('temp/header');
-                $this->load->view('allClass', $data);
-                $this->load->view('temp/footer');
+                alert();
+               redirect('sclass/allClass');
             }
         } else {
             $data['teacher'] = $this->common->getAllData('teachers_info');
@@ -76,9 +70,9 @@ class Sclass extends MX_Controller
     //This function is useing for geting all class short information
     public function allClass($cabang_id=0)
     {
+        $data['classInfo'] = $this->classmodel->getClassByCabang($cabang_id);
         $user = $this->ion_auth->user()->row();
         $user_id = $user->id;
-        $data['classInfo'] = $this->classmodel->getClassByCabang($cabang_id);
         if($this->ion_auth->is_teacher() or $this->ion_auth->is_admin())
         {
             $teacher_id = $this->common->select_teacher($user_id);
@@ -542,7 +536,7 @@ WHERE cs.class_id='$idClass'");
                             $this->db->where('student_id', $studentId);
                             $this->db->update('parents_info', $arrayParentsInfo);
                             $arrrayStudInfo = array(
-                                'year' => $this->db->escape_like_str($this->input->post('nextYear', TRUE)),
+                                'year' => date('Y'),
 //                                'roll_number' => $this->db->escape_like_str($newRoll),
                                 'class_id' => $this->db->escape_like_str($nextClass_id),
                             );
@@ -555,6 +549,7 @@ WHERE cs.class_id='$idClass'");
                 }
                 $data['message'] = lang('clasc_12');
                 $data['classTile'] = $this->common->getAllData('class');
+                $data['cabang'] = $this->common->selectCabang();
                 $this->load->view('temp/header');
                 $this->load->view('promotion', $data);
                 $this->load->view('temp/footer');
@@ -567,7 +562,7 @@ WHERE cs.class_id='$idClass'");
             }
         } else {
             $data['classTile'] = $this->common->getAllData('class');
-            $data['cabang'] = $this->common->getAllData('cabang');
+            $data['cabang'] = $this->common->selectCabang();
             $this->load->view('temp/header');
             $this->load->view('promotion', $data);
             $this->load->view('temp/footer');
