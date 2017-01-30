@@ -63,6 +63,41 @@ $route['api/getcabang'] = 'student_api/getCabang';
 /*get class by cabang*/
 $route['api/class/(:num)'] = 'student_api/getClassByCabang/$1';
 
+/*show jurnal berdasarkan user id*/
+$route['api/jurnal/(:num)'] = 'jurnal_api/get_class/$1';
+
+/*Show detail berdasarkan ID*/
+$route['api/jurnal/edit/(:num)'] = 'jurnal_api/getById/$1';
+
+/*Save Jurnal
+$data = array(
+            'class_id' => $posts['class_id'],
+            'task' => $posts['task'],
+            'situasi_kelas' => $posts['situasi_kelas'],
+            'catatan' => $posts['catatan'],
+            'time' => $compTime,
+            'date' => strtotime(date('d-m-Y')),
+            'user' => $posts['user'],
+            'user_id' => $posts['user_id'],
+            'year' => date('Y'),
+            'approval' => '1',
+        );
+*/
+$route['api/savejurnal'] = 'jurnal_api/saveJurnal';
+
+/*Update jurnal berdasarkan ID
+$data = array(
+            'task' => $posts['task'],
+            'situasi_kelas' => $posts['situasi_kelas'],
+            'catatan' => $posts['catatan'],
+        );
+*/
+$route['api/updatejurnal/(:num)'] = 'jurnal_api/updateJurnal/$1';
+
+/*delete jurnal*/
+$route['api/deletejurnal/(:num)'] = 'jurnal_api/deleteJurnal/$1';
+
+
 $route['404_override'] = '';
 
 
