@@ -51,9 +51,22 @@ class HomeModel extends CI_Model {
     }
 
     //This function will show daily attendance percentise
-    public function atten_chart_cabang($cabang_id) {
+    public function atten_chart_cabang($cabang_id,$start_date='',$end_date='') {
         $data = array();
-        $query = $this->db->query("SELECT class_title,attendance_percentices_daily FROM class WHERE cabang_id='$cabang_id'");
+        $rowclass =array();
+        $class = $this->common->selectClassByCabang($cabang_id);
+        foreach($class as $cl)
+        {
+            $rowclass[] = $cl['class_title'];
+        }
+
+        $this->db->select('class_title,COUNT(id) as attendance_percentices_daily');
+        $this->db->where_in('class_title', $rowclass);
+        $this->db->where('date >=', strtotime($start_date));
+        $this->db->where('date <=', strtotime($end_date));
+        $this->db->group_by('class_title');
+        $this->db->from('daily_attendance');
+        $query = $this->db->get();
         foreach ($query->result_array() as $row) {
             $data[] = $row;
         }

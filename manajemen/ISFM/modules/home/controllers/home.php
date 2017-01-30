@@ -61,25 +61,30 @@ class Home extends MX_Controller
         $this->load->view('temp/footer');
     }
 
-    public function dashboard_cabang($cabang_id)
+    public function dashboard_cabang()
     {
+        $cabang_id = $this->input->get('cabang_id');
+        $start = $this->input->get('start_date');
+        $end = $this->input->get('end_date');
         $user = $this->ion_auth->user()->row();
         $id = $user->id;
         $data['massage'] = $this->common->getWhere('massage', 'receiver_id', $id);
         $data['totalStudent'] = $this->common->totalStudentByCabang($cabang_id);
         $data['totalTeacher'] = count($this->common->selectTeacherByCabang($cabang_id));
         $data['totalParents'] = $this->common->totalParentsByCabang($cabang_id);
-        $data['totalAttendStudent'] = $this->common->totalAttendStudentByCabang($cabang_id);
+        $data['totalAttendStudent'] = $this->common->totalAttendStudentByCabang($cabang_id,$start,$end);
         $data['teacherAttendance'] = $this->common->teacherAttendance();
         $data['presentEmploy'] = $this->homeModel->presentEmploy();
         $data['absentEmploy'] = $this->homeModel->absentEmploy();
         $data['leaveEmploy'] = $this->homeModel->leaveEmploy();
         $data['event'] = $this->homeModel->all_event($id);
         $data['notice'] = $this->common->getAllData('notice_board');
-        $data['classAttendance'] = $this->homeModel->atten_chart_cabang($cabang_id);
+        $data['classAttendance'] = $this->homeModel->atten_chart_cabang($cabang_id,$start,$end);
         $data['classInfo'] = $this->common->classInfoCabang($cabang_id);
         $data['cabang'] = $this->common->selectCabang();
         $data['cabang_id'] = $cabang_id;
+        $data['start_date'] = $start;
+        $data['end_date'] = $end;
         if ($this->ion_auth->is_student()) {
             //Whice notice is created for student these notice can see both students and parents.
             $query = $this->common->getWhere('student_info', 'user_id', $id);

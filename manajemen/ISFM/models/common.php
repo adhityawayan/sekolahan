@@ -351,7 +351,7 @@ WHERE ts.cabang_id='$cabang_id'");
         return count($data);
     }
 
-    public function totalAttendStudentByCabang($cabang_id)
+    public function totalAttendStudentByCabang($cabang_id,$start='',$end='')
     {
         $day = date("m/d/y");
         $date = strtotime($day);
@@ -361,7 +361,6 @@ WHERE ts.cabang_id='$cabang_id'");
         {
             $rowclass[] = $cl['id'];
         }
-
         $this->db->where_in('class_id', $rowclass);
         $this->db->from('student_info');
         $datasiswa = $this->db->get()->result_array();
@@ -372,7 +371,15 @@ WHERE ts.cabang_id='$cabang_id'");
         }
 
         $this->db->where_in('student_id', $rowsiswa);
-        $this->db->where('date', $date);
+        if($start!='' and $end!='')
+        {
+            $this->db->where('date >=', strtotime($start));
+            $this->db->where('date <=', strtotime($end));
+        }
+        else
+        {
+            $this->db->where('date', $date);
+        }
         $this->db->where('present_or_absent', 'P');
         $this->db->from('daily_attendance');
         $query = $this->db->get();
