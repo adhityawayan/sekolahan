@@ -50,6 +50,16 @@ class HomeModel extends CI_Model {
         return $data;
     }
 
+    //This function will show daily attendance percentise
+    public function atten_chart_cabang($cabang_id) {
+        $data = array();
+        $query = $this->db->query("SELECT class_title,attendance_percentices_daily FROM class WHERE cabang_id='$cabang_id'");
+        foreach ($query->result_array() as $row) {
+            $data[] = $row;
+        }
+        return $data;
+    }
+
     //This function will return all events
     public function all_event($userId) {
         $data = array();

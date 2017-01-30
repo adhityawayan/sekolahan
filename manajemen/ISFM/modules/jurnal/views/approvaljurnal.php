@@ -82,20 +82,19 @@ $userId = $user->id; ?>
                                 <th>Materi</th>
                                 <th>Situasi</th>
                                 <th>Catatan</th>
-                                <th>Approval</th>
                                 <th>
                                     Actions
                                 </th>
                             </tr>
                             </thead>
                             <tbody>
-                            <?php foreach ($jurnal as $row) { ?>
+                            <?php if(count($jurnal)): foreach ($jurnal as $row) { ?>
                                 <tr>
                                     <td>
                                         <?php echo $row['id']; ?>
                                     </td>
                                     <td>
-                                        <?php echo $row['class_id']; ?>
+                                        <?php echo $row['class_title']; ?>
                                     </td>
                                     <td>
                                         <?php echo $row['user']; ?>
@@ -109,18 +108,14 @@ $userId = $user->id; ?>
                                     <td><?=$row['task']?></td>
                                     <td><?=$row['situasi_kelas']?></td>
                                     <td><?=$row['catatan']?></td>
-                                    <td><?=$row['approval']?'Setuju':'Tidak'?></td>
                                     <td>
-                                        <a class="btn btn-xs default"
-                                           href="index.php/jurnal/jurnalDetail/<?php echo $row['id']; ?>"> <i
-                                                class="fa fa-pencil-square"></i> <?php echo lang('edit'); ?> </a>
-                                        <a class="btn btn-xs red"
-                                           href="index.php/jurnal/delete/<?php echo $row['id']; ?>"
-                                           onClick="javascript:return confirm('Are you sure you want to delete this cabang?')"> <i
-                                                class="fa fa-trash-o"></i> <?php echo lang('delete'); ?> </a>
+                                        <a class="btn btn-xs yellow"
+                                           href="<?=site_url('jurnal/do_approval/'.$row['id'])?>"
+                                           onClick="javascript:return confirm('Are you sure you want to change this data?')"> <i
+                                                class="fa fa-check"></i> <?php echo 'Approve'; ?> </a>
                                     </td>
                                 </tr>
-                            <?php } ?>
+                            <?php } endif; ?>
                             </tbody>
                         </table>
                     </div>

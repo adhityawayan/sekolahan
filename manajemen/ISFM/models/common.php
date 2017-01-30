@@ -166,6 +166,62 @@ WHERE ts.cabang_id='$cabang_id'");
         return count($data);
     }
 
+    public function totalStudentByCabang($cabang_id)
+    {
+        $condition['cabang_id'] = $cabang_id;
+        $class = array();
+        $data = $this->base_model->getData('class',$condition)->result_array();
+        foreach($data as $row)
+        {
+            $class[] = $row['id'];
+        }
+
+        $this->db->where_in('class_id', $class);
+        $this->db->from('student_info');
+        $query = $this->db->get();
+
+        foreach ($query->result_array() as $row) {
+            $data[] = $row;
+        }
+        return count($data);
+    }
+
+    public function getApprovalJurnal()
+    {
+        $user = $this->ion_auth->user()->row();
+        $user_id = $user->id;
+        $data=array();
+        if($this->ion_auth->is_teacher() or $this->ion_auth->is_admin())
+        {
+            $teacher_id = $this->select_teacher($user_id);
+            $rowclass = array();
+            $cabang = $this->selectCabangByTeacherId($teacher_id);
+            foreach($cabang as $cb)
+            {
+                $class = $this->selectClassByCabang($cb['id']);
+                foreach($class as $cl)
+                {
+                    $rowclass[] = $cl['id'];
+                }
+            }
+
+
+            $this->db->select('jurnal.*,class.class_title');
+            $this->db->where_in('jurnal.class_id', $rowclass);
+            $this->db->where('jurnal.approval', '0');
+            $this->db->from('jurnal');
+            $this->db->join('class', 'jurnal.class_id = class.id');
+            $query = $this->db->get();
+        }
+
+        foreach ( $query->result_array() as $row)
+        {
+            $data[]=$row;
+        }
+
+        return $data;
+    }
+
     //This function will cheack data table empty or not
     public function emptyCheack($a)
     {
@@ -229,6 +285,26 @@ WHERE ts.cabang_id='$cabang_id'");
         return count($data);
     }
 
+    public function totalParentsByCabang($cabang_id)
+    {
+        $class = $this->selectClassByCabang($cabang_id);
+        foreach($class as $cl)
+        {
+            $rowclass[] = $cl['id'];
+        }
+
+        $this->db->where_in('class_id', $rowclass);
+        $this->db->from('parents_info');
+        $query = $this->db->get();
+
+        $data = array();
+
+        foreach ($query->result_array() as $row) {
+            $data[] = $row;
+        }
+        return count($data);
+    }
+
     //Today total Attend student will returan this function
     public function totalAttendStudent()
     {
@@ -275,6 +351,38 @@ WHERE ts.cabang_id='$cabang_id'");
         return count($data);
     }
 
+    public function totalAttendStudentByCabang($cabang_id)
+    {
+        $day = date("m/d/y");
+        $date = strtotime($day);
+        $data = array();
+        $class = $this->selectClassByCabang($cabang_id);
+        foreach($class as $cl)
+        {
+            $rowclass[] = $cl['id'];
+        }
+
+        $this->db->where_in('class_id', $rowclass);
+        $this->db->from('student_info');
+        $datasiswa = $this->db->get()->result_array();
+        $rowsiswa = array();
+        foreach($datasiswa as $ds)
+        {
+            $rowsiswa[] = $ds['student_id'];
+        }
+
+        $this->db->where_in('student_id', $rowsiswa);
+        $this->db->where('date', $date);
+        $this->db->where('present_or_absent', 'P');
+        $this->db->from('daily_attendance');
+        $query = $this->db->get();
+
+        foreach ($query->result_array() as $row) {
+            $data[] = $row;
+        }
+        return count($data);
+    }
+
     //This function will return time and date as a string
     public function iceTime()
     {
@@ -296,6 +404,14 @@ WHERE ts.cabang_id='$cabang_id'");
         $data = array();
         $query = $this->db->query("SELECT class_title FROM class WHERE id=$class_id")->row();
         return $query->class_title;
+    }
+
+    //This function will return only class title by class id from class table.
+    public function userid_title($user_title)
+    {
+        $data = array();
+        $query = $this->db->query("SELECT * FROM users WHERE username='$user_title'")->row();
+        return $query->id;
     }
 
     //This function will show student title by student id
@@ -323,6 +439,38 @@ WHERE ts.cabang_id='$cabang_id'");
     {
         $data = array();
         $query = $this->db->query("SELECT class_title,student_amount,attendance_percentices_daily,attend_percentise_yearly FROM class");
+
+        $user = $this->ion_auth->user()->row();
+        $user_id = $user->id;
+        if($this->ion_auth->is_teacher() or $this->ion_auth->is_admin())
+        {
+            $teacher_id = $this->select_teacher($user_id);
+            $rowclass = array();
+            $cabang = $this->selectCabangByTeacherId($teacher_id);
+            foreach($cabang as $cb)
+            {
+                $class = $this->selectClassByCabang($cb['id']);
+                foreach($class as $cl)
+                {
+                    $rowclass[] = $cl['id'];
+                }
+            }
+
+            $this->db->where_in('id', $rowclass);
+            $this->db->from('class');
+            $query = $this->db->get();
+        }
+
+        foreach ($query->result_array() as $row) {
+            $data[] = $row;
+        }
+        return $data;
+    }
+
+    public function classInfoCabang($cabang_id)
+    {
+        $data = array();
+        $query = $this->db->query("SELECT class_title,student_amount,attendance_percentices_daily,attend_percentise_yearly FROM class WHERE cabang_id='$cabang_id'");
 
         $user = $this->ion_auth->user()->row();
         $user_id = $user->id;
@@ -513,7 +661,6 @@ WHERE ts.cabang_id='$cabang_id'");
         }
         return $data;
     }
-
     //This function will return class exam term
     public function examTerm($a)
     {

@@ -44,9 +44,25 @@ if (!defined('BASEPATH')) {
 
 //$route['default_controller'] = "fva";
 $route['default_controller'] = "auth";
+/*Get Student for by class ID*/
 $route['api/student/(:num)'] = 'student_api/getStudent/$1';
+
+/*Save student*/
 $route['api/savestudent'] = 'student_api/saveStudent';
-$route['api/attendance/(:num)/(:num)'] = 'student_api/attedance/$1/$2';
+
+/*attendance*/
+/* {
+"date" : "23-01-2017",
+"class_title" : "Class New 3"
+} */
+$route['api/attendance'] = 'student_api/attendance';
+
+/*get Cabang*/
+$route['api/getcabang'] = 'student_api/getCabang';
+
+/*get class by cabang*/
+$route['api/class/(:num)'] = 'student_api/getClassByCabang/$1';
+
 $route['404_override'] = '';
 
 

@@ -3,17 +3,19 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Home extends MX_Controller {
+class Home extends MX_Controller
+{
 
     /**
      * Index Page for this controller.
      *
      * Maps to the following URL
-     * 		http://example.com/index.php/home
-     * 	- or -  
-     * 		http://example.com/index.php/home/index
+     *        http://example.com/index.php/home
+     *    - or -
+     *        http://example.com/index.php/home/index
      */
-    function __construct() {
+    function __construct()
+    {
         parent::__construct();
         $this->load->model('common');
         $this->load->model('homeModel');
@@ -25,7 +27,8 @@ class Home extends MX_Controller {
     }
 
     //This function will show the users dashboard
-    public function index() {
+    public function index()
+    {
         $user = $this->ion_auth->user()->row();
         $id = $user->id;
         $data['massage'] = $this->common->getWhere('massage', 'receiver_id', $id);
@@ -38,10 +41,11 @@ class Home extends MX_Controller {
         $data['absentEmploy'] = $this->homeModel->absentEmploy();
         $data['leaveEmploy'] = $this->homeModel->leaveEmploy();
         $data['event'] = $this->homeModel->all_event($id);
-            $data['notice'] = $this->common->getAllData('notice_board');
-            $data['classAttendance'] = $this->homeModel->atten_chart();
-            $data['classInfo'] = $this->common->classInfo();
-            if ($this->ion_auth->is_student()) {
+        $data['notice'] = $this->common->getAllData('notice_board');
+        $data['classAttendance'] = $this->homeModel->atten_chart();
+        $data['classInfo'] = $this->common->classInfo();
+        $data['cabang'] = $this->common->selectCabang();
+        if ($this->ion_auth->is_student()) {
             //Whice notice is created for student these notice can see both students and parents.
             $query = $this->common->getWhere('student_info', 'user_id', $id);
             foreach ($query as $row) {
@@ -56,6 +60,42 @@ class Home extends MX_Controller {
         $this->load->view('dashboard', $data);
         $this->load->view('temp/footer');
     }
+
+    public function dashboard_cabang($cabang_id)
+    {
+        $user = $this->ion_auth->user()->row();
+        $id = $user->id;
+        $data['massage'] = $this->common->getWhere('massage', 'receiver_id', $id);
+        $data['totalStudent'] = $this->common->totalStudentByCabang($cabang_id);
+        $data['totalTeacher'] = count($this->common->selectTeacherByCabang($cabang_id));
+        $data['totalParents'] = $this->common->totalParentsByCabang($cabang_id);
+        $data['totalAttendStudent'] = $this->common->totalAttendStudentByCabang($cabang_id);
+        $data['teacherAttendance'] = $this->common->teacherAttendance();
+        $data['presentEmploy'] = $this->homeModel->presentEmploy();
+        $data['absentEmploy'] = $this->homeModel->absentEmploy();
+        $data['leaveEmploy'] = $this->homeModel->leaveEmploy();
+        $data['event'] = $this->homeModel->all_event($id);
+        $data['notice'] = $this->common->getAllData('notice_board');
+        $data['classAttendance'] = $this->homeModel->atten_chart_cabang($cabang_id);
+        $data['classInfo'] = $this->common->classInfoCabang($cabang_id);
+        $data['cabang'] = $this->common->selectCabang();
+        $data['cabang_id'] = $cabang_id;
+        if ($this->ion_auth->is_student()) {
+            //Whice notice is created for student these notice can see both students and parents.
+            $query = $this->common->getWhere('student_info', 'user_id', $id);
+            foreach ($query as $row) {
+                $class_id = $row['class_id'];
+            }
+            $data['class_id'] = $class_id;
+            $data['day'] = $this->common->getAllData('config_week_day');
+            $data['subject'] = $this->common->getWhere('class_subject', 'class_id', $class_id);
+            $data['teacher'] = $this->common->getAllData('teachers_info');
+        }
+        $this->load->view('temp/header', $data);
+        $this->load->view('dashboard', $data);
+        $this->load->view('temp/footer');
+    }
+
 
 //    public function index() {
 //        $user = $this->ion_auth->user()->row();
@@ -98,7 +138,8 @@ class Home extends MX_Controller {
 //        $this->load->view('temp/footer');
 //    }
 //    
-    public function profileView() {
+    public function profileView()
+    {
         $user = $this->ion_auth->user()->row();
         $data['userprofile'] = $this->common->getWhere('users', 'id', $user->id);
         if ($this->input->post('submit', TRUE)) {
@@ -120,7 +161,8 @@ class Home extends MX_Controller {
         }
     }
 
-    public function profileImage() {
+    public function profileImage()
+    {
         $user = $this->ion_auth->user()->row();
         if ($this->ion_auth->is_admin()) {
             if (empty($user->profile_image)) {
@@ -317,7 +359,8 @@ class Home extends MX_Controller {
     }
 
     //Thid function will show the calender with event
-    public function calender() {
+    public function calender()
+    {
         $user = $this->ion_auth->user()->row();
         $userId = $user->id;
         if ($this->input->post('submit', TRUE)) {
@@ -345,7 +388,8 @@ class Home extends MX_Controller {
         }
     }
 
-    public function addEvent() {
+    public function addEvent()
+    {
         $user = $this->ion_auth->user()->row();
         $userId = $user->id;
         if ($this->input->post('submit', TRUE)) {
@@ -376,7 +420,8 @@ class Home extends MX_Controller {
     }
 
     //This function will edit events information
-    public function edit_event() {
+    public function edit_event()
+    {
         if ($this->input->post('submit', TRUE)) {
             $eve_id = $this->input->post('eve_id', TRUE);
             $title = $this->input->post('title', TRUE);
@@ -407,13 +452,16 @@ class Home extends MX_Controller {
         }
     }
 
-    public function iceTime() {
+    public function iceTime()
+    {
         $time = $this->common->iceTime();
     }
+
     //This function will delete clender event
-    public function delete_event() {
+    public function delete_event()
+    {
         $id = $this->input->get('eve_id');
-        
+
         if ($this->db->delete('calender_events', array('id' => $id))) {
             $data['event'] = $this->homeModel->all_event($userId);
             $data['message'] = '<div class="alert alert-success alert-dismissable">

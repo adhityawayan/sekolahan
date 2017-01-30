@@ -118,11 +118,21 @@ class student_api extends CI_Controller
         exit;
     }
 
-    public function attedance($date)
+    /**
+     * for attendance
+     * send exmpale
+     * {
+    "date" : "23-01-2017",
+    "class_title" : "Class New 3"
+    }
+     */
+    public function attendance()
     {
+        $posts = (array)json_decode(file_get_contents('php://input'));
+        $result = $this->student->getAttendance($posts['date'],$posts['class_title']);
         $response = array(
-            'content' => $this->student->getAttendance($date),
-            'totalPages' => count($this->student->getAttendance($date))
+            'content' => $result,
+            'totalPages' => count($result)
         );
 
         $this->output
@@ -133,14 +143,13 @@ class student_api extends CI_Controller
         exit;
     }
 
-    public function updateMahasiswa($npm)
+    public function getCabang()
     {
-        $data = (array)json_decode(file_get_contents('php://input'));
-        $this->Mahasiswa->updateMahasiswa($data, $npm);
-
+        $result = $this->common->selectCabang();
         $response = array(
-            'Success' => true,
-            'Info' => 'Data Berhasil di update');
+            'content' => $result,
+            'totalPages' => count($result)
+        );
 
         $this->output
             ->set_status_header(200)
@@ -150,13 +159,13 @@ class student_api extends CI_Controller
         exit;
     }
 
-    public function deleteMahasiswa($npm)
+    public function getClassByCabang($cabang_id)
     {
-        $this->Mahasiswa->deleteMahasiswa($npm);
-
+        $result = $this->common->selectClassByCabang($cabang_id);
         $response = array(
-            'Success' => true,
-            'Info' => 'Data Berhasil di hapus');
+            'content' => $result,
+            'totalPages' => count($result)
+        );
 
         $this->output
             ->set_status_header(200)

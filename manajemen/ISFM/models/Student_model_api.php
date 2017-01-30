@@ -33,9 +33,10 @@ class Student_model_api extends Base_model
         $this->addData('daily_attendance',$val);
     }
 
-    public function getAttendance($date)
+    public function getAttendance($date,$classTitle)
     {
-        $result = $this->getData('daily_attendance',array('date'=>$date))->result_array();
+        $date = strtotime($date);
+        $result = $this->getData('daily_attendance',array('date'=>$date,'class_title'=>$classTitle))->result_array();
         if($result)
         {
             return $result;

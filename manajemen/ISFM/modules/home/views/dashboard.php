@@ -22,6 +22,23 @@
                 <!-- END PAGE TITLE & BREADCRUMB-->
             </div>
         </div>
+        <?php if($this->ion_auth->is_superadmin()): ?>
+        <div class="row">
+            <div class="col-md-12">
+<!--                --><?//= date('d-m-Y', '1485104400') ?>
+                <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <select id="selectcabang" class="form-control">
+                            <option value="">Pilih Cabang</option>
+                            <?php foreach($cabang as $cb): ?>
+                                <option value="<?=$cb['id']?>" <?=isset($cabang_id)?$cabang_id==$cb['id']?'selected':'':''?> ><?=$cb['name']?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <?php endif; ?>
         <!-- END PAGE HEADER-->
         <?php
         $user = $this->ion_auth->user()->row();
@@ -567,6 +584,25 @@
 <script src="assets/admin/pages/scripts/index.js" type="text/javascript"></script>
 <script src="assets/admin/pages/scripts/tasks.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
+<input type="hidden" id="urldashboard" value="<?=site_url('home/dashboard_cabang')?>">
+<input type="hidden" id="url" value="<?=site_url('home/index')?>">
+
+<script>
+    $('#selectcabang').change(function(){
+        var cabang_id  = this.value;
+        var urldas = $('#urldashboard').val();
+        var urlind = $('#url').val();
+        if(cabang_id!='')
+        {
+            window.location.href = urldas+'/'+cabang_id;
+        }
+        else
+        {
+            window.location.href = urlind;
+        }
+    });
+
+</script>
 
 <script>
     jQuery(document).ready(function () {

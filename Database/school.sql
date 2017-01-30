@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 23, 2017 at 04:56 AM
+-- Generation Time: Jan 30, 2017 at 08:37 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -179,7 +179,8 @@ CREATE TABLE `calender_events` (
 --
 
 INSERT INTO `calender_events` (`id`, `title`, `start_date`, `end_date`, `color`, `url`, `user_id`) VALUES
-(1, 'test', '05-05-2016', '06-05-2016', 'red', 'test.com', 1);
+(1, 'test', '05-05-2016', '06-05-2016', 'red', 'test.com', 1),
+(2, 'Lomba', '01-02-2017', '04-02-2017', 'green', 'https://www.youtube.com/watch?v=DvW66QQeLCI&list=PLEB1A010CD8485E54&index=2', 15);
 
 -- --------------------------------------------------------
 
@@ -206,11 +207,12 @@ CREATE TABLE `class` (
 --
 
 INSERT INTO `class` (`id`, `cabang_id`, `class_title`, `class_group`, `section`, `section_student_capacity`, `classCode`, `student_amount`, `attendance_percentices_daily`, `attend_percentise_yearly`, `month_fee`) VALUES
-(11, 0, 'Class 1', 'Class G1', 'Matematika', '10', '13', 4, 100, 100, ''),
-(12, 0, 'Class 2', '', 'Matematika XX', '10', '2', 1, 0, 0, ''),
-(13, 0, 'Class 3', '', 'Bahasa Inggris,Bahasa Indonesia', '10', '4', 1, 0, 0, ''),
-(14, 4, 'Class New 2', '', '', '10', '', 0, 0, 0, ''),
-(15, 2, 'Class New 3', '', '', '10', 'CB00002015', 2, 100, 100, '');
+(14, 4, 'Class New 2', '', '', '10', '', 1, 0, 0, ''),
+(15, 2, 'Class New 3', '', '', '10', 'CB00002015', 1, 0, 0, ''),
+(16, 2, 'Class New 4 2017/2018', '', '', '10', 'CB00002016', 1, 0, 0, ''),
+(17, 2, 'Class New 5 2017/2018', '', '', '10', 'CB00002017', 1, 0, 0, ''),
+(18, 2, 'Class New 6 2017/2018', '', '', '10', 'CB00002018', 0, 0, 0, ''),
+(19, 2, 'Class New 7 2017/2018', '', '', '10', 'CB00002019', 0, 0, 0, '');
 
 -- --------------------------------------------------------
 
@@ -256,7 +258,10 @@ INSERT INTO `class_routine` (`id`, `class_id`, `section`, `day_title`, `subject`
 (19, 11, '', 'Thursday', 'Kuadrat', 'Adhitya W. Yunanza', '13:00', '15:00', '4'),
 (20, 11, '', 'Monday', 'Persamaan Linier', 'Mokhamad Ariadi', '10:00', '11:00', '3'),
 (21, 12, '', 'Sunday', 'Statistika', 'Mokhamad Ariadi', '09:00', '10:00', '2'),
-(22, 14, '', 'Monday', 'BangunRuang', 'Mokhamad Ariadi', '09:00', '10:00', '2');
+(22, 14, '', 'Monday', 'BangunRuang', 'Mokhamad Ariadi', '09:00', '10:00', '2'),
+(23, 15, '', 'Sunday', 'Bangun Ruang', 'Mokhamad Ariadi', '15:00', '16:00', '3'),
+(24, 15, '', 'Sunday', 'Bangun Ruang', 'Mokhamad Ariadi', '10:00', '12:00', '3'),
+(25, 15, '', 'Sunday', 'Bangun Ruang', 'Mokhamad Ariadi', '07:14', '09:14', '7');
 
 -- --------------------------------------------------------
 
@@ -329,8 +334,8 @@ INSERT INTO `class_students` (`id`, `year`, `user_id`, `roll_number`, `student_i
 (46, 2017, 7, 3, '201713002', 12, 'Class 2', 'Matematika', 'Juniar Sandra', 0, ''),
 (47, 2017, 11, 2, '201713003', 12, 'Class 2', 'Matematika', 'Khoriri Matoh', 0, ''),
 (48, 2017, 12, 4, '201713004', 12, 'Class 2', 'Matematika', 'Silvia Kurnia', 0, ''),
-(49, 2017, 13, 1, '2017CB00002015001', 15, 'Class New 3', '', 'Dicky  Wahyu', 100, ''),
-(50, 2017, 14, 2, '2017CB00002015002', 15, 'Class New 3', '', 'Sujino Marquez', 0, '');
+(49, 2017, 13, 1, '2017CB00002015001', 14, 'Class New 2', '', 'Dicky  Wahyu', 0, ''),
+(50, 0, 14, 2, '2017CB00002015002', 17, 'Class New 5 2017/2018', '', 'Sujino Marquez', 0, '');
 
 -- --------------------------------------------------------
 
@@ -444,7 +449,7 @@ INSERT INTO `class_subject` (`id`, `year`, `class_id`, `subject_title`, `group`,
 (87, 2017, 11, 'Kuadrat', '', 'Adhitya W. Yunanza', 'Pengembangan', 'Blibis Ketut', 1),
 (88, 2017, 12, 'Statistika', '', 'Mokhamad Ariadi', '2017', 'Rin', 0),
 (89, 2017, 14, 'BangunRuang', '', 'Mokhamad Ariadi', '2017', 'Admin', 0),
-(90, 2017, 15, 'Bangun Ruang', '', '', '2017', 'Deyee', 0);
+(90, 2017, 15, 'Bangun Ruang', '', 'Mokhamad Ariadi', '2017', 'Deyee', 0);
 
 -- --------------------------------------------------------
 
@@ -534,8 +539,12 @@ CREATE TABLE `daily_attendance` (
 --
 
 INSERT INTO `daily_attendance` (`id`, `date`, `user_id`, `student_id`, `class_title`, `section`, `days_amount`, `roll_no`, `present_or_absent`, `student_title`, `class_amount_monthly`, `class_amount_yearly`, `attend_amount_monthly`, `attend_amount_yearly`, `percentise_month`, `percentise_year`) VALUES
-(1, '1483916400', '5', '201713001', 'Class 1', 'Matematika', '', 1, 'P', 'Amirul Arbi', 1, 1, 1, 1, 100, 100),
-(2, '1484780400', '13', '2017CB00002015001', 'Class New 3', '', '', 1, 'P', 'Dicky  Wahyu', 1, 1, 1, 1, 100, 100);
+(1, '1485104400', '13', '2017CB00002015001', 'Class New 3', '', '', 1, 'P', 'Dicky  Wahyu', 2, 2, 2, 2, 100, 100),
+(2, '1485104400', '13', '2017CB00002015001', 'Class New 3', '', '', 1, 'P', 'Dicky  Wahyu', 2, 2, 2, 2, 100, 100),
+(3, '1485190800', '13', '2017CB00002015001', 'Class New 3', '', '', 1, 'P', 'Dicky  Wahyu', 3, 3, 3, 3, 100, 100),
+(4, '1485190800', '14', '2017CB00002015002', 'Class New 3', '', '', 2, 'P', 'Sujino Marquez', 1, 1, 1, 1, 100, 100),
+(5, '1485277200', '13', '2017CB00002015001', 'Class New 3', '', '', 1, 'P', 'Dicky  Wahyu', 4, 4, 4, 4, 100, 100),
+(6, '1485277200', '14', '2017CB00002015002', 'Class New 3', '', '', 2, 'P', 'Sujino Marquez', 2, 2, 2, 2, 100, 100);
 
 -- --------------------------------------------------------
 
@@ -758,11 +767,7 @@ INSERT INTO `groups` (`id`, `name`, `description`) VALUES
 (2, 'admin', 'Level Headmaster'),
 (3, 'student', 'This user is student''s groups member.'),
 (4, 'teacher', 'This user is teacher''s groups member.'),
-(5, 'parents', 'This user is parent''s groups member.'),
-(6, 'accountant', 'This user is accountent''s groups member.'),
-(7, 'library_man', 'The library man can manage library and library''s account information'),
-(8, '4th_class_employ', ''),
-(9, 'driver', '');
+(5, 'parents', 'This user is parent''s groups member.');
 
 -- --------------------------------------------------------
 
@@ -827,16 +832,21 @@ CREATE TABLE `jurnal` (
   `date` int(11) NOT NULL,
   `user` varchar(50) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `year` int(11) NOT NULL
+  `year` int(11) NOT NULL,
+  `approval` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `jurnal`
 --
 
-INSERT INTO `jurnal` (`id`, `class_id`, `task`, `situasi_kelas`, `catatan`, `time`, `date`, `user`, `user_id`, `year`) VALUES
-(1, 15, 'BangunRuang ', 'Kondusif', 'Tidak ada', '10:46 am', 1485104400, 'Mokhamad Ariadi', 2, 2017),
-(2, 15, 'Persamaan', 'Kondisf', 'Tidak ada', '10:51 am', 1485104400, 'Head Office', 10, 2017);
+INSERT INTO `jurnal` (`id`, `class_id`, `task`, `situasi_kelas`, `catatan`, `time`, `date`, `user`, `user_id`, `year`, `approval`) VALUES
+(1, 15, 'BangunRuang ', 'Kondusif', 'Tidak ada', '10:46 am', 1485104400, 'Mokhamad Ariadi', 2, 2017, 1),
+(2, 15, 'Persamaan', 'Kondisf', 'Tidak ada', '10:51 am', 1485104400, 'Head Office', 10, 2017, 1),
+(3, 15, 'Persamaan Kuadrat', 'Kondusif', 'Tidak ada', '11:24 am', 1485104400, 'Mokhamad Ariadi', 2, 2017, 1),
+(4, 14, 'Persamaan Kuadrat', 'Kondusif', 'Tidak ada', '11:26 am', 1485104400, 'Mokhamad Ariadi', 2, 2017, 0),
+(5, 14, 'Bangun Ruang', 'Kondusif', 'Tidak ada', '11:27 am', 1485104400, 'Mokhamad Ariadi', 2, 2017, 0),
+(6, 15, 'Bangun Ruang', 'Kondusif', 'Tidak ada', '03:46 pm', 1485277200, 'Mokhamad Ariadi', 2, 2017, 1);
 
 -- --------------------------------------------------------
 
@@ -930,7 +940,7 @@ CREATE TABLE `parents_info` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `class_id` int(11) NOT NULL,
-  `student_id` int(11) NOT NULL,
+  `student_id` varchar(20) NOT NULL,
   `parents_name` varchar(100) NOT NULL,
   `relation` varchar(100) NOT NULL,
   `email` varchar(50) NOT NULL,
@@ -942,7 +952,10 @@ CREATE TABLE `parents_info` (
 --
 
 INSERT INTO `parents_info` (`id`, `user_id`, `class_id`, `student_id`, `parents_name`, `relation`, `email`, `phone`) VALUES
-(1, 6, 12, 201713001, 'Wali  Aku', 'Ponakan', 'wali@gmail.com', '+62085895986526');
+(1, 6, 12, '201713001', 'Wali  Aku', 'Ponakan', 'wali@gmail.com', '+62085895986526'),
+(2, 19, 0, '2017', 'Wayyaaa Bababa', 'Kakek', 'wayayy@gmail.com', '+6285895986529'),
+(3, 20, 0, '2017', 'Udin  Duasss', 'Papa', 'udinpapa@gmail.com', '+6285895986529'),
+(4, 21, 14, '2017', 'Dede Dudu', 'Uncle', 'dede@gmail.com', '+6285895986529');
 
 -- --------------------------------------------------------
 
@@ -1157,7 +1170,15 @@ INSERT INTO `role_based_access` (`id`, `user_id`, `group_id`, `das_top_info`, `d
 (11, 11, 3, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 (12, 12, 3, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 (13, 13, 3, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(14, 14, 3, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+(14, 14, 3, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(15, 15, 4, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(16, 16, 4, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(17, 17, 4, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(18, 18, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1),
+(19, 19, 5, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(20, 20, 5, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(21, 21, 5, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(22, 22, 4, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1281,8 +1302,8 @@ INSERT INTO `student_info` (`id`, `year`, `user_id`, `student_id`, `roll_number`
 (3, 2017, 7, '201713002', 3, 12, 'Juniar Sandra', 'Junjun', 'mom', '23/05/1993', 'Male', 'Sidoarjo', 'Sidoarjo', '+62085895986529', 'Employer', '4000000', 'Housewife', '875d151f16b91d969c33128bbdf47dcf.jpg', 'submited', '', '', '', '', 'NO S-15', 2017, 0, '', '', '', 0, '', '', '', 0, '', 0, 0, 0, '', 'A+', 0),
 (4, 2017, 11, '201713003', 2, 12, 'Khoriri Matoh', 'Khoo', 'Mhoo', '09/12/1993', 'Male', 'Bojonegoro', 'Surabaya', '+6285895986529', 'Employer', '4000000', 'Housewife', 'd4a7e93b813e624fc2bb19e74d747c7c.jpg', 'submited', '', '', '', '', 'No S21213', 2017, 0, '', '', '', 0, '', '', '', 0, '', 0, 0, 0, '', 'O-', 0),
 (5, 2017, 12, '201713004', 4, 12, 'Silvia Kurnia', 'Soho', 'Mojo', '09/07/1993', 'Female', ' Mojokerto', 'Surabaya', '+6285895986529', 'Business', '4000000', 'Housewife', 'e8b34939ba022412a902f7a4b682896a.jpg', 'submited', '', '', '', '', 'No 1321321', 2017, 0, '', '', '', 0, '', '', '', 0, '', 0, 0, 0, '', 'O-', 0),
-(6, 2017, 13, '2017CB00002015001', 1, 15, 'Dicky  Wahyu', 'Dickdick', 'Bukbuk', '11/12/1993', 'Male', ' Surabaya', 'Surabaya', '+6285895986529', 'Business', '5000000', 'Housewife', 'd8b967e55fd469cf58cd313476511579.jpg', 'submited', 'submited', '', '', '', 'S0232432', 2017, 0, '', '', '', 0, '', '', '', 0, '', 0, 0, 0, '', 'A+', 0),
-(7, 2017, 14, '2017CB00002015002', 2, 15, 'Sujino Marquez', 'Jojo', 'Bubu', '27/01/1993', 'Male', ' Surabaya', 'Surabaya', '+6285895986529', 'Business', '5000000', 'Housewife', '2cde5910de78a84e4bd54ca83c87e09d.jpg', 'submited', 'submited', '', '', '', 'S000333', 2017, 0, '', '', '', 0, '', '', '', 0, '', 0, 0, 0, '', 'A+', 2);
+(6, 2017, 13, '2017CB00002015001', 1, 14, 'Dicky  Wahyu', 'Dickdick', 'Bukbuk', '11/12/1993', 'Male', ' Surabaya', 'Surabaya', '+6285895986529', 'Business', '5000000', 'Housewife', 'd8b967e55fd469cf58cd313476511579.jpg', 'submited', 'submited', '', '', '', 'S0232432', 2017, 0, '', '', '', 0, '', '', '', 0, '', 0, 0, 0, '', 'A+', 0),
+(7, 0, 14, '2017CB00002015002', 2, 17, 'Sujino Marquez', 'Jojo', 'Bubu', '27/01/1993', 'Male', ' Surabaya', 'Surabaya', '+6285895986529', 'Business', '5000000', 'Housewife', '2cde5910de78a84e4bd54ca83c87e09d.jpg', 'submited', 'submited', '', '', '', 'S000333', 2017, 0, '', '', '', 0, '', '', '', 0, '', 0, 0, 0, '', 'A+', 2);
 
 -- --------------------------------------------------------
 
@@ -1360,7 +1381,10 @@ CREATE TABLE `teachers_info` (
 
 INSERT INTO `teachers_info` (`id`, `user_id`, `fullname`, `farther_name`, `mother_name`, `birth_date`, `sex`, `present_address`, `permanent_address`, `phone`, `subject`, `position`, `working_hour`, `educational_qualification_1`, `educational_qualification_2`, `educational_qualification_3`, `educational_qualification_4`, `educational_qualification_5`, `teachers_photo`, `cv`, `educational_certificat`, `exprieance_certificatte`, `files_info`, `index_no`) VALUES
 (1, '2', 'Mokhamad Ariadi', 'Sopo', 'Momo', '27/01/1993', 'Male', 'Jombang', 'Surabaya', '+6285895986529', 'IPA', 'Teacher', 'Full time', 'Spd,Universitas Negeri Surabaya,3.40,2015', '', '', '', '', 'bb4847768092d9ea7aa1a9409f059174.jpg', 'submited', 'submited', '', 'No Ijazah 22.00072.15', '1'),
-(2, '3', 'Adhitya W.  Yunanza', '-', '-', '20/03/1994', 'Male', 'Surabaya', 'Surabaya', '+6285707146567', 'IPA', 'Teacher', 'Full time', 'Spd,Universitas Negeri Surabaya,3.40,2016', '', '', '', '', '4fc4367281baeb3fc2a2b2ea6f02c906.jpg', 'submited', '', '', 'No Ijazah 22.00073.15', '2');
+(2, '3', 'Adhitya W.  Yunanza', '-', '-', '20/03/1994', 'Male', 'Surabaya', 'Surabaya', '+6285707146567', 'IPA', 'Teacher', 'Full time', 'Spd,Universitas Negeri Surabaya,3.40,2016', '', '', '', '', '4fc4367281baeb3fc2a2b2ea6f02c906.jpg', 'submited', '', '', 'No Ijazah 22.00073.15', '2'),
+(4, '16', 'Lintang Prasetyo', 'Papa', 'Mama', '20/04/1993', 'Male', 'Surabaya', 'Surabaya', '+6285895986529', 'Teknik', 'Headmaster', 'Full time', 'S1,Universitas Negeri Surabaya,3.40,2016', '', '', '', '', 'ae05ee6ea21acd5a7160be2fdf4152b8.jpg', 'submited', 'submited', '', 'S0924032', '7'),
+(6, '18', 'Putut Jaya', 'Jojo', 'Nini', '20/07/1993', 'Male', 'Surabaya', 'Surabaya', '+6285895986529', 'IPA', 'Headmaster', 'Full time', 'S1,Universitas Negeri Surabaya,3.40,2016', '', '', '', '', 'f01baa5b134e3ffcb8f8e69190d01ec7.jpg', 'submited', 'submited', '', 'S779234', '9'),
+(7, '22', 'Dimas  Bangka', 'Babat', 'bubut', '23/01/1993', 'Male', 'Surabaya', 'Surabaya', '+6285895986529', 'Mapel', 'Teacher', 'Full time', 'S1,Universitas Negeri Surabaya,3.40,2016', '', '', '', '', '019b0dd274664bb8bd0118ad8b789c50.jpg', 'submited', 'submited', '', 'S-2932100', '5');
 
 -- --------------------------------------------------------
 
@@ -1392,7 +1416,10 @@ INSERT INTO `teacher_attendance` (`id`, `year`, `date`, `employ_id`, `employ_tit
 (7, 2017, 1484953200, 3, 'Adhitya W.  Yunanza', 'Absent', ''),
 (8, 2017, 1484953200, 8, 'Satria  Hernanda', 'Absent', ''),
 (9, 2017, 1484953200, 9, 'Punggawa Cipto', 'Absent', ''),
-(10, 2017, 1484953200, 10, 'Head Office', 'Absent', '');
+(10, 2017, 1484953200, 10, 'Head Office', 'Absent', ''),
+(11, 2017, 1485104400, 2, 'Mokhamad Ariadi', 'Present', '11:26 am'),
+(12, 2017, 1485277200, 2, 'Mokhamad Ariadi', 'Present', '03:46 pm'),
+(13, 2017, 1485277200, 2, 'Mokhamad Ariadi', 'Present', '03:46 pm');
 
 -- --------------------------------------------------------
 
@@ -1413,7 +1440,9 @@ CREATE TABLE `teacher_school` (
 INSERT INTO `teacher_school` (`id`, `teacher_id`, `cabang_id`) VALUES
 (1, 2, 2),
 (2, 1, 2),
-(4, 1, 4);
+(4, 1, 4),
+(7, 6, 2),
+(10, 7, 2);
 
 -- --------------------------------------------------------
 
@@ -1475,14 +1504,6 @@ CREATE TABLE `userinfo` (
   `phone` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `userinfo`
---
-
-INSERT INTO `userinfo` (`id`, `user_id`, `group_id`, `full_name`, `farther_name`, `mother_name`, `birth_date`, `sex`, `present_address`, `permanent_address`, `working_hour`, `educational_qualification_1`, `educational_qualification_2`, `educational_qualification_3`, `educational_qualification_4`, `educational_qualification_5`, `users_photo`, `cv`, `educational_certificat`, `exprieance_certificatte`, `files_info`, `phone`) VALUES
-(1, 8, 7, 'Satria  Hernanda', 'jojo', 'bubu', '03/03/1991', 'Male', 'Surabaya', 'Surabaya', 'Full time', 'D3,Universitas Negeri Surabaya,3.40,2016', '', '', '', '', '9f10cf333624408758536b895928f724.jpg', 'submited', '', '', 'No 232323', '+62085895986529'),
-(2, 9, 6, 'Punggawa Cipto', 'Cipo', 'bubu', '04/04/1991', 'Male', 'Sidoarjo', 'Sidoarjo', 'Full time', 'D3,Universitas Negeri Surabaya,3.40,2016', '', '', '', '', '1ae6a93163275d53c10ba3132494d0cf.jpg', 'submited', '', '', 'No 12123', '+6285895986529');
-
 -- --------------------------------------------------------
 
 --
@@ -1519,19 +1540,23 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `phone`, `profile_image`, `user_status`, `leave_status`, `leave_start`, `leave_end`, `salary`) VALUES
-(1, '127.0.0.1', 'Headmaster', '$2y$08$qBQ/MzJzXyil0yuVM.s1XewJerIMCntwxez/Jfs3x/xwxFnkKWo2y', NULL, 'admin@admin.com', NULL, 'HBj4C30st5pOHbjpHojzGu4667ad49e75655b131', 1420113369, 'IcD7gVAwU5DDX4jTuWOVXe', 1268889823, 1484277612, 1, 'Kermit J.', 'Jackson', '123456789', 'admin.png', 'Employee', 'Available', 1447196400, 1449874800, 0),
-(2, '::1', 'Mokhamad Ariadi', '$2y$08$xSp/BEzMjbsTxBBLatsV/eCpar1FB66ZWyeHnVNUjfg3q20nUbORS', NULL, 'mokhamad27@gmail.com', NULL, NULL, NULL, NULL, 1483760492, 1485143532, 1, 'Mokhamad', 'Ariadi', '+6285895986529', 'bb4847768092d9ea7aa1a9409f059174.jpg', 'Employee', 'Available', 0, 0, 0),
+(1, '127.0.0.1', 'Headmaster', '$2y$08$qBQ/MzJzXyil0yuVM.s1XewJerIMCntwxez/Jfs3x/xwxFnkKWo2y', NULL, 'admin@admin.com', NULL, 'HBj4C30st5pOHbjpHojzGu4667ad49e75655b131', 1420113369, 'IcD7gVAwU5DDX4jTuWOVXe', 1268889823, 1485248619, 1, 'Kermit J.', 'Jackson', '123456789', 'admin.png', 'Employee', 'Available', 1447196400, 1449874800, 0),
+(2, '::1', 'Mokhamad Ariadi', '$2y$08$xSp/BEzMjbsTxBBLatsV/eCpar1FB66ZWyeHnVNUjfg3q20nUbORS', NULL, 'mokhamad27@gmail.com', NULL, NULL, NULL, NULL, 1483760492, 1485707813, 1, 'Mokhamad', 'Ariadi', '+6285895986529', 'bb4847768092d9ea7aa1a9409f059174.jpg', 'Employee', 'Available', 0, 0, 0),
 (3, '::1', 'Adhitya W.  Yunanza', '$2y$08$.fyUctfOXweRHxJpmrqWTOwt4x1wBq4r1e0vMcIAmcbz1r198OYgS', NULL, 'adhityawayan@gmail.com', NULL, NULL, NULL, NULL, 1483760888, 1483760888, 1, 'Adhitya W. ', 'Yunanza', '+6285707146567', '4fc4367281baeb3fc2a2b2ea6f02c906.jpg', 'Employee', 'Available', 0, 0, 0),
 (4, '::1', 'Noviagati  Pramudia', '$2y$08$G.Cf6JM6TzuqRjMPsHDA6.gyouLsVv2tOpmfO1qP1aKbTBx6HHvEG', NULL, 'noviagatipramudia@gmail.com', NULL, NULL, NULL, NULL, 1483761669, 1483943672, 1, 'Noviagati ', 'Pramudia', '+6289679730967', 'e9b934f653bbe7fbc4d251c6896c00d0.jpg', '', '', 0, 0, 0),
 (6, '::1', 'Wali  Aku', '$2y$08$eEos7BrOFYA/DbHhIgh2COpeLDgjNoOpwdjo2yhi2GDoRHoao1Yd6', NULL, 'wali@gmail.com', NULL, NULL, NULL, NULL, 1483954071, 1483954750, 1, 'Wali ', 'Aku', '+62085895986526', 'f67b7771927eaebf8509f0a6cfa2fae5.jpg', '', '', 0, 0, 0),
 (7, '::1', 'Juniar Sandra', '$2y$08$bzD6z7xX.ZzmeAfOjTxxPeJbWJMxo7zM.vVltsCV1IH8CdDzce1cG', NULL, 'juniarsandra@gmail.com', NULL, NULL, NULL, NULL, 1483955065, 1483955065, 1, 'Juniar', 'Sandra', '+62085895986529', '875d151f16b91d969c33128bbdf47dcf.jpg', '', '', 0, 0, 0),
-(8, '::1', 'Satria  Hernanda', '$2y$08$XIOGluVIvxSs3LBXXJ0pf.7UTPdF6rHaXVjz3vm9C/.aFt1C0wSWq', NULL, 'satria@gmail.com', NULL, NULL, NULL, NULL, 1484031733, 1484031733, 1, 'Satria ', 'Hernanda', '+62085895986529', '9f10cf333624408758536b895928f724.jpg', 'Employee', 'Available', 0, 0, 0),
-(9, '::1', 'Punggawa Cipto', '$2y$08$g4INzbOF6FZmVPovBByxVOd2EsUbcVmQwCEYxILQnOGVfethQ19ou', NULL, 'punggawa@gmail.com', NULL, NULL, NULL, NULL, 1484033771, 1484033771, 1, 'Punggawa', 'Cipto', '+6285895986529', '1ae6a93163275d53c10ba3132494d0cf.jpg', 'Employee', 'Available', 0, 0, 0),
-(10, '::1', 'Head Office', '$2y$08$qBQ/MzJzXyil0yuVM.s1XewJerIMCntwxez/Jfs3x/xwxFnkKWo2y', NULL, 'ho@gmail.com', NULL, NULL, NULL, NULL, 1484033771, 1485143460, 1, 'Head', 'Office', '123456789', 'admin.png', 'Employee', 'Available', 0, 0, 0),
+(10, '::1', 'Head Office', '$2y$08$qBQ/MzJzXyil0yuVM.s1XewJerIMCntwxez/Jfs3x/xwxFnkKWo2y', NULL, 'ho@gmail.com', NULL, NULL, NULL, NULL, 1484033771, 1485748460, 1, 'Head', 'Office', '123456789', 'admin.png', 'Employee', 'Available', 0, 0, 0),
 (11, '::1', 'Khoriri Matoh', '$2y$08$gHCD7VKD0S6Jk12I3SeOTuMFx3vFqctKCa9yj4h2wF0kJv/Y7Ul7G', NULL, 'khoriri@gmail.com', NULL, NULL, NULL, NULL, 1484102752, 1484106335, 1, 'Khoriri', 'Matoh', '+6285895986529', 'd4a7e93b813e624fc2bb19e74d747c7c.jpg', '', '', 0, 0, 0),
 (12, '::1', 'Silvia Kurnia', '$2y$08$Ow.gGka1HvNprv7n3h/D5Or.RL0ZG7jBK1Cx5nQa7t/CXXAW.EbNC', NULL, 'silvi@gmail.com', NULL, NULL, NULL, NULL, 1484102972, 1484102972, 1, 'Silvia', 'Kurnia', '+6285895986529', 'e8b34939ba022412a902f7a4b682896a.jpg', '', '', 0, 0, 0),
 (13, '::1', 'Dicky  Wahyu', '$2y$08$NHRbSmxsFmNmwSaA31BfB.3bslR4xfjSgjvmZZnntUtSCV4y9iqzO', NULL, 'dicky@gmail.com', NULL, NULL, NULL, NULL, 1484798782, 1484798782, 1, 'Dicky ', 'Wahyu', '+6285895986529', 'd8b967e55fd469cf58cd313476511579.jpg', '', '', 0, 0, 0),
-(14, '::1', 'Sujino Marquez', '$2y$08$kSWaYCyRpYqiClM0gaYM2ehRQMoOE0SQiMVeyi0kpaYkRcn3bIRg.', NULL, 'sujino@gmail.com', NULL, NULL, NULL, NULL, 1484900109, 1484900109, 1, 'Sujino', 'Marquez', '+6285895986529', '2cde5910de78a84e4bd54ca83c87e09d.jpg', '', '', 0, 0, 0);
+(14, '::1', 'Sujino Marquez', '$2y$08$kSWaYCyRpYqiClM0gaYM2ehRQMoOE0SQiMVeyi0kpaYkRcn3bIRg.', NULL, 'sujino@gmail.com', NULL, NULL, NULL, NULL, 1484900109, 1484900109, 1, 'Sujino', 'Marquez', '+6285895986529', '2cde5910de78a84e4bd54ca83c87e09d.jpg', '', '', 0, 0, 0),
+(16, '::1', 'Lintang Prasetyo', '$2y$08$7Fcp2oJJlU0yUcu8MUFXWOuWToDb5mU.1YGbXjgbZYDjZCPVVM8XS', NULL, 'lintang@gmail.com', NULL, NULL, NULL, NULL, 1485318837, 1485318885, 1, 'Lintang', 'Prasetyo', '+6285895986529', 'ae05ee6ea21acd5a7160be2fdf4152b8.jpg', 'Employee', 'Available', 0, 0, 0),
+(18, '::1', 'Putut Jaya', '$2y$08$gXh7fL5mDEWZdiKueWheT.2j0wt66yot4kJaE.wRoC88KbNtNyhJe', NULL, 'putut@gmail.com', NULL, NULL, NULL, NULL, 1485328447, 1485717418, 1, 'Putut', 'Jaya', '+6285895986529', 'f01baa5b134e3ffcb8f8e69190d01ec7.jpg', 'Employee', 'Available', 0, 0, 0),
+(19, '::1', 'Wayyaaa Bababa', '$2y$08$QPv/KRpjDfhe/sHzRHdMHu9/X2bchogYyVnd1V7vwwzilTj1.XhPK', NULL, 'wayayy@gmail.com', NULL, NULL, NULL, NULL, 1485335826, 1485335826, 1, 'Wayyaaa', 'Bababa', '+6285895986529', '4f45c923f44d643f0dc79a6eb79ee8e8.jpg', '', '', 0, 0, 0),
+(20, '::1', 'Udin  Duasss', '$2y$08$dXRO0LLJdYB3/TLud9HvvOAMlxngW.w3o0/MSGtQwXSqNSGy4PCVq', NULL, 'udinpapa@gmail.com', NULL, NULL, NULL, NULL, 1485336038, 1485336038, 1, 'Udin ', 'Duasss', '+6285895986529', '1a126864474a92e35583df8bc68ab295.jpg', '', '', 0, 0, 0),
+(21, '::1', 'Dede Dudu', '$2y$08$nf8zC.BsqghGcHCpdko3zOJtA3og4QFURbL/rqqVjc8JmWLaTofgi', NULL, 'dede@gmail.com', NULL, NULL, NULL, NULL, 1485498344, 1485498344, 1, 'Dede', 'Dudu', '+6285895986529', '1e0787a4f87edfb66f1bf33dcdba9bc6.jpg', '', '', 0, 0, 0),
+(22, '::1', 'Dimas  Bangka', '$2y$08$Egjse.2hcOfdiSaj0fQ6C.Sd9nNiMvrIO5QJ2j2j.aJ7MAiDleQ7W', NULL, 'dimas@gmail.com', NULL, NULL, NULL, NULL, 1485682896, 1485712237, 1, 'Dimas ', 'Bangka', '+6285895986529', '019b0dd274664bb8bd0118ad8b789c50.jpg', 'Employee', 'Available', 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1556,13 +1581,17 @@ INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
 (57, 4, 3),
 (59, 6, 5),
 (60, 7, 3),
-(61, 8, 7),
-(62, 9, 6),
 (65, 10, 1),
 (63, 11, 3),
 (64, 12, 3),
 (66, 13, 3),
-(67, 14, 3);
+(67, 14, 3),
+(69, 16, 2),
+(71, 18, 2),
+(72, 19, 5),
+(73, 20, 5),
+(74, 21, 5),
+(75, 22, 4);
 
 -- --------------------------------------------------------
 
@@ -1934,22 +1963,22 @@ ALTER TABLE `books_category`
 -- AUTO_INCREMENT for table `cabang`
 --
 ALTER TABLE `cabang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `calender_events`
 --
 ALTER TABLE `calender_events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `class`
 --
 ALTER TABLE `class`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT for table `class_routine`
 --
 ALTER TABLE `class_routine`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 --
 -- AUTO_INCREMENT for table `class_students`
 --
@@ -1969,7 +1998,7 @@ ALTER TABLE `config_week_day`
 -- AUTO_INCREMENT for table `daily_attendance`
 --
 ALTER TABLE `daily_attendance`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `dormitory`
 --
@@ -2019,7 +2048,7 @@ ALTER TABLE `final_result`
 -- AUTO_INCREMENT for table `groups`
 --
 ALTER TABLE `groups`
-  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `inven_category`
 --
@@ -2039,7 +2068,7 @@ ALTER TABLE `issu_item`
 -- AUTO_INCREMENT for table `jurnal`
 --
 ALTER TABLE `jurnal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `leave_application`
 --
@@ -2069,7 +2098,7 @@ ALTER TABLE `notice_board`
 -- AUTO_INCREMENT for table `parents_info`
 --
 ALTER TABLE `parents_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `result_action`
 --
@@ -2089,7 +2118,7 @@ ALTER TABLE `result_submition_info`
 -- AUTO_INCREMENT for table `role_based_access`
 --
 ALTER TABLE `role_based_access`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT for table `salary`
 --
@@ -2124,17 +2153,17 @@ ALTER TABLE `suggestion`
 -- AUTO_INCREMENT for table `teachers_info`
 --
 ALTER TABLE `teachers_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `teacher_attendance`
 --
 ALTER TABLE `teacher_attendance`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `teacher_school`
 --
 ALTER TABLE `teacher_school`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `transection`
 --
@@ -2149,17 +2178,17 @@ ALTER TABLE `transport`
 -- AUTO_INCREMENT for table `userinfo`
 --
 ALTER TABLE `userinfo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT for table `users_groups`
 --
 ALTER TABLE `users_groups`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 --
 -- AUTO_INCREMENT for table `vendors`
 --

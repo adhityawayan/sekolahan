@@ -18,7 +18,21 @@ class jurnalmodel extends Base_model
 
     public function getAll()
     {
-        $pagedata = $this->getData($this->table,array('status'=>0))->result_array();
+        $pagedata = $this->get($this->table)->result_array();
+        if($pagedata)
+        {
+            return $pagedata;
+        }
+        return [];
+    }
+
+    public function getAllByApproval()
+    {
+        $user = $this->ion_auth->user()->row();
+        $user_id = $user->id;
+        $teacher_id = $this->select_teacher($user_id);
+
+        $pagedata = $this->getData($this->table,array('approval'=>0))->result_array();
         if($pagedata)
         {
             return $pagedata;

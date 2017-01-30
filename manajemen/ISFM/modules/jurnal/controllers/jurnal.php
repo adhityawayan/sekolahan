@@ -93,6 +93,10 @@ class jurnal extends MX_Controller
         {
             $data['jurnal'] = $this->jurnalmodel->getByClassDateByAdmin($class_id,$date);
         }
+        if($this->ion_auth->is_admin())
+        {
+            $data['jurnal'] = $this->jurnalmodel->getByClassDateByAdmin($class_id,$date);
+        }
         $data['class_id'] = $class_id;
         $data['date'] = $date;
 //            return var_dump($data);
@@ -149,18 +153,6 @@ class jurnal extends MX_Controller
 
         if($result)
         {
-            $dataAttedance = array(
-                'year' => date('Y'),
-                'date' => strtotime(date("d-m-Y")),
-                'employ_id' => $userId,
-                'employ_title' => $username,
-                'present_or_absent' => 'Present',
-                'attend_time' => $compTime
-            );
-            if($this->jurnalmodel->check_teacher_attedance(strtotime(date("d-m-Y")),date('Y')))
-            {
-                $this->jurnalmodel->addTeacherAttedance($dataAttedance);
-            }
             alert();
             redirect('jurnal/addjurnal');
         }
@@ -185,6 +177,38 @@ class jurnal extends MX_Controller
         {
             alert(2);
             redirect('jurnal/filterJurnal?date='.$date.'&class_id='.$class_id);
+        }
+    }
+
+    public function approvalJurnal()
+    {
+        $data['jurnal'] = $this->common->getApprovalJurnal();
+        $this->load->view('temp/header');
+        $this->load->view('approvaljurnal', $data);
+        $this->load->view('temp/footer');
+    }
+
+    public function do_approval($id)
+    {
+        $condition['approval'] ='1';
+        $rowdata = $this->jurnalmodel->getId($id);
+        $dataAttedance = array(
+            'year' => $rowdata['year'],
+            'date' => $rowdata['date'],
+            'employ_id' => $rowdata['user_id'],
+            'employ_title' => $rowdata['user'],
+            'present_or_absent' => 'Present',
+            'attend_time' => $rowdata['time']
+        );
+        $result = $this->jurnalmodel->update($id,$condition);
+        if($result)
+        {
+            if($this->jurnalmodel->check_teacher_attedance(strtotime(date("d-m-Y")),date('Y')))
+            {
+                $this->jurnalmodel->addTeacherAttedance($dataAttedance);
+            }
+            alert(2);
+            redirect('jurnal/approvalJurnal');
         }
     }
 }

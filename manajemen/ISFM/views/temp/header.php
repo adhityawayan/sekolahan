@@ -838,11 +838,13 @@ if ($cont == "home") {
                                                 <span class="title">View Jurnal</span>
                                             </a>
                                         </li>
+                                        <?php if($this->ion_auth->is_admin()): ?>
                                         <li class="nav-item <?php echo $approvalJurnal; ?>">
                                             <a href="<?=site_url('jurnal/approvalJurnal')?>" class="nav-link ">
                                                 <span class="title">Approval Jurnal</span>
                                             </a>
                                         </li>
+                                        <?php endif; ?>
                                     </ul>
                                 </li>
                             <?php }
