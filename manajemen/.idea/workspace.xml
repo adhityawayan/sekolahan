@@ -42,21 +42,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Student_model_api.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ISFM/models/Student_model_api.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
-              <folding>
-                <marker date="1485760531884" expanded="true" signature="1441:1532" placeholder="SELECT MAX(c..." />
-                <marker date="1485760531884" expanded="true" signature="1799:1889" placeholder="SELECT MAX(c..." />
-                <marker date="1485760531884" expanded="true" signature="2162:2254" placeholder="SELECT MAX(a..." />
-                <marker date="1485760531884" expanded="true" signature="2525:2616" placeholder="SELECT MAX(a..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Jurnal_model_api.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ISFM/models/Jurnal_model_api.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -80,8 +65,8 @@
       <file leaf-file-name="dashboard.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ISFM/modules/home/views/dashboard.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.08374384">
-              <caret line="36" column="99" selection-start-line="36" selection-start-column="99" selection-end-line="36" selection-end-column="99" />
+            <state vertical-scroll-proportion="0.36520377">
+              <caret line="700" column="41" selection-start-line="700" selection-start-column="25" selection-end-line="700" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -90,8 +75,8 @@
       <file leaf-file-name="home.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ISFM/modules/home/controllers/home.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.2181816">
-              <caret line="86" column="33" selection-start-line="86" selection-start-column="33" selection-end-line="86" selection-end-column="33" />
+            <state vertical-scroll-proportion="-12.423077">
+              <caret line="45" column="53" selection-start-line="45" selection-start-column="44" selection-end-line="45" selection-end-column="53" />
               <folding>
                 <marker date="1485802762049" expanded="true" signature="22532:22710" placeholder="..." />
               </folding>
@@ -102,7 +87,7 @@
       <file leaf-file-name="homemodel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ISFM/modules/home/models/homemodel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.1090908">
+            <state vertical-scroll-proportion="0.0">
               <caret line="53" column="38" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="38" />
               <folding>
                 <marker date="1485802495972" expanded="true" signature="446:530" placeholder="SELECT id FR..teacher_attendance..." />
@@ -120,7 +105,7 @@
       <file leaf-file-name="events.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ISFM/modules/home/views/events.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="5.230769">
+            <state vertical-scroll-proportion="0.0">
               <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="110" />
               <folding />
             </state>
@@ -130,45 +115,56 @@
       <file leaf-file-name="common.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ISFM/models/common.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.3818183">
-              <caret line="376" column="57" selection-start-line="375" selection-start-column="12" selection-end-line="376" selection-end-column="57" />
+            <state vertical-scroll-proportion="-3.3454545">
+              <caret line="469" column="32" selection-start-line="469" selection-start-column="32" selection-end-line="469" selection-end-column="32" />
               <folding>
-                <marker date="1485800972809" expanded="true" signature="428:470" placeholder="SELECT logo,..configuration..." />
-                <marker date="1485800972809" expanded="true" signature="710:755" placeholder="SELECT id FR..users..." />
-                <marker date="1485800972809" expanded="true" signature="1477:1509" placeholder="SELECT id,cl..class..." />
-                <marker date="1485800972809" expanded="true" signature="1800:1839" placeholder="SELECT * FRO..cabang..." />
-                <marker date="1485800972809" expanded="true" signature="2342:2394" placeholder="SELECT * FRO..teachers_info..." />
-                <marker date="1485800972809" expanded="true" signature="2562:2692" placeholder="SELECT cb.`i..." />
-                <marker date="1485800972809" expanded="true" signature="2967:3013" placeholder="SELECT id,co..cabang..." />
-                <marker date="1485800972809" expanded="true" signature="3202:3263" placeholder="SELECT id,cl..class..." />
-                <marker date="1485800972809" expanded="true" signature="3505:3621" placeholder="SELECT * FRO..teacher_school..." />
-                <marker date="1485800972809" expanded="true" signature="6571:6585" placeholder="SELECT * FRO..." />
-                <marker date="1485800972809" expanded="true" signature="11686:11721" placeholder="SELECT time_..configuration..." />
-                <marker date="1485800972809" expanded="true" signature="12268:12307" placeholder="SELECT class..class..." />
-                <marker date="1485800972809" expanded="true" signature="12561:12580" placeholder="SELECT * FRO..users..." />
-                <marker date="1485800972809" expanded="true" signature="12561:12609" placeholder="SELECT * FRO..users..." />
-                <marker date="1485800972809" expanded="true" signature="12827:12881" placeholder="SELECT stude..student_info..." />
-                <marker date="1485800972809" expanded="true" signature="13130:13180" placeholder="SELECT stude..student_info..." />
-                <marker date="1485800972809" expanded="true" signature="13327:13377" placeholder="SELECT stude..parents_info..." />
-                <marker date="1485800972809" expanded="true" signature="13607:13705" placeholder="SELECT class..class..." />
-                <marker date="1485800972809" expanded="true" signature="14649:14747" placeholder="SELECT class..class..." />
-                <marker date="1485800972809" expanded="true" signature="14649:14776" placeholder="SELECT class..class..." />
-                <marker date="1485800972809" expanded="true" signature="15694:15739" placeholder="SELECT MAX(i..." />
-                <marker date="1485800972809" expanded="true" signature="17871:17940" placeholder="SELECT * FRO..notice_board..." />
-                <marker date="1485800972809" expanded="true" signature="18253:18322" placeholder="SELECT * FRO..notice_board..." />
-                <marker date="1485800972809" expanded="true" signature="18644:18691" placeholder="SELECT * FRO..notice_board..." />
-                <marker date="1485800972809" expanded="true" signature="19525:19615" placeholder="SELECT user_..student_info..." />
-                <marker date="1485800972809" expanded="true" signature="19782:19823" placeholder="SELECT count..configuration..." />
-                <marker date="1485800972809" expanded="true" signature="20086:20188" placeholder="SELECT emplo..teacher_attendance..." />
-                <marker date="1485800972809" expanded="true" signature="20468:20520" placeholder="SELECT exam_..set_fees..." />
-                <marker date="1485800972809" expanded="true" signature="21267:21326" placeholder="SELECT ${$co..set_fees..." />
-                <marker date="1485800972809" expanded="true" signature="21732:21795" placeholder="SELECT id FR..." />
-                <marker date="1485800972809" expanded="true" signature="22250:22314" placeholder="SELECT ${$si..." />
-                <marker date="1485800972809" expanded="true" signature="22607:22636" placeholder="SELECT class..class..." />
-                <marker date="1485800972809" expanded="true" signature="23082:23155" placeholder="SELECT id FR..add_exam..." />
-                <marker date="1485800972809" expanded="true" signature="23448:23540" placeholder="SELECT id,su..class_subject..." />
-                <marker date="1485800972809" expanded="true" signature="23811:23844" placeholder="SELECT name ..groups..." />
+                <marker date="1485834450294" expanded="true" signature="428:470" placeholder="SELECT logo,..configuration..." />
+                <marker date="1485834450294" expanded="true" signature="710:755" placeholder="SELECT id FR..users..." />
+                <marker date="1485834450294" expanded="true" signature="1477:1509" placeholder="SELECT id,cl..class..." />
+                <marker date="1485834450294" expanded="true" signature="1800:1839" placeholder="SELECT * FRO..cabang..." />
+                <marker date="1485834450294" expanded="true" signature="2342:2394" placeholder="SELECT * FRO..teachers_info..." />
+                <marker date="1485834450294" expanded="true" signature="2562:2692" placeholder="SELECT cb.`i..." />
+                <marker date="1485834450294" expanded="true" signature="2967:3013" placeholder="SELECT id,co..cabang..." />
+                <marker date="1485834450294" expanded="true" signature="3202:3263" placeholder="SELECT id,cl..class..." />
+                <marker date="1485834450294" expanded="true" signature="3505:3621" placeholder="SELECT * FRO..teacher_school..." />
+                <marker date="1485834450294" expanded="true" signature="3860:3937" placeholder="SELECT * FRO..class_routine..." />
+                <marker date="1485834450294" expanded="true" signature="6893:6907" placeholder="SELECT * FRO..." />
+                <marker date="1485834450294" expanded="true" signature="12008:12043" placeholder="SELECT time_..configuration..." />
+                <marker date="1485834450294" expanded="true" signature="12590:12629" placeholder="SELECT class..class..." />
+                <marker date="1485834450294" expanded="true" signature="12883:12902" placeholder="SELECT * FRO..users..." />
+                <marker date="1485834450294" expanded="true" signature="12883:12931" placeholder="SELECT * FRO..users..." />
+                <marker date="1485834450294" expanded="true" signature="13149:13203" placeholder="SELECT stude..student_info..." />
+                <marker date="1485834450294" expanded="true" signature="13452:13502" placeholder="SELECT stude..student_info..." />
+                <marker date="1485834450294" expanded="true" signature="13649:13699" placeholder="SELECT stude..parents_info..." />
+                <marker date="1485834450294" expanded="true" signature="13929:14027" placeholder="SELECT class..class..." />
+                <marker date="1485834450294" expanded="true" signature="15381:15479" placeholder="SELECT class..class..." />
+                <marker date="1485834450294" expanded="true" signature="15381:15508" placeholder="SELECT class..class..." />
+                <marker date="1485834450294" expanded="true" signature="16426:16471" placeholder="SELECT MAX(i..." />
+                <marker date="1485834450294" expanded="true" signature="18603:18672" placeholder="SELECT * FRO..notice_board..." />
+                <marker date="1485834450294" expanded="true" signature="18985:19054" placeholder="SELECT * FRO..notice_board..." />
+                <marker date="1485834450294" expanded="true" signature="19376:19423" placeholder="SELECT * FRO..notice_board..." />
+                <marker date="1485834450294" expanded="true" signature="20257:20347" placeholder="SELECT user_..student_info..." />
+                <marker date="1485834450294" expanded="true" signature="20514:20555" placeholder="SELECT count..configuration..." />
+                <marker date="1485834450294" expanded="true" signature="20818:20920" placeholder="SELECT emplo..teacher_attendance..." />
+                <marker date="1485834450294" expanded="true" signature="21200:21252" placeholder="SELECT exam_..set_fees..." />
+                <marker date="1485834450294" expanded="true" signature="21999:22058" placeholder="SELECT ${$co..set_fees..." />
+                <marker date="1485834450294" expanded="true" signature="22464:22527" placeholder="SELECT id FR..." />
+                <marker date="1485834450294" expanded="true" signature="22982:23046" placeholder="SELECT ${$si..." />
+                <marker date="1485834450294" expanded="true" signature="23339:23368" placeholder="SELECT class..class..." />
+                <marker date="1485834450294" expanded="true" signature="23814:23887" placeholder="SELECT id FR..add_exam..." />
+                <marker date="1485834450294" expanded="true" signature="24180:24272" placeholder="SELECT id,su..class_subject..." />
+                <marker date="1485834450294" expanded="true" signature="24543:24576" placeholder="SELECT name ..groups..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="calender.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ISFM/modules/home/views/calender.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -225,10 +221,10 @@
         <option value="$PROJECT_DIR$/ISFM/controllers/jurnal_api.php" />
         <option value="$PROJECT_DIR$/ISFM/config/routes.php" />
         <option value="$PROJECT_DIR$/ISFM/modules/home/views/events.php" />
-        <option value="$PROJECT_DIR$/ISFM/models/common.php" />
         <option value="$PROJECT_DIR$/ISFM/modules/home/models/homemodel.php" />
         <option value="$PROJECT_DIR$/ISFM/modules/home/controllers/home.php" />
         <option value="$PROJECT_DIR$/ISFM/modules/home/views/dashboard.php" />
+        <option value="$PROJECT_DIR$/ISFM/models/common.php" />
       </list>
     </option>
   </component>
@@ -273,6 +269,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -517,12 +514,11 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../sewabaju2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../managementcis" />
     <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
@@ -576,7 +572,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.215959" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -619,13 +615,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ISFM/modules/dailyAttendance/models/attendancemodule.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="84" column="21" selection-start-line="84" selection-start-column="21" selection-end-line="84" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ISFM/views/allUserInfo.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -889,7 +878,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="40" column="29" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -897,7 +885,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -905,7 +892,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="144" column="31" selection-start-line="144" selection-start-column="22" selection-end-line="144" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -914,10 +900,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
           <folding>
-            <marker date="1485760531884" expanded="true" signature="1441:1532" placeholder="SELECT MAX(c..." />
-            <marker date="1485760531884" expanded="true" signature="1799:1889" placeholder="SELECT MAX(c..." />
-            <marker date="1485760531884" expanded="true" signature="2162:2254" placeholder="SELECT MAX(a..." />
-            <marker date="1485760531884" expanded="true" signature="2525:2616" placeholder="SELECT MAX(a..." />
+            <marker date="1485760531884" expanded="true" signature="-1:-1" placeholder="SELECT MAX(c..." />
+            <marker date="1485760531884" expanded="true" signature="-1:-1" placeholder="SELECT MAX(c..." />
+            <marker date="1485760531884" expanded="true" signature="-1:-1" placeholder="SELECT MAX(a..." />
+            <marker date="1485760531884" expanded="true" signature="-1:-1" placeholder="SELECT MAX(a..." />
           </folding>
         </state>
       </provider>
@@ -956,7 +942,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ISFM/modules/home/views/events.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="5.230769">
+        <state vertical-scroll-proportion="0.0">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="110" />
           <folding />
         </state>
@@ -964,7 +950,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ISFM/modules/home/models/homemodel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.1090908">
+        <state vertical-scroll-proportion="0.0">
           <caret line="53" column="38" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="38" />
           <folding>
             <marker date="1485802495972" expanded="true" signature="446:530" placeholder="SELECT id FR..teacher_attendance..." />
@@ -978,64 +964,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ISFM/models/common.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.3818183">
-          <caret line="376" column="57" selection-start-line="375" selection-start-column="12" selection-end-line="376" selection-end-column="57" />
-          <folding>
-            <marker date="1485800972809" expanded="true" signature="428:470" placeholder="SELECT logo,..configuration..." />
-            <marker date="1485800972809" expanded="true" signature="710:755" placeholder="SELECT id FR..users..." />
-            <marker date="1485800972809" expanded="true" signature="1477:1509" placeholder="SELECT id,cl..class..." />
-            <marker date="1485800972809" expanded="true" signature="1800:1839" placeholder="SELECT * FRO..cabang..." />
-            <marker date="1485800972809" expanded="true" signature="2342:2394" placeholder="SELECT * FRO..teachers_info..." />
-            <marker date="1485800972809" expanded="true" signature="2562:2692" placeholder="SELECT cb.`i..." />
-            <marker date="1485800972809" expanded="true" signature="2967:3013" placeholder="SELECT id,co..cabang..." />
-            <marker date="1485800972809" expanded="true" signature="3202:3263" placeholder="SELECT id,cl..class..." />
-            <marker date="1485800972809" expanded="true" signature="3505:3621" placeholder="SELECT * FRO..teacher_school..." />
-            <marker date="1485800972809" expanded="true" signature="6571:6585" placeholder="SELECT * FRO..." />
-            <marker date="1485800972809" expanded="true" signature="11686:11721" placeholder="SELECT time_..configuration..." />
-            <marker date="1485800972809" expanded="true" signature="12268:12307" placeholder="SELECT class..class..." />
-            <marker date="1485800972809" expanded="true" signature="12561:12580" placeholder="SELECT * FRO..users..." />
-            <marker date="1485800972809" expanded="true" signature="12561:12609" placeholder="SELECT * FRO..users..." />
-            <marker date="1485800972809" expanded="true" signature="12827:12881" placeholder="SELECT stude..student_info..." />
-            <marker date="1485800972809" expanded="true" signature="13130:13180" placeholder="SELECT stude..student_info..." />
-            <marker date="1485800972809" expanded="true" signature="13327:13377" placeholder="SELECT stude..parents_info..." />
-            <marker date="1485800972809" expanded="true" signature="13607:13705" placeholder="SELECT class..class..." />
-            <marker date="1485800972809" expanded="true" signature="14649:14747" placeholder="SELECT class..class..." />
-            <marker date="1485800972809" expanded="true" signature="14649:14776" placeholder="SELECT class..class..." />
-            <marker date="1485800972809" expanded="true" signature="15694:15739" placeholder="SELECT MAX(i..." />
-            <marker date="1485800972809" expanded="true" signature="17871:17940" placeholder="SELECT * FRO..notice_board..." />
-            <marker date="1485800972809" expanded="true" signature="18253:18322" placeholder="SELECT * FRO..notice_board..." />
-            <marker date="1485800972809" expanded="true" signature="18644:18691" placeholder="SELECT * FRO..notice_board..." />
-            <marker date="1485800972809" expanded="true" signature="19525:19615" placeholder="SELECT user_..student_info..." />
-            <marker date="1485800972809" expanded="true" signature="19782:19823" placeholder="SELECT count..configuration..." />
-            <marker date="1485800972809" expanded="true" signature="20086:20188" placeholder="SELECT emplo..teacher_attendance..." />
-            <marker date="1485800972809" expanded="true" signature="20468:20520" placeholder="SELECT exam_..set_fees..." />
-            <marker date="1485800972809" expanded="true" signature="21267:21326" placeholder="SELECT ${$co..set_fees..." />
-            <marker date="1485800972809" expanded="true" signature="21732:21795" placeholder="SELECT id FR..." />
-            <marker date="1485800972809" expanded="true" signature="22250:22314" placeholder="SELECT ${$si..." />
-            <marker date="1485800972809" expanded="true" signature="22607:22636" placeholder="SELECT class..class..." />
-            <marker date="1485800972809" expanded="true" signature="23082:23155" placeholder="SELECT id FR..add_exam..." />
-            <marker date="1485800972809" expanded="true" signature="23448:23540" placeholder="SELECT id,su..class_subject..." />
-            <marker date="1485800972809" expanded="true" signature="23811:23844" placeholder="SELECT name ..groups..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ISFM/modules/home/controllers/home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.2181816">
-          <caret line="86" column="33" selection-start-line="86" selection-start-column="33" selection-end-line="86" selection-end-column="33" />
+        <state vertical-scroll-proportion="-12.423077">
+          <caret line="45" column="53" selection-start-line="45" selection-start-column="44" selection-end-line="45" selection-end-column="53" />
           <folding>
             <marker date="1485802762049" expanded="true" signature="22532:22710" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ISFM/models/common.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.3454545">
+          <caret line="469" column="32" selection-start-line="469" selection-start-column="32" selection-end-line="469" selection-end-column="32" />
+          <folding>
+            <marker date="1485834450294" expanded="true" signature="428:470" placeholder="SELECT logo,..configuration..." />
+            <marker date="1485834450294" expanded="true" signature="710:755" placeholder="SELECT id FR..users..." />
+            <marker date="1485834450294" expanded="true" signature="1477:1509" placeholder="SELECT id,cl..class..." />
+            <marker date="1485834450294" expanded="true" signature="1800:1839" placeholder="SELECT * FRO..cabang..." />
+            <marker date="1485834450294" expanded="true" signature="2342:2394" placeholder="SELECT * FRO..teachers_info..." />
+            <marker date="1485834450294" expanded="true" signature="2562:2692" placeholder="SELECT cb.`i..." />
+            <marker date="1485834450294" expanded="true" signature="2967:3013" placeholder="SELECT id,co..cabang..." />
+            <marker date="1485834450294" expanded="true" signature="3202:3263" placeholder="SELECT id,cl..class..." />
+            <marker date="1485834450294" expanded="true" signature="3505:3621" placeholder="SELECT * FRO..teacher_school..." />
+            <marker date="1485834450294" expanded="true" signature="3860:3937" placeholder="SELECT * FRO..class_routine..." />
+            <marker date="1485834450294" expanded="true" signature="6893:6907" placeholder="SELECT * FRO..." />
+            <marker date="1485834450294" expanded="true" signature="12008:12043" placeholder="SELECT time_..configuration..." />
+            <marker date="1485834450294" expanded="true" signature="12590:12629" placeholder="SELECT class..class..." />
+            <marker date="1485834450294" expanded="true" signature="12883:12902" placeholder="SELECT * FRO..users..." />
+            <marker date="1485834450294" expanded="true" signature="12883:12931" placeholder="SELECT * FRO..users..." />
+            <marker date="1485834450294" expanded="true" signature="13149:13203" placeholder="SELECT stude..student_info..." />
+            <marker date="1485834450294" expanded="true" signature="13452:13502" placeholder="SELECT stude..student_info..." />
+            <marker date="1485834450294" expanded="true" signature="13649:13699" placeholder="SELECT stude..parents_info..." />
+            <marker date="1485834450294" expanded="true" signature="13929:14027" placeholder="SELECT class..class..." />
+            <marker date="1485834450294" expanded="true" signature="15381:15479" placeholder="SELECT class..class..." />
+            <marker date="1485834450294" expanded="true" signature="15381:15508" placeholder="SELECT class..class..." />
+            <marker date="1485834450294" expanded="true" signature="16426:16471" placeholder="SELECT MAX(i..." />
+            <marker date="1485834450294" expanded="true" signature="18603:18672" placeholder="SELECT * FRO..notice_board..." />
+            <marker date="1485834450294" expanded="true" signature="18985:19054" placeholder="SELECT * FRO..notice_board..." />
+            <marker date="1485834450294" expanded="true" signature="19376:19423" placeholder="SELECT * FRO..notice_board..." />
+            <marker date="1485834450294" expanded="true" signature="20257:20347" placeholder="SELECT user_..student_info..." />
+            <marker date="1485834450294" expanded="true" signature="20514:20555" placeholder="SELECT count..configuration..." />
+            <marker date="1485834450294" expanded="true" signature="20818:20920" placeholder="SELECT emplo..teacher_attendance..." />
+            <marker date="1485834450294" expanded="true" signature="21200:21252" placeholder="SELECT exam_..set_fees..." />
+            <marker date="1485834450294" expanded="true" signature="21999:22058" placeholder="SELECT ${$co..set_fees..." />
+            <marker date="1485834450294" expanded="true" signature="22464:22527" placeholder="SELECT id FR..." />
+            <marker date="1485834450294" expanded="true" signature="22982:23046" placeholder="SELECT ${$si..." />
+            <marker date="1485834450294" expanded="true" signature="23339:23368" placeholder="SELECT class..class..." />
+            <marker date="1485834450294" expanded="true" signature="23814:23887" placeholder="SELECT id FR..add_exam..." />
+            <marker date="1485834450294" expanded="true" signature="24180:24272" placeholder="SELECT id,su..class_subject..." />
+            <marker date="1485834450294" expanded="true" signature="24543:24576" placeholder="SELECT name ..groups..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ISFM/modules/home/views/calender.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ISFM/modules/home/views/dashboard.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08374384">
-          <caret line="36" column="99" selection-start-line="36" selection-start-column="99" selection-end-line="36" selection-end-column="99" />
+        <state vertical-scroll-proportion="0.36520377">
+          <caret line="700" column="41" selection-start-line="700" selection-start-column="25" selection-end-line="700" selection-end-column="41" />
           <folding />
         </state>
       </provider>

@@ -130,6 +130,20 @@ WHERE ts.cabang_id='$cabang_id'");
         return $data;
     }
 
+    public function getClassByNameTeacher($string)
+    {
+        $data = array();
+        $query = $this->db->query("SELECT * FROM class_routine
+WHERE subject_teacher='$string'
+GROUP BY class_id");
+
+        foreach($query->result_array() as $row)
+        {
+            $data[]=$row;
+        }
+        return $data;
+    }
+
     //Total students will returan this function
     public function totalStudent()
     {
@@ -449,7 +463,8 @@ WHERE ts.cabang_id='$cabang_id'");
 
         $user = $this->ion_auth->user()->row();
         $user_id = $user->id;
-        if($this->ion_auth->is_teacher() or $this->ion_auth->is_admin())
+        $user_name = $user->username;
+        if($this->ion_auth->is_admin())
         {
             $teacher_id = $this->select_teacher($user_id);
             $rowclass = array();
@@ -461,6 +476,20 @@ WHERE ts.cabang_id='$cabang_id'");
                 {
                     $rowclass[] = $cl['id'];
                 }
+            }
+
+            $this->db->where_in('id', $rowclass);
+            $this->db->from('class');
+            $query = $this->db->get();
+        }
+
+        if($this->ion_auth->is_teacher())
+        {
+            $classdata = $this->getClassByNameTeacher($user_name);
+            $rowclass = array();
+            foreach($classdata as $cl)
+            {
+                $rowclass[] = $cl['class_id'];
             }
 
             $this->db->where_in('id', $rowclass);
