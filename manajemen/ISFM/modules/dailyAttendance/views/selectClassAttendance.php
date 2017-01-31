@@ -56,7 +56,7 @@
                                     <div class="form-group">
                                         <label class="col-md-3 control-label">Cabang</label>
                                         <div class="col-md-4">
-                                            <select name="class_title" onchange="viewClass(this.value)" class="form-control">
+                                            <select name="cabang_id" onchange="viewClass(this.value)" class="form-control">
                                                 <option value="0"> <?php echo lang('select'); ?> </option>
                                                 <?php foreach ($cabang as $row) { ?>
                                                     <option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
@@ -86,7 +86,7 @@
         <!-- END PAGE CONTENT-->
     </div>
     <!-- END CONTENT -->
-    <input type="hidden" id="urlclass" value="<?=site_url('dailyAttendance/getClassByCabang/')?>">
+    <input type="hidden" id="urlclass" value="<?=site_url('dailyAttendance/getClassByCabangForClassId/')?>">
     <script>
         jQuery(document).ready(function () {
             //here is auto reload after 1 second for time and date in the top

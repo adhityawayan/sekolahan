@@ -10,6 +10,7 @@
     <div class="page-content">
         <!-- BEGIN PAGE HEADER-->
         <div class="row">
+            <?=$this->session->flashdata('pesan')?>
             <div class="col-md-12">
                 <!-- BEGIN PAGE TITLE & BREADCRUMB-->
                 <h3 class="page-title">

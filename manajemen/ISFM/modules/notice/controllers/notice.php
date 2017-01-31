@@ -66,6 +66,7 @@ class Notice extends CI_Controller {
                 'notice' => $this->db->escape_like_str($notice),
                 'receiver' => $this->db->escape_like_str($receiver)
             );
+//            return var_dump($noticeArray);
             //now sening the array information to database.
             if ($this->db->insert('notice_board', $noticeArray)) {
                 redirect('notice/allNotice', 'refresh');

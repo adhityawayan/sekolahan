@@ -32,6 +32,7 @@ class Subjects extends MX_Controller {
                                     </div>';
                 $data['class'] = $this->common->getAllData('class');
                 $data['teacher'] = $this->common->getAllData('teachers_info');
+                $data['cabang'] = $this->common->selectCabang();
                 $this->load->view('temp/header');
                 $this->load->view('addSubject', $data);
                 $this->load->view('temp/footer');
@@ -39,7 +40,7 @@ class Subjects extends MX_Controller {
         } else {
             $data['class'] = $this->common->getAllData('class');
             $data['teacher'] = $this->common->getAllData('teachers_info');
-            $data['cabang'] = $this->subject_model->allCabang();
+            $data['cabang'] = $this->common->selectCabang();
             $this->load->view('temp/header');
             $this->load->view('addSubject', $data);
             $this->load->view('temp/footer');

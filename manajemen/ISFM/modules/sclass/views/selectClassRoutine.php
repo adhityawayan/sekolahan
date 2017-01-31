@@ -29,6 +29,7 @@
         </div>
         <!-- END PAGE HEADER-->
         <div class="row">
+            <?=$this->session->flashdata('pesan')?>
             <div class="col-md-12 ">
                 <!-- BEGIN SAMPLE FORM PORTLET-->
                 <div class="portlet box green ">

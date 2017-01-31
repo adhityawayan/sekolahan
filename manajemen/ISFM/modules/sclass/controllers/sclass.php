@@ -128,6 +128,8 @@ class Sclass extends MX_Controller
     {
         $class_id = $this->input->post('class', TRUE);
         $cabang_id = $this->input->post('cabang_id', TRUE);
+        $teacherfor = $this->common->selectTeacherByCabang($cabang_id);
+
         $classTitle = $this->common->class_title($class_id);
         //if admin set section for any class then bellow [if(){ condition]  will execute ***(Start)***
         if ($this->input->post('section', TRUE)) {
@@ -218,8 +220,10 @@ class Sclass extends MX_Controller
                 }
             }
         } //if admin do not set section for any class then bellow [else{ condition]  will execute ***(Start)***
-        else {
-            if ($this->input->post('submit2', TRUE)) {
+        else
+        {
+            if ($this->input->post('submit2', TRUE))
+            {
                 $day = $this->input->post('day', TRUE);
                 $subject = $this->input->post('subject', TRUE);
                 $teacher = $this->input->post('teacher', TRUE);
@@ -239,22 +243,27 @@ class Sclass extends MX_Controller
                     'subject_teacher' => $this->db->escape_like_str($teacher),
                 );
                 //$this->db->where(array('class_title' => $classTitle,'subject_title' =>$subject));
-                if ($this->db->insert('class_routine', $tableData) && $this->db->update('class_subject', $tableData2, array('class_id' => $class_id, 'subject_title' => $subject))) {
-                    $data['classTile'] = $classTitle;
-                    $data['class_id'] = $class_id;
-                    $data['day'] = $this->common->getAllData('config_week_day');
-                    $data['subject'] = $this->common->getWhere('class_subject', 'class_id', $class_id);
-                    $data['teacher'] = $this->common->getAllData('teachers_info');
-                    $this->load->view('temp/header');
-                    $this->load->view('addClassRoutin', $data);
-                    $this->load->view('temp/footer');
+                if ($this->db->insert('class_routine', $tableData) && $this->db->update('class_subject', $tableData2, array('class_id' => $class_id, 'subject_title' => $subject)))
+                {
+//                    $data['classTile'] = $classTitle;
+//                    $data['class_id'] = $class_id;
+//                    $data['day'] = $this->common->getAllData('config_week_day');
+//                    $data['subject'] = $this->common->getWhere('class_subject', 'class_id', $class_id);
+//                    $data['teacher'] = $teacherfor;
+//                    return var_dump($data);
+//
+//                    $this->load->view('temp/header');
+//                    $this->load->view('addClassRoutin', $data);
+//                    $this->load->view('temp/footer');
+                    alert();
+                    redirect('sclass/selectClassRoutin');
                 }
             } else {
                 $data['classTile'] = $classTitle;
                 $data['class_id'] = $class_id;
                 $data['day'] = $this->common->getAllData('config_week_day');
                 $data['subject'] = $this->common->getWhere('class_subject', 'class_id', $class_id);
-                $data['teacher'] = $this->common->selectTeacherByCabang($cabang_id);
+                $data['teacher'] = $teacherfor;
                 $this->load->view('temp/header');
                 $this->load->view('addClassRoutin', $data);
                 $this->load->view('temp/footer');
@@ -405,7 +414,16 @@ class Sclass extends MX_Controller
     {
         $data = array();
         $userId = $this->input->get('uisd');
-        $query = $this->db->query("SELECT class_id FROM parents_info WHERE user_id='$userId'");
+
+        if($this->ion_auth->is_student())
+        {
+            $query = $this->db->query("SELECT class_id FROM student_info WHERE user_id='$userId'");
+        }
+        if($this->ion_auth->is_parents())
+        {
+            $query = $this->db->query("SELECT class_id FROM parents_info WHERE user_id='$userId'");
+        }
+
         foreach ($query->result_array() as $row) {
             $class_id = $row['class_id'];
         }

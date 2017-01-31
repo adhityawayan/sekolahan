@@ -217,6 +217,7 @@ class Users extends CI_Controller {
                                                             </div>';
                                 //Load the admission form again for new student. 
                                 $data['s_class'] = $this->common->getAllData('class');
+                                $data['cabang'] = $this->common->selectCabang();
                                 $this->load->view('temp/header');
                                 $this->load->view('add_new_student', $data);
                                 $this->load->view('temp/footer');
@@ -566,6 +567,7 @@ class Users extends CI_Controller {
                 $this->db->insert('teachers_info', $teachersInfo);
                 if ($this->db->insert('role_based_access', $teacher_access)) {
                     //Load the Teachers Information's page after Add New Teacher.
+                    alert();
                     redirect('teachers/allTeachers', 'refresh');
                 }
             } else {
@@ -811,6 +813,7 @@ class Users extends CI_Controller {
                                                         <button aria-hidden="true" data-dismiss="alert" class="close" type="button"></button>
                                                         <strong>Success!</strong> The parents profile made successfully.
                                                 </div></div>';
+                    $data['cabang'] = $this->common->selectCabang();
                     $this->load->view('temp/header');
                     $this->load->view('parents', $data);
                     $this->load->view('temp/footer');

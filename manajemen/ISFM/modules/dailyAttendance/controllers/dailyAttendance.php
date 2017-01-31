@@ -30,6 +30,14 @@ class DailyAttendance extends MX_Controller {
         $this->load->view('ajaxClass',$data);
     }
 
+    public function getClassByCabangForClassId($cabang_id)
+    {
+        $data=array(
+            's_class' => $this->common->selectClassByCabang($cabang_id)
+        );
+        $this->load->view('ajaxClassId',$data);
+    }
+
     //This function show the class & section for selecting class to take attendance 
     public function selectClassAttendance() {
         $data['cabang'] = $this->common->selectCabang();
@@ -117,7 +125,9 @@ class DailyAttendance extends MX_Controller {
             redirect('dailyAttendance/attendanceCompleteMessage', 'refresh');
         } else {
             //Load attendence view before takeing attendence with class,All section and specific class section
-            $classTitle = $this->input->post('class_title', TRUE);
+            $classId = $this->input->post('class_id', TRUE);
+            $classTitle = $this->common->class_title($classId);
+            $cabang_id = $this->input->post('cabang_id', TRUE);
             if ($this->input->post('section', TRUE)) {
                 $Section = $this->input->post('section', TRUE);
                 if ($Section == 'all') {
@@ -151,11 +161,13 @@ class DailyAttendance extends MX_Controller {
                 }
             } else {
                 //whene want any class students attendence sheet only,then work this erea.
+
                 $queryData = array();
-                $query = $this->db->get_where('class_students', array('class_title' => $classTitle));
+                $query = $this->db->get_where('class_students', array('class_id'=>$classId));
                 foreach ($query->result_array() as $row) {
                     $queryData[] = $row;
                 }
+
                 $data['students'] = $queryData;
                 if (!empty($data['students'])) {
                     $this->load->view('temp/header');

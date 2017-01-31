@@ -66,7 +66,7 @@
                                 <div class="form-group last">
                                     <label class="control-label col-md-3"> <?php echo lang('not_ice'); ?> </label>
                                     <div class="col-md-9">
-                                        <textarea class="ckeditor form-control" name="noticeDetails" rows="6"></textarea>
+                                        <textarea class="form-control" name="noticeDetails" rows="6"></textarea>
                                     </div>
                                 </div>
                             </div>
