@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 30, 2017 at 08:37 AM
+-- Generation Time: Feb 01, 2017 at 05:17 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -59,16 +59,6 @@ CREATE TABLE `add_exam` (
   `status` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `add_exam`
---
-
-INSERT INTO `add_exam` (`id`, `year`, `exam_title`, `start_date`, `class_id`, `total_time`, `publish`, `final`, `status`) VALUES
-(4, 2016, 'Test Exam 1', '09/06/2016', 1, '1 Hour 30 ', 'Publish', 'NoFinal', 'NoResult'),
-(5, 2016, 'FInal Exam', '08/10/2016', 3, '30 Minute', 'Not Publish', 'Final', 'NoResult'),
-(7, 2017, 'UAS', '11/01/2017', 11, '30 Minute', 'Publish', 'Final', 'NoResult'),
-(19, 2017, 'Tes Mingguan Dua', '20/01/2017', 15, '30 Minute', 'Not Publish', 'NoFinal', 'NoResult');
-
 -- --------------------------------------------------------
 
 --
@@ -95,20 +85,6 @@ CREATE TABLE `books` (
   `cover_photo` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `books`
---
-
-INSERT INTO `books` (`id`, `date`, `isbn_no`, `book_no`, `books_title`, `authore`, `category`, `edition`, `pages`, `language`, `uploderTitle`, `books_amount`, `status`, `issu_date`, `due_date`, `issu_member_no`, `cover_photo`) VALUES
-(1, 1464559200, '978-3-16-148410-0', 20161, 'Book Test 1', 'Author Test 1', 'English', '16 th', 1500, 'English', 'Headmaster', 1, 'Not Available', 1475245412, 1475186400, 1, 'f7cebda75f3c1c09ef31e2e525db8805.gif'),
-(2, 1464559200, '978-3-16-148410-1', 20162, 'Book Test 2', 'Author Test 2', 'Bangla ', '16 th', 1500, 'Bangla', 'Headmaster', 2, 'Available', 0, 0, 0, 'eee468e20c7387d459487dafda58709d.gif'),
-(3, 1464559200, '978-3-16-148410-2', 20163, 'Book Test 3', 'Author Test 3', 'English', '16 th', 522, 'English', 'Headmaster', 3, 'Available', 0, 0, 0, '6583655141ea7c33d3981bbd7332c586.gif'),
-(4, 1464559200, '978-3-16-148410-3', 20164, 'Book Test 4', 'Author Test 4', 'Bangla ', '16 th', 520, 'Bangla', 'Headmaster', 4, 'Available', 0, 0, 0, 'ceabf75a2a7dead8862b7821d3fd3bd4.gif'),
-(5, 1464559200, '978-3-16-148410-4', 20165, 'Book Test 5', 'Author Test 5', 'Bangla ', '14 th', 711, 'Bangla', 'Headmaster', 5, 'Available', 0, 0, 0, '9d4b20f013a24ebc882c84b0b344e526.gif'),
-(6, 1464559200, '978-3-16-148410-5', 20166, 'Book Test 6', 'Author Test 6', 'English', '10 th', 485, 'English', 'Headmaster', 6, 'Available', 0, 0, 0, '1d28dd98b150b33ad4a708a95031408a.gif'),
-(7, 1464559200, '978-3-16-148410-6', 20167, 'Book Test 7', 'Author Test 77', 'English', '9 th', 485, 'English', 'Headmaster', 7, 'Available', 0, 0, 0, '036337321c644b23bd7916f3e4b3eca4.gif'),
-(8, 1464559200, '978-3-16-148410-7', 20168, 'Book Test 8', 'Author Test 8', 'English', '14 th', 950, 'English', 'Headmaster', 8, 'Available', 0, 0, 0, '3b174671512c28eaf95be33657e2af69.gif');
-
 -- --------------------------------------------------------
 
 --
@@ -123,17 +99,6 @@ CREATE TABLE `books_category` (
   `description` varchar(500) NOT NULL,
   `books_amount` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `books_category`
---
-
-INSERT INTO `books_category` (`id`, `category_creator`, `category_title`, `parent_category`, `description`, `books_amount`) VALUES
-(1, 'Headmaster', 'English', '', '', 0),
-(2, 'Headmaster', 'Story ', 'English', '', 0),
-(3, 'Headmaster', 'Bangla ', '', '', 0),
-(4, 'Headmaster', 'Story', 'Bangla ', '', 0),
-(5, 'Headmaster', 'poem', 'English', '', 0);
 
 -- --------------------------------------------------------
 
@@ -174,14 +139,6 @@ CREATE TABLE `calender_events` (
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `calender_events`
---
-
-INSERT INTO `calender_events` (`id`, `title`, `start_date`, `end_date`, `color`, `url`, `user_id`) VALUES
-(1, 'test', '05-05-2016', '06-05-2016', 'red', 'test.com', 1),
-(2, 'Lomba', '01-02-2017', '04-02-2017', 'green', 'https://www.youtube.com/watch?v=DvW66QQeLCI&list=PLEB1A010CD8485E54&index=2', 15);
-
 -- --------------------------------------------------------
 
 --
@@ -207,12 +164,18 @@ CREATE TABLE `class` (
 --
 
 INSERT INTO `class` (`id`, `cabang_id`, `class_title`, `class_group`, `section`, `section_student_capacity`, `classCode`, `student_amount`, `attendance_percentices_daily`, `attend_percentise_yearly`, `month_fee`) VALUES
-(14, 4, 'Class New 2', '', '', '10', '', 1, 0, 0, ''),
-(15, 2, 'Class New 3', '', '', '10', 'CB00002015', 1, 0, 0, ''),
-(16, 2, 'Class New 4 2017/2018', '', '', '10', 'CB00002016', 1, 0, 0, ''),
-(17, 2, 'Class New 5 2017/2018', '', '', '10', 'CB00002017', 1, 0, 0, ''),
-(18, 2, 'Class New 6 2017/2018', '', '', '10', 'CB00002018', 0, 0, 0, ''),
-(19, 2, 'Class New 7 2017/2018', '', '', '10', 'CB00002019', 0, 0, 0, '');
+(1, 2, 'Kelas Satu 2017/2018', '', '', '5', 'CB00002001', 5, 100, 100, ''),
+(2, 2, 'Kelas Dua 2017/2018', '', '', '5', 'CB00002002', 0, 0, 0, ''),
+(3, 2, 'Kelas Tiga 2017/2018', '', '', '5', 'CB00002003', 0, 0, 0, ''),
+(4, 2, 'Kelas Empat 2017/2018', '', '', '5', 'CB00002004', 0, 0, 0, ''),
+(5, 2, 'Kelas Lima 2017/2018', '', '', '5', 'CB00002005', 0, 0, 0, ''),
+(6, 2, 'Kelas Enam 2017/2018', '', '', '5', 'CB00002006', 0, 0, 0, ''),
+(7, 4, 'Kelas Satu 2017/2018', '', '', '5', 'CB00003007', 5, 100, 100, ''),
+(8, 4, 'Kelas Dua 2017/2018', '', '', '5', 'CB00003008', 0, 0, 0, ''),
+(9, 4, 'Kelas Tiga 2017/2018', '', '', '5', 'CB00003009', 0, 0, 0, ''),
+(12, 4, 'Kelas Empat 2017/2018', '', '', '5', 'CB00003010', 0, 0, 0, ''),
+(13, 4, 'Kelas Lima 2017/2018', '', '', '5', 'CB00003013', 0, 0, 0, ''),
+(14, 4, 'Kelas Enam 2017/2018', '', '', '5', 'CB00003014', 0, 0, 0, '');
 
 -- --------------------------------------------------------
 
@@ -237,31 +200,16 @@ CREATE TABLE `class_routine` (
 --
 
 INSERT INTO `class_routine` (`id`, `class_id`, `section`, `day_title`, `subject`, `subject_teacher`, `start_time`, `end_time`, `room_number`) VALUES
-(1, 1, '', 'Sunday', 'AMAR BANGLA BOI', 'Willie B. Quint', '9.00am', '9.30', '101'),
-(2, 1, '', 'Sunday', 'ENGLISH FOR TODAY', 'Fredrick V. Keyes', '9.31am', '10.00am', '101'),
-(3, 1, '', 'Sunday', 'PRIMARY MATHEMATICS', 'mumar abboud', '10.01am', '10.30am', '101'),
-(4, 1, '', 'Sunday', 'PRIMARY MATHEMATICS', 'mumar abboud', '10.01am', '10.30am', '101'),
-(5, 2, '', 'Sunday', 'AMAR BANGLA BOI', 'Inayah Asfour', '9.00am', '9.30am', '102'),
-(6, 2, '', 'Sunday', 'ENGLISH FOR TODAY', 'mumar abboud', '9.31am', '10.00am', '102'),
-(7, 2, '', 'Sunday', 'PRIMARY MATHEMATICS', 'Fredrick V. Keyes', '10.01am', '10.30am', '102'),
-(8, 3, '', 'Sunday', 'AMAR BANGLA BOI', 'Willie B. Quint', '9.00am', '9.30am', '103'),
-(9, 3, '', 'Sunday', 'ENGLISH FOR TODAY', 'Fredrick V. Keyes', '9.31am', '10.00am', '103'),
-(10, 3, '', 'Sunday', 'PRIMARY MATHEMATICS', 'mumar abboud', '10.01am', '10.30am', '103'),
-(11, 3, '', 'Sunday', 'BANGLADESH AND GLOBAL STUDIES', 'Inayah Asfour', '10.30am', '11.00am', '103'),
-(12, 3, '', 'Monday', 'ENGLISH FOR TODAY', 'Fredrick V. Keyes', '9.00am', '9.30', '103'),
-(13, 3, '', 'Monday', 'PRIMARY MATHEMATICS', 'mumar abboud', '9.31am', '10.00am', '103'),
-(14, 11, '', 'Sunday', 'Persamaan Linier', 'Mokhamad Ariadi', '09:00', '11:00', '2'),
-(15, 11, '', 'Tuesday', 'Persamaan Linier', 'Mokhamad Ariadi', '10:00', '12:00', '3'),
-(16, 11, '', 'Tuesday', 'Persamaan Linier', 'Mokhamad Ariadi', '13:00', '15:00', '4'),
-(17, 11, '', 'Sunday', 'Kuadrat', 'Adhitya W. Yunanza', '07:00', '09:00', '2'),
-(18, 11, '', 'Wednesday', 'Kuadrat', 'Adhitya W. Yunanza', '09:00', '11:00', '3'),
-(19, 11, '', 'Thursday', 'Kuadrat', 'Adhitya W. Yunanza', '13:00', '15:00', '4'),
-(20, 11, '', 'Monday', 'Persamaan Linier', 'Mokhamad Ariadi', '10:00', '11:00', '3'),
-(21, 12, '', 'Sunday', 'Statistika', 'Mokhamad Ariadi', '09:00', '10:00', '2'),
-(22, 14, '', 'Monday', 'BangunRuang', 'Mokhamad Ariadi', '09:00', '10:00', '2'),
-(23, 15, '', 'Sunday', 'Bangun Ruang', 'Mokhamad Ariadi', '15:00', '16:00', '3'),
-(24, 15, '', 'Sunday', 'Bangun Ruang', 'Mokhamad Ariadi', '10:00', '12:00', '3'),
-(25, 15, '', 'Sunday', 'Bangun Ruang', 'Mokhamad Ariadi', '07:14', '09:14', '7');
+(1, 1, '', 'Sunday', 'Biologi', 'Firman Zain', '10:00', '11:00', 'R1'),
+(2, 1, '', 'Sunday', 'KIMIA', 'Dio Saputra', '11:15', '12:00', 'R1'),
+(3, 1, '', 'Sunday', 'Sejarah', 'Dio Saputra', '07:00', '08:00', 'R1'),
+(4, 1, '', 'Sunday', 'Agama', 'Firman Zain', '12:15', '13:15', 'R1'),
+(5, 1, '', 'Monday', 'Bahasa Indonesia', 'Firman Zain', '12:00', '13:00', 'R1'),
+(6, 1, '', 'Monday', 'Bahasa Inggris', 'Dio Saputra', '10:00', '11:00', 'R1'),
+(7, 1, '', 'Tuesday', 'Bahasa Inggris', 'Firman Zain', '14:00', '15:00', 'R1'),
+(8, 1, '', 'Wednesday', 'Sejarah', 'Firman Zain', '08:00', '09:00', 'R1'),
+(9, 7, '', 'Sunday', 'Metematika', 'Rizky Febrianto', '14:34', '14:50', 'R1'),
+(10, 7, '', 'Monday', 'Biologi', 'Putut Wijaya', '07:30', '08:30', 'R1');
 
 -- --------------------------------------------------------
 
@@ -288,54 +236,16 @@ CREATE TABLE `class_students` (
 --
 
 INSERT INTO `class_students` (`id`, `year`, `user_id`, `roll_number`, `student_id`, `class_id`, `class_title`, `section`, `student_title`, `attendance_percentices_daily`, `optional_sub`) VALUES
-(1, 2016, 4, 1, '201601001', 1, 'Class 1', 'Section A,Section B,Section C,Section D', 'Benjamin D. Lampe', 100, ''),
-(2, 2016, 12, 2, '201601002', 1, 'Class 1', 'Section A,Section B,Section C,Section D', 'Rahim Hasan', 100, ''),
-(3, 2016, 13, 3, '201601003', 1, 'Class 1', 'Section A,Section B,Section C,Section D', 'Junayed Hak', 100, ''),
-(4, 2016, 16, 4, '201601004', 1, 'Class 1', '', 'Razia Akture', 0, ''),
-(5, 2016, 17, 1, '201602001', 2, 'Class 2', '', 'Abdullah  hossain', 100, ''),
-(6, 2016, 18, 2, '201602002', 2, 'Class 2', '', 'Sujana Ahmed', 100, ''),
-(7, 2016, 19, 3, '201602003', 2, 'Class 2', '', 'Mahmud Hasan', 100, ''),
-(8, 2016, 20, 4, '201602004', 2, 'Class 2', '', 'Mahbuba Akter', 100, ''),
-(9, 2016, 21, 5, '201602005', 2, 'Class 2', '', 'Irfan Hossain', 100, ''),
-(10, 2016, 22, 6, '201602006', 2, 'Class 2', '', 'Imran Hasan', 100, ''),
-(11, 2016, 23, 5, '201601005', 1, 'Class 1', '', 'Polash Sarder', 100, ''),
-(12, 2016, 24, 6, '201601006', 1, 'Class 1', '', 'Sumon Akon', 0, ''),
-(13, 2016, 25, 1, '201603001', 3, 'Class 3', '', 'Farjana Akter', 0, ''),
-(14, 2016, 26, 2, '201603002', 3, 'Class 3', '', 'Akram Hossain', 100, ''),
-(15, 2016, 27, 3, '201603003', 3, 'Class 3', '', 'Alamin Saeder', 100, ''),
-(16, 2016, 28, 4, '201603004', 3, 'Class 3', '', 'Sabina Sumi', 100, ''),
-(17, 2016, 29, 1, '201604001', 4, 'Class 4', '', 'Sanjida Hossain', 100, ''),
-(18, 2016, 30, 2, '201604002', 4, 'Class 4', '', 'Kawser  Shikder', 100, ''),
-(19, 2016, 31, 3, '201604003', 4, 'Class 4', '', 'Shohana Akter', 100, ''),
-(20, 2016, 32, 4, '201604004', 4, 'Class 4', '', 'Juthi Khanam', 100, ''),
-(21, 2016, 33, 1, '201605001', 5, 'Class 5', '', 'Tanjila Akter', 100, ''),
-(22, 2016, 34, 2, '201605002', 5, 'Class 5', '', 'Nusrat Jahan', 100, ''),
-(23, 2016, 35, 3, '201605003', 5, 'Class 5', '', 'Amina Akter', 100, ''),
-(24, 2016, 36, 4, '201605004', 5, 'Class 5', '', 'Ebrahim Khondokar', 0, ''),
-(25, 2016, 37, 5, '201605005', 5, 'Class 5', '', 'Mintu  Fokir', 0, ''),
-(26, 2016, 38, 1, '201606001', 6, 'Class 6', 'Section A', 'Shohid Islam', 100, ''),
-(27, 2016, 39, 2, '201606002', 6, 'Class 6', 'Section B', 'Khadija Akter', 100, ''),
-(28, 2016, 40, 3, '201606003', 6, 'Class 6', 'Section A', 'Maruf Hossain', 100, ''),
-(29, 2016, 41, 4, '201606004', 6, 'Class 6', 'Section B', 'Mitu  Akter', 100, ''),
-(30, 2016, 42, 5, '201606005', 6, 'Class 6', 'Section A', 'Rayhan  Kebria', 0, ''),
-(32, 2016, 44, 2, '201607002', 7, 'Class 7', 'Section A,Section B,Section C,Section D', 'Airin Akter', 0, ''),
-(33, 2016, 45, 3, '201607003', 7, 'Class 7', '', 'Hemel Hossain', 0, ''),
-(34, 2016, 46, 4, '201607004', 7, 'Class 7', '', 'Mou Akter', 0, ''),
-(35, 2016, 47, 5, '201607005', 7, 'Class 7', '', 'Dedar  Hossain', 0, ''),
-(36, 2016, 48, 6, '201607006', 7, 'Class 7', '', 'Samia Akter', 0, ''),
-(37, 2016, 49, 1, '201608001', 8, 'Class 8', '', 'Al Mamun', 0, ''),
-(38, 2016, 50, 2, '201608002', 8, 'Class 8', '', 'Jiniya Hoq', 0, ''),
-(39, 2016, 51, 3, '201608003', 8, 'Class 8', '', 'Junayed Ahmed', 0, ''),
-(40, 2016, 52, 4, '201608004', 8, 'Class 8', '', 'Priya Ahmed', 0, ''),
-(41, 2016, 53, 5, '201608005', 8, 'Class 8', '', 'Mithu Khondokar', 0, ''),
-(42, 2016, 54, 1, '201609001', 9, 'Class 9', '', 'Rasel Hossain', 0, ''),
-(43, 2016, 56, 2, '201609002', 9, 'Class 9', '', 'Test Name', 0, ''),
-(44, 2018, 4, 1, '201701007', 13, 'Class 3', 'Matematika', 'Noviagati  Pramudia', 0, ''),
-(46, 2017, 7, 3, '201713002', 12, 'Class 2', 'Matematika', 'Juniar Sandra', 0, ''),
-(47, 2017, 11, 2, '201713003', 12, 'Class 2', 'Matematika', 'Khoriri Matoh', 0, ''),
-(48, 2017, 12, 4, '201713004', 12, 'Class 2', 'Matematika', 'Silvia Kurnia', 0, ''),
-(49, 2017, 13, 1, '2017CB00002015001', 14, 'Class New 2', '', 'Dicky  Wahyu', 0, ''),
-(50, 0, 14, 2, '2017CB00002015002', 17, 'Class New 5 2017/2018', '', 'Sujino Marquez', 0, '');
+(1, 2017, 30, 1, '2017CB00002001001', 1, 'Kelas Satu 2017/2018', '', 'Dini Setia', 100, ''),
+(2, 2017, 31, 2, '2017CB00002001002', 1, 'Kelas Satu 2017/2018', '', 'Bagas Pamungkas', 100, ''),
+(3, 2017, 32, 3, '2017CB00002001003', 1, 'Kelas Satu 2017/2018', '', 'Alvin Bintang', 100, ''),
+(4, 2017, 33, 4, '2017CB00002001004', 1, 'Kelas Satu 2017/2018', '', 'Arbi Ahmad', 100, ''),
+(5, 2017, 34, 5, '2017CB00002001005', 1, 'Kelas Satu 2017/2018', '', 'Adi Yakub', 100, ''),
+(6, 2017, 35, 1, '2017CB00003007001', 7, 'Kelas Satu 2017/2018', '', 'Queen Bella', 100, ''),
+(7, 2017, 36, 2, '2017CB00003007002', 7, 'Kelas Satu 2017/2018', '', 'Siti Nuriyah', 100, ''),
+(8, 2017, 37, 3, '2017CB00003007003', 7, 'Kelas Satu 2017/2018', '', 'Fery Eka Wahyuni', 100, ''),
+(9, 2017, 38, 4, '2017CB00003007004', 7, 'Kelas Satu 2017/2018', '', 'Nur Aeni', 100, ''),
+(10, 2017, 39, 5, '2017CB00003007005', 7, 'Kelas Satu 2017/2018', '', 'Heru  Fatoni', 100, '');
 
 -- --------------------------------------------------------
 
@@ -360,96 +270,16 @@ CREATE TABLE `class_subject` (
 --
 
 INSERT INTO `class_subject` (`id`, `year`, `class_id`, `subject_title`, `group`, `subject_teacher`, `edition`, `writer_name`, `optional`) VALUES
-(1, 2016, 1, 'AMAR BANGLA BOI', '', 'Willie B. Quint', '2016', 'NCTB', 0),
-(2, 2016, 1, 'ENGLISH FOR TODAY', '', 'Fredrick V. Keyes', '2016', 'NCTB', 0),
-(3, 2016, 1, 'PRIMARY MATHEMATICS', '', 'mumar abboud', '2016', 'NCTB', 0),
-(4, 2016, 2, 'AMAR BANGLA BOI', '', 'Inayah Asfour', '2016', 'NCTB', 0),
-(5, 2016, 2, 'ENGLISH FOR TODAY', '', 'mumar abboud', '2016', 'NCTB', 0),
-(6, 2016, 2, 'PRIMARY MATHEMATICS', '', 'Fredrick V. Keyes', '2016', 'NCTB', 0),
-(7, 2016, 2, 'PRIMARY MATHEMATICS', '', 'Fredrick V. Keyes', '2016', 'NCTB', 0),
-(8, 2016, 3, 'AMAR BANGLA BOI', '', 'Willie B. Quint', '2016', 'NCTB', 0),
-(9, 2016, 3, 'ENGLISH FOR TODAY', '', 'Fredrick V. Keyes', '2016', 'NCTB', 0),
-(10, 2016, 3, 'PRIMARY MATHEMATICS', '', 'mumar abboud', '2016', 'NCTB', 0),
-(11, 2016, 3, 'BANGLADESH AND GLOBAL STUDIES', '', 'Inayah Asfour', '2016', 'NCTB', 0),
-(12, 2016, 3, 'PRIMARY SCIENCE', '', '', '2016', 'NCTB', 0),
-(13, 2016, 3, 'ISLAM AND MORAL EDUCATION', '', '', '2016', 'NCTB', 0),
-(14, 2016, 3, 'HINDU RELIGION AND MORAL EDUCATION', '', '', '2016', 'NCTB', 0),
-(15, 2016, 3, 'BUDDIST RELIGION AND MORAL EDUCATION', '', '', '2016', 'NCTB', 0),
-(16, 2016, 3, 'CHRIST RELIGION AND MORAL EDUCATION', '', '', '2016', 'NCTB', 0),
-(17, 2016, 4, 'AMAR BANGLA BOI', '', '', '2016', 'NCTB', 0),
-(18, 2016, 4, 'ENGLISH FOR TODAY', '', '', '2016', 'NCTB', 0),
-(19, 2016, 4, 'PRIMARY MATHEMATICS', '', '', '2016', 'NCTB', 0),
-(20, 2016, 4, 'BANGLADESH AND GLOBAL STUDIES', '', '', '2016', 'NCTB', 0),
-(21, 2016, 4, 'PRIMARY SCIENCE', '', '', '2016', 'NCTB', 0),
-(22, 2016, 4, 'ISLAM AND MORAL EDUCATION', '', '', '2016', 'NCTB', 0),
-(23, 2016, 4, 'HINDU RELIGION AND MORAL EDUCATION', '', '', '2016', 'NCTB', 0),
-(24, 2016, 4, 'BUDDIST RELIGION AND MORAL EDUCATION', '', '', '2016', 'NCTB', 0),
-(25, 2016, 4, 'CHRIST RELIGION AND MORAL EDUCATION', '', '', '2016', 'NCTB', 0),
-(26, 2016, 5, 'AMAR BANGLA BOI', '', '', '2016', 'NCTB', 0),
-(27, 2016, 5, 'ENGLISH FOR TODAY', '', '', '2016', 'NCTB', 0),
-(28, 2016, 5, 'PRIMARY MATHEMATICS', '', '', '2016', 'NCTB', 0),
-(29, 2016, 5, 'BANGLADESH AND GLOBAL STUDIES', '', '', '2016', 'NCTB', 0),
-(30, 2016, 5, 'PRIMARY SCIENCE', '', '', '2016', 'NCTB', 0),
-(31, 2016, 5, 'ISLAM AND MORAL EDUCATION', '', '', '2016', 'NCTB', 0),
-(32, 2016, 5, 'HINDU RELIGION AND MORAL EDUCATION', '', '', '2016', 'NCTB', 0),
-(33, 2016, 5, 'BUDDIST RELIGION AND MORAL EDUCATION', '', '', '2016', 'NCTB', 0),
-(34, 2016, 5, 'CHRIST RELIGION AND MORAL EDUCATION', '', '', '2016', 'NCTB', 0),
-(35, 2016, 6, 'AMAR BANGLA BOI', '', '', '2016', 'NCTB', 0),
-(36, 2016, 6, 'ENGLISH FOR TODAY', '', '', '2016', 'NCTB', 0),
-(37, 2016, 6, 'PRIMARY MATHEMATICS', '', '', '2016', 'NCTB', 0),
-(38, 2016, 6, 'BANGLADESH AND GLOBAL STUDIES', '', '', '2016', 'NCTB', 0),
-(39, 2016, 6, 'PRIMARY SCIENCE', '', '', '2016', 'NCTB', 0),
-(40, 2016, 6, 'ISLAM AND MORAL EDUCATION', '', '', '2016', 'NCTB', 0),
-(41, 2016, 6, 'HINDU RELIGION AND MORAL EDUCATION', '', '', '2016', 'NCTB', 0),
-(42, 2016, 6, 'BUDDIST RELIGION AND MORAL EDUCATION', '', '', '2016', 'NCTB', 0),
-(43, 2016, 6, 'CHRIST RELIGION AND MORAL EDUCATION', '', '', '2016', 'NCTB', 0),
-(44, 2016, 7, 'AMAR BANGLA BOI', '', '', '2016', 'NCTB', 0),
-(45, 2016, 7, 'ENGLISH FOR TODAY', '', '', '2016', 'NCTB', 0),
-(46, 2016, 7, 'PRIMARY MATHEMATICS', '', '', '2016', 'NCTB', 0),
-(47, 2016, 7, 'BANGLADESH AND GLOBAL STUDIES', '', '', '2016', 'NCTB', 0),
-(48, 2016, 7, 'PRIMARY SCIENCE', '', '', '2016', 'NCTB', 0),
-(49, 2016, 7, 'ISLAM AND MORAL EDUCATION', '', '', '2016', 'NCTB', 0),
-(50, 2016, 7, 'HINDU RELIGION AND MORAL EDUCATION', '', '', '2016', 'NCTB', 0),
-(51, 2016, 7, 'BUDDIST RELIGION AND MORAL EDUCATION', '', '', '2016', 'NCTB', 0),
-(52, 2016, 7, 'CHRIST RELIGION AND MORAL EDUCATION', '', '', '2016', 'NCTB', 0),
-(53, 2016, 8, 'AMAR BANGLA BOI', '', '', '2016', 'NCTB', 0),
-(54, 2016, 8, 'ENGLISH FOR TODAY', '', '', '2016', 'NCTB', 0),
-(55, 2016, 8, 'PRIMARY MATHEMATICS', '', '', '2016', 'NCTB', 0),
-(56, 2016, 8, 'ISLAM AND MORAL EDUCATION', '', '', '2016', 'NCTB', 0),
-(57, 2016, 8, 'HINDU RELIGION AND MORAL EDUCATION', '', '', '2016', 'NCTB', 0),
-(58, 2016, 8, 'BUDDIST RELIGION AND MORAL EDUCATION', '', '', '2016', 'NCTB', 0),
-(59, 2016, 8, 'CHRIST RELIGION AND MORAL EDUCATION', '', '', '2016', 'NCTB', 0),
-(60, 2016, 8, 'BANGLADESH AND GLOBAL STUDIES', '', '', '2016', 'NCTB', 0),
-(61, 2016, 8, 'PRIMARY SCIENCE', '', '', '2016', 'NCTB', 0),
-(62, 2016, 9, 'AMAR BANGLA BOI', '', '', '2016', 'NCTB', 0),
-(63, 2016, 9, 'ENGLISH FOR TODAY', '', '', '2016', 'NCTB', 0),
-(64, 2016, 9, 'PRIMARY MATHEMATICS', '', '', '2016', 'NCTB', 0),
-(65, 2016, 9, 'BANGLADESH AND GLOBAL STUDIES', '', '', '2016', 'NCTB', 0),
-(66, 2016, 9, 'PRIMARY SCIENCE', '', '', '2016', 'NCTB', 0),
-(67, 2016, 9, 'ISLAM AND MORAL EDUCATION', '', '', '2016', 'NCTB', 0),
-(68, 2016, 9, 'HINDU RELIGION AND MORAL EDUCATION', '', '', '2016', 'NCTB', 0),
-(69, 2016, 9, 'BUDDIST RELIGION AND MORAL EDUCATION', '', '', '2016', 'NCTB', 0),
-(70, 2016, 9, 'CHRIST RELIGION AND MORAL EDUCATION', '', '', '2016', 'NCTB', 0),
-(71, 2016, 10, 'AMAR BANGLA BOI', '', '', '2016', 'NCTB', 0),
-(72, 2016, 10, 'ENGLISH FOR TODAY', '', '', '2016', 'NCTB', 0),
-(73, 2016, 10, 'PRIMARY MATHEMATICS', '', '', '2016', 'NCTB', 0),
-(74, 2016, 10, 'BANGLADESH AND GLOBAL STUDIES', '', '', '2016', 'NCTB', 0),
-(75, 2016, 10, 'ISLAM AND MORAL EDUCATION', '', '', '2016', 'NCTB', 0),
-(76, 2016, 10, 'HINDU RELIGION AND MORAL EDUCATION', '', '', '2016', 'NCTB', 0),
-(77, 2016, 10, 'BUDDIST RELIGION AND MORAL EDUCATION', '', '', '2016', 'NCTB', 0),
-(78, 2016, 10, 'CHRIST RELIGION AND MORAL EDUCATION', '', '', '2016', 'NCTB', 0),
-(79, 2016, 10, 'PRIMARY SCIENCE', '', '', '2016', 'NCTB', 0),
-(80, 2016, 9, 'AGRICULTURE STUDIES', '', '', '2016', 'NCTB', 1),
-(81, 2016, 10, 'AGRICULTURE STUDIES', '', '', '2016', 'NCTB', 1),
-(82, 2016, 10, 'ARTS & CRAFTS', '', '', '2016', 'NCTB', 1),
-(83, 2016, 10, 'ARTS & CRAFTS', '', '', '2016', 'NCTB', 1),
-(84, 2016, 9, 'MUSIC', '', '', '2016', 'NCTB', 1),
-(85, 2016, 10, 'MUSIC', '', '', '2016', 'NCTB', 1),
-(86, 2017, 11, 'Persamaan Linier', '', 'Mokhamad Ariadi', 'Orentasi', 'Setia Malik', 0),
-(87, 2017, 11, 'Kuadrat', '', 'Adhitya W. Yunanza', 'Pengembangan', 'Blibis Ketut', 1),
-(88, 2017, 12, 'Statistika', '', 'Mokhamad Ariadi', '2017', 'Rin', 0),
-(89, 2017, 14, 'BangunRuang', '', 'Mokhamad Ariadi', '2017', 'Admin', 0),
-(90, 2017, 15, 'Bangun Ruang', '', 'Mokhamad Ariadi', '2017', 'Deyee', 0);
+(1, 2017, 7, 'Metematika', '', 'Rizky Febrianto', '2017', 'TU', 0),
+(2, 2017, 1, 'Biologi', '', 'Firman Zain', '2017', 'TU', 0),
+(3, 2017, 1, 'KIMIA', '', 'Dio Saputra', '2017', 'TU', 0),
+(4, 2017, 1, 'Sejarah', '', 'Firman Zain', '2017', 'TU', 0),
+(5, 2017, 1, 'Agama', '', 'Firman Zain', '2017', 'TU', 0),
+(6, 2017, 1, 'Olahraga', '', '', '2017', 'TU', 0),
+(7, 2017, 1, 'Bahasa Indonesia', '', 'Firman Zain', '2017', 'TU', 0),
+(8, 2017, 1, 'Bahasa Inggris', '', 'Firman Zain', '2017', 'TU', 0),
+(9, 2017, 1, 'Sosiologi', '', '', '2017', 'TU', 0),
+(11, 2017, 7, 'Biologi', '', 'Putut Wijaya', '2017', 'TU', 0);
 
 -- --------------------------------------------------------
 
@@ -539,12 +369,16 @@ CREATE TABLE `daily_attendance` (
 --
 
 INSERT INTO `daily_attendance` (`id`, `date`, `user_id`, `student_id`, `class_title`, `section`, `days_amount`, `roll_no`, `present_or_absent`, `student_title`, `class_amount_monthly`, `class_amount_yearly`, `attend_amount_monthly`, `attend_amount_yearly`, `percentise_month`, `percentise_year`) VALUES
-(1, '1485104400', '13', '2017CB00002015001', 'Class New 3', '', '', 1, 'P', 'Dicky  Wahyu', 2, 2, 2, 2, 100, 100),
-(2, '1485104400', '13', '2017CB00002015001', 'Class New 3', '', '', 1, 'P', 'Dicky  Wahyu', 2, 2, 2, 2, 100, 100),
-(3, '1485190800', '13', '2017CB00002015001', 'Class New 3', '', '', 1, 'P', 'Dicky  Wahyu', 3, 3, 3, 3, 100, 100),
-(4, '1485190800', '14', '2017CB00002015002', 'Class New 3', '', '', 2, 'P', 'Sujino Marquez', 1, 1, 1, 1, 100, 100),
-(5, '1485277200', '13', '2017CB00002015001', 'Class New 3', '', '', 1, 'P', 'Dicky  Wahyu', 4, 4, 4, 4, 100, 100),
-(6, '1485277200', '14', '2017CB00002015002', 'Class New 3', '', '', 2, 'P', 'Sujino Marquez', 2, 2, 2, 2, 100, 100);
+(1, '1485795600', '35', '2017CB00003007001', 'Kelas Satu 2017/2018', '', '', 1, 'P', 'Queen Bella', 1, 1, 1, 1, 100, 100),
+(2, '1485795600', '36', '2017CB00003007002', 'Kelas Satu 2017/2018', '', '', 2, 'P', 'Siti Nuriyah', 1, 1, 1, 1, 100, 100),
+(3, '1485795600', '37', '2017CB00003007003', 'Kelas Satu 2017/2018', '', '', 3, 'P', 'Fery Eka Wahyuni', 1, 1, 1, 1, 100, 100),
+(4, '1485795600', '38', '2017CB00003007004', 'Kelas Satu 2017/2018', '', '', 4, 'P', 'Nur Aeni', 1, 1, 1, 1, 100, 100),
+(5, '1485795600', '39', '2017CB00003007005', 'Kelas Satu 2017/2018', '', '', 5, 'P', 'Heru  Fatoni', 1, 1, 1, 1, 100, 100),
+(6, '1485795600', '30', '2017CB00002001001', 'Kelas Satu 2017/2018', '', '', 1, 'P', 'Dini Setia', 1, 1, 1, 1, 100, 100),
+(7, '1485795600', '31', '2017CB00002001002', 'Kelas Satu 2017/2018', '', '', 2, 'P', 'Bagas Pamungkas', 1, 1, 1, 1, 100, 100),
+(8, '1485795600', '32', '2017CB00002001003', 'Kelas Satu 2017/2018', '', '', 3, 'P', 'Alvin Bintang', 1, 1, 1, 1, 100, 100),
+(9, '1485795600', '33', '2017CB00002001004', 'Kelas Satu 2017/2018', '', '', 4, 'P', 'Arbi Ahmad', 1, 1, 1, 1, 100, 100),
+(10, '1485795600', '34', '2017CB00002001005', 'Kelas Satu 2017/2018', '', '', 5, 'P', 'Adi Yakub', 1, 1, 1, 1, 100, 100);
 
 -- --------------------------------------------------------
 
@@ -637,19 +471,6 @@ CREATE TABLE `exam_attendanc` (
   `attendance` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `exam_attendanc`
---
-
-INSERT INTO `exam_attendanc` (`id`, `date`, `user_id`, `student_id`, `student_title`, `class_id`, `roll_no`, `section`, `exam_title`, `exam_subject`, `attendance`) VALUES
-(1, '09/01/2017', 5, '201713001', 'Amirul Arbi', 11, '1', 'Matematika', 'Ujian Class 1', 'Kuadrat', 'P'),
-(2, '11/01/2017', 4, '201701007', 'Noviagati  Pramudia', 11, '7', 'Matematika', 'UAS', 'Persamaan Linier', 'P'),
-(3, '11/01/2017', 7, '201713002', 'Juniar Sandra', 11, '2', 'Matematika', 'UAS', 'Persamaan Linier', 'P'),
-(4, '11/01/2017', 11, '201713003', 'Khoriri Matoh', 11, '3', 'Matematika', 'UAS', 'Persamaan Linier', 'P'),
-(5, '11/01/2017', 12, '201713004', 'Silvia Kurnia', 11, '4', 'Matematika', 'UAS', 'Persamaan Linier', 'P'),
-(6, '20/01/2017', 13, '2017CB00002015001', 'Dicky  Wahyu', 15, '1', '', 'Tes Mingguan Dua', 'Bangun Ruang', 'P'),
-(7, '20/01/2017', 14, '2017CB00002015002', 'Sujino Marquez', 15, '2', '', 'Tes Mingguan Dua', 'Bangun Ruang', 'P');
-
 -- --------------------------------------------------------
 
 --
@@ -663,13 +484,6 @@ CREATE TABLE `exam_grade` (
   `number_form` varchar(5) NOT NULL,
   `number_to` varchar(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `exam_grade`
---
-
-INSERT INTO `exam_grade` (`id`, `grade_name`, `point`, `number_form`, `number_to`) VALUES
-(1, 'A', '5', '80', '100');
 
 -- --------------------------------------------------------
 
@@ -689,15 +503,6 @@ CREATE TABLE `exam_routine` (
   `exam_shift` varchar(50) NOT NULL,
   `status` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `exam_routine`
---
-
-INSERT INTO `exam_routine` (`id`, `exam_id`, `exam_date`, `exam_subject`, `subject_code`, `rome_number`, `start_time`, `end_time`, `exam_shift`, `status`) VALUES
-(2, 7, '11/01/2017', 'Persamaan Linier', 'PL01', '12', '10:30', '11:00', 'Morning shift', 'Result'),
-(3, 8, '20/01/2017', 'BangunRuang', 'S001', '2', '09:00', '09:30', 'Morning shift', 'NoResult'),
-(4, 19, '20/01/2017', 'Bangun Ruang', 'S0032', '2', '16:00', '16:30', 'Evening shift', 'Result');
 
 -- --------------------------------------------------------
 
@@ -734,17 +539,6 @@ CREATE TABLE `final_result` (
   `point` varchar(11) NOT NULL,
   `fail_amount` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `final_result`
---
-
-INSERT INTO `final_result` (`id`, `class_id`, `section`, `exam_id`, `exam_title`, `student_id`, `student_name`, `total_mark`, `final_grade`, `maride_list`, `status`, `point`, `fail_amount`) VALUES
-(1, 11, '', 6, 'Ujian Class 1', '201713001', 'Amirul Arbi', '90', 'A+', '1', 'Pass', '5', 0),
-(2, 11, '', 7, 'UAS', '201701007', 'Noviagati  Pramudia', '90', 'A+', '1', 'Pass', '5', 0),
-(3, 11, '', 7, 'UAS', '201713002', 'Juniar Sandra', '89', 'A+', '3', 'Pass', '5', 0),
-(4, 11, '', 7, 'UAS', '201713003', 'Khoriri Matoh', '90', 'A+', '2', 'Pass', '5', 0),
-(5, 11, '', 7, 'UAS', '201713004', 'Silvia Kurnia', '88', 'A+', '4', 'Pass', '5', 0);
 
 -- --------------------------------------------------------
 
@@ -841,12 +635,7 @@ CREATE TABLE `jurnal` (
 --
 
 INSERT INTO `jurnal` (`id`, `class_id`, `task`, `situasi_kelas`, `catatan`, `time`, `date`, `user`, `user_id`, `year`, `approval`) VALUES
-(1, 15, 'BangunRuang ', 'Kondusif', 'Tidak ada', '10:46 am', 1485104400, 'Mokhamad Ariadi', 2, 2017, 1),
-(2, 15, 'Persamaan', 'Kondisf', 'Tidak ada', '10:51 am', 1485104400, 'Head Office', 10, 2017, 1),
-(3, 15, 'Persamaan Kuadrat', 'Kondusif', 'Tidak ada', '11:24 am', 1485104400, 'Mokhamad Ariadi', 2, 2017, 1),
-(4, 14, 'Persamaan Kuadrat', 'Kondusif', 'Tidak ada', '11:26 am', 1485104400, 'Mokhamad Ariadi', 2, 2017, 0),
-(5, 14, 'Bangun Ruang', 'Kondusif', 'Tidak ada', '11:27 am', 1485104400, 'Mokhamad Ariadi', 2, 2017, 0),
-(6, 15, 'Bangun Ruang', 'Kondusif', 'Tidak ada', '03:46 pm', 1485277200, 'Mokhamad Ariadi', 2, 2017, 1);
+(1, 1, 'Tututhhhh', 'Tututhhhhdfff', 'Tututhhhhaaaaa', '03:59 pm', 1485795600, 'Firman Zain', 23, 2017, 1);
 
 -- --------------------------------------------------------
 
@@ -915,6 +704,13 @@ CREATE TABLE `massage` (
   `class` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `massage`
+--
+
+INSERT INTO `massage` (`id`, `sender_id`, `receiver_id`, `message`, `subject`, `read_unread`, `date`, `sender_delete`, `receiver_delete`, `class`) VALUES
+(1, 10, '23', '<p>dsadasdsadsaddsadas</p>\\r\\n', 'SMSS', 1, 1485853504, 1, 1, '');
+
 -- --------------------------------------------------------
 
 --
@@ -929,6 +725,13 @@ CREATE TABLE `notice_board` (
   `notice` varchar(1000) NOT NULL,
   `receiver` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `notice_board`
+--
+
+INSERT INTO `notice_board` (`id`, `date`, `sender`, `subject`, `notice`, `receiver`) VALUES
+(1, '31/01/2017', 'Head Office', 'Pengumuman', '<p>Semua akan ada hikmahnya test test tes</p>\\r\\n', 'all');
 
 -- --------------------------------------------------------
 
@@ -952,10 +755,14 @@ CREATE TABLE `parents_info` (
 --
 
 INSERT INTO `parents_info` (`id`, `user_id`, `class_id`, `student_id`, `parents_name`, `relation`, `email`, `phone`) VALUES
-(1, 6, 12, '201713001', 'Wali  Aku', 'Ponakan', 'wali@gmail.com', '+62085895986526'),
-(2, 19, 0, '2017', 'Wayyaaa Bababa', 'Kakek', 'wayayy@gmail.com', '+6285895986529'),
-(3, 20, 0, '2017', 'Udin  Duasss', 'Papa', 'udinpapa@gmail.com', '+6285895986529'),
-(4, 21, 14, '2017', 'Dede Dudu', 'Uncle', 'dede@gmail.com', '+6285895986529');
+(1, 40, 7, '2017CB00003007001', 'Haqi Jaja', 'Ayah', 'haqi@gmail.com', '+6285895986529'),
+(2, 41, 7, '2017CB00003007003', 'Agus  Setiyo', 'Ayah', 'agus@gmail.com', '+6285895986524'),
+(3, 42, 7, '2017CB00003007002', 'Ririn Pramita', 'Tante', 'ririn@gmail.com', '+6285895986723'),
+(4, 43, 1, '2017CB00002001001', 'Didin Kiswanto', 'Ayah', 'didin@gmail.com', '+6285895986525'),
+(5, 44, 1, '2017CB00002001002', 'Sutinah  Mariah', 'Nenek', 'sutinah@gmail.com', '+6285895986522'),
+(6, 45, 1, '2017CB00002001003', 'Aan Mubarok', 'Ayah', 'aan@gmail.com', '+62858959867244'),
+(7, 46, 1, '2017CB00002001004', 'Bial Bilal', 'Ayah', 'bial@gmail.com', '+6285895986520'),
+(8, 47, 1, '2017CB00002001005', 'Maryam  Mersedes', 'Tante', 'maryam@gmail.com', '+6285895986573');
 
 -- --------------------------------------------------------
 
@@ -971,14 +778,6 @@ CREATE TABLE `result_action` (
   `status` varchar(20) NOT NULL,
   `publish` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `result_action`
---
-
-INSERT INTO `result_action` (`id`, `class_id`, `exam_id`, `exam_title`, `status`, `publish`) VALUES
-(1, 11, 6, 'Ujian Class 1', 'Complete', 'Publish'),
-(2, 11, 7, 'UAS', 'Complete', 'Publish');
 
 -- --------------------------------------------------------
 
@@ -1002,19 +801,6 @@ CREATE TABLE `result_shit` (
   `result` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `result_shit`
---
-
-INSERT INTO `result_shit` (`id`, `exam_title`, `exam_id`, `class_id`, `section`, `student_name`, `student_id`, `exam_subject`, `mark`, `point`, `grade`, `roll_number`, `result`) VALUES
-(1, 'Ujian Class 1', 6, 11, '', 'Amirul Arbi', '201713001', 'Kuadrat', '90', '5', 'A', 1, 'Pass'),
-(2, 'UAS', 7, 11, '', 'Noviagati  Pramudia', '201701007', 'Persamaan Linier', '90', '5', 'A', 7, 'Pass'),
-(3, 'UAS', 7, 11, '', 'Juniar Sandra', '201713002', 'Persamaan Linier', '89', '5', 'A', 2, 'Pass'),
-(4, 'UAS', 7, 11, '', 'Khoriri Matoh', '201713003', 'Persamaan Linier', '90', '5', 'A', 3, 'Pass'),
-(5, 'UAS', 7, 11, '', 'Silvia Kurnia', '201713004', 'Persamaan Linier', '88', '5', 'A', 4, 'Pass'),
-(6, 'Tes Mingguan Dua', 19, 15, '', 'Dicky  Wahyu', '2017CB00002015001', 'Bangun Ruang', '90', '5', 'A', 1, 'Pass'),
-(7, 'Tes Mingguan Dua', 19, 15, '', 'Sujino Marquez', '2017CB00002015002', 'Bangun Ruang', '90', '5', 'A', 2, 'Pass');
-
 -- --------------------------------------------------------
 
 --
@@ -1032,15 +818,6 @@ CREATE TABLE `result_submition_info` (
   `teacher` varchar(100) NOT NULL,
   `exam_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `result_submition_info`
---
-
-INSERT INTO `result_submition_info` (`id`, `class_id`, `section`, `exam_title`, `date`, `subject`, `submited`, `teacher`, `exam_id`) VALUES
-(1, 11, '', 'Ujian Class 1', '09/01/2017', 'Kuadrat', '1', 'Headmaster', 6),
-(2, 11, '', 'UAS', '11/01/2017', 'Persamaan Linier', '1', 'Head Office', 7),
-(3, 15, '', 'Tes Mingguan Dua', '20/01/2017', 'Bangun Ruang', '0', 'Head Office', 19);
 
 -- --------------------------------------------------------
 
@@ -1157,28 +934,32 @@ CREATE TABLE `role_based_access` (
 --
 
 INSERT INTO `role_based_access` (`id`, `user_id`, `group_id`, `das_top_info`, `das_grab_chart`, `das_class_info`, `das_message`, `das_employ_attend`, `das_notice`, `das_calender`, `admission`, `all_student_info`, `stud_edit_delete`, `stu_own_info`, `teacher_info`, `add_teacher`, `teacher_details`, `teacher_edit_delete`, `all_parents_info`, `own_parents_info`, `make_parents_id`, `parents_edit_dlete`, `add_employee`, `employee_list`, `employ_attendance`, `empl_atte_view`, `add_new_class`, `all_class_info`, `class_details`, `class_delete`, `class_promotion`, `add_class_routine`, `own_class_routine`, `all_class_routine`, `rutin_edit_delete`, `attendance_preview`, `take_studence_atten`, `edit_student_atten`, `add_subject`, `all_subject`, `assin_optio_sub`, `make_suggestion`, `all_suggestion`, `own_suggestion`, `add_exam_gread`, `exam_gread`, `gread_edit_dele`, `add_exam_routin`, `all_exam_routine`, `own_exam_routine`, `exam_attend_preview`, `approve_result`, `view_result`, `all_mark_sheet`, `own_mark_sheet`, `take_exam_attend`, `change_exam_attendance`, `make_result`, `add_category`, `all_category`, `edit_delete_category`, `add_books`, `all_books`, `edit_delete_books`, `add_library_mem`, `memb_list`, `issu_return`, `add_dormitories`, `add_set_dormi`, `set_member_bed`, `dormi_report`, `add_transport`, `all_transport`, `transport_edit_dele`, `add_account_title`, `edit_dele_acco`, `trensection`, `fee_collection`, `all_slips`, `own_slip`, `slip_edit_delete`, `pay_salary`, `creat_notice`, `send_message`, `vendor`, `delet_vendor`, `add_inv_cat`, `inve_item`, `delete_inve_ite`, `delete_inv_cat`, `inve_issu`, `delete_inven_issu`, `check_leav_appli`, `setting_accounts`, `other_setting`, `front_setings`, `set_optional`, `setting_manage_user`, `all_cabang`, `add_cabang`, `delete_edit_cabang`) VALUES
-(1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0),
-(2, 2, 4, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(3, 3, 4, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(4, 4, 3, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(5, 5, 3, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(6, 6, 5, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(7, 7, 3, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(8, 8, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(9, 9, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 (10, 10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-(11, 11, 3, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(12, 12, 3, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(13, 13, 3, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(14, 14, 3, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(15, 15, 4, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(16, 16, 4, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(17, 17, 4, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(18, 18, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1),
-(19, 19, 5, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(20, 20, 5, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(21, 21, 5, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(22, 22, 4, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+(23, 23, 4, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(24, 24, 4, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(25, 25, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0),
+(26, 26, 4, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(27, 27, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0),
+(28, 28, 4, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(29, 29, 4, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(30, 30, 3, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(31, 31, 3, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(32, 32, 3, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(33, 33, 3, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(34, 34, 3, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(35, 35, 3, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(36, 36, 3, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(37, 37, 3, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(38, 38, 3, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(39, 39, 3, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(40, 40, 5, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(41, 41, 5, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(42, 42, 5, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(43, 43, 5, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(44, 44, 5, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(45, 45, 5, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(46, 46, 5, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(47, 47, 5, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1297,13 +1078,16 @@ CREATE TABLE `student_info` (
 --
 
 INSERT INTO `student_info` (`id`, `year`, `user_id`, `student_id`, `roll_number`, `class_id`, `student_nam`, `farther_name`, `mother_name`, `birth_date`, `sex`, `present_address`, `permanent_address`, `phone`, `father_occupation`, `father_incom_range`, `mother_occupation`, `student_photo`, `last_class_certificate`, `t_c`, `national_birth_certificate`, `academic_transcription`, `testimonial`, `documents_info`, `starting_year`, `transfer_year`, `transfer_to`, `transfer_reason`, `tc_appli_approved_by`, `passing_year`, `compleat_level`, `registration_number`, `certificates_status`, `admission_year`, `admission_class`, `admission_roll`, `admission_form_no`, `admission_test_result`, `tc_form`, `blood`, `cabang_id`) VALUES
-(1, 2018, 4, '201701007', 1, 13, 'Noviagati  Pramudia', 'Joko', 'Ibu', '06/11/1992', 'Female', ' Pacitan', 'Surabaya', '+6289679730967', 'Teachers', '4000000', 'Teachers', 'e9b934f653bbe7fbc4d251c6896c00d0.jpg', '', 'submited', '', '', '', 'Iso 001', 2017, 0, '', '', '', 0, '', '', '', 0, '', 0, 0, 0, '', 'A-', 0),
-(2, 2017, 5, '201713001', 1, 12, 'Amirul Arbi', 'Aam', 'iim', '27/01/1991', 'Male', ' Pacitan', 'Surabaya', '+6285895986527', 'Teachers', '2000000', 'Housewife', '5c2b729d56ebaf2ed7ec87758bcd2e7b.jpg', 'submited', '', '', '', '', 'NO S-156', 2017, 0, '', '', '', 0, '', '', '', 0, '', 0, 0, 0, '', 'A+', 0),
-(3, 2017, 7, '201713002', 3, 12, 'Juniar Sandra', 'Junjun', 'mom', '23/05/1993', 'Male', 'Sidoarjo', 'Sidoarjo', '+62085895986529', 'Employer', '4000000', 'Housewife', '875d151f16b91d969c33128bbdf47dcf.jpg', 'submited', '', '', '', '', 'NO S-15', 2017, 0, '', '', '', 0, '', '', '', 0, '', 0, 0, 0, '', 'A+', 0),
-(4, 2017, 11, '201713003', 2, 12, 'Khoriri Matoh', 'Khoo', 'Mhoo', '09/12/1993', 'Male', 'Bojonegoro', 'Surabaya', '+6285895986529', 'Employer', '4000000', 'Housewife', 'd4a7e93b813e624fc2bb19e74d747c7c.jpg', 'submited', '', '', '', '', 'No S21213', 2017, 0, '', '', '', 0, '', '', '', 0, '', 0, 0, 0, '', 'O-', 0),
-(5, 2017, 12, '201713004', 4, 12, 'Silvia Kurnia', 'Soho', 'Mojo', '09/07/1993', 'Female', ' Mojokerto', 'Surabaya', '+6285895986529', 'Business', '4000000', 'Housewife', 'e8b34939ba022412a902f7a4b682896a.jpg', 'submited', '', '', '', '', 'No 1321321', 2017, 0, '', '', '', 0, '', '', '', 0, '', 0, 0, 0, '', 'O-', 0),
-(6, 2017, 13, '2017CB00002015001', 1, 14, 'Dicky  Wahyu', 'Dickdick', 'Bukbuk', '11/12/1993', 'Male', ' Surabaya', 'Surabaya', '+6285895986529', 'Business', '5000000', 'Housewife', 'd8b967e55fd469cf58cd313476511579.jpg', 'submited', 'submited', '', '', '', 'S0232432', 2017, 0, '', '', '', 0, '', '', '', 0, '', 0, 0, 0, '', 'A+', 0),
-(7, 0, 14, '2017CB00002015002', 2, 17, 'Sujino Marquez', 'Jojo', 'Bubu', '27/01/1993', 'Male', ' Surabaya', 'Surabaya', '+6285895986529', 'Business', '5000000', 'Housewife', '2cde5910de78a84e4bd54ca83c87e09d.jpg', 'submited', 'submited', '', '', '', 'S000333', 2017, 0, '', '', '', 0, '', '', '', 0, '', 0, 0, 0, '', 'A+', 2);
+(1, 2017, 30, '2017CB00002001001', 1, 1, 'Dini Setia', 'Didin', 'Bubu', '28/01/1999', 'Female', ' Surabaya', 'Surabaya', '+6285895986529', 'Business', '4000000', 'Housewife', '7a0b20d3b54e285a8554d11c0c1f1f06.jpg', 'submited', 'submited', '', 'submited', '', 'S023243273', 2017, 0, '', '', '', 0, '', '', '', 0, '', 0, 0, 0, '', 'O+', 2),
+(2, 2017, 31, '2017CB00002001002', 2, 1, 'Bagas Pamungkas', 'Papa', 'Mama', '27/03/1999', 'Male', ' Surabaya', 'Surabaya', '+6285895986529', 'Business', '4000000', 'Housewife', '85685bc5f8ffd250395126060b13f5d4.jpg', 'submited', 'submited', '', 'submited', '', 'S023243279', 2017, 0, '', '', '', 0, '', '', '', 0, '', 0, 0, 0, '', 'O+', 2),
+(3, 2017, 32, '2017CB00002001003', 3, 1, 'Alvin Bintang', 'Aan', 'Bubun', '22/05/1999', 'Male', ' Surabaya', 'Surabaya', '+6285895986520', 'Business', '4000000', 'Housewife', '01fbb2791f1473f5e10cadd41ee0d17f.jpg', 'submited', 'submited', '', 'submited', '', 'S023245473', 2017, 0, '', '', '', 0, '', '', '', 0, '', 0, 0, 0, '', 'O+', 2),
+(4, 2017, 33, '2017CB00002001004', 4, 1, 'Arbi Ahmad', 'Bial', 'Bubu', '16/07/1999', 'Male', 'Surabaya', 'Surabaya', '+6285895986277', 'Business', '4000000', 'Housewife', 'e8c1b73c6902587a2f75a2dd3a376728.jpg', 'submited', 'submited', '', 'submited', '', 'S027673273', 2017, 0, '', '', '', 0, '', '', '', 0, '', 0, 0, 0, '', 'A-', 2),
+(5, 2017, 34, '2017CB00002001005', 5, 1, 'Adi Yakub', 'Aad', 'Uud', '23/09/1999', 'Male', 'Surabaya', 'Surabaya', '+6281217807622', 'Business', '4000000', 'Housewife', '8b478b33efab3e2df0d5065521cc1fc5.jpg', 'submited', 'submited', '', 'submited', '', 'S023298773', 2017, 0, '', '', '', 0, '', '', '', 0, '', 0, 0, 0, '', 'A-', 2),
+(6, 2017, 35, '2017CB00003007001', 1, 7, 'Queen Bella', 'Haqi', 'Bubun', '05/05/1999', 'Female', ' Surabaya', 'Surabaya', '+6285895986522', 'Business', '4000000', 'Housewife', 'f0000058d4d4d5a1f39b09e81772420a.jpg', 'submited', 'submited', '', 'submited', '', 'S02322332', 2017, 0, '', '', '', 0, '', '', '', 0, '', 0, 0, 0, '', 'A-', 4),
+(7, 2017, 36, '2017CB00003007002', 2, 7, 'Siti Nuriyah', 'Santo', 'Sinta', '07/01/1999', 'Female', ' Surabaya', 'Surabaya', '+6285895986529', 'Business', '4000000', 'Housewife', 'cb66383252df401c1fbdd42364692a47.jpg', 'submited', 'submited', '', 'submited', '', 'S02325022', 2017, 0, '', '', '', 0, '', '', '', 0, '', 0, 0, 0, '', 'A-', 4),
+(8, 2017, 37, '2017CB00003007003', 3, 7, 'Fery Eka Wahyuni', 'Agus', 'Tonik', '02/12/1999', 'Female', ' Surabaya', 'Surabaya', '+6285895986522', 'Business', '4000000', 'Housewife', 'e54ac720d0a498592d77afc256094608.jpg', 'submited', 'submited', '', '', '', 'S02326752', 2017, 0, '', '', '', 0, '', '', '', 0, '', 0, 0, 0, '', 'B+', 4),
+(9, 2017, 38, '2017CB00003007004', 4, 7, 'Nur Aeni', 'Udin', 'Anik', '22/06/1999', 'Female', ' Surabaya', 'Surabaya', '+6285895986521', 'Business', '4000000', 'Housewife', 'f52b673f7555c6b46225a4334925cc14.jpg', 'submited', 'submited', '', 'submited', '', 'S02388332', 2017, 0, '', '', '', 0, '', '', '', 0, '', 0, 0, 0, '', 'B+', 4),
+(10, 2017, 39, '2017CB00003007005', 5, 7, 'Heru  Fatoni', 'Herman', 'Siti', '04/04/1999', 'Male', ' Surabaya', 'Surabaya', '+6281217807622', 'Business', '5000000', 'Housewife', '4cce209110e9b8601f409111e2218dee.jpg', 'submited', 'submited', '', 'submited', '', 'S02320972', 2017, 0, '', '', '', 0, '', '', '', 0, '', 0, 0, 0, '', 'A+', 4);
 
 -- --------------------------------------------------------
 
@@ -1380,11 +1164,13 @@ CREATE TABLE `teachers_info` (
 --
 
 INSERT INTO `teachers_info` (`id`, `user_id`, `fullname`, `farther_name`, `mother_name`, `birth_date`, `sex`, `present_address`, `permanent_address`, `phone`, `subject`, `position`, `working_hour`, `educational_qualification_1`, `educational_qualification_2`, `educational_qualification_3`, `educational_qualification_4`, `educational_qualification_5`, `teachers_photo`, `cv`, `educational_certificat`, `exprieance_certificatte`, `files_info`, `index_no`) VALUES
-(1, '2', 'Mokhamad Ariadi', 'Sopo', 'Momo', '27/01/1993', 'Male', 'Jombang', 'Surabaya', '+6285895986529', 'IPA', 'Teacher', 'Full time', 'Spd,Universitas Negeri Surabaya,3.40,2015', '', '', '', '', 'bb4847768092d9ea7aa1a9409f059174.jpg', 'submited', 'submited', '', 'No Ijazah 22.00072.15', '1'),
-(2, '3', 'Adhitya W.  Yunanza', '-', '-', '20/03/1994', 'Male', 'Surabaya', 'Surabaya', '+6285707146567', 'IPA', 'Teacher', 'Full time', 'Spd,Universitas Negeri Surabaya,3.40,2016', '', '', '', '', '4fc4367281baeb3fc2a2b2ea6f02c906.jpg', 'submited', '', '', 'No Ijazah 22.00073.15', '2'),
-(4, '16', 'Lintang Prasetyo', 'Papa', 'Mama', '20/04/1993', 'Male', 'Surabaya', 'Surabaya', '+6285895986529', 'Teknik', 'Headmaster', 'Full time', 'S1,Universitas Negeri Surabaya,3.40,2016', '', '', '', '', 'ae05ee6ea21acd5a7160be2fdf4152b8.jpg', 'submited', 'submited', '', 'S0924032', '7'),
-(6, '18', 'Putut Jaya', 'Jojo', 'Nini', '20/07/1993', 'Male', 'Surabaya', 'Surabaya', '+6285895986529', 'IPA', 'Headmaster', 'Full time', 'S1,Universitas Negeri Surabaya,3.40,2016', '', '', '', '', 'f01baa5b134e3ffcb8f8e69190d01ec7.jpg', 'submited', 'submited', '', 'S779234', '9'),
-(7, '22', 'Dimas  Bangka', 'Babat', 'bubut', '23/01/1993', 'Male', 'Surabaya', 'Surabaya', '+6285895986529', 'Mapel', 'Teacher', 'Full time', 'S1,Universitas Negeri Surabaya,3.40,2016', '', '', '', '', '019b0dd274664bb8bd0118ad8b789c50.jpg', 'submited', 'submited', '', 'S-2932100', '5');
+(1, '23', 'Firman Zain', 'Zozo', 'Zizin', '03/03/1993', 'Male', 'Surabaya', 'Surabaya', '+6285895986527', 'MIPA', 'Teacher', 'Full time', 'S1,Universitas Negeri Surabaya,3.40,2016', '', '', '', '', 'da0bc800445bdfad61d09a3a739af571.jpg', 'submited', 'submited', '', 'S023245', '1'),
+(2, '24', 'Dio  Saputra', 'Dodo', 'Mimin', '23/01/1993', 'Male', 'Surabaya', 'Surabaya', '+6285895986523', 'Teknik', 'Teacher', 'Full time', 'S1,Teknik Informatika,3.4,2016', '', '', '', '', '34fa4d81c1d952cfafc57ee898031671.jpg', 'submited', 'submited', '', 'S221288', '2'),
+(3, '25', 'Wayan Adhitya', 'Wayway', 'Momon', '22/04/1993', 'Male', 'Surabaya', 'Surabaya', '+6285895986729', 'Teknik', 'Headmaster', 'Full time', 'S1,Universitas Negeri Surabaya,3.4,2016', '', '', '', '', '393873eb059999cd1b5604db02c30afd.jpg', 'submited', 'submited', '', 'S001234244', '3'),
+(4, '26', 'Dicky Wahyu', 'Didik', 'Mimik', '20/07/1993', 'Male', 'Surabaya', 'Surabaya', '+6285895986227', 'Teknik', 'Teacher', 'Full time', 'S1,ITS,3.4,2016', '', '', '', '', '4eea903fcd60ace9d8492fad26d7f230.jpg', 'submited', 'submited', '', 'S001234288', '4'),
+(5, '27', 'Lintang Gemilang', 'Limbat', 'Momon', '23/06/1993', 'Male', 'Surabaya', 'Surabaya', '+6285895986528', 'Teknik', 'Headmaster', 'Full time', 'S2,Universitas Negeri Surabaya,3.4,2001', '', '', '', '', 'f4b197b75b3b74817befeb7abdb773d1.jpg', 'submited', 'submited', '', 'S001234242', '5'),
+(6, '28', 'Rizky Febrianto', 'Roki', 'Ruma', '23/08/1994', 'Male', 'Surabaya', 'Surabaya', '+62858959862389', 'Teknik', 'Teacher', 'Full time', 'S1,Unair,2.4,2001', '', '', '', '', '6049cb039dc1ad0fac61fb179497592b.jpg', 'submited', 'submited', '', 'S001234266', '6'),
+(7, '29', 'Putut Wijaya', 'Popo', 'Pipit', '22/08/1993', 'Male', 'Surabaya', 'Surabaya', '+6285895986529', 'Teknik', 'Teacher', 'Full time', 'S1,Universitas Negeri Surabaya,3.4,2016', '', '', '', '', '4841afce5e3d3bd763629d387ddb3723.jpg', 'submited', 'submited', '', 'S001234299', '7');
 
 -- --------------------------------------------------------
 
@@ -1407,19 +1193,7 @@ CREATE TABLE `teacher_attendance` (
 --
 
 INSERT INTO `teacher_attendance` (`id`, `year`, `date`, `employ_id`, `employ_title`, `present_or_absent`, `attend_time`) VALUES
-(1, 2017, 1484002800, 1, 'Headmaster', 'Present', '01:22 pm'),
-(2, 2017, 1484002800, 2, 'Mokhamad Ariadi', 'Present', '01:19 pm'),
-(3, 2017, 1484002800, 3, 'Adhitya W.  Yunanza', 'Present', '01:22 pm'),
-(4, 2017, 1484002800, 8, 'Satria  Hernanda', 'Present', '01:21 pm'),
-(5, 2017, 1484953200, 1, 'Headmaster', 'Absent', ''),
-(6, 2017, 1484953200, 2, 'Mokhamad Ariadi', 'Present', '11:27 am'),
-(7, 2017, 1484953200, 3, 'Adhitya W.  Yunanza', 'Absent', ''),
-(8, 2017, 1484953200, 8, 'Satria  Hernanda', 'Absent', ''),
-(9, 2017, 1484953200, 9, 'Punggawa Cipto', 'Absent', ''),
-(10, 2017, 1484953200, 10, 'Head Office', 'Absent', ''),
-(11, 2017, 1485104400, 2, 'Mokhamad Ariadi', 'Present', '11:26 am'),
-(12, 2017, 1485277200, 2, 'Mokhamad Ariadi', 'Present', '03:46 pm'),
-(13, 2017, 1485277200, 2, 'Mokhamad Ariadi', 'Present', '03:46 pm');
+(1, 2017, 1485795600, 23, 'Firman Zain', 'Present', '03:59 pm');
 
 -- --------------------------------------------------------
 
@@ -1438,11 +1212,13 @@ CREATE TABLE `teacher_school` (
 --
 
 INSERT INTO `teacher_school` (`id`, `teacher_id`, `cabang_id`) VALUES
-(1, 2, 2),
-(2, 1, 2),
-(4, 1, 4),
-(7, 6, 2),
-(10, 7, 2);
+(1, 1, 2),
+(2, 2, 2),
+(3, 5, 2),
+(4, 3, 4),
+(5, 4, 4),
+(6, 6, 4),
+(7, 7, 4);
 
 -- --------------------------------------------------------
 
@@ -1540,23 +1316,32 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `phone`, `profile_image`, `user_status`, `leave_status`, `leave_start`, `leave_end`, `salary`) VALUES
-(1, '127.0.0.1', 'Headmaster', '$2y$08$qBQ/MzJzXyil0yuVM.s1XewJerIMCntwxez/Jfs3x/xwxFnkKWo2y', NULL, 'admin@admin.com', NULL, 'HBj4C30st5pOHbjpHojzGu4667ad49e75655b131', 1420113369, 'IcD7gVAwU5DDX4jTuWOVXe', 1268889823, 1485248619, 1, 'Kermit J.', 'Jackson', '123456789', 'admin.png', 'Employee', 'Available', 1447196400, 1449874800, 0),
-(2, '::1', 'Mokhamad Ariadi', '$2y$08$xSp/BEzMjbsTxBBLatsV/eCpar1FB66ZWyeHnVNUjfg3q20nUbORS', NULL, 'mokhamad27@gmail.com', NULL, NULL, NULL, NULL, 1483760492, 1485707813, 1, 'Mokhamad', 'Ariadi', '+6285895986529', 'bb4847768092d9ea7aa1a9409f059174.jpg', 'Employee', 'Available', 0, 0, 0),
-(3, '::1', 'Adhitya W.  Yunanza', '$2y$08$.fyUctfOXweRHxJpmrqWTOwt4x1wBq4r1e0vMcIAmcbz1r198OYgS', NULL, 'adhityawayan@gmail.com', NULL, NULL, NULL, NULL, 1483760888, 1483760888, 1, 'Adhitya W. ', 'Yunanza', '+6285707146567', '4fc4367281baeb3fc2a2b2ea6f02c906.jpg', 'Employee', 'Available', 0, 0, 0),
-(4, '::1', 'Noviagati  Pramudia', '$2y$08$G.Cf6JM6TzuqRjMPsHDA6.gyouLsVv2tOpmfO1qP1aKbTBx6HHvEG', NULL, 'noviagatipramudia@gmail.com', NULL, NULL, NULL, NULL, 1483761669, 1483943672, 1, 'Noviagati ', 'Pramudia', '+6289679730967', 'e9b934f653bbe7fbc4d251c6896c00d0.jpg', '', '', 0, 0, 0),
-(6, '::1', 'Wali  Aku', '$2y$08$eEos7BrOFYA/DbHhIgh2COpeLDgjNoOpwdjo2yhi2GDoRHoao1Yd6', NULL, 'wali@gmail.com', NULL, NULL, NULL, NULL, 1483954071, 1483954750, 1, 'Wali ', 'Aku', '+62085895986526', 'f67b7771927eaebf8509f0a6cfa2fae5.jpg', '', '', 0, 0, 0),
-(7, '::1', 'Juniar Sandra', '$2y$08$bzD6z7xX.ZzmeAfOjTxxPeJbWJMxo7zM.vVltsCV1IH8CdDzce1cG', NULL, 'juniarsandra@gmail.com', NULL, NULL, NULL, NULL, 1483955065, 1483955065, 1, 'Juniar', 'Sandra', '+62085895986529', '875d151f16b91d969c33128bbdf47dcf.jpg', '', '', 0, 0, 0),
-(10, '::1', 'Head Office', '$2y$08$qBQ/MzJzXyil0yuVM.s1XewJerIMCntwxez/Jfs3x/xwxFnkKWo2y', NULL, 'ho@gmail.com', NULL, NULL, NULL, NULL, 1484033771, 1485748460, 1, 'Head', 'Office', '123456789', 'admin.png', 'Employee', 'Available', 0, 0, 0),
-(11, '::1', 'Khoriri Matoh', '$2y$08$gHCD7VKD0S6Jk12I3SeOTuMFx3vFqctKCa9yj4h2wF0kJv/Y7Ul7G', NULL, 'khoriri@gmail.com', NULL, NULL, NULL, NULL, 1484102752, 1484106335, 1, 'Khoriri', 'Matoh', '+6285895986529', 'd4a7e93b813e624fc2bb19e74d747c7c.jpg', '', '', 0, 0, 0),
-(12, '::1', 'Silvia Kurnia', '$2y$08$Ow.gGka1HvNprv7n3h/D5Or.RL0ZG7jBK1Cx5nQa7t/CXXAW.EbNC', NULL, 'silvi@gmail.com', NULL, NULL, NULL, NULL, 1484102972, 1484102972, 1, 'Silvia', 'Kurnia', '+6285895986529', 'e8b34939ba022412a902f7a4b682896a.jpg', '', '', 0, 0, 0),
-(13, '::1', 'Dicky  Wahyu', '$2y$08$NHRbSmxsFmNmwSaA31BfB.3bslR4xfjSgjvmZZnntUtSCV4y9iqzO', NULL, 'dicky@gmail.com', NULL, NULL, NULL, NULL, 1484798782, 1484798782, 1, 'Dicky ', 'Wahyu', '+6285895986529', 'd8b967e55fd469cf58cd313476511579.jpg', '', '', 0, 0, 0),
-(14, '::1', 'Sujino Marquez', '$2y$08$kSWaYCyRpYqiClM0gaYM2ehRQMoOE0SQiMVeyi0kpaYkRcn3bIRg.', NULL, 'sujino@gmail.com', NULL, NULL, NULL, NULL, 1484900109, 1484900109, 1, 'Sujino', 'Marquez', '+6285895986529', '2cde5910de78a84e4bd54ca83c87e09d.jpg', '', '', 0, 0, 0),
-(16, '::1', 'Lintang Prasetyo', '$2y$08$7Fcp2oJJlU0yUcu8MUFXWOuWToDb5mU.1YGbXjgbZYDjZCPVVM8XS', NULL, 'lintang@gmail.com', NULL, NULL, NULL, NULL, 1485318837, 1485318885, 1, 'Lintang', 'Prasetyo', '+6285895986529', 'ae05ee6ea21acd5a7160be2fdf4152b8.jpg', 'Employee', 'Available', 0, 0, 0),
-(18, '::1', 'Putut Jaya', '$2y$08$gXh7fL5mDEWZdiKueWheT.2j0wt66yot4kJaE.wRoC88KbNtNyhJe', NULL, 'putut@gmail.com', NULL, NULL, NULL, NULL, 1485328447, 1485717418, 1, 'Putut', 'Jaya', '+6285895986529', 'f01baa5b134e3ffcb8f8e69190d01ec7.jpg', 'Employee', 'Available', 0, 0, 0),
-(19, '::1', 'Wayyaaa Bababa', '$2y$08$QPv/KRpjDfhe/sHzRHdMHu9/X2bchogYyVnd1V7vwwzilTj1.XhPK', NULL, 'wayayy@gmail.com', NULL, NULL, NULL, NULL, 1485335826, 1485335826, 1, 'Wayyaaa', 'Bababa', '+6285895986529', '4f45c923f44d643f0dc79a6eb79ee8e8.jpg', '', '', 0, 0, 0),
-(20, '::1', 'Udin  Duasss', '$2y$08$dXRO0LLJdYB3/TLud9HvvOAMlxngW.w3o0/MSGtQwXSqNSGy4PCVq', NULL, 'udinpapa@gmail.com', NULL, NULL, NULL, NULL, 1485336038, 1485336038, 1, 'Udin ', 'Duasss', '+6285895986529', '1a126864474a92e35583df8bc68ab295.jpg', '', '', 0, 0, 0),
-(21, '::1', 'Dede Dudu', '$2y$08$nf8zC.BsqghGcHCpdko3zOJtA3og4QFURbL/rqqVjc8JmWLaTofgi', NULL, 'dede@gmail.com', NULL, NULL, NULL, NULL, 1485498344, 1485498344, 1, 'Dede', 'Dudu', '+6285895986529', '1e0787a4f87edfb66f1bf33dcdba9bc6.jpg', '', '', 0, 0, 0),
-(22, '::1', 'Dimas  Bangka', '$2y$08$Egjse.2hcOfdiSaj0fQ6C.Sd9nNiMvrIO5QJ2j2j.aJ7MAiDleQ7W', NULL, 'dimas@gmail.com', NULL, NULL, NULL, NULL, 1485682896, 1485712237, 1, 'Dimas ', 'Bangka', '+6285895986529', '019b0dd274664bb8bd0118ad8b789c50.jpg', 'Employee', 'Available', 0, 0, 0);
+(10, '::1', 'Head Office', '$2y$08$qBQ/MzJzXyil0yuVM.s1XewJerIMCntwxez/Jfs3x/xwxFnkKWo2y', NULL, 'ho@gmail.com', NULL, NULL, NULL, NULL, 1484033771, 1485838482, 1, 'Head', 'Office', '123456789', 'admin.png', 'Employee', 'Available', 0, 0, 0),
+(23, '::1', 'Firman Zain', '$2y$08$WnqKRCDlTppbr9pCR1UbeeJ74feR91zzPjoksSdrC/qQuc.D3..BG', NULL, 'firman@gmail.com', NULL, NULL, NULL, NULL, 1485838659, 1485853542, 1, 'Firman', 'Zain', '+6285895986527', 'da0bc800445bdfad61d09a3a739af571.jpg', 'Employee', 'Available', 0, 0, 0),
+(24, '::1', 'Dio  Saputra', '$2y$08$eR5ifOlVX1CX59IaJ0ADEeXuyeR.UoLP0r0ZBzILvarGmws3S8nk2', NULL, 'dio@gmail.com', NULL, NULL, NULL, NULL, 1485839014, 1485852758, 1, 'Dio ', 'Saputra', '+6285895986523', '34fa4d81c1d952cfafc57ee898031671.jpg', 'Employee', 'Available', 0, 0, 0),
+(25, '::1', 'Wayan Adhitya', '$2y$08$scVA7zRn2yzI1axpXHEhjOoZ4fhzeC91q8l9UQ5kwsceC97iDFAS.', NULL, 'wayan@gmail.com', NULL, NULL, NULL, NULL, 1485839203, 1485839203, 1, 'Wayan', 'Adhitya', '+6285895986729', '393873eb059999cd1b5604db02c30afd.jpg', 'Employee', 'Available', 0, 0, 0),
+(26, '::1', 'Dicky Wahyu', '$2y$08$asadGWYmv46C7Qld6B54eOxVYv5.Y68dVYLT2ieDdBizbqTQ3NFP6', NULL, 'dicky@gmail.com', NULL, NULL, NULL, NULL, 1485839320, 1485839320, 1, 'Dicky', 'Wahyu', '+6285895986227', '4eea903fcd60ace9d8492fad26d7f230.jpg', 'Employee', 'Available', 0, 0, 0),
+(27, '::1', 'Lintang Gemilang', '$2y$08$PT.ViPDttXz2YBoorGEZqun6ngKgRGDNFTwu4mmDBLsaSEU.qgHsa', NULL, 'lintang@gmail.com', NULL, NULL, NULL, NULL, 1485839664, 1485853738, 1, 'Lintang', 'Gemilang', '+6285895986528', 'f4b197b75b3b74817befeb7abdb773d1.jpg', 'Employee', 'Available', 0, 0, 0),
+(28, '::1', 'Rizky Febrianto', '$2y$08$HIWmkr6utCqWrGs18c97DeCUqbbdlXg/cg.Ju29Xk2.R6OPoLY.6C', NULL, 'rizky@gmail.com', NULL, NULL, NULL, NULL, 1485839804, 1485848211, 1, 'Rizky', 'Febrianto', '+62858959862389', '6049cb039dc1ad0fac61fb179497592b.jpg', 'Employee', 'Available', 0, 0, 0),
+(29, '::1', 'Putut Wijaya', '$2y$08$O9bgePSucx0hltJU.oqlbOD/rmVJa6.5W00zzz/q/DHR.MnL.9pSS', NULL, 'putut@gmail.com', NULL, NULL, NULL, NULL, 1485842986, 1485842986, 1, 'Putut', 'Wijaya', '+6285895986529', '4841afce5e3d3bd763629d387ddb3723.jpg', 'Employee', 'Available', 0, 0, 0),
+(30, '::1', 'Dini Setia', '$2y$08$/5zUYJg08H4WfTbP58vQp.WqR/qzR6ZA1UT27uTieYLTTKMdqtAVu', NULL, 'dini@gmail.com', NULL, NULL, NULL, NULL, 1485843789, 1485843789, 1, 'Dini', 'Setia', '+6285895986529', '7a0b20d3b54e285a8554d11c0c1f1f06.jpg', '', '', 0, 0, 0),
+(31, '::1', 'Bagas Pamungkas', '$2y$08$oqjIGqYy5cUNprCixdR0tOHBwdy48/xct1XQhYpSCD4YHUv78qxhi', NULL, 'bagas@gmail.com', NULL, NULL, NULL, NULL, 1485843897, 1485843897, 1, 'Bagas', 'Pamungkas', '+6285895986529', '85685bc5f8ffd250395126060b13f5d4.jpg', '', '', 0, 0, 0),
+(32, '::1', 'Alvin Bintang', '$2y$08$FE1OpKghmzb2FHRqjDH3oOQLOT1YkM4qkzganQvgs8T95.Q7h03pm', NULL, 'alvin@gmail.com', NULL, NULL, NULL, NULL, 1485844035, 1485844035, 1, 'Alvin', 'Bintang', '+6285895986520', '01fbb2791f1473f5e10cadd41ee0d17f.jpg', '', '', 0, 0, 0),
+(33, '::1', 'Arbi Ahmad', '$2y$08$g6PekeRxkAzBLmA/CrG8C.hRC1Ab5X9crsMDdoGMe35gco4CSUmb.', NULL, 'arbi@gmail.com', NULL, NULL, NULL, NULL, 1485844168, 1485844168, 1, 'Arbi', 'Ahmad', '+6285895986277', 'e8c1b73c6902587a2f75a2dd3a376728.jpg', '', '', 0, 0, 0),
+(34, '::1', 'Adi Yakub', '$2y$08$i1.uDi7D87F.Av1ezCseDuAAwK0UCZskLhqWg0C1ed8AU28UyjBHK', NULL, 'adi@gmail.com', NULL, NULL, NULL, NULL, 1485844334, 1485844334, 1, 'Adi', 'Yakub', '+6281217807622', '8b478b33efab3e2df0d5065521cc1fc5.jpg', '', '', 0, 0, 0),
+(35, '::1', 'Queen Bella', '$2y$08$4EOx.ATai1IR45RGYI9l4uki2jPsxHctob7ZkQCtDyQK6VVXWwAka', NULL, 'queen@gmail.com', NULL, NULL, NULL, NULL, 1485844557, 1485852058, 1, 'Queen', 'Bella', '+6285895986522', 'f0000058d4d4d5a1f39b09e81772420a.jpg', '', '', 0, 0, 0),
+(36, '::1', 'Siti Nuriyah', '$2y$08$JKbwB7AJEnfC1KZZnNyDh.33HG54XUhO3GOt92VoHXzpjzNJjlD4S', NULL, 'siti@gmail.com', NULL, NULL, NULL, NULL, 1485844736, 1485844736, 1, 'Siti', 'Nuriyah', '+6285895986529', 'cb66383252df401c1fbdd42364692a47.jpg', '', '', 0, 0, 0),
+(37, '::1', 'Fery Eka Wahyuni', '$2y$08$MZR/PhXAoiOR0oLXRqUv9ujFcV8Nq.0FNZ.q.6BE4lH7GNFdaWXMO', NULL, 'fery@gmail.com', NULL, NULL, NULL, NULL, 1485844914, 1485844914, 1, 'Fery', 'Eka Wahyuni', '+6285895986522', 'e54ac720d0a498592d77afc256094608.jpg', '', '', 0, 0, 0),
+(38, '::1', 'Nur Aeni', '$2y$08$lMp31g/woalQ7CXzXakEdulAzGTLrAdHIqsejvjFvNCq5hbr2QYXC', NULL, 'eni@gmail.com', NULL, NULL, NULL, NULL, 1485845005, 1485845005, 1, 'Nur', 'Aeni', '+6285895986521', 'f52b673f7555c6b46225a4334925cc14.jpg', '', '', 0, 0, 0),
+(39, '::1', 'Heru  Fatoni', '$2y$08$p37ugxNakf.hzE1C0PC.z.sx6UmCEEgfcZbmlNdvepMrvxNyv4UY2', NULL, 'heru@gmail.com', NULL, NULL, NULL, NULL, 1485845088, 1485845088, 1, 'Heru ', 'Fatoni', '+6281217807622', '4cce209110e9b8601f409111e2218dee.jpg', '', '', 0, 0, 0),
+(40, '::1', 'Haqi Jaja', '$2y$08$KjwOLIjZnUXk61yDXg0cZeIIEodD0gD3VEGcirOecQxuOUSDGe6hS', NULL, 'haqi@gmail.com', NULL, NULL, NULL, NULL, 1485851219, 1485851784, 1, 'Haqi', 'Jaja', '+6285895986529', '2f3283c315d16638f7e622044257540d.jpg', '', '', 0, 0, 0),
+(41, '::1', 'Agus  Setiyo', '$2y$08$kru9bbY80aMkZxjIQqkJvuRc/vryaC7X7KK2JG8dWOQmfSdjh/LYa', NULL, 'agus@gmail.com', NULL, NULL, NULL, NULL, 1485851339, 1485851339, 1, 'Agus ', 'Setiyo', '+6285895986524', '86e8459f37f34dbf824e61537ca37bf7.jpg', '', '', 0, 0, 0),
+(42, '::1', 'Ririn Pramita', '$2y$08$oW3PMvCI06BOjq8PKtHx1.b6WaXZVWLOQ4NeDkOu/DHSP8Tpxss8G', NULL, 'ririn@gmail.com', NULL, NULL, NULL, NULL, 1485851478, 1485851478, 1, 'Ririn', 'Pramita', '+6285895986723', 'de6eea91c5f14f892fff01fd339c95e9.jpg', '', '', 0, 0, 0),
+(43, '::1', 'Didin Kiswanto', '$2y$08$n3kd9xINhn0qVV65YRd80OMWxoRQ./lYb4tk/ZhnJpPnhozCn/yWS', NULL, 'didin@gmail.com', NULL, NULL, NULL, NULL, 1485852146, 1485852146, 1, 'Didin', 'Kiswanto', '+6285895986525', 'b537b3870fdea6df8e54d2035a60210f.jpg', '', '', 0, 0, 0),
+(44, '::1', 'Sutinah  Mariah', '$2y$08$gQJnKon3IHwekHiZM8TXp.3PKJnlsxDExktWn/AW90ND1CasT5I4y', NULL, 'sutinah@gmail.com', NULL, NULL, NULL, NULL, 1485852226, 1485852226, 1, 'Sutinah ', 'Mariah', '+6285895986522', '0b7f982cb6f62d6cb88f24286b96ac98.jpg', '', '', 0, 0, 0),
+(45, '::1', 'Aan Mubarok', '$2y$08$WSijvr4Rt8zHR4j9oQFisONbe0q45WqOZCBL7f8QmPyIJajrYzC6O', NULL, 'aan@gmail.com', NULL, NULL, NULL, NULL, 1485852399, 1485852399, 1, 'Aan', 'Mubarok', '+62858959867244', '1929142ee6e2a7754379243e48b9140c.jpg', '', '', 0, 0, 0),
+(46, '::1', 'Bial Bilal', '$2y$08$CaxxgYqv7PE3JPu08eQIxOZHG2u6WkBrc6DJGwvOydomR1oHZ.FPC', NULL, 'bial@gmail.com', NULL, NULL, NULL, NULL, 1485852550, 1485852550, 1, 'Bial', 'Bilal', '+6285895986520', 'a6f2c27e7ebc952a0e0ddf337ee4024c.jpg', '', '', 0, 0, 0),
+(47, '::1', 'Maryam  Mersedes', '$2y$08$8uxmcJVjKhMme1rfbTKPJuPYKA.TLM6.CBp52blqkb3wsrA2tWB5i', NULL, 'maryam@gmail.com', NULL, NULL, NULL, NULL, 1485852703, 1485852703, 1, 'Maryam ', 'Mersedes', '+6285895986573', 'efc4c0d7a98a74cd1c6b07910a859465.jpg', '', '', 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1575,23 +1360,32 @@ CREATE TABLE `users_groups` (
 --
 
 INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
-(1, 1, 2),
-(55, 2, 4),
-(56, 3, 4),
-(57, 4, 3),
-(59, 6, 5),
-(60, 7, 3),
 (65, 10, 1),
-(63, 11, 3),
-(64, 12, 3),
-(66, 13, 3),
-(67, 14, 3),
-(69, 16, 2),
-(71, 18, 2),
-(72, 19, 5),
-(73, 20, 5),
-(74, 21, 5),
-(75, 22, 4);
+(76, 23, 4),
+(77, 24, 4),
+(78, 25, 2),
+(79, 26, 4),
+(80, 27, 2),
+(81, 28, 4),
+(82, 29, 4),
+(83, 30, 3),
+(84, 31, 3),
+(85, 32, 3),
+(86, 33, 3),
+(87, 34, 3),
+(88, 35, 3),
+(89, 36, 3),
+(90, 37, 3),
+(91, 38, 3),
+(92, 39, 3),
+(93, 40, 5),
+(94, 41, 5),
+(95, 42, 5),
+(96, 43, 5),
+(97, 44, 5),
+(98, 45, 5),
+(99, 46, 5),
+(100, 47, 5);
 
 -- --------------------------------------------------------
 
@@ -1948,47 +1742,47 @@ ALTER TABLE `account_title`
 -- AUTO_INCREMENT for table `add_exam`
 --
 ALTER TABLE `add_exam`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `books_category`
 --
 ALTER TABLE `books_category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `cabang`
 --
 ALTER TABLE `cabang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `calender_events`
 --
 ALTER TABLE `calender_events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `class`
 --
 ALTER TABLE `class`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `class_routine`
 --
 ALTER TABLE `class_routine`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `class_students`
 --
 ALTER TABLE `class_students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `class_subject`
 --
 ALTER TABLE `class_subject`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `config_week_day`
 --
@@ -1998,7 +1792,7 @@ ALTER TABLE `config_week_day`
 -- AUTO_INCREMENT for table `daily_attendance`
 --
 ALTER TABLE `daily_attendance`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `dormitory`
 --
@@ -2023,17 +1817,17 @@ ALTER TABLE `employe`
 -- AUTO_INCREMENT for table `exam_attendanc`
 --
 ALTER TABLE `exam_attendanc`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `exam_grade`
 --
 ALTER TABLE `exam_grade`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `exam_routine`
 --
 ALTER TABLE `exam_routine`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `fee_item`
 --
@@ -2043,7 +1837,7 @@ ALTER TABLE `fee_item`
 -- AUTO_INCREMENT for table `final_result`
 --
 ALTER TABLE `final_result`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `groups`
 --
@@ -2068,7 +1862,7 @@ ALTER TABLE `issu_item`
 -- AUTO_INCREMENT for table `jurnal`
 --
 ALTER TABLE `jurnal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `leave_application`
 --
@@ -2088,37 +1882,37 @@ ALTER TABLE `login_attempts`
 -- AUTO_INCREMENT for table `massage`
 --
 ALTER TABLE `massage`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `notice_board`
 --
 ALTER TABLE `notice_board`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `parents_info`
 --
 ALTER TABLE `parents_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `result_action`
 --
 ALTER TABLE `result_action`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `result_shit`
 --
 ALTER TABLE `result_shit`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `result_submition_info`
 --
 ALTER TABLE `result_submition_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `role_based_access`
 --
 ALTER TABLE `role_based_access`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 --
 -- AUTO_INCREMENT for table `salary`
 --
@@ -2138,7 +1932,7 @@ ALTER TABLE `slip`
 -- AUTO_INCREMENT for table `student_info`
 --
 ALTER TABLE `student_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `subjects_mark`
 --
@@ -2158,12 +1952,12 @@ ALTER TABLE `teachers_info`
 -- AUTO_INCREMENT for table `teacher_attendance`
 --
 ALTER TABLE `teacher_attendance`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `teacher_school`
 --
 ALTER TABLE `teacher_school`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `transection`
 --
@@ -2183,12 +1977,12 @@ ALTER TABLE `userinfo`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 --
 -- AUTO_INCREMENT for table `users_groups`
 --
 ALTER TABLE `users_groups`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 --
 -- AUTO_INCREMENT for table `vendors`
 --
