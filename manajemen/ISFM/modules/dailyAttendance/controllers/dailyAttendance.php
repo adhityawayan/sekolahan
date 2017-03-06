@@ -51,9 +51,11 @@ class DailyAttendance extends MX_Controller {
         if ($this->input->post('submit', TRUE)) {
             //Whene submit the attendence information after takeing the attendence
             $i = $this->input->post('in_velu', TRUE);
+            print_r($i);
             $day = date("d-m-Y");
             $date = strtotime($day);
             $classTitle = $this->input->post('classTitle', TRUE);
+            print_r($_POST);
             for ($x = 1; $x <= $i; $x++) {
                 $roll = $this->input->post("roll_$x", TRUE);
                 $name = $this->input->post("atudentName_$x", TRUE);

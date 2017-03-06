@@ -44,6 +44,10 @@ if (!defined('BASEPATH')) {
 
 //$route['default_controller'] = "fva";
 $route['default_controller'] = "auth";
+// auth route
+$route['api/auth'] = 'auth_api/cekUser';
+
+$route['api/users/(:any)/(:any)'] = 'auth_api/getUser/$1/$2';
 /*Get Student for by class ID*/
 $route['api/student/(:num)'] = 'student_api/getStudent/$1';
 

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Created by PhpStorm.
  * User: deyelovi
@@ -35,7 +34,14 @@ class student_api extends CI_Controller
     public function saveStudent()
     {
         $posts = (array)json_decode(file_get_contents('php://input'));
-        $i = $posts["in_velu"];
+        $i=0;
+        foreach($posts as $key=>$value){
+            if(substr($key, 0, 4) == 'roll'){
+                $i++;
+            }
+        }
+        // $i = $posts["in_velu"];
+        // // $i = [1];
         $day = date("d-m-Y");
         $date = strtotime($day);
         $classTitle = $posts['classTitle'];

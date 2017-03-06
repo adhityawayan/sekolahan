@@ -368,17 +368,17 @@ CREATE TABLE `daily_attendance` (
 -- Dumping data for table `daily_attendance`
 --
 
-INSERT INTO `daily_attendance` (`id`, `date`, `user_id`, `student_id`, `class_title`, `section`, `days_amount`, `roll_no`, `present_or_absent`, `student_title`, `class_amount_monthly`, `class_amount_yearly`, `attend_amount_monthly`, `attend_amount_yearly`, `percentise_month`, `percentise_year`) VALUES
-(1, '1485795600', '35', '2017CB00003007001', 'Kelas Satu 2017/2018', '', '', 1, 'P', 'Queen Bella', 1, 1, 1, 1, 100, 100),
-(2, '1485795600', '36', '2017CB00003007002', 'Kelas Satu 2017/2018', '', '', 2, 'P', 'Siti Nuriyah', 1, 1, 1, 1, 100, 100),
-(3, '1485795600', '37', '2017CB00003007003', 'Kelas Satu 2017/2018', '', '', 3, 'P', 'Fery Eka Wahyuni', 1, 1, 1, 1, 100, 100),
-(4, '1485795600', '38', '2017CB00003007004', 'Kelas Satu 2017/2018', '', '', 4, 'P', 'Nur Aeni', 1, 1, 1, 1, 100, 100),
-(5, '1485795600', '39', '2017CB00003007005', 'Kelas Satu 2017/2018', '', '', 5, 'P', 'Heru  Fatoni', 1, 1, 1, 1, 100, 100),
-(6, '1485795600', '30', '2017CB00002001001', 'Kelas Satu 2017/2018', '', '', 1, 'P', 'Dini Setia', 1, 1, 1, 1, 100, 100),
-(7, '1485795600', '31', '2017CB00002001002', 'Kelas Satu 2017/2018', '', '', 2, 'P', 'Bagas Pamungkas', 1, 1, 1, 1, 100, 100),
-(8, '1485795600', '32', '2017CB00002001003', 'Kelas Satu 2017/2018', '', '', 3, 'P', 'Alvin Bintang', 1, 1, 1, 1, 100, 100),
-(9, '1485795600', '33', '2017CB00002001004', 'Kelas Satu 2017/2018', '', '', 4, 'P', 'Arbi Ahmad', 1, 1, 1, 1, 100, 100),
-(10, '1485795600', '34', '2017CB00002001005', 'Kelas Satu 2017/2018', '', '', 5, 'P', 'Adi Yakub', 1, 1, 1, 1, 100, 100);
+-- INSERT INTO `daily_attendance` (`id`, `date`, `user_id`, `student_id`, `class_title`, `section`, `days_amount`, `roll_no`, `present_or_absent`, `student_title`, `class_amount_monthly`, `class_amount_yearly`, `attend_amount_monthly`, `attend_amount_yearly`, `percentise_month`, `percentise_year`) VALUES
+-- (1, '1485795600', '35', '2017CB00003007001', 'Kelas Satu 2017/2018', '', '', 1, 'P', 'Queen Bella', 1, 1, 1, 1, 100, 100),
+-- (2, '1485795600', '36', '2017CB00003007002', 'Kelas Satu 2017/2018', '', '', 2, 'P', 'Siti Nuriyah', 1, 1, 1, 1, 100, 100),
+-- (3, '1485795600', '37', '2017CB00003007003', 'Kelas Satu 2017/2018', '', '', 3, 'P', 'Fery Eka Wahyuni', 1, 1, 1, 1, 100, 100),
+-- (4, '1485795600', '38', '2017CB00003007004', 'Kelas Satu 2017/2018', '', '', 4, 'P', 'Nur Aeni', 1, 1, 1, 1, 100, 100),
+-- (5, '1485795600', '39', '2017CB00003007005', 'Kelas Satu 2017/2018', '', '', 5, 'P', 'Heru  Fatoni', 1, 1, 1, 1, 100, 100),
+-- (6, '1485795600', '30', '2017CB00002001001', 'Kelas Satu 2017/2018', '', '', 1, 'P', 'Dini Setia', 1, 1, 1, 1, 100, 100),
+-- (7, '1485795600', '31', '2017CB00002001002', 'Kelas Satu 2017/2018', '', '', 2, 'P', 'Bagas Pamungkas', 1, 1, 1, 1, 100, 100),
+-- (8, '1485795600', '32', '2017CB00002001003', 'Kelas Satu 2017/2018', '', '', 3, 'P', 'Alvin Bintang', 1, 1, 1, 1, 100, 100),
+-- (9, '1485795600', '33', '2017CB00002001004', 'Kelas Satu 2017/2018', '', '', 4, 'P', 'Arbi Ahmad', 1, 1, 1, 1, 100, 100),
+-- (10, '1485795600', '34', '2017CB00002001005', 'Kelas Satu 2017/2018', '', '', 5, 'P', 'Adi Yakub', 1, 1, 1, 1, 100, 100);
 
 -- --------------------------------------------------------
 

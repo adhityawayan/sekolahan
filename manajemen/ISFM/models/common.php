@@ -72,7 +72,8 @@ WHERE nonaktif='0'");
             $data[] = $row;
         }
         $user = $this->ion_auth->user()->row();
-        $user_id = $user->id;
+        // $user_id = $user->id;
+        $user_id = 23;
         if($this->ion_auth->is_teacher() or $this->ion_auth->is_admin())
         {
             $teacher_id = $this->select_teacher($user_id);
